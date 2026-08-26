@@ -1,0 +1,32 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- run artifacts (regenerate; never version) ---
+checkpoints/
+results/
+*.pt
+*.pth
+
+# --- Kaggle job outputs fetched locally (hundreds of MB) ---
+kaggle_jobs/**/out/
+kaggle_jobs/**/out2/
+kaggle_jobs/**/out3/
+kaggle_jobs/**/out4/
+*.log
+
+# --- generated: rebuild with `python kaggle_jobs/launch.py bundle` ---
+kaggle_jobs/train/kernel_main.py
+kaggle_jobs/code/src/
+
+# --- credentials (never commit) ---
+.kaggle/
+kaggle.json
+access_token
+
+# --- misc ---
+.DS_Store
+Thumbs.db

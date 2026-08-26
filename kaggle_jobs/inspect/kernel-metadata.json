@@ -1,0 +1,15 @@
+{
+  "id": "choudhary15/dermil-dataset-inspect",
+  "title": "dermil dataset inspect",
+  "code_file": "inspect_datasets.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["safaaqaisi/thyroidxl", "abdullahelafifi/main-data"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

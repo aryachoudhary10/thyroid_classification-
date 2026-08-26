@@ -1,0 +1,19 @@
+{
+  "id": "choudhary15/dermil-train",
+  "title": "dermil train",
+  "code_file": "kernel_main.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "safaaqaisi/thyroidxl",
+    "abdullahelafifi/main-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": [],
+  "machine_shape": "nvidiaTeslaT4"
+}
