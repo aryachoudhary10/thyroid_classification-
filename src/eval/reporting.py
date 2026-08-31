@@ -154,7 +154,7 @@ def threshold_table(cfg: Config, model: str) -> pd.DataFrame:
 
 def tirads_comparison(cfg: Config, manifest: pd.DataFrame, model: str,
                       cutoff: int = 4) -> pd.DataFrame:
-    """RCAF/DER-MIL versus TIRADS >= cutoff on the same test cohort."""
+    """Model predictions versus TIRADS >= cutoff on the same test cohort."""
     te = load_test(cfg, model)
     if te is None or "tirads" not in manifest.columns:
         return pd.DataFrame()

@@ -176,6 +176,16 @@ RUN_EXTERNAL = os.environ.get("DERMIL_EXTERNAL", "1") == "1"
 RUN_ROBUST = os.environ.get("DERMIL_ROBUST", "1") == "1"
 
 cfg = Config()
+# The calibration/main run used the default roi_pool encoder, which pools region
+# embeddings from the 14x14 / 7x7 feature maps. Measured lesion area is 6.75% of
+# the frame, so the margin band lands under one feature-map cell -- setting
+# masked_input runs each region masked at full 224 resolution instead (K
+# backbone passes per frame, ~4x the compute).
+EVIDENCE_MODE = os.environ.get("DERMIL_EVIDENCE_MODE", "")
+# regions "lesion,margin,peri,global" makes the evidence set a strict superset
+# of RCAF's two branches: lesion == x*M, global == x.
+REGIONS = os.environ.get("DERMIL_REGIONS", "")
+EVIDENCE_FUSION = os.environ.get("DERMIL_EVIDENCE_FUSION", "")
 cfg.data.thyroidxl_root = THYROID
 cfg.data.tn5000_root = TN5000
 cfg.data.num_workers = 4
@@ -188,6 +198,16 @@ if os.environ.get("DERMIL_DEBUG"):
     cfg.optim.stage1_epochs = 1
     cfg.optim.stage2_epochs = 1
     cfg.eval.n_folds = 2
+
+if EVIDENCE_MODE:
+    cfg.model.evidence_mode = EVIDENCE_MODE
+    print("evidence_mode override -> %s" % EVIDENCE_MODE)
+if REGIONS:
+    cfg.model.regions = tuple(r.strip() for r in REGIONS.split(",") if r.strip())
+    print("regions override -> %s" % (cfg.model.regions,))
+if EVIDENCE_FUSION:
+    cfg.model.evidence_fusion = EVIDENCE_FUSION
+    print("evidence_fusion override -> %s" % EVIDENCE_FUSION)
 
 set_seed(cfg.run.seed)
 registry = StageRegistry(cfg.run.ckpt_root)
@@ -209,7 +229,10 @@ manifest = pipeline.prepare_thyroidxl(cfg, registry)
 # cache_images detects the missing files and rebuilds automatically.
 USE_CACHE = os.environ.get("DERMIL_CACHE", "1") == "1"
 if USE_CACHE:
-    scratch = "/kaggle/temp" if os.path.isdir("/kaggle/temp") else WORK
+    # NOT /kaggle/working: everything there becomes the kernel output, and the
+    # 23k cache files overflowed it twice, silently dropping results/ from the
+    # saved output. /kaggle/temp does not exist on Kaggle images; /tmp does.
+    scratch = "/tmp"
     CACHE_DIR = os.path.join(scratch, "dermil_cache")
     t_cache = time.time()
     manifest = pipeline.cache_images(cfg, manifest, registry, CACHE_DIR)

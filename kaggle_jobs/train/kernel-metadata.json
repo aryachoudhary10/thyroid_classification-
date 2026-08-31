@@ -1,6 +1,6 @@
 {
-  "id": "choudhary15/dermil-train",
-  "title": "dermil train",
+  "id": "choudhary15/dermil-arms",
+  "title": "dermil arms",
   "code_file": "kernel_main.py",
   "language": "python",
   "kernel_type": "script",
@@ -13,7 +13,9 @@
     "abdullahelafifi/main-data"
   ],
   "competition_sources": [],
-  "kernel_sources": [],
+  "kernel_sources": [
+    "choudhary15/dermil-train"
+  ],
   "model_sources": [],
   "machine_shape": "nvidiaTeslaT4"
 }

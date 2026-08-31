@@ -43,7 +43,7 @@ TRAIN_DIR = os.path.join(HERE, "train")
 
 USER = "choudhary15"
 CODE_DS = USER + "/dermil-code"
-KERNEL = USER + "/dermil-train"
+KERNEL = os.environ.get("DERMIL_KERNEL_SLUG", USER + "/dermil-train")
 PROBE = USER + "/dermil-gpu-probe"
 # Kaggle offers P100 (sm_60) and T4 x2 (sm_75). The preinstalled PyTorch 2.10
 # build dropped Pascal support, so a P100 session fails with
@@ -113,8 +113,10 @@ def build_self_contained_kernel(env=None) -> str:
                 n_files += 1
     payload = base64.b64encode(buf.getvalue()).decode("ascii")
 
-    with open(os.path.join(TRAIN_DIR, "train_kernel.py"), encoding="utf-8") as fh:
+    body_file = os.environ.get("DERMIL_KERNEL_BODY", "train_kernel.py")
+    with open(os.path.join(TRAIN_DIR, body_file), encoding="utf-8") as fh:
         body = fh.read()
+    print("kernel body:", body_file)
 
     lines = ["_PAYLOAD = " + repr(payload)] + BOOTSTRAP
     if env:
@@ -165,9 +167,12 @@ def sync_code(version_notes="update"):
 def write_metadata(chain: bool, gpu: bool = True, internet: bool = True,
                    embed: bool = True) -> str:
     sources = [THYROID_DS, TN5000_DS] + ([] if embed else [CODE_DS])
+    extra = os.environ.get("DERMIL_EXTRA_DATASETS", "")
+    sources += [d.strip() for d in extra.split(",") if d.strip()]
     meta = {
         "id": KERNEL,
-        "title": "dermil train",
+        # Kaggle rejects a title whose slug does not match the id (409).
+        "title": KERNEL.split("/")[-1].replace("-", " "),
         "code_file": "kernel_main.py" if embed else "train_kernel.py",
         "language": "python",
         "kernel_type": "script",
@@ -179,7 +184,10 @@ def write_metadata(chain: bool, gpu: bool = True, internet: bool = True,
         "dataset_sources": sources,
         "competition_sources": [],
         # self-reference: attach the previous session's output
-        "kernel_sources": [KERNEL] if chain else [],
+        # chain source may differ from this kernel (e.g. a verify job
+        # reading the training job's checkpoints)
+        "kernel_sources": ([os.environ.get("DERMIL_CHAIN_FROM", KERNEL)]
+                           if chain else []),
         "model_sources": [],
         "machine_shape": ACCELERATOR if gpu else None,
     }

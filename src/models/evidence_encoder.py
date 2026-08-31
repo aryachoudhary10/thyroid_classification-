@@ -9,14 +9,14 @@ Two modes, both driven by the same region maps:
 ``roi_pool`` (default)
     ONE backbone pass per frame. Region embeddings are obtained by
     coverage-weighted pooling of the layer3 (14x14) and layer4 (7x7) feature
-    maps. Cost is *lower* than RCAF's two-branch design while yielding four
+    maps. Cost is *lower* than a two-branch lesion/context design while yielding four
     evidence streams instead of two, which is what makes the full DER-MIL
     trainable on a single Colab GPU.
 
 ``masked_input``
     K backbone passes per frame over region-masked images, i.e. the literal
     x (*) m formulation generalised to K regions. Faithful but K times the
-    compute; kept for a like-for-like ablation against RCAF.
+    compute; kept for a like-for-like ablation against two-branch encoders.
 """
 from __future__ import annotations
 

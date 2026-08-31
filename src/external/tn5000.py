@@ -6,7 +6,7 @@ patient-level. Each image therefore becomes a bag of one, which is the honest
 mapping -- padding a single frame into a fake multi-view bag would fabricate
 cross-view evidence that does not exist.
 
-Protocol, applied identically to the preserved RCAF baseline and to DER-MIL:
+Protocol, applied identically to every model under evaluation:
 
     1. start from the ThyroidXL-trained checkpoint
     2. domain-adapt on the TN5000 training split with progressive backbone
@@ -262,9 +262,21 @@ def evaluate_with_tta(cfg: Config, model_name: str, ckpt: str,
 
 def external_validation(cfg: Config, model_name: str, source_ckpt: str,
                         tn_manifest: pd.DataFrame, registry: StageRegistry,
-                        mask_variants: Tuple[str, ...] = ("pixel", "bbox")
+                        mask_variants: Tuple[str, ...] = ("pixel", "bbox"),
+                        unet_manifest: Optional[pd.DataFrame] = None
                         ) -> pd.DataFrame:
-    """Adapt + evaluate one model on TN5000 under each mask variant."""
+    """Adapt + evaluate one model on TN5000 under each mask variant.
+
+    Variants
+    --------
+    ``pixel``  the manifest's own pixel masks, when the mirror ships any.
+    ``bbox``   rectangles derived from the Pascal VOC annotations.
+    ``unet``   masks predicted by a segmenter trained on ThyroidXL, which is how
+               the source paper produced its headline external number. Requires
+               ``unet_manifest`` from ``segmentation.unet_mask_manifest``; the
+               arm is skipped with a warning rather than silently downgraded if
+               it is missing.
+    """
     key = "tn5000/eval/%s/%s" % (cfg.run.run_name, model_name)
     out = os.path.join(cfg.run.results_root, cfg.run.run_name, model_name,
                        "tn5000_results.csv")
@@ -275,7 +287,16 @@ def external_validation(cfg: Config, model_name: str, source_ckpt: str,
 
     rows = []
     for variant in mask_variants:
-        man = tn_manifest if variant == "pixel" else force_bbox_masks(tn_manifest)
+        if variant == "bbox":
+            man = force_bbox_masks(tn_manifest)
+        elif variant == "unet":
+            if unet_manifest is None:
+                log("  SKIP unet arm -- no segmenter masks were supplied")
+                continue
+            man = unet_manifest
+        else:
+            man = tn_manifest
+        log("  --- mask variant: %s | %s" % (variant, mask_coverage(man)))
         if (man["split"] == "val").sum() > 0:
             adapt_df, eval_df = official_eval_subset(
                 man, cfg.external.eval_subset_per_class, cfg.run.seed)

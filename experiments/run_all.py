@@ -1,7 +1,7 @@
 """Command-line driver for the whole study (same code path as the notebook).
 
     python experiments/run_all.py --stage all
-    python experiments/run_all.py --stage train --models rcaf der_mil
+    python experiments/run_all.py --stage train --models mr_mil der_mil
     python experiments/run_all.py --stage external
     python experiments/run_all.py --status
     python experiments/run_all.py --reset-prefix robust/
@@ -105,12 +105,12 @@ def main() -> int:
         pipeline.run_models(cfg, manifest, registry, extra, args.final_mode)
     if stage in ("all", "robust"):
         rob_models = [m for m in models + ["mask_channel"]
-                      if m in ("rcaf", "mr_mil", "der_mil", "mask_channel",
+                      if m in ("mr_mil", "der_mil", "mask_channel",
                                "lesion_mil", "image_mil")]
         pipeline.run_robustness(cfg, manifest, registry, rob_models,
                                 args.proposed, args.final_mode)
     if stage in ("all", "external"):
-        pipeline.run_external(cfg, registry, ["rcaf", args.proposed])
+        pipeline.run_external(cfg, registry, sorted({"mr_mil", args.proposed}))
     if stage in ("all", "report"):
         all_models = sorted(set(models) | set(ABLATION_LADDER))
         pipeline.build_report(cfg, manifest, all_models, args.proposed)

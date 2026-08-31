@@ -1,4 +1,4 @@
-"""Central configuration for the RCAF / DER-MIL project.
+"""Central configuration for the DER-MIL project.
 
 Every knob that changes an experiment lives here so a run is fully reproducible
 from a single serialised dict, which is stored next to each checkpoint.
@@ -57,17 +57,26 @@ class ModelConfig:
     attn_dim: int = 128                   # paper: d_attn = d_embed / 2
     dropout: float = 0.25
 
-    # ---- RCAF baseline -----------------------------------------------------
-    rcaf_gated: bool = True               # False -> "RCAF no-gating" ablation
+    # ---- arm 7: derived-descriptor vision-language fusion -------------
+    use_descriptors: bool = False         # der_mil_vl turns this on
+    descriptor_dim: int = 128
 
     # ---- DER-MIL evidence encoder -----------------------------------------
     # roi_pool     : ONE backbone pass per frame; region embeddings come from
     #                masked pooling of the spatial feature map. Colab friendly.
     # masked_input : K backbone passes per frame on region-masked images.
-    #                Faithful to the RCAF elementwise-product formulation but
+    #                Faithful to the published elementwise-product formulation but
     #                K times the compute.
     evidence_mode: str = "roi_pool"
     regions: Tuple[str, ...] = ("core", "margin", "peri", "global")
+    # How the K evidence streams are combined into one frame embedding.
+    #   softmax : one scalar weight per region (K numbers)
+    #   gated   : one weight per region PER DIMENSION (K x D), which is what
+    #             makes this a strict generalisation of the published gated
+    #             fusion (Sherif et al., Sci Rep 2026), which gates 256
+    #             dimensions independently, so a scalar mixture
+    #             is strictly less expressive despite having more streams.
+    evidence_fusion: str = "softmax"
 
     # ---- DER-MIL reliability components (each independently switchable) ----
     use_support: bool = True
@@ -152,6 +161,40 @@ class ExternalConfig:
 # Run
 # --------------------------------------------------------------------------- #
 @dataclass
+class SegConfig:
+    """U-Net segmenter for the TN5000 pixel-mask arm.
+
+    Trained on ThyroidXL ground-truth masks only; never sees TN5000 labels.
+    """
+    backbone: str = "resnet34"            # lighter than the classifier trunk
+    epochs: int = 14
+    lr: float = 3e-4
+    batch_size: int = 16
+    dice_weight: float = 0.5              # loss = 0.5*BCE + 0.5*softDice
+    freeze_encoder_epochs: int = 2        # warm the decoder before unfreezing
+    threshold: float = 0.5                # probability -> binary mask
+
+
+@dataclass
+class AdaptConfig:
+    """Label-free TN5000 adaptation arms (4 and 5). No target labels are used."""
+    # ---- arm 4: uncertainty-aware pseudo-labeling --------------------------
+    upl_rounds: int = 2
+    upl_epochs: int = 2
+    upl_lr: float = 5e-5
+    upl_confidence: float = 0.85          # |p - 0.5| gate on the TTA mean
+    upl_max_std: float = 0.10             # across-view stability gate
+    upl_min_samples: int = 8              # below this the arm is degenerate
+
+    # ---- arm 5: test-time adaptation (TENT) --------------------------------
+    tent_steps: int = 1                   # passes over the evaluation set
+    tent_lr: float = 1e-3                 # normalisation affine params only
+
+    # ---- arm 6: retrieval pseudo-bags --------------------------------------
+    retrieval_bag_size: int = 5           # query + 4 nearest neighbours
+
+
+@dataclass
 class RunConfig:
     run_name: str = "der_mil"
     ckpt_root: str = "./checkpoints"
@@ -171,6 +214,8 @@ class Config:
     optim: OptimConfig = field(default_factory=OptimConfig)
     eval: EvalConfig = field(default_factory=EvalConfig)
     external: ExternalConfig = field(default_factory=ExternalConfig)
+    seg: SegConfig = field(default_factory=SegConfig)
+    adapt: AdaptConfig = field(default_factory=AdaptConfig)
     run: RunConfig = field(default_factory=RunConfig)
 
     # ------------------------------------------------------------------ #
@@ -209,7 +254,7 @@ class Config:
             return Config.from_dict(json.load(fh))
 
     def clone(self, **overrides) -> "Config":
-        """Clone with dotted overrides, e.g. clone(**{"model.name": "rcaf"})."""
+        """Clone with dotted overrides, e.g. clone(**{"model.name": "der_mil"})."""
         d = self.to_dict()
         for key, value in overrides.items():
             section, _, leaf = key.partition(".")

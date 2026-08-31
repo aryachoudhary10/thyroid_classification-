@@ -11,9 +11,9 @@ from typing import Callable, Dict, Tuple
 import torch.nn as nn
 
 from ..config import Config, ModelConfig
-from .baselines import ImageOnlyMIL, LesionCropMIL, PoolingMIL, TransformerBagMIL
+from .baselines import (ImageOnlyMIL, LesionCropMIL, MaskChannelMIL, PoolingMIL,
+                        TransformerBagMIL)
 from .der_mil import DERMIL
-from .rcaf import RCAF, MaskChannelMIL
 
 
 # --------------------------------------------------------------------------- #
@@ -36,12 +36,6 @@ MODEL_REGISTRY: Dict[str, Dict[str, object]] = {
     "transformer_bag": {"build": lambda c: TransformerBagMIL(c.model),
                         "data": _needs(False), "group": "fair"},
 
-    # ---- preserved RCAF baseline ----------------------------------------- #
-    "rcaf": {"build": lambda c: RCAF(_with(c.model, rcaf_gated=True)),
-             "data": _needs(False), "group": "fair"},
-    "rcaf_nogate": {"build": lambda c: RCAF(_with(c.model, rcaf_gated=False)),
-                    "data": _needs(False), "group": "ablation"},
-
     # ---- shortcut diagnostics (NOT fair baselines) ----------------------- #
     "mask_channel": {"build": lambda c: MaskChannelMIL(c.model),
                      "data": _needs(False), "group": "diagnostic"},
@@ -59,6 +53,11 @@ MODEL_REGISTRY: Dict[str, Dict[str, object]] = {
                "data": _needs(True), "group": "proposed"},
     "der_mil": {"build": lambda c: DERMIL(_flags(c.model, sup=True, con=True, unc=True)),
                 "data": _needs(True), "group": "proposed"},
+
+    # ---- arm 7: same model, plus derived-descriptor text ----------------- #
+    "der_mil_vl": {"build": lambda c: DERMIL(
+        _with(_flags(c.model, sup=True, con=True, unc=True), use_descriptors=True)),
+        "data": _needs(True), "group": "proposed"},
 }
 
 
@@ -94,7 +93,7 @@ def model_group(name: str) -> str:
 
 
 FAIR_BASELINES = [n for n, e in MODEL_REGISTRY.items() if e["group"] == "fair"]
-ABLATION_LADDER = ["lesion_mil", "rcaf_nogate", "rcaf", "mr_mil",
-                   "der_is", "der_isd", "der_iu", "der_mil"]
-ALL_MAIN = ["mean_pool", "max_pool", "image_mil", "lesion_mil", "transformer_bag",
-            "rcaf", "mr_mil", "der_mil"]
+ABLATION_LADDER = ["lesion_mil", "mr_mil", "der_i", "der_is",
+                   "der_isd", "der_iu", "der_mil"]
+ALL_MAIN = ["mean_pool", "max_pool", "image_mil", "lesion_mil",
+            "transformer_bag", "mr_mil", "der_mil"]

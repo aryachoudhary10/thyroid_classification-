@@ -114,6 +114,16 @@ def tiny_config(root: str, thyroid: str, tn: str) -> Config:
     cfg.eval.bootstrap_external = 40
     cfg.eval.tta_views = 2
 
+    cfg.seg.backbone = "resnet18"
+    cfg.seg.epochs = 1
+    cfg.seg.batch_size = 4
+    cfg.seg.freeze_encoder_epochs = 0
+
+    cfg.adapt.upl_rounds = 1
+    cfg.adapt.upl_epochs = 1
+    cfg.adapt.tent_steps = 1
+    cfg.adapt.retrieval_bag_size = 3
+
     cfg.external.epochs = 1
     cfg.external.warmup_epochs = 1
     cfg.external.eval_subset_per_class = 8
@@ -215,7 +225,7 @@ def main() -> int:
 
         # ---- 6. full protocol for two models ----------------------------- #
         banner("6. FULL PROTOCOL")
-        models = ["rcaf", "der_mil"]
+        models = ["lesion_mil", "der_mil", "der_mil_vl"]
         pipeline.run_models(cfg, man, registry, models)
 
         # ---- 7. robustness + counterfactual ------------------------------ #
@@ -224,7 +234,8 @@ def main() -> int:
 
         # ---- 8. external validation -------------------------------------- #
         banner("8. EXTERNAL VALIDATION")
-        pipeline.run_external(cfg, registry, models, mask_variants=("bbox",))
+        pipeline.run_external(cfg, registry, models, mask_variants=("bbox", "unet"),
+                              manifest=man, label_free=True, retrieval=True)
 
         # ---- 9. tables + figures ----------------------------------------- #
         banner("9. TABLES AND FIGURES")

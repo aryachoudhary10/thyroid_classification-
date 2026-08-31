@@ -25,6 +25,7 @@ from .data.thyroidxl import (assert_table1, build_thyroidxl_manifest,
 from .engine.cv import (build_final_predictor, fit_calibration, full_protocol,
                         calibration_table)
 from .eval import reporting
+from .eval.metrics import all_metrics
 from .eval.counterfactual import (agreement_contradiction_cases, evidence_ablation,
                                   reliability_influence_correlation)
 from .eval.robustness import (corruption_reliability_response, frame_corruption_study,
@@ -154,6 +155,13 @@ def run_model(cfg: Config, manifest: pd.DataFrame, registry: StageRegistry,
 def run_models(cfg: Config, manifest: pd.DataFrame, registry: StageRegistry,
                model_names: Sequence[str], final_mode: str = "ensemble"
                ) -> Dict[str, Any]:
+    # Descriptor models quantise measurements into phrases; the boundaries must
+    # be fitted before any training so they are identical across every fold and
+    # every dataset the run touches.
+    if any(str(m).endswith("_vl") for m in model_names):
+        from .models.descriptors import calibrate_bin_edges
+        calibrate_bin_edges(cfg, manifest, registry)
+
     out = {}
     for name in model_names:
         banner("MODEL: " + name)
@@ -218,13 +226,41 @@ def run_robustness(cfg: Config, manifest: pd.DataFrame, registry: StageRegistry,
 # 4. external validation
 # --------------------------------------------------------------------------- #
 def run_external(cfg: Config, registry: StageRegistry,
-                 model_names: Sequence[str] = ("rcaf", "der_mil"),
+                 model_names: Sequence[str] = ("mr_mil", "der_mil"),
                  override: Optional[LayoutOverride] = None,
-                 mask_variants: Tuple[str, ...] = ("pixel", "bbox")) -> pd.DataFrame:
+                 mask_variants: Tuple[str, ...] = ("pixel", "bbox"),
+                 manifest: Optional[pd.DataFrame] = None,
+                 label_free: bool = False,
+                 retrieval: bool = False) -> pd.DataFrame:
+    """Run the TN5000 arms for each model.
+
+    The ``unet`` arm needs a segmenter trained on ThyroidXL, so it also needs
+    the ThyroidXL ``manifest``. Asking for ``unet`` without one is a hard error
+    rather than a silent downgrade to boxes -- a mask arm that quietly evaluates
+    something other than what it claims is worse than one that does not run.
+    """
     from .external.tn5000 import (build_tn5000_manifest, compare_external,
-                                  external_validation)
+                                  external_validation, force_bbox_masks)
+    from .external.segmentation import unet_mask_manifest
+    from .external.adaptation import run_label_free_arms
+    from .external.retrieval import build_retrieval_bags, evaluate_retrieval_bags
+    from .data.tn5000 import official_eval_subset
+    from .models.descriptors import calibrate_bin_edges
+
+    if any(str(m).endswith("_vl") for m in model_names):
+        if manifest is None:
+            raise ValueError("descriptor models need the ThyroidXL manifest to "
+                             "calibrate their phrase boundaries; pass manifest=...")
+        calibrate_bin_edges(cfg, manifest, registry)
     banner("EXTERNAL VALIDATION ON TN5000 (Setup B)")
     tn = build_tn5000_manifest(cfg, registry, override)
+
+    unet_man = None
+    if "unet" in mask_variants:
+        if manifest is None:
+            raise ValueError("the 'unet' mask arm needs the ThyroidXL manifest "
+                             "to train a segmenter; pass manifest=...")
+        unet_man = unet_mask_manifest(cfg, manifest, tn, registry)
 
     frames = []
     for name in model_names:
@@ -232,8 +268,41 @@ def run_external(cfg: Config, registry: StageRegistry,
         if not src:
             log("  no ThyroidXL checkpoint for %s -- skipping" % name)
             continue
-        df = external_validation(cfg, name, src[0], tn, registry, mask_variants)
+        df = external_validation(cfg, name, src[0], tn, registry, mask_variants,
+                                 unet_manifest=unet_man)
         frames.append(df)
+
+        if label_free:
+            # Same carve as the supervised arms, so every rung is scored on the
+            # identical held-out subset and the comparison stays paired.
+            base = force_bbox_masks(tn) if "bbox" in mask_variants else tn
+            adapt_df, eval_df = official_eval_subset(
+                base, cfg.external.eval_subset_per_class, cfg.run.seed)
+            try:
+                run_label_free_arms(cfg, name, src[0], adapt_df, eval_df, registry)
+            except Exception:
+                import traceback
+                traceback.print_exc()
+
+        if retrieval:
+            base = force_bbox_masks(tn) if "bbox" in mask_variants else tn
+            adapt_df, eval_df = official_eval_subset(
+                base, cfg.external.eval_subset_per_class, cfg.run.seed)
+            try:
+                bags = build_retrieval_bags(cfg, name, src[0], adapt_df,
+                                            eval_df, registry)
+                r = evaluate_retrieval_bags(cfg, name, src[0], bags,
+                                            cfg.eval.tta_views)
+                met = all_metrics(r["y"], r["p"])
+                log("  retrieval bags (k=%d): AUC %.4f | F1 %.4f"
+                    % (cfg.adapt.retrieval_bag_size, met["roc_auc"], met["f1"]))
+                pd.DataFrame({"patient_id": bags["patient_id"].astype(str).values,
+                              "label": r["y"].astype(int), "p": r["p"]}).to_csv(
+                    os.path.join(cfg.run.results_root, cfg.run.run_name, name,
+                                 "tn5000_retrieval_predictions.csv"), index=False)
+            except Exception:
+                import traceback
+                traceback.print_exc()
 
     if not frames:
         return pd.DataFrame()

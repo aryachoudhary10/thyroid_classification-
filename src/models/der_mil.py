@@ -29,6 +29,7 @@ import torch.nn.functional as F
 
 from ..config import ModelConfig
 from .attn_mil import AttnMIL, NEG_INF
+from .descriptors import VisionLanguageFusion
 from .evidence_encoder import EvidenceEncoder
 from .reliability import EvidenceReliability
 
@@ -58,7 +59,26 @@ class DERMIL(nn.Module):
             mc_samples=cfg.mc_dropout_samples,
         )
 
+        # Per-dimension evidence gating. The published baseline fuses its
+        # two branches with a 256-dim gate, so a scalar softmax over K regions
+        # is strictly LESS expressive despite having more streams. This
+        # restores that capacity: with K=2 and reliability disabled it reduces
+        # to a softmax form of that sigmoid gate, so DER-MIL becomes a
+        # generalisation rather than a replacement.
+        self.fusion = cfg.evidence_fusion
+        if self.fusion == "gated":
+            self.gate_net = nn.Sequential(
+                nn.Linear(self.K * d, self.K * d), nn.ReLU(inplace=True),
+                nn.Dropout(cfg.dropout), nn.Linear(self.K * d, self.K * d))
+        elif self.fusion != "softmax":
+            raise KeyError("evidence_fusion must be 'softmax' or 'gated'")
+
         self.frame_norm = nn.LayerNorm(d)
+        # Arm 7: derived-descriptor text fused into the frame representation.
+        # Off by default, so the proposed model is unchanged unless asked for.
+        self.use_descriptors = bool(getattr(cfg, "use_descriptors", False))
+        self.vl = (VisionLanguageFusion(d, cfg.descriptor_dim, cfg.dropout)
+                   if self.use_descriptors else None)
         self.mil = AttnMIL(d, cfg.attn_dim, gated=True, dropout=cfg.dropout)
         self.head = nn.Sequential(nn.Dropout(cfg.dropout), nn.Linear(d, 1))
 
@@ -72,12 +92,28 @@ class DERMIL(nn.Module):
         e_ctx = rel["evidence"]
 
         # ---- level 1: evidence weights inside each frame ------------------
+        b, t, k, d = e_ctx.shape
         ev_logits = I
         if self.use_reliability:
             ev_logits = ev_logits + torch.log(R.clamp_min(EPS))
-        w_ev = torch.softmax(ev_logits, dim=2)                   # (B, T, K)
-        h = torch.einsum("btk,btkd->btd", w_ev, e_ctx)           # (B, T, D)
+
+        if self.fusion == "gated":
+            # (B, T, K, D) logits: every embedding dimension picks its own
+            # mixture over the K evidence streams, biased by importance and
+            # reliability (broadcast across D).
+            g = self.gate_net(e_ctx.reshape(b, t, k * d)).reshape(b, t, k, d)
+            w_full = torch.softmax(g + ev_logits.unsqueeze(-1), dim=2)
+            h = (w_full * e_ctx).sum(dim=2)                      # (B, T, D)
+            w_ev = w_full.mean(dim=-1)                           # (B, T, K) for reporting
+        else:
+            w_ev = torch.softmax(ev_logits, dim=2)               # (B, T, K)
+            h = torch.einsum("btk,btkd->btd", w_ev, e_ctx)       # (B, T, D)
         h = self.frame_norm(h)
+
+        vl_out: Dict[str, torch.Tensor] = {}
+        if self.vl is not None:
+            vl_out = self.vl(h, batch["image"], batch["lesion"])
+            h = vl_out["fused"]
 
         # ---- level 2: reliability-modulated frame attention ---------------
         frame_R = (w_ev * R).sum(dim=2)                          # (B, T)
@@ -98,6 +134,8 @@ class DERMIL(nn.Module):
             "w_joint": w_joint,
             "frame_reliability": frame_R,
             "I": I, "S": rel["S"], "D": rel["D"], "U": rel["U"], "R": R,
+            **({"text_gate": vl_out["text_gate"],
+                "text_tokens": vl_out["tokens"]} if vl_out else {}),
             "has_peers": rel["has_peers"],
         }
         for key in ("A_pos", "A_neg", "cos"):
@@ -144,8 +182,16 @@ class DERMIL(nn.Module):
         if self.use_reliability:
             ev_logits = ev_logits + torch.log(R.clamp_min(EPS))
         ev_logits = ev_logits.masked_fill(keep < 0.5, NEG_INF)
-        w_ev = torch.softmax(ev_logits, dim=2)
-        h = self.frame_norm(torch.einsum("btk,btkd->btd", w_ev, e_ctx))
+        b, t, k, d = e_ctx.shape
+        if self.fusion == "gated":
+            g = self.gate_net(e_ctx.reshape(b, t, k * d)).reshape(b, t, k, d)
+            w_full = torch.softmax(g + ev_logits.unsqueeze(-1), dim=2)
+            h = (w_full * e_ctx).sum(dim=2)
+            w_ev = w_full.mean(dim=-1)
+        else:
+            w_ev = torch.softmax(ev_logits, dim=2)
+            h = torch.einsum("btk,btkd->btd", w_ev, e_ctx)
+        h = self.frame_norm(h)
 
         frame_R = (w_ev * R).sum(dim=2)
         bias = torch.log(frame_R.clamp_min(EPS)) if self.use_reliability else None

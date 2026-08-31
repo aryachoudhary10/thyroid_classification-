@@ -1,7 +1,7 @@
-"""Fair patient-level baselines (paper Table 5).
+"""Fair patient-level baselines.
 
 Every baseline shares the backbone, embedding width, bag construction, two-stage
-schedule and checkpoint-selection logic with RCAF and DER-MIL, so differences
+schedule and checkpoint-selection logic with DER-MIL, so differences
 are attributable to architecture rather than to protocol.
 """
 from __future__ import annotations
@@ -184,3 +184,51 @@ class PoolingMIL(nn.Module):
 
     def set_stage(self, stage: int) -> None:
         self.backbone.set_stage(stage)
+
+
+# --------------------------------------------------------------------------- #
+class MaskChannelMIL(nn.Module):
+    """Diagnostic baseline: naive image--mask channel concatenation.
+
+    Included only to drive the shortcut-sensitivity experiment. It is
+    deliberately NOT part of the fair baseline ladder -- its purpose is to
+    demonstrate that a model given the mask as a raw input channel collapses
+    when the masks are shuffled, which is the behaviour structured region
+    encoding must avoid.
+    """
+
+    def __init__(self, cfg: ModelConfig):
+        super().__init__()
+        self.cfg = cfg
+        self.backbone = Backbone(cfg.backbone, cfg.pretrained)
+        # widen conv1 to 4 channels, replicating the pretrained RGB filters
+        old = self.backbone.stem[0]
+        new = nn.Conv2d(4, old.out_channels, old.kernel_size, old.stride,
+                        old.padding, bias=old.bias is not None)
+        with torch.no_grad():
+            new.weight[:, :3] = old.weight
+            new.weight[:, 3:] = old.weight.mean(1, keepdim=True)
+        self.backbone.stem[0] = new
+
+        d = cfg.embed_dim
+        self.proj = nn.Sequential(
+            nn.Linear(self.backbone.out_dim, d), nn.ReLU(inplace=True),
+            nn.Dropout(cfg.dropout))
+        self.mil = AttnMIL(d, cfg.attn_dim, gated=True, dropout=cfg.dropout)
+        self.head = nn.Linear(d, 1)
+
+    def forward(self, batch: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
+        b, t = batch["image"].shape[:2]
+        idx = valid_index(batch["valid"])
+        x = torch.cat([batch["image"], batch["lesion"]], dim=2)   # 4 channels
+        z = self.proj(self.backbone.forward_vec(gather_frames(x, idx)))
+        z = scatter_frames(z, idx, b, t)
+        bag, alpha = self.mil(z, batch["valid"])
+        return {"logit": self.head(bag).squeeze(-1), "alpha": alpha,
+                "bag": bag, "frame_emb": z}
+
+    def set_stage(self, stage: int) -> None:
+        self.backbone.set_stage(stage)
+        # conv1 was rebuilt, so it must stay trainable for the extra channel
+        for p in self.backbone.stem[0].parameters():
+            p.requires_grad_(True)

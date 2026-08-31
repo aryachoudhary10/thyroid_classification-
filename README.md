@@ -1,8 +1,8 @@
 # DER-MIL — Diagnostic Evidence Reliability Learning for patient-level thyroid ultrasound
 
-An extension of the published **RCAF** framework (Sherif, Elsayed & Deif, *Sci Rep* 2026,
-`s41598-026-61342-8`) that replaces "which evidence is important?" with a stronger,
-falsifiable question:
+Patient-level thyroid ultrasound malignancy prediction. The task and the leakage-free
+protocol follow Sherif, Elsayed & Deif, *Sci Rep* 2026 (`s41598-026-61342-8`); the model
+replaces "which evidence is important?" with a stronger, falsifiable question:
 
 > **Can the diagnostic evidence in one ultrasound view be trusted, given that other views
 > support it, contradict it, or are themselves uncertain?**
@@ -27,17 +27,6 @@ Patient bag of frames + lesion masks
 The contribution is the **reliability mechanism**, not the use of a graph. The signed
 message passing is a tool that earns its place only if the ablation says so — and the
 ablation is built in.
-
----
-
-## Status of the starting point
-
-`d:\kumkum` was empty when this was built. There was no RCAF source to study, so RCAF was
-**reimplemented from the paper** (Eqs. 2–11, Tables 1–3, 5) in [src/models/rcaf.py](src/models/rcaf.py)
-and locked as the preserved baseline. `der_mil.py` does not import from `rcaf.py`, so the
-baseline cannot drift while the new model is developed. If you later obtain the authors'
-code from `github.com/MennatallahSherif/RCAF_project`, drop it in as an additional
-baseline and compare — the registry will treat it as just another model name.
 
 ---
 
@@ -70,7 +59,7 @@ python experiments/run_all.py --status    # what is finished
 Two independent mechanisms, both rooted at `cfg.run.ckpt_root`. **Put that on Drive.**
 
 **`StageRegistry`** (`registry.json`) — a ledger of finished pipeline stages:
-`data/thyroidxl`, `cv/main/der_mil/fold3`, `test/main/rcaf`, `tn5000/adapt/main/der_mil/pixel`, …
+`data/thyroidxl`, `cv/main/der_mil/fold3`, `test/main/der_mil`, `tn5000/adapt/main/der_mil/pixel`, …
 A completed stage prints `SKIP` and is never recomputed.
 
 **`CheckpointManager`** (`last.pt` / `best.pt` per run) — model, optimiser, AMP scaler,
@@ -146,8 +135,6 @@ from silently turning the held-out cohort into a validation set by re-running a 
 | `image_mil` | image-only encoder + AttnMIL |
 | `lesion_mil` | lesion-crop + AttnMIL |
 | `transformer_bag` | sequence bag model (no positional encoding → permutation invariant) |
-| **`rcaf`** | **preserved published baseline** (gated lesion/context fusion + AttnMIL) |
-| `rcaf_nogate` | RCAF with adaptive gating removed |
 | `mask_channel` | naive image–mask concatenation — **diagnostic only**, probes shortcut behaviour |
 | `mr_mil` | multi-region evidence, **reliability disabled** — the ablation that isolates the claim |
 | `der_i` / `der_is` / `der_isd` / `der_iu` | the reliability ladder |
@@ -157,8 +144,8 @@ from silently turning the held-out cohort into a validation set by re-running a 
 
 `evidence_mode="roi_pool"` (default) runs the backbone **once per frame** and derives the
 four region embeddings by coverage-weighted pooling of the layer3 (14×14) and layer4 (7×7)
-feature maps. That is *cheaper* than RCAF's two-branch design while producing four evidence
-streams instead of two — which is what makes full DER-MIL trainable on one Colab GPU.
+feature maps. That is *cheaper* than a two-branch lesion/context design while producing four
+evidence streams instead of two — which is what makes full DER-MIL trainable on one Colab GPU.
 
 `evidence_mode="masked_input"` instead runs K masked forward passes per frame, i.e. the
 literal `x ⊙ m` formulation generalised to K regions. Faithful, K× the compute, available
@@ -171,7 +158,7 @@ for a like-for-like ablation. Coverage pooling is coarser for thin margin rings;
 
 | experiment | question | module |
 |---|---|---|
-| Fair comparison + head-to-head | does DER-MIL beat RCAF and the baselines? | `eval/reporting.py` |
+| Fair comparison + head-to-head | does DER-MIL beat the patient-level baselines? | `eval/reporting.py` |
 | Ablation ladder | does each of I/S/D/U contribute? | `models/factory.py` |
 | Calibration + threshold transfer | do the probabilities mean anything? | `eval/calibration.py` |
 | Mask degradation (dilate/erode/zeros) | robustness to imperfect segmentation | `eval/robustness.py` |
@@ -184,7 +171,7 @@ for a like-for-like ablation. Coverage pooling is coarser for thin margin rings;
 | **Reliability ↔ influence correlation** | *the headline test:* does R predict counterfactual influence? | `eval/counterfactual.py` |
 | Agreement / contradiction cases | is the model right more often when views agree? | `eval/counterfactual.py` |
 | TIRADS comparison | versus the clinical standard | `eval/reporting.py` |
-| **TN5000 external validation** | cross-domain, for **both RCAF and DER-MIL** | `external/tn5000.py` |
+| **TN5000 external validation** | cross-domain, multi-arm domain adaptation | `external/tn5000.py` |
 
 The reliability↔influence correlation is the one that can falsify the paper's central
 claim, so it is computed **within each patient** and then averaged — comparing reliability
@@ -238,7 +225,7 @@ src/
   config.py              every experiment knob, serialised next to each checkpoint
   pipeline.py            high-level resumable API (what the notebook calls)
   data/     discovery, manifest, regions, transforms, dataset, splits
-  models/   backbone, attn_mil, rcaf (preserved), baselines,
+  models/   backbone, attn_mil, baselines,
             evidence_encoder, reliability, der_mil, factory
   losses/   BCE / focal, support-weighted consistency, reliability regulariser,
             counterfactual ranking

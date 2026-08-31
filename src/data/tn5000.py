@@ -18,7 +18,8 @@ publication (Zhang et al., Sci Data 2025), which reports **3,572 malignant and
 (the 2-image difference between mirror and paper is noted, not corrected).
 
 The official ``val`` split holds 375 malignant + 125 benign, which is exactly
-how the RCAF paper arrived at its "125 malignant + 125 benign" balanced subset:
+how the source paper (Sherif et al., Sci Rep 2026) arrived at its
+"125 malignant + 125 benign" balanced subset:
 take all 125 benign and match 125 malignant.
 """
 from __future__ import annotations

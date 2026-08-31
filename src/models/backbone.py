@@ -5,17 +5,26 @@ performance differences are attributable to the fusion / reliability design
 rather than to representational capacity (paper, Methods).
 
 ``forward_maps`` exposes the intermediate spatial maps that DER-MIL needs for
-region pooling; ``forward_vec`` is the plain global-pooled path used by RCAF
-and the simpler baselines.
+region pooling; ``forward_vec`` is the plain global-pooled path used by the
+simpler baselines.
 """
 from __future__ import annotations
 
 import os
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 import torch
 import torch.nn as nn
 import torchvision
+
+
+# Encoders whose stages are discovered by probing rather than hard-coded.
+# Arm 3 of the external-validation ladder swaps the ResNet trunk for one of
+# these; every model keeps the same ``Backbone`` interface, so the swap is a
+# config change rather than a code change.
+FOUNDATION_BACKBONES = ("convnext_tiny", "convnext_small", "convnext_base",
+                        "efficientnet_v2_s", "efficientnet_v2_m",
+                        "swin_t", "swin_s", "swin_v2_t", "swin_v2_s")
 
 
 BACKBONE_DIMS: Dict[str, Dict[str, int]] = {
@@ -45,7 +54,8 @@ def _local_weights(name: str) -> "Optional[str]":
     return None
 
 
-def _load_resnet(name: str, pretrained: bool) -> nn.Module:
+def _load_tv(name: str, pretrained: bool) -> nn.Module:
+    """Load any torchvision classifier, preferring a local checkpoint offline."""
     fn = getattr(torchvision.models, name)
     if not pretrained:
         try:
@@ -79,31 +89,94 @@ def _load_resnet(name: str, pretrained: bool) -> nn.Module:
             "cfg.model.pretrained=False deliberately.") from exc
 
 
+def _probe_stages(features: nn.Module, in_size: Tuple[int, int] = (128, 96)
+                  ) -> List[Dict[str, object]]:
+    """Run a dummy pass to learn each stage's stride, width and memory layout.
+
+    Probed rather than tabulated because torchvision reorganises these module
+    trees between releases, and because Swin emits NHWC while ConvNeXt and
+    EfficientNet emit NCHW. The dummy input is deliberately non-square so the
+    two spatial axes can be told apart from the channel axis.
+    """
+    h0, w0 = in_size
+    x = torch.zeros(1, 3, h0, w0)
+    out: List[Dict[str, object]] = []
+    with torch.no_grad():
+        for i, mod in enumerate(features):
+            x = mod(x)
+            if x.dim() != 4:
+                continue
+            # NHWC iff dims 1,2 hold the spatial axes in the input aspect ratio
+            nhwc = (x.shape[1] * w0 == x.shape[2] * h0) and x.shape[1] != x.shape[3]
+            h = x.shape[1] if nhwc else x.shape[2]
+            c = x.shape[3] if nhwc else x.shape[1]
+            out.append({"index": i, "stride": max(h0 // max(int(h), 1), 1),
+                        "channels": int(c), "nhwc": bool(nhwc)})
+    return out
+
+
+def _to_nchw(x: torch.Tensor, nhwc: bool) -> torch.Tensor:
+    return x.permute(0, 3, 1, 2).contiguous() if nhwc else x
+
+
 class Backbone(nn.Module):
     """ResNet trunk with a two-stage fine-tuning schedule."""
 
     def __init__(self, name: str = "resnet50", pretrained: bool = True):
         super().__init__()
-        if name not in BACKBONE_DIMS:
-            raise KeyError("unsupported backbone: " + name)
-        net = _load_resnet(name, pretrained)
         self.name = name
-        self.stem = nn.Sequential(net.conv1, net.bn1, net.relu, net.maxpool)
-        self.layer1 = net.layer1
-        self.layer2 = net.layer2
-        self.layer3 = net.layer3
-        self.layer4 = net.layer4
-        self.dim_c4 = BACKBONE_DIMS[name]["c4"]
-        self.dim_c5 = BACKBONE_DIMS[name]["c5"]
+        if name in BACKBONE_DIMS:
+            self.kind = "resnet"
+            net = _load_tv(name, pretrained)
+            self.stem = nn.Sequential(net.conv1, net.bn1, net.relu, net.maxpool)
+            self.layer1 = net.layer1
+            self.layer2 = net.layer2
+            self.layer3 = net.layer3
+            self.layer4 = net.layer4
+            self.dim_c4 = BACKBONE_DIMS[name]["c4"]
+            self.dim_c5 = BACKBONE_DIMS[name]["c5"]
+        elif name in FOUNDATION_BACKBONES:
+            self.kind = "foundation"
+            net = _load_tv(name, pretrained)
+            self.features = net.features
+            stages = _probe_stages(self.features)
+            s16 = [d for d in stages if d["stride"] == 16]
+            s32 = [d for d in stages if d["stride"] >= 32]
+            if not s16 or not s32:
+                raise RuntimeError("could not locate stride-16/32 stages in " + name)
+            self._t4, self._t5 = s16[-1], s32[-1]
+            self.dim_c4 = int(self._t4["channels"])
+            self.dim_c5 = int(self._t5["channels"])
+            # Stage boundaries for progressive unfreezing, coarse-to-fine.
+            self._bounds = [int(self._t5["index"]), int(self._t4["index"])]
+        else:
+            raise KeyError("unsupported backbone: " + name + ". Known: "
+                           + ", ".join(sorted(set(BACKBONE_DIMS) | set(FOUNDATION_BACKBONES))))
         self.out_dim = self.dim_c5
 
     # ------------------------------------------------------------------ #
     def forward_maps(self, x: torch.Tensor) -> Dict[str, torch.Tensor]:
-        x = self.stem(x)
-        x = self.layer1(x)
-        x = self.layer2(x)
-        c4 = self.layer3(x)          # (B, dim_c4, H/16, W/16)  -> 14x14 @ 224
-        c5 = self.layer4(c4)         # (B, dim_c5, H/32, W/32)  ->  7x7 @ 224
+        """Spatial feature maps at stride 16 (``c4``) and stride 32 (``c5``).
+
+        Always returned NCHW, so region pooling is layout-agnostic even when the
+        encoder is a Swin variant that works internally in NHWC.
+        """
+        if self.kind == "resnet":
+            x = self.stem(x)
+            x = self.layer1(x)
+            x = self.layer2(x)
+            c4 = self.layer3(x)      # (B, dim_c4, H/16, W/16)  -> 14x14 @ 224
+            c5 = self.layer4(c4)     # (B, dim_c5, H/32, W/32)  ->  7x7 @ 224
+            return {"c4": c4, "c5": c5}
+
+        c4 = c5 = None
+        for i, mod in enumerate(self.features):
+            x = mod(x)
+            if i == self._t4["index"]:
+                c4 = _to_nchw(x, bool(self._t4["nhwc"]))
+            if i == self._t5["index"]:
+                c5 = _to_nchw(x, bool(self._t5["nhwc"]))
+                break
         return {"c4": c4, "c5": c5}
 
     def forward_vec(self, x: torch.Tensor) -> torch.Tensor:
@@ -114,27 +187,34 @@ class Backbone(nn.Module):
         return self.forward_vec(x)
 
     # ------------------------------------------------------------------ #
+    def _blocks(self) -> List[nn.Module]:
+        """Trainable groups, deepest first -- the unfreezing order."""
+        if self.kind == "resnet":
+            return [self.layer4, self.layer3, self.layer2]
+        # Foundation trunks: everything from the stride-32 tap, then from the
+        # stride-16 tap, then the remainder.
+        b32, b16 = self._bounds
+        deep = nn.ModuleList([m for i, m in enumerate(self.features) if i > b16])
+        mid = nn.ModuleList([m for i, m in enumerate(self.features)
+                             if b32 - (b32 - b16) <= i <= b16])
+        shallow = nn.ModuleList([m for i, m in enumerate(self.features) if i < b16])
+        return [deep, mid, shallow]
+
     def set_stage(self, stage: int) -> None:
-        """stage 1: everything frozen. stage 2: layer3 + layer4 trainable."""
+        """stage 1: everything frozen. stage 2: the two deepest groups train."""
         for p in self.parameters():
             p.requires_grad_(False)
         if stage >= 2:
-            for m in (self.layer3, self.layer4):
+            for m in self._blocks()[:2]:
                 for p in m.parameters():
                     p.requires_grad_(True)
 
     def set_progressive_unfreeze(self, level: int) -> None:
-        """Used by TN5000 domain adaptation: 0 -> head only, 3 -> +layer4, 6 -> +layer3."""
+        """TN5000 adaptation: 0 -> head only, then one more group per level."""
         for p in self.parameters():
             p.requires_grad_(False)
-        if level >= 1:
-            for p in self.layer4.parameters():
-                p.requires_grad_(True)
-        if level >= 2:
-            for p in self.layer3.parameters():
-                p.requires_grad_(True)
-        if level >= 3:
-            for p in self.layer2.parameters():
+        for m in self._blocks()[:max(int(level), 0)]:
+            for p in m.parameters():
                 p.requires_grad_(True)
 
     def train(self, mode: bool = True):
