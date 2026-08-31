@@ -1,0 +1,10 @@
+{
+  "model": "mr_mil",
+  "n_patients_analysed": 400,
+  "mean_within_patient_spearman": 0.6671195287167854,
+  "median_within_patient_spearman": 0.7029411764705883,
+  "frac_positive_spearman": 1.0,
+  "mean_within_patient_kendall": 0.5024466935348226,
+  "ttest_t": 74.63316418657952,
+  "ttest_p": 1.645392668901556e-236
+}

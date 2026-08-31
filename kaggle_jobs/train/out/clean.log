@@ -1,0 +1,2672 @@
+embedded source extracted to /kaggle/working/_code
+
+run parameters: {'DERMIL_BUDGET_HOURS': '8.5', 'DERMIL_CACHE': '1', 'DERMIL_EXTERNAL': '1', 'DERMIL_FINAL_MODE': 'refit', 'DERMIL_MODELS': 'rcaf,mr_mil,der_mil,lesion_mil,image_mil', 'DERMIL_ROBUST': '1', 'DERMIL_RUN': 'main'}
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.
+
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+
+    (7.0) - (12.0)
+
+    
+
+  queued_call()
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+    Please install PyTorch with a following CUDA
+
+    configurations:  12.6 following instructions at
+
+    https://pytorch.org/get-started/locally/
+
+    
+
+  queued_call()
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.
+
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+
+If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+
+
+  queued_call()
+
+GPU: Tesla P100-PCIE-16GB (sm_60) | torch 2.10.0+cu128 supports ['sm_70', 'sm_75', 'sm_80', 'sm_86', 'sm_90', 'sm_100', 'sm_120']
+
+INCOMPATIBLE: installing a PyTorch build with sm_60 support ...
+
+pip rc=0 in 2.7 min
+
+re-executing with the new PyTorch ...
+
+embedded source extracted to /kaggle/working/_code
+
+run parameters: {'DERMIL_BUDGET_HOURS': '8.5', 'DERMIL_CACHE': '1', 'DERMIL_EXTERNAL': '1', 'DERMIL_FINAL_MODE': 'refit', 'DERMIL_MODELS': 'rcaf,mr_mil,der_mil,lesion_mil,image_mil', 'DERMIL_ROBUST': '1', 'DERMIL_RUN': 'main'}
+
+code    : /kaggle/working/_code
+
+thyroid : /kaggle/input/datasets/safaaqaisi/thyroidxl
+
+tn5000  : /kaggle/input/datasets/abdullahelafifi/main-data/Main data
+
+
+
+==============================================================================
+
+FRESH RUN (no previous checkpoints attached)
+
+==============================================================================
+
+torch 2.5.1+cu121 | CUDA True | Tesla P100-PCIE-16GB
+
+
+
+registry on entry:
+
+(registry empty -- nothing completed yet)
+
+
+
+models: ['rcaf', 'mr_mil', 'der_mil', 'lesion_mil', 'image_mil'] | final_mode: refit | budget: 8.5 h
+
+
+
+==============================================================================
+
+DATA
+
+==============================================================================
+
+
+
+==============================================================================
+
+BUILDING THYROIDXL PATIENT MANIFEST
+
+==============================================================================
+
+[    3.8s] ThyroidXL adapter: root = /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL
+
+[    3.9s] ThyroidXL adapter: 3354 train / 739 test patients, 4093 in id2info
+
+[   20.3s] ThyroidXL adapter: 4093 patients, 11635 frames
+
+[   20.3s] ThyroidXL adapter: Table 1 reproduced exactly (3354/739 patients, 9541/2094 images, 877/353 malignant, TIRADS match)
+
+[   20.4s] label provenance:
+
+split            conclusion_text    n         source
+
+  dev              Benign (FNAC) 2397           FNAC
+
+  dev    Benign (Histopathology)   80 histopathology
+
+  dev           Malignant (FNAC)  366           FNAC
+
+  dev Malignant (Histopathology)  511 histopathology
+
+ test              Benign (FNAC)  372           FNAC
+
+ test    Benign (Histopathology)   14 histopathology
+
+ test           Malignant (FNAC)  156           FNAC
+
+ test Malignant (Histopathology)  197 histopathology
+
+[   20.4s] leakage check: OK -- 4093 unique patients, no split overlap
+
+[   20.4s] folds:
+
+      size      mean
+
+fold                
+
+0      671  0.260805
+
+1      671  0.260805
+
+2      671  0.262295
+
+3      671  0.262295
+
+4      670  0.261194
+
+[   20.4s] split validation: OK (dev=3354, test=739, folds=5)
+
+[   20.5s] split validation: OK (dev=3354, test=739, folds=5)
+
+[   20.6s] mask coverage: {'frames': 11635, 'pixel_mask': 1.0, 'bbox_only': 0.0, 'no_mask': 0.0}
+
+                                          Development set                     Test set
+
+Number of patients                                   3354                          739
+
+Number of images                                     9541                         2094
+
+Frames per patient (min-max)                         1-10                          1-8
+
+Mean frames per patient                              2.84                         2.83
+
+Median frames per patient                               3                            3
+
+Benign patients, n (%)                       2477 (73.9%)                  386 (52.2%)
+
+Malignant patients, n (%)                     877 (26.1%)                  353 (47.8%)
+
+TIRADS 1, n                                            24                            0
+
+TIRADS 2, n                                           328                           45
+
+TIRADS 3, n                                          1090                          182
+
+TIRADS 4, n                                          1024                          215
+
+TIRADS 5, n                                           888                          297
+
+Mean age, years               48.2 +/- 12.7 (range 12-94)  47.6 +/- 12.8 (range 14-84)
+
+
+
+==============================================================================
+
+BUILDING RESIZE CACHE (224 px)
+
+==============================================================================
+
+[   21.0s] resize cache: 23270 files total, 0 already cached, 23270 to build
+
+[   27.0s]   cached 2000/23270
+
+[   32.4s]   cached 4000/23270
+
+[   38.4s]   cached 6000/23270
+
+[   44.9s]   cached 8000/23270
+
+[   50.5s]   cached 10000/23270
+
+[   55.9s]   cached 12000/23270
+
+[   61.5s]   cached 14000/23270
+
+[   67.1s]   cached 16000/23270
+
+[   72.7s]   cached 18000/23270
+
+[   80.1s]   cached 20000/23270
+
+[   85.9s]   cached 22000/23270
+
+[   91.2s] resize cache: ready -- 23270 files, 1.1GB on disk
+
+[   91.3s] cache verify: {'checked': 40, 'bad_shape': 0, 'bad_mask': 0}
+
+[   91.3s] resize cache ready in 1.2 min
+
+
+
+==============================================================================
+
+TRAINING
+
+==============================================================================
+
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+
+
+  0%|          | 0.00/97.8M [00:00<?, ?B/s]
+ 10%|?         | 9.75M/97.8M [00:00<00:00, 102MB/s]
+ 33%|????      | 32.1M/97.8M [00:00<00:00, 180MB/s]
+ 51%|??????    | 50.1M/97.8M [00:00<00:00, 184MB/s]
+ 69%|???????   | 67.8M/97.8M [00:00<00:00, 171MB/s]
+ 90%|????????? | 88.1M/97.8M [00:00<00:00, 186MB/s]
+100%|??????????| 97.8M/97.8M [00:00<00:00, 182MB/s]
+
+[   92.7s] main/rcaf/fold0: 24,230,082 parameters
+
+[   92.7s] --- main/rcaf/fold0 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[  154.1s]   s1 e00  loss 0.4372 | val roc_auc 0.9880 | best 0.9880  *
+
+[  203.1s]   s1 e01  loss 0.2759 | val roc_auc 0.9882 | best 0.9882  *
+
+[  252.2s]   s1 e02  loss 0.2462 | val roc_auc 0.9860 | best 0.9882
+
+[  300.2s]   s1 e03  loss 0.2401 | val roc_auc 0.9889 | best 0.9889  *
+
+[  347.8s]   s1 e04  loss 0.2253 | val roc_auc 0.9874 | best 0.9889
+
+[  396.6s]   s1 e05  loss 0.2251 | val roc_auc 0.9886 | best 0.9889
+
+[  444.7s]   s1 e06  loss 0.2292 | val roc_auc 0.9887 | best 0.9889
+
+[  444.9s]   early stop after 3 epochs without improvement
+
+[  444.9s] --- main/rcaf/fold0 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[  542.1s]   s2 e00  loss 0.5707 | val roc_auc 0.9911 | best 0.9911  *
+
+[  604.1s]   s2 e01  loss 0.2746 | val roc_auc 0.9919 | best 0.9919  *
+
+[  667.4s]   s2 e02  loss 0.2171 | val roc_auc 0.9929 | best 0.9929  *
+
+[  731.5s]   s2 e03  loss 0.1927 | val roc_auc 0.9890 | best 0.9929
+
+[  791.8s]   s2 e04  loss 0.1668 | val roc_auc 0.9939 | best 0.9939  *
+
+[  853.1s]   s2 e05  loss 0.1665 | val roc_auc 0.9937 | best 0.9939
+
+[  913.3s]   s2 e06  loss 0.1486 | val roc_auc 0.9926 | best 0.9939
+
+[  974.6s]   s2 e07  loss 0.1566 | val roc_auc 0.9926 | best 0.9939
+
+[ 1034.0s]   s2 e08  loss 0.1433 | val roc_auc 0.9930 | best 0.9939
+
+[ 1034.6s]   early stop after 4 epochs without improvement
+
+[ 1034.8s] main/rcaf/fold0: finished. best val roc_auc = 0.9939 (stage 2, epoch 4)
+
+[ 1042.4s] fold 0 rcaf: held-out ROC-AUC = 0.9939
+
+[ 1042.5s] fold wall-clock 15.9 min | elapsed 0.32 h | budget left 7.98 h
+
+[ 1043.0s] main/rcaf/fold1: 24,230,082 parameters
+
+[ 1043.0s] --- main/rcaf/fold1 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 1085.7s]   s1 e00  loss 0.3862 | val roc_auc 0.9838 | best 0.9838  *
+
+[ 1127.7s]   s1 e01  loss 0.3211 | val roc_auc 0.9816 | best 0.9838
+
+[ 1169.8s]   s1 e02  loss 0.2464 | val roc_auc 0.9848 | best 0.9848  *
+
+[ 1211.9s]   s1 e03  loss 0.2391 | val roc_auc 0.9851 | best 0.9851  *
+
+[ 1254.7s]   s1 e04  loss 0.2344 | val roc_auc 0.9834 | best 0.9851
+
+[ 1297.5s]   s1 e05  loss 0.2274 | val roc_auc 0.9859 | best 0.9859  *
+
+[ 1340.0s]   s1 e06  loss 0.2026 | val roc_auc 0.9869 | best 0.9869  *
+
+[ 1382.6s]   s1 e07  loss 0.1954 | val roc_auc 0.9822 | best 0.9869
+
+[ 1424.1s]   s1 e08  loss 0.2200 | val roc_auc 0.9861 | best 0.9869
+
+[ 1465.6s]   s1 e09  loss 0.1962 | val roc_auc 0.9879 | best 0.9879  *
+
+[ 1465.9s] --- main/rcaf/fold1 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 1522.8s]   s2 e00  loss 0.5277 | val roc_auc 0.9891 | best 0.9891  *
+
+[ 1581.5s]   s2 e01  loss 0.2793 | val roc_auc 0.9877 | best 0.9891
+
+[ 1640.2s]   s2 e02  loss 0.1937 | val roc_auc 0.9910 | best 0.9910  *
+
+[ 1698.5s]   s2 e03  loss 0.1896 | val roc_auc 0.9920 | best 0.9920  *
+
+[ 1756.4s]   s2 e04  loss 0.1985 | val roc_auc 0.9917 | best 0.9920
+
+[ 1814.0s]   s2 e05  loss 0.1576 | val roc_auc 0.9910 | best 0.9920
+
+[ 1872.8s]   s2 e06  loss 0.1391 | val roc_auc 0.9929 | best 0.9929  *
+
+[ 1930.8s]   s2 e07  loss 0.1366 | val roc_auc 0.9866 | best 0.9929
+
+[ 1990.0s]   s2 e08  loss 0.1376 | val roc_auc 0.9918 | best 0.9929
+
+[ 2048.3s]   s2 e09  loss 0.1157 | val roc_auc 0.9848 | best 0.9929
+
+[ 2106.2s]   s2 e10  loss 0.1467 | val roc_auc 0.9902 | best 0.9929
+
+[ 2106.8s]   early stop after 4 epochs without improvement
+
+[ 2107.0s] main/rcaf/fold1: finished. best val roc_auc = 0.9929 (stage 2, epoch 6)
+
+[ 2115.0s] fold 1 rcaf: held-out ROC-AUC = 0.9929
+
+[ 2115.1s] fold wall-clock 17.9 min | elapsed 0.62 h | budget left 7.68 h
+
+[ 2115.7s] main/rcaf/fold2: 24,230,082 parameters
+
+[ 2115.7s] --- main/rcaf/fold2 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 2158.5s]   s1 e00  loss 0.4378 | val roc_auc 0.9774 | best 0.9774  *
+
+[ 2200.2s]   s1 e01  loss 0.2576 | val roc_auc 0.9792 | best 0.9792  *
+
+[ 2242.2s]   s1 e02  loss 0.2399 | val roc_auc 0.9798 | best 0.9798  *
+
+[ 2283.2s]   s1 e03  loss 0.2307 | val roc_auc 0.9814 | best 0.9814  *
+
+[ 2324.7s]   s1 e04  loss 0.2038 | val roc_auc 0.9798 | best 0.9814
+
+[ 2365.8s]   s1 e05  loss 0.2287 | val roc_auc 0.9802 | best 0.9814
+
+[ 2406.6s]   s1 e06  loss 0.2315 | val roc_auc 0.9766 | best 0.9814
+
+[ 2406.8s]   early stop after 3 epochs without improvement
+
+[ 2406.8s] --- main/rcaf/fold2 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 2466.7s]   s2 e00  loss 0.4722 | val roc_auc 0.9741 | best 0.9814
+
+[ 2524.9s]   s2 e01  loss 0.2638 | val roc_auc 0.9879 | best 0.9879  *
+
+[ 2583.1s]   s2 e02  loss 0.2192 | val roc_auc 0.9881 | best 0.9881  *
+
+[ 2641.1s]   s2 e03  loss 0.1877 | val roc_auc 0.9887 | best 0.9887  *
+
+[ 2699.8s]   s2 e04  loss 0.1747 | val roc_auc 0.9851 | best 0.9887
+
+[ 2757.7s]   s2 e05  loss 0.1870 | val roc_auc 0.9819 | best 0.9887
+
+[ 2816.5s]   s2 e06  loss 0.1368 | val roc_auc 0.9820 | best 0.9887
+
+[ 2874.7s]   s2 e07  loss 0.1724 | val roc_auc 0.9856 | best 0.9887
+
+[ 2875.3s]   early stop after 4 epochs without improvement
+
+[ 2875.5s] main/rcaf/fold2: finished. best val roc_auc = 0.9887 (stage 2, epoch 3)
+
+[ 2883.4s] fold 2 rcaf: held-out ROC-AUC = 0.9887
+
+[ 2883.5s] fold wall-clock 12.8 min | elapsed 0.83 h | budget left 7.47 h
+
+[ 2884.1s] main/rcaf/fold3: 24,230,082 parameters
+
+[ 2884.1s] --- main/rcaf/fold3 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 2927.5s]   s1 e00  loss 0.3773 | val roc_auc 0.9844 | best 0.9844  *
+
+[ 2970.0s]   s1 e01  loss 0.2768 | val roc_auc 0.9882 | best 0.9882  *
+
+[ 3013.1s]   s1 e02  loss 0.2707 | val roc_auc 0.9900 | best 0.9900  *
+
+[ 3055.6s]   s1 e03  loss 0.2451 | val roc_auc 0.9906 | best 0.9906  *
+
+[ 3098.0s]   s1 e04  loss 0.2342 | val roc_auc 0.9877 | best 0.9906
+
+[ 3139.7s]   s1 e05  loss 0.2354 | val roc_auc 0.9891 | best 0.9906
+
+[ 3180.8s]   s1 e06  loss 0.2272 | val roc_auc 0.9904 | best 0.9906
+
+[ 3181.0s]   early stop after 3 epochs without improvement
+
+[ 3181.0s] --- main/rcaf/fold3 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 3241.5s]   s2 e00  loss 0.4746 | val roc_auc 0.9895 | best 0.9906
+
+[ 3303.1s]   s2 e01  loss 0.2682 | val roc_auc 0.9878 | best 0.9906
+
+[ 3361.1s]   s2 e02  loss 0.2203 | val roc_auc 0.9927 | best 0.9927  *
+
+[ 3419.3s]   s2 e03  loss 0.1912 | val roc_auc 0.9917 | best 0.9927
+
+[ 3478.0s]   s2 e04  loss 0.1843 | val roc_auc 0.9915 | best 0.9927
+
+[ 3535.7s]   s2 e05  loss 0.1912 | val roc_auc 0.9908 | best 0.9927
+
+[ 3594.0s]   s2 e06  loss 0.1566 | val roc_auc 0.9919 | best 0.9927
+
+[ 3594.5s]   early stop after 4 epochs without improvement
+
+[ 3594.7s] main/rcaf/fold3: finished. best val roc_auc = 0.9927 (stage 2, epoch 2)
+
+[ 3602.0s] fold 3 rcaf: held-out ROC-AUC = 0.9927
+
+[ 3602.1s] fold wall-clock 12.0 min | elapsed 1.03 h | budget left 7.27 h
+
+[ 3602.6s] main/rcaf/fold4: 24,230,082 parameters
+
+[ 3602.6s] --- main/rcaf/fold4 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 3642.5s]   s1 e00  loss 0.3756 | val roc_auc 0.9847 | best 0.9847  *
+
+[ 3682.6s]   s1 e01  loss 0.3002 | val roc_auc 0.9858 | best 0.9858  *
+
+[ 3723.2s]   s1 e02  loss 0.2597 | val roc_auc 0.9849 | best 0.9858
+
+[ 3763.7s]   s1 e03  loss 0.2310 | val roc_auc 0.9828 | best 0.9858
+
+[ 3803.9s]   s1 e04  loss 0.2359 | val roc_auc 0.9870 | best 0.9870  *
+
+[ 3844.5s]   s1 e05  loss 0.2478 | val roc_auc 0.9824 | best 0.9870
+
+[ 3884.8s]   s1 e06  loss 0.2374 | val roc_auc 0.9868 | best 0.9870
+
+[ 3924.7s]   s1 e07  loss 0.2174 | val roc_auc 0.9839 | best 0.9870
+
+[ 3924.9s]   early stop after 3 epochs without improvement
+
+[ 3924.9s] --- main/rcaf/fold4 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 3982.3s]   s2 e00  loss 0.5120 | val roc_auc 0.9859 | best 0.9870
+
+[ 4041.1s]   s2 e01  loss 0.2897 | val roc_auc 0.9940 | best 0.9940  *
+
+[ 4098.8s]   s2 e02  loss 0.2126 | val roc_auc 0.9929 | best 0.9940
+
+[ 4156.7s]   s2 e03  loss 0.1973 | val roc_auc 0.9881 | best 0.9940
+
+[ 4213.9s]   s2 e04  loss 0.1710 | val roc_auc 0.9929 | best 0.9940
+
+[ 4271.8s]   s2 e05  loss 0.1602 | val roc_auc 0.9827 | best 0.9940
+
+[ 4272.3s]   early stop after 4 epochs without improvement
+
+[ 4272.6s] main/rcaf/fold4: finished. best val roc_auc = 0.9940 (stage 2, epoch 1)
+
+[ 4280.1s] fold 4 rcaf: held-out ROC-AUC = 0.9940
+
+[ 4280.2s] fold wall-clock 11.3 min | elapsed 1.22 h | budget left 7.08 h
+
+[ 4280.8s] main/mr_mil/fold0: 26,757,801 parameters
+
+[ 4280.8s] --- main/mr_mil/fold0 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 4330.1s]   s1 e00  loss 0.9811 | val roc_auc 0.7930 | best 0.7930  *
+
+[ 4374.6s]   s1 e01  loss 0.8237 | val roc_auc 0.8320 | best 0.8320  *
+
+[ 4419.5s]   s1 e02  loss 0.7476 | val roc_auc 0.8375 | best 0.8375  *
+
+[ 4464.1s]   s1 e03  loss 0.7297 | val roc_auc 0.8465 | best 0.8465  *
+
+[ 4508.0s]   s1 e04  loss 0.7178 | val roc_auc 0.8482 | best 0.8482  *
+
+[ 4552.6s]   s1 e05  loss 0.6905 | val roc_auc 0.8486 | best 0.8486  *
+
+[ 4597.0s]   s1 e06  loss 0.6693 | val roc_auc 0.8624 | best 0.8624  *
+
+[ 4641.3s]   s1 e07  loss 0.6483 | val roc_auc 0.8639 | best 0.8639  *
+
+[ 4685.8s]   s1 e08  loss 0.6466 | val roc_auc 0.8624 | best 0.8639
+
+[ 4730.4s]   s1 e09  loss 0.6288 | val roc_auc 0.8628 | best 0.8639
+
+[ 4730.6s] --- main/mr_mil/fold0 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 4792.9s]   s2 e00  loss 0.8099 | val roc_auc 0.8918 | best 0.8918  *
+
+[ 4844.4s]   s2 e01  loss 0.6153 | val roc_auc 0.9166 | best 0.9166  *
+
+[ 4896.0s]   s2 e02  loss 0.4814 | val roc_auc 0.9190 | best 0.9190  *
+
+[ 4948.5s]   s2 e03  loss 0.4420 | val roc_auc 0.9350 | best 0.9350  *
+
+[ 4997.6s]   s2 e04  loss 0.3919 | val roc_auc 0.9147 | best 0.9350
+
+[ 5047.6s]   s2 e05  loss 0.3286 | val roc_auc 0.9230 | best 0.9350
+
+[ 5097.3s]   s2 e06  loss 0.3107 | val roc_auc 0.9257 | best 0.9350
+
+[ 5146.0s]   s2 e07  loss 0.2998 | val roc_auc 0.9164 | best 0.9350
+
+[ 5146.6s]   early stop after 4 epochs without improvement
+
+[ 5146.8s] main/mr_mil/fold0: finished. best val roc_auc = 0.9350 (stage 2, epoch 3)
+
+[ 5154.7s] fold 0 mr_mil: held-out ROC-AUC = 0.9350
+
+[ 5154.8s] fold wall-clock 14.6 min | elapsed 1.46 h | budget left 6.84 h
+
+[ 5155.3s] main/mr_mil/fold1: 26,757,801 parameters
+
+[ 5155.3s] --- main/mr_mil/fold1 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 5199.3s]   s1 e00  loss 0.9932 | val roc_auc 0.7714 | best 0.7714  *
+
+[ 5243.9s]   s1 e01  loss 0.8885 | val roc_auc 0.8195 | best 0.8195  *
+
+[ 5289.3s]   s1 e02  loss 0.7953 | val roc_auc 0.8424 | best 0.8424  *
+
+[ 5333.8s]   s1 e03  loss 0.7757 | val roc_auc 0.8478 | best 0.8478  *
+
+[ 5377.8s]   s1 e04  loss 0.7409 | val roc_auc 0.8611 | best 0.8611  *
+
+[ 5421.6s]   s1 e05  loss 0.7078 | val roc_auc 0.8612 | best 0.8612  *
+
+[ 5465.6s]   s1 e06  loss 0.6975 | val roc_auc 0.8626 | best 0.8626  *
+
+[ 5510.5s]   s1 e07  loss 0.6501 | val roc_auc 0.8735 | best 0.8735  *
+
+[ 5556.7s]   s1 e08  loss 0.6320 | val roc_auc 0.8680 | best 0.8735
+
+[ 5601.8s]   s1 e09  loss 0.6366 | val roc_auc 0.8738 | best 0.8738  *
+
+[ 5602.2s] --- main/mr_mil/fold1 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 5651.0s]   s2 e00  loss 0.7846 | val roc_auc 0.9293 | best 0.9293  *
+
+[ 5702.5s]   s2 e01  loss 0.5576 | val roc_auc 0.9265 | best 0.9293
+
+[ 5754.0s]   s2 e02  loss 0.5118 | val roc_auc 0.9270 | best 0.9293
+
+[ 5804.8s]   s2 e03  loss 0.4278 | val roc_auc 0.9268 | best 0.9293
+
+[ 5855.3s]   s2 e04  loss 0.3795 | val roc_auc 0.9352 | best 0.9352  *
+
+[ 5906.3s]   s2 e05  loss 0.3325 | val roc_auc 0.9354 | best 0.9354  *
+
+[ 5958.0s]   s2 e06  loss 0.2980 | val roc_auc 0.9393 | best 0.9393  *
+
+[ 6008.5s]   s2 e07  loss 0.2428 | val roc_auc 0.9249 | best 0.9393
+
+[ 6058.1s]   s2 e08  loss 0.2585 | val roc_auc 0.9198 | best 0.9393
+
+[ 6107.7s]   s2 e09  loss 0.2239 | val roc_auc 0.9338 | best 0.9393
+
+[ 6156.3s]   s2 e10  loss 0.1832 | val roc_auc 0.9240 | best 0.9393
+
+[ 6156.9s]   early stop after 4 epochs without improvement
+
+[ 6157.2s] main/mr_mil/fold1: finished. best val roc_auc = 0.9393 (stage 2, epoch 6)
+
+[ 6165.4s] fold 1 mr_mil: held-out ROC-AUC = 0.9393
+
+[ 6165.5s] fold wall-clock 16.8 min | elapsed 1.75 h | budget left 6.55 h
+
+[ 6166.0s] main/mr_mil/fold2: 26,757,801 parameters
+
+[ 6166.0s] --- main/mr_mil/fold2 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 6210.8s]   s1 e00  loss 0.9818 | val roc_auc 0.7931 | best 0.7931  *
+
+[ 6255.9s]   s1 e01  loss 0.8294 | val roc_auc 0.8167 | best 0.8167  *
+
+[ 6300.6s]   s1 e02  loss 0.7663 | val roc_auc 0.8285 | best 0.8285  *
+
+[ 6345.1s]   s1 e03  loss 0.7555 | val roc_auc 0.8426 | best 0.8426  *
+
+[ 6389.6s]   s1 e04  loss 0.7114 | val roc_auc 0.8467 | best 0.8467  *
+
+[ 6434.0s]   s1 e05  loss 0.7033 | val roc_auc 0.8480 | best 0.8480  *
+
+[ 6478.8s]   s1 e06  loss 0.7067 | val roc_auc 0.8600 | best 0.8600  *
+
+[ 6523.8s]   s1 e07  loss 0.6837 | val roc_auc 0.8596 | best 0.8600
+
+[ 6568.9s]   s1 e08  loss 0.6608 | val roc_auc 0.8661 | best 0.8661  *
+
+[ 6614.0s]   s1 e09  loss 0.6389 | val roc_auc 0.8642 | best 0.8661
+
+[ 6614.3s] --- main/mr_mil/fold2 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 6663.4s]   s2 e00  loss 0.7976 | val roc_auc 0.8963 | best 0.8963  *
+
+[ 6714.3s]   s2 e01  loss 0.6069 | val roc_auc 0.9336 | best 0.9336  *
+
+[ 6764.0s]   s2 e02  loss 0.4980 | val roc_auc 0.9230 | best 0.9336
+
+[ 6814.3s]   s2 e03  loss 0.4632 | val roc_auc 0.9243 | best 0.9336
+
+[ 6863.5s]   s2 e04  loss 0.3924 | val roc_auc 0.9355 | best 0.9355  *
+
+[ 6912.9s]   s2 e05  loss 0.3625 | val roc_auc 0.9262 | best 0.9355
+
+[ 6962.7s]   s2 e06  loss 0.3353 | val roc_auc 0.9334 | best 0.9355
+
+[ 7011.6s]   s2 e07  loss 0.2799 | val roc_auc 0.9113 | best 0.9355
+
+[ 7060.4s]   s2 e08  loss 0.2950 | val roc_auc 0.9282 | best 0.9355
+
+[ 7061.0s]   early stop after 4 epochs without improvement
+
+[ 7061.3s] main/mr_mil/fold2: finished. best val roc_auc = 0.9355 (stage 2, epoch 4)
+
+[ 7069.3s] fold 2 mr_mil: held-out ROC-AUC = 0.9355
+
+[ 7069.4s] fold wall-clock 15.1 min | elapsed 2.00 h | budget left 6.30 h
+
+[ 7069.9s] main/mr_mil/fold3: 26,757,801 parameters
+
+[ 7069.9s] --- main/mr_mil/fold3 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 7114.7s]   s1 e00  loss 0.9941 | val roc_auc 0.8064 | best 0.8064  *
+
+[ 7160.8s]   s1 e01  loss 0.8732 | val roc_auc 0.8355 | best 0.8355  *
+
+[ 7206.8s]   s1 e02  loss 0.8145 | val roc_auc 0.8506 | best 0.8506  *
+
+[ 7252.1s]   s1 e03  loss 0.7709 | val roc_auc 0.8693 | best 0.8693  *
+
+[ 7297.9s]   s1 e04  loss 0.7718 | val roc_auc 0.8812 | best 0.8812  *
+
+[ 7343.1s]   s1 e05  loss 0.7019 | val roc_auc 0.8809 | best 0.8812
+
+[ 7388.0s]   s1 e06  loss 0.7010 | val roc_auc 0.8883 | best 0.8883  *
+
+[ 7432.9s]   s1 e07  loss 0.6655 | val roc_auc 0.8900 | best 0.8900  *
+
+[ 7477.8s]   s1 e08  loss 0.6713 | val roc_auc 0.8919 | best 0.8919  *
+
+[ 7522.4s]   s1 e09  loss 0.6366 | val roc_auc 0.8903 | best 0.8919
+
+[ 7522.7s] --- main/mr_mil/fold3 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 7573.1s]   s2 e00  loss 0.7637 | val roc_auc 0.9136 | best 0.9136  *
+
+[ 7624.1s]   s2 e01  loss 0.5977 | val roc_auc 0.9331 | best 0.9331  *
+
+[ 7675.6s]   s2 e02  loss 0.5021 | val roc_auc 0.9282 | best 0.9331
+
+[ 7729.6s]   s2 e03  loss 0.4305 | val roc_auc 0.9203 | best 0.9331
+
+[ 7783.5s]   s2 e04  loss 0.3924 | val roc_auc 0.9291 | best 0.9331
+
+[ 7837.4s]   s2 e05  loss 0.3576 | val roc_auc 0.9294 | best 0.9331
+
+[ 7838.0s]   early stop after 4 epochs without improvement
+
+[ 7838.3s] main/mr_mil/fold3: finished. best val roc_auc = 0.9331 (stage 2, epoch 1)
+
+[ 7847.0s] fold 3 mr_mil: held-out ROC-AUC = 0.9331
+
+[ 7847.1s] fold wall-clock 13.0 min | elapsed 2.21 h | budget left 6.09 h
+
+[ 7847.7s] main/mr_mil/fold4: 26,757,801 parameters
+
+[ 7847.7s] --- main/mr_mil/fold4 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 7896.0s]   s1 e00  loss 1.0207 | val roc_auc 0.7920 | best 0.7920  *
+
+[ 7945.9s]   s1 e01  loss 0.8450 | val roc_auc 0.8286 | best 0.8286  *
+
+[ 7996.9s]   s1 e02  loss 0.7714 | val roc_auc 0.8439 | best 0.8439  *
+
+[ 8047.1s]   s1 e03  loss 0.7547 | val roc_auc 0.8451 | best 0.8451  *
+
+[ 8096.6s]   s1 e04  loss 0.7079 | val roc_auc 0.8561 | best 0.8561  *
+
+[ 8144.0s]   s1 e05  loss 0.6974 | val roc_auc 0.8622 | best 0.8622  *
+
+[ 8190.1s]   s1 e06  loss 0.6723 | val roc_auc 0.8675 | best 0.8675  *
+
+[ 8235.5s]   s1 e07  loss 0.6517 | val roc_auc 0.8713 | best 0.8713  *
+
+[ 8281.2s]   s1 e08  loss 0.6709 | val roc_auc 0.8786 | best 0.8786  *
+
+[ 8326.6s]   s1 e09  loss 0.6197 | val roc_auc 0.8771 | best 0.8786
+
+[ 8326.9s] --- main/mr_mil/fold4 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 8376.2s]   s2 e00  loss 0.7745 | val roc_auc 0.9102 | best 0.9102  *
+
+[ 8427.8s]   s2 e01  loss 0.6048 | val roc_auc 0.9217 | best 0.9217  *
+
+[ 8477.7s]   s2 e02  loss 0.5013 | val roc_auc 0.9286 | best 0.9286  *
+
+[ 8528.7s]   s2 e03  loss 0.4549 | val roc_auc 0.9278 | best 0.9286
+
+[ 8578.2s]   s2 e04  loss 0.3925 | val roc_auc 0.9294 | best 0.9294  *
+
+[ 8628.1s]   s2 e05  loss 0.3606 | val roc_auc 0.9283 | best 0.9294
+
+[ 8678.6s]   s2 e06  loss 0.3177 | val roc_auc 0.9213 | best 0.9294
+
+[ 8728.6s]   s2 e07  loss 0.2767 | val roc_auc 0.9330 | best 0.9330  *
+
+[ 8778.6s]   s2 e08  loss 0.2354 | val roc_auc 0.9238 | best 0.9330
+
+[ 8830.9s]   s2 e09  loss 0.1936 | val roc_auc 0.9307 | best 0.9330
+
+[ 8880.9s]   s2 e10  loss 0.2058 | val roc_auc 0.9148 | best 0.9330
+
+[ 8930.6s]   s2 e11  loss 0.1780 | val roc_auc 0.9253 | best 0.9330
+
+[ 8931.1s]   early stop after 4 epochs without improvement
+
+[ 8931.4s] main/mr_mil/fold4: finished. best val roc_auc = 0.9330 (stage 2, epoch 7)
+
+[ 8939.6s] fold 4 mr_mil: held-out ROC-AUC = 0.9330
+
+[ 8939.6s] fold wall-clock 18.2 min | elapsed 2.52 h | budget left 5.78 h
+
+[ 8940.2s] main/der_mil/fold0: 27,185,581 parameters
+
+[ 8940.2s] --- main/der_mil/fold0 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[ 8986.8s]   s1 e00  loss 1.0177 | val roc_auc 0.7820 | best 0.7820  *
+
+[ 9033.5s]   s1 e01  loss 0.8676 | val roc_auc 0.8088 | best 0.8088  *
+
+[ 9080.1s]   s1 e02  loss 0.8032 | val roc_auc 0.8135 | best 0.8135  *
+
+[ 9126.7s]   s1 e03  loss 0.7839 | val roc_auc 0.8204 | best 0.8204  *
+
+[ 9173.8s]   s1 e04  loss 0.7733 | val roc_auc 0.8226 | best 0.8226  *
+
+[ 9220.4s]   s1 e05  loss 0.7639 | val roc_auc 0.8110 | best 0.8226
+
+[ 9266.4s]   s1 e06  loss 0.7275 | val roc_auc 0.8347 | best 0.8347  *
+
+[ 9312.1s]   s1 e07  loss 0.7178 | val roc_auc 0.8387 | best 0.8387  *
+
+[ 9358.4s]   s1 e08  loss 0.7135 | val roc_auc 0.8333 | best 0.8387
+
+[ 9404.8s]   s1 e09  loss 0.6834 | val roc_auc 0.8400 | best 0.8400  *
+
+[ 9405.2s] --- main/der_mil/fold0 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[ 9456.2s]   s2 e00  loss 0.8762 | val roc_auc 0.8815 | best 0.8815  *
+
+[ 9508.3s]   s2 e01  loss 0.6244 | val roc_auc 0.9174 | best 0.9174  *
+
+[ 9559.5s]   s2 e02  loss 0.5254 | val roc_auc 0.9236 | best 0.9236  *
+
+[ 9612.6s]   s2 e03  loss 0.4675 | val roc_auc 0.9275 | best 0.9275  *
+
+[ 9664.9s]   s2 e04  loss 0.4237 | val roc_auc 0.9311 | best 0.9311  *
+
+[ 9716.8s]   s2 e05  loss 0.3294 | val roc_auc 0.9153 | best 0.9311
+
+[ 9769.5s]   s2 e06  loss 0.3501 | val roc_auc 0.9389 | best 0.9389  *
+
+[ 9821.3s]   s2 e07  loss 0.3107 | val roc_auc 0.9307 | best 0.9389
+
+[ 9873.1s]   s2 e08  loss 0.2471 | val roc_auc 0.9249 | best 0.9389
+
+[ 9926.0s]   s2 e09  loss 0.2786 | val roc_auc 0.9089 | best 0.9389
+
+[ 9977.9s]   s2 e10  loss 0.2186 | val roc_auc 0.9313 | best 0.9389
+
+[ 9978.5s]   early stop after 4 epochs without improvement
+
+[ 9978.8s] main/der_mil/fold0: finished. best val roc_auc = 0.9389 (stage 2, epoch 6)
+
+[ 9987.1s] fold 0 der_mil: held-out ROC-AUC = 0.9389
+
+[ 9987.2s] fold wall-clock 17.5 min | elapsed 2.81 h | budget left 5.49 h
+
+[ 9987.7s] main/der_mil/fold1: 27,185,581 parameters
+
+[ 9987.7s] --- main/der_mil/fold1 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[10034.2s]   s1 e00  loss 1.0173 | val roc_auc 0.7578 | best 0.7578  *
+
+[10080.7s]   s1 e01  loss 0.9190 | val roc_auc 0.7841 | best 0.7841  *
+
+[10130.5s]   s1 e02  loss 0.8544 | val roc_auc 0.7958 | best 0.7958  *
+
+[10181.6s]   s1 e03  loss 0.8636 | val roc_auc 0.8106 | best 0.8106  *
+
+[10232.8s]   s1 e04  loss 0.8183 | val roc_auc 0.8165 | best 0.8165  *
+
+[10284.0s]   s1 e05  loss 0.8052 | val roc_auc 0.8162 | best 0.8165
+
+[10334.9s]   s1 e06  loss 0.7908 | val roc_auc 0.8120 | best 0.8165
+
+[10385.1s]   s1 e07  loss 0.7755 | val roc_auc 0.8135 | best 0.8165
+
+[10385.4s]   early stop after 3 epochs without improvement
+
+[10385.4s] --- main/der_mil/fold1 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[10441.8s]   s2 e00  loss 0.8854 | val roc_auc 0.9108 | best 0.9108  *
+
+[10498.1s]   s2 e01  loss 0.6163 | val roc_auc 0.9227 | best 0.9227  *
+
+[10555.3s]   s2 e02  loss 0.5561 | val roc_auc 0.9300 | best 0.9300  *
+
+[10613.3s]   s2 e03  loss 0.4675 | val roc_auc 0.9064 | best 0.9300
+
+[10669.9s]   s2 e04  loss 0.4451 | val roc_auc 0.9335 | best 0.9335  *
+
+[10727.1s]   s2 e05  loss 0.4275 | val roc_auc 0.9379 | best 0.9379  *
+
+[10781.4s]   s2 e06  loss 0.3785 | val roc_auc 0.9230 | best 0.9379
+
+[10836.3s]   s2 e07  loss 0.3444 | val roc_auc 0.9260 | best 0.9379
+
+[10892.6s]   s2 e08  loss 0.3241 | val roc_auc 0.9251 | best 0.9379
+
+[10947.6s]   s2 e09  loss 0.2441 | val roc_auc 0.9268 | best 0.9379
+
+[10948.2s]   early stop after 4 epochs without improvement
+
+[10948.5s] main/der_mil/fold1: finished. best val roc_auc = 0.9379 (stage 2, epoch 5)
+
+[10957.5s] fold 1 der_mil: held-out ROC-AUC = 0.9379
+
+[10957.5s] fold wall-clock 16.2 min | elapsed 3.08 h | budget left 5.22 h
+
+[10958.1s] main/der_mil/fold2: 27,185,581 parameters
+
+[10958.1s] --- main/der_mil/fold2 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[11006.7s]   s1 e00  loss 0.9921 | val roc_auc 0.7919 | best 0.7919  *
+
+[11056.2s]   s1 e01  loss 0.8247 | val roc_auc 0.8182 | best 0.8182  *
+
+[11105.9s]   s1 e02  loss 0.7600 | val roc_auc 0.8235 | best 0.8235  *
+
+[11155.1s]   s1 e03  loss 0.7446 | val roc_auc 0.8411 | best 0.8411  *
+
+[11204.8s]   s1 e04  loss 0.7129 | val roc_auc 0.8448 | best 0.8448  *
+
+[11254.2s]   s1 e05  loss 0.7364 | val roc_auc 0.8490 | best 0.8490  *
+
+[11303.4s]   s1 e06  loss 0.7332 | val roc_auc 0.8590 | best 0.8590  *
+
+[11353.0s]   s1 e07  loss 0.6838 | val roc_auc 0.8558 | best 0.8590
+
+[11402.5s]   s1 e08  loss 0.6489 | val roc_auc 0.8673 | best 0.8673  *
+
+[11451.1s]   s1 e09  loss 0.6234 | val roc_auc 0.8705 | best 0.8705  *
+
+[11451.6s] --- main/der_mil/fold2 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[11503.9s]   s2 e00  loss 0.8173 | val roc_auc 0.8965 | best 0.8965  *
+
+[11559.4s]   s2 e01  loss 0.5710 | val roc_auc 0.9335 | best 0.9335  *
+
+[11613.8s]   s2 e02  loss 0.4693 | val roc_auc 0.9229 | best 0.9335
+
+[11668.3s]   s2 e03  loss 0.4189 | val roc_auc 0.9201 | best 0.9335
+
+[11722.3s]   s2 e04  loss 0.3893 | val roc_auc 0.9293 | best 0.9335
+
+[11776.5s]   s2 e05  loss 0.3673 | val roc_auc 0.9276 | best 0.9335
+
+[11777.1s]   early stop after 4 epochs without improvement
+
+[11777.4s] main/der_mil/fold2: finished. best val roc_auc = 0.9335 (stage 2, epoch 1)
+
+[11786.1s] fold 2 der_mil: held-out ROC-AUC = 0.9335
+
+[11786.1s] fold wall-clock 13.8 min | elapsed 3.31 h | budget left 4.99 h
+
+[11786.7s] main/der_mil/fold3: 27,185,581 parameters
+
+[11786.7s] --- main/der_mil/fold3 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[11833.9s]   s1 e00  loss 1.0516 | val roc_auc 0.7851 | best 0.7851  *
+
+[11882.5s]   s1 e01  loss 0.9278 | val roc_auc 0.8112 | best 0.8112  *
+
+[11929.9s]   s1 e02  loss 0.8645 | val roc_auc 0.8156 | best 0.8156  *
+
+[11976.5s]   s1 e03  loss 0.8555 | val roc_auc 0.8229 | best 0.8229  *
+
+[12023.6s]   s1 e04  loss 0.8672 | val roc_auc 0.8377 | best 0.8377  *
+
+[12070.5s]   s1 e05  loss 0.8180 | val roc_auc 0.8391 | best 0.8391  *
+
+[12117.3s]   s1 e06  loss 0.8115 | val roc_auc 0.8390 | best 0.8391
+
+[12164.0s]   s1 e07  loss 0.7843 | val roc_auc 0.8442 | best 0.8442  *
+
+[12211.6s]   s1 e08  loss 0.7798 | val roc_auc 0.8429 | best 0.8442
+
+[12258.0s]   s1 e09  loss 0.7669 | val roc_auc 0.8417 | best 0.8442
+
+[12258.3s] --- main/der_mil/fold3 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[12310.4s]   s2 e00  loss 0.8464 | val roc_auc 0.8984 | best 0.8984  *
+
+[12363.5s]   s2 e01  loss 0.6324 | val roc_auc 0.9252 | best 0.9252  *
+
+[12416.9s]   s2 e02  loss 0.5596 | val roc_auc 0.9315 | best 0.9315  *
+
+[12470.6s]   s2 e03  loss 0.4595 | val roc_auc 0.9229 | best 0.9315
+
+[12524.7s]   s2 e04  loss 0.4352 | val roc_auc 0.9350 | best 0.9350  *
+
+[12578.7s]   s2 e05  loss 0.4012 | val roc_auc 0.9152 | best 0.9350
+
+[12632.0s]   s2 e06  loss 0.3333 | val roc_auc 0.9281 | best 0.9350
+
+[12685.3s]   s2 e07  loss 0.3696 | val roc_auc 0.9192 | best 0.9350
+
+[12737.8s]   s2 e08  loss 0.3090 | val roc_auc 0.9134 | best 0.9350
+
+[12738.4s]   early stop after 4 epochs without improvement
+
+[12738.7s] main/der_mil/fold3: finished. best val roc_auc = 0.9350 (stage 2, epoch 4)
+
+[12747.0s] fold 3 der_mil: held-out ROC-AUC = 0.9350
+
+[12747.0s] fold wall-clock 16.0 min | elapsed 3.57 h | budget left 4.73 h
+
+[12747.6s] main/der_mil/fold4: 27,185,581 parameters
+
+[12747.6s] --- main/der_mil/fold4 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[12794.3s]   s1 e00  loss 1.0422 | val roc_auc 0.7950 | best 0.7950  *
+
+[12841.4s]   s1 e01  loss 0.8462 | val roc_auc 0.8272 | best 0.8272  *
+
+[12888.8s]   s1 e02  loss 0.7817 | val roc_auc 0.8446 | best 0.8446  *
+
+[12935.8s]   s1 e03  loss 0.7665 | val roc_auc 0.8476 | best 0.8476  *
+
+[12982.5s]   s1 e04  loss 0.7173 | val roc_auc 0.8574 | best 0.8574  *
+
+[13029.4s]   s1 e05  loss 0.6963 | val roc_auc 0.8619 | best 0.8619  *
+
+[13075.7s]   s1 e06  loss 0.6767 | val roc_auc 0.8665 | best 0.8665  *
+
+[13121.8s]   s1 e07  loss 0.6635 | val roc_auc 0.8692 | best 0.8692  *
+
+[13169.3s]   s1 e08  loss 0.6616 | val roc_auc 0.8742 | best 0.8742  *
+
+[13217.0s]   s1 e09  loss 0.6292 | val roc_auc 0.8766 | best 0.8766  *
+
+[13217.5s] --- main/der_mil/fold4 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[13269.6s]   s2 e00  loss 0.7586 | val roc_auc 0.9162 | best 0.9162  *
+
+[13323.9s]   s2 e01  loss 0.6011 | val roc_auc 0.9213 | best 0.9213  *
+
+[13377.6s]   s2 e02  loss 0.5170 | val roc_auc 0.9332 | best 0.9332  *
+
+[13431.9s]   s2 e03  loss 0.4648 | val roc_auc 0.9278 | best 0.9332
+
+[13485.2s]   s2 e04  loss 0.4035 | val roc_auc 0.9410 | best 0.9410  *
+
+[13539.0s]   s2 e05  loss 0.3486 | val roc_auc 0.9294 | best 0.9410
+
+[13593.3s]   s2 e06  loss 0.3627 | val roc_auc 0.9421 | best 0.9421  *
+
+[13646.2s]   s2 e07  loss 0.2852 | val roc_auc 0.9364 | best 0.9421
+
+[13698.6s]   s2 e08  loss 0.2318 | val roc_auc 0.9220 | best 0.9421
+
+[13751.3s]   s2 e09  loss 0.2345 | val roc_auc 0.9335 | best 0.9421
+
+[13804.0s]   s2 e10  loss 0.1814 | val roc_auc 0.9313 | best 0.9421
+
+[13804.6s]   early stop after 4 epochs without improvement
+
+[13804.9s] main/der_mil/fold4: finished. best val roc_auc = 0.9421 (stage 2, epoch 6)
+
+[13813.2s] fold 4 der_mil: held-out ROC-AUC = 0.9421
+
+[13813.2s] fold wall-clock 17.8 min | elapsed 3.87 h | budget left 4.43 h
+
+[13813.7s] main/lesion_mil/fold0: 24,098,754 parameters
+
+[13813.7s] --- main/lesion_mil/fold0 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[13852.6s]   s1 e00  loss 0.8582 | val roc_auc 0.8509 | best 0.8509  *
+
+[13891.6s]   s1 e01  loss 0.7635 | val roc_auc 0.8759 | best 0.8759  *
+
+[13930.7s]   s1 e02  loss 0.7052 | val roc_auc 0.8820 | best 0.8820  *
+
+[13969.5s]   s1 e03  loss 0.6861 | val roc_auc 0.8951 | best 0.8951  *
+
+[14007.7s]   s1 e04  loss 0.6662 | val roc_auc 0.8860 | best 0.8951
+
+[14046.8s]   s1 e05  loss 0.6293 | val roc_auc 0.8920 | best 0.8951
+
+[14085.7s]   s1 e06  loss 0.6411 | val roc_auc 0.8984 | best 0.8984  *
+
+[14125.2s]   s1 e07  loss 0.6042 | val roc_auc 0.8937 | best 0.8984
+
+[14164.1s]   s1 e08  loss 0.6141 | val roc_auc 0.8965 | best 0.8984
+
+[14202.7s]   s1 e09  loss 0.5914 | val roc_auc 0.9059 | best 0.9059  *
+
+[14203.1s] --- main/lesion_mil/fold0 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[14246.3s]   s2 e00  loss 0.9542 | val roc_auc 0.9003 | best 0.9059
+
+[14290.1s]   s2 e01  loss 0.6756 | val roc_auc 0.9319 | best 0.9319  *
+
+[14333.1s]   s2 e02  loss 0.5838 | val roc_auc 0.9406 | best 0.9406  *
+
+[14377.5s]   s2 e03  loss 0.5169 | val roc_auc 0.9423 | best 0.9423  *
+
+[14420.7s]   s2 e04  loss 0.4708 | val roc_auc 0.9426 | best 0.9426  *
+
+[14464.1s]   s2 e05  loss 0.3977 | val roc_auc 0.9326 | best 0.9426
+
+[14507.9s]   s2 e06  loss 0.3894 | val roc_auc 0.9500 | best 0.9500  *
+
+[14551.5s]   s2 e07  loss 0.3725 | val roc_auc 0.9370 | best 0.9500
+
+[14595.3s]   s2 e08  loss 0.3320 | val roc_auc 0.9414 | best 0.9500
+
+[14640.5s]   s2 e09  loss 0.3198 | val roc_auc 0.9450 | best 0.9500
+
+[14685.8s]   s2 e10  loss 0.2531 | val roc_auc 0.9445 | best 0.9500
+
+[14686.3s]   early stop after 4 epochs without improvement
+
+[14686.5s] main/lesion_mil/fold0: finished. best val roc_auc = 0.9500 (stage 2, epoch 6)
+
+[14693.9s] fold 0 lesion_mil: held-out ROC-AUC = 0.9500
+
+[14693.9s] fold wall-clock 14.7 min | elapsed 4.11 h | budget left 4.19 h
+
+[14694.5s] main/lesion_mil/fold1: 24,098,754 parameters
+
+[14694.5s] --- main/lesion_mil/fold1 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[14735.1s]   s1 e00  loss 0.8419 | val roc_auc 0.8770 | best 0.8770  *
+
+[14776.2s]   s1 e01  loss 0.7475 | val roc_auc 0.8806 | best 0.8806  *
+
+[14817.8s]   s1 e02  loss 0.7135 | val roc_auc 0.8817 | best 0.8817  *
+
+[14859.0s]   s1 e03  loss 0.6993 | val roc_auc 0.8894 | best 0.8894  *
+
+[14900.0s]   s1 e04  loss 0.6648 | val roc_auc 0.8930 | best 0.8930  *
+
+[14941.2s]   s1 e05  loss 0.6379 | val roc_auc 0.8967 | best 0.8967  *
+
+[14981.8s]   s1 e06  loss 0.6186 | val roc_auc 0.8980 | best 0.8980  *
+
+[15022.3s]   s1 e07  loss 0.6169 | val roc_auc 0.8980 | best 0.8980
+
+[15063.5s]   s1 e08  loss 0.6157 | val roc_auc 0.9010 | best 0.9010  *
+
+[15104.8s]   s1 e09  loss 0.6159 | val roc_auc 0.8993 | best 0.9010
+
+[15105.0s] --- main/lesion_mil/fold1 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[15150.2s]   s2 e00  loss 0.9137 | val roc_auc 0.8921 | best 0.9010
+
+[15196.5s]   s2 e01  loss 0.6814 | val roc_auc 0.9263 | best 0.9263  *
+
+[15243.2s]   s2 e02  loss 0.6094 | val roc_auc 0.9295 | best 0.9295  *
+
+[15291.2s]   s2 e03  loss 0.5239 | val roc_auc 0.9454 | best 0.9454  *
+
+[15337.9s]   s2 e04  loss 0.4698 | val roc_auc 0.9463 | best 0.9463  *
+
+[15384.1s]   s2 e05  loss 0.4162 | val roc_auc 0.9460 | best 0.9463
+
+[15429.7s]   s2 e06  loss 0.3410 | val roc_auc 0.9391 | best 0.9463
+
+[15474.9s]   s2 e07  loss 0.3404 | val roc_auc 0.9405 | best 0.9463
+
+[15519.0s]   s2 e08  loss 0.3333 | val roc_auc 0.9452 | best 0.9463
+
+[15519.5s]   early stop after 4 epochs without improvement
+
+[15519.7s] main/lesion_mil/fold1: finished. best val roc_auc = 0.9463 (stage 2, epoch 4)
+
+[15527.0s] fold 1 lesion_mil: held-out ROC-AUC = 0.9463
+
+[15527.1s] fold wall-clock 13.9 min | elapsed 4.35 h | budget left 3.95 h
+
+[15527.6s] main/lesion_mil/fold2: 24,098,754 parameters
+
+[15527.6s] --- main/lesion_mil/fold2 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[15566.6s]   s1 e00  loss 0.8330 | val roc_auc 0.8488 | best 0.8488  *
+
+[15606.2s]   s1 e01  loss 0.7463 | val roc_auc 0.8593 | best 0.8593  *
+
+[15646.0s]   s1 e02  loss 0.7205 | val roc_auc 0.8695 | best 0.8695  *
+
+[15685.6s]   s1 e03  loss 0.6912 | val roc_auc 0.8731 | best 0.8731  *
+
+[15725.7s]   s1 e04  loss 0.6431 | val roc_auc 0.8791 | best 0.8791  *
+
+[15766.0s]   s1 e05  loss 0.6476 | val roc_auc 0.8830 | best 0.8830  *
+
+[15806.1s]   s1 e06  loss 0.6397 | val roc_auc 0.8811 | best 0.8830
+
+[15844.6s]   s1 e07  loss 0.6319 | val roc_auc 0.8833 | best 0.8833  *
+
+[15883.0s]   s1 e08  loss 0.6063 | val roc_auc 0.8903 | best 0.8903  *
+
+[15921.8s]   s1 e09  loss 0.6207 | val roc_auc 0.8840 | best 0.8903
+
+[15922.0s] --- main/lesion_mil/fold2 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[15966.2s]   s2 e00  loss 0.9697 | val roc_auc 0.9179 | best 0.9179  *
+
+[16012.6s]   s2 e01  loss 0.6948 | val roc_auc 0.9421 | best 0.9421  *
+
+[16058.7s]   s2 e02  loss 0.6106 | val roc_auc 0.9486 | best 0.9486  *
+
+[16105.9s]   s2 e03  loss 0.5328 | val roc_auc 0.9190 | best 0.9486
+
+[16150.8s]   s2 e04  loss 0.4818 | val roc_auc 0.9323 | best 0.9486
+
+[16195.7s]   s2 e05  loss 0.4612 | val roc_auc 0.9372 | best 0.9486
+
+[16241.3s]   s2 e06  loss 0.3925 | val roc_auc 0.9382 | best 0.9486
+
+[16241.9s]   early stop after 4 epochs without improvement
+
+[16242.1s] main/lesion_mil/fold2: finished. best val roc_auc = 0.9486 (stage 2, epoch 2)
+
+[16249.6s] fold 2 lesion_mil: held-out ROC-AUC = 0.9486
+
+[16249.6s] fold wall-clock 12.0 min | elapsed 4.55 h | budget left 3.75 h
+
+[16250.1s] main/lesion_mil/fold3: 24,098,754 parameters
+
+[16250.1s] --- main/lesion_mil/fold3 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[16290.2s]   s1 e00  loss 0.8354 | val roc_auc 0.8383 | best 0.8383  *
+
+[16330.5s]   s1 e01  loss 0.7520 | val roc_auc 0.8610 | best 0.8610  *
+
+[16371.0s]   s1 e02  loss 0.7085 | val roc_auc 0.8775 | best 0.8775  *
+
+[16411.3s]   s1 e03  loss 0.6787 | val roc_auc 0.8848 | best 0.8848  *
+
+[16451.8s]   s1 e04  loss 0.6712 | val roc_auc 0.8916 | best 0.8916  *
+
+[16492.3s]   s1 e05  loss 0.6310 | val roc_auc 0.8936 | best 0.8936  *
+
+[16532.5s]   s1 e06  loss 0.6216 | val roc_auc 0.8961 | best 0.8961  *
+
+[16573.3s]   s1 e07  loss 0.6063 | val roc_auc 0.8985 | best 0.8985  *
+
+[16614.0s]   s1 e08  loss 0.6233 | val roc_auc 0.8994 | best 0.8994  *
+
+[16654.3s]   s1 e09  loss 0.6020 | val roc_auc 0.8997 | best 0.8997  *
+
+[16654.7s] --- main/lesion_mil/fold3 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[16699.1s]   s2 e00  loss 0.9436 | val roc_auc 0.8861 | best 0.8997
+
+[16745.5s]   s2 e01  loss 0.7263 | val roc_auc 0.9246 | best 0.9246  *
+
+[16791.9s]   s2 e02  loss 0.5432 | val roc_auc 0.9161 | best 0.9246
+
+[16838.5s]   s2 e03  loss 0.5041 | val roc_auc 0.9196 | best 0.9246
+
+[16884.6s]   s2 e04  loss 0.4800 | val roc_auc 0.9417 | best 0.9417  *
+
+[16931.0s]   s2 e05  loss 0.4468 | val roc_auc 0.9336 | best 0.9417
+
+[16977.1s]   s2 e06  loss 0.3792 | val roc_auc 0.9350 | best 0.9417
+
+[17022.5s]   s2 e07  loss 0.3569 | val roc_auc 0.9159 | best 0.9417
+
+[17067.8s]   s2 e08  loss 0.3659 | val roc_auc 0.9298 | best 0.9417
+
+[17068.3s]   early stop after 4 epochs without improvement
+
+[17068.6s] main/lesion_mil/fold3: finished. best val roc_auc = 0.9417 (stage 2, epoch 4)
+
+[17076.0s] fold 3 lesion_mil: held-out ROC-AUC = 0.9417
+
+[17076.0s] fold wall-clock 13.8 min | elapsed 4.78 h | budget left 3.52 h
+
+[17076.6s] main/lesion_mil/fold4: 24,098,754 parameters
+
+[17076.6s] --- main/lesion_mil/fold4 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[17117.8s]   s1 e00  loss 0.8353 | val roc_auc 0.8160 | best 0.8160  *
+
+[17159.7s]   s1 e01  loss 0.7464 | val roc_auc 0.8378 | best 0.8378  *
+
+[17201.6s]   s1 e02  loss 0.7178 | val roc_auc 0.8480 | best 0.8480  *
+
+[17244.0s]   s1 e03  loss 0.6878 | val roc_auc 0.8563 | best 0.8563  *
+
+[17285.9s]   s1 e04  loss 0.6439 | val roc_auc 0.8565 | best 0.8565  *
+
+[17328.3s]   s1 e05  loss 0.6362 | val roc_auc 0.8622 | best 0.8622  *
+
+[17369.9s]   s1 e06  loss 0.6328 | val roc_auc 0.8641 | best 0.8641  *
+
+[17411.7s]   s1 e07  loss 0.6229 | val roc_auc 0.8667 | best 0.8667  *
+
+[17453.1s]   s1 e08  loss 0.6168 | val roc_auc 0.8743 | best 0.8743  *
+
+[17494.8s]   s1 e09  loss 0.6003 | val roc_auc 0.8699 | best 0.8743
+
+[17495.1s] --- main/lesion_mil/fold4 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[17539.9s]   s2 e00  loss 0.9607 | val roc_auc 0.9333 | best 0.9333  *
+
+[17586.4s]   s2 e01  loss 0.6768 | val roc_auc 0.9192 | best 0.9333
+
+[17631.2s]   s2 e02  loss 0.6245 | val roc_auc 0.9344 | best 0.9344  *
+
+[17677.4s]   s2 e03  loss 0.5193 | val roc_auc 0.9339 | best 0.9344
+
+[17722.2s]   s2 e04  loss 0.4721 | val roc_auc 0.9478 | best 0.9478  *
+
+[17767.5s]   s2 e05  loss 0.4768 | val roc_auc 0.9350 | best 0.9478
+
+[17812.5s]   s2 e06  loss 0.3720 | val roc_auc 0.9456 | best 0.9478
+
+[17857.0s]   s2 e07  loss 0.3559 | val roc_auc 0.9409 | best 0.9478
+
+[17901.5s]   s2 e08  loss 0.3423 | val roc_auc 0.9352 | best 0.9478
+
+[17902.0s]   early stop after 4 epochs without improvement
+
+[17902.2s] main/lesion_mil/fold4: finished. best val roc_auc = 0.9478 (stage 2, epoch 4)
+
+[17909.7s] fold 4 lesion_mil: held-out ROC-AUC = 0.9478
+
+[17909.7s] fold wall-clock 13.9 min | elapsed 5.01 h | budget left 3.29 h
+
+[17910.3s] main/image_mil/fold0: 24,098,754 parameters
+
+[17910.3s] --- main/image_mil/fold0 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[17949.3s]   s1 e00  loss 1.0448 | val roc_auc 0.7197 | best 0.7197  *
+
+[17989.0s]   s1 e01  loss 0.9724 | val roc_auc 0.7311 | best 0.7311  *
+
+[18028.9s]   s1 e02  loss 0.9257 | val roc_auc 0.7371 | best 0.7371  *
+
+[18067.9s]   s1 e03  loss 0.9224 | val roc_auc 0.7428 | best 0.7428  *
+
+[18106.3s]   s1 e04  loss 0.9075 | val roc_auc 0.7402 | best 0.7428
+
+[18144.6s]   s1 e05  loss 0.8927 | val roc_auc 0.7477 | best 0.7477  *
+
+[18183.1s]   s1 e06  loss 0.8781 | val roc_auc 0.7515 | best 0.7515  *
+
+[18221.9s]   s1 e07  loss 0.8721 | val roc_auc 0.7519 | best 0.7519  *
+
+[18260.7s]   s1 e08  loss 0.8735 | val roc_auc 0.7518 | best 0.7519
+
+[18298.8s]   s1 e09  loss 0.8654 | val roc_auc 0.7516 | best 0.7519
+
+[18299.0s] --- main/image_mil/fold0 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[18341.9s]   s2 e00  loss 0.9815 | val roc_auc 0.8747 | best 0.8747  *
+
+[18386.0s]   s2 e01  loss 0.7670 | val roc_auc 0.8897 | best 0.8897  *
+
+[18429.0s]   s2 e02  loss 0.6708 | val roc_auc 0.9087 | best 0.9087  *
+
+[18472.1s]   s2 e03  loss 0.5840 | val roc_auc 0.9168 | best 0.9168  *
+
+[18515.2s]   s2 e04  loss 0.5294 | val roc_auc 0.9281 | best 0.9281  *
+
+[18558.1s]   s2 e05  loss 0.5036 | val roc_auc 0.9147 | best 0.9281
+
+[18602.4s]   s2 e06  loss 0.4284 | val roc_auc 0.9219 | best 0.9281
+
+[18646.5s]   s2 e07  loss 0.4302 | val roc_auc 0.9329 | best 0.9329  *
+
+[18692.4s]   s2 e08  loss 0.3364 | val roc_auc 0.9297 | best 0.9329
+
+[18739.3s]   s2 e09  loss 0.3886 | val roc_auc 0.9232 | best 0.9329
+
+[18785.6s]   s2 e10  loss 0.2958 | val roc_auc 0.9171 | best 0.9329
+
+[18831.7s]   s2 e11  loss 0.3023 | val roc_auc 0.9270 | best 0.9329
+
+[18832.3s]   early stop after 4 epochs without improvement
+
+[18832.5s] main/image_mil/fold0: finished. best val roc_auc = 0.9329 (stage 2, epoch 7)
+
+[18840.4s] fold 0 image_mil: held-out ROC-AUC = 0.9329
+
+[18840.4s] fold wall-clock 15.5 min | elapsed 5.27 h | budget left 3.03 h
+
+[18841.0s] main/image_mil/fold1: 24,098,754 parameters
+
+[18841.0s] --- main/image_mil/fold1 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[18883.1s]   s1 e00  loss 1.0197 | val roc_auc 0.7305 | best 0.7305  *
+
+[18925.9s]   s1 e01  loss 0.9698 | val roc_auc 0.7469 | best 0.7469  *
+
+[18968.7s]   s1 e02  loss 0.9321 | val roc_auc 0.7482 | best 0.7482  *
+
+[19010.8s]   s1 e03  loss 0.9227 | val roc_auc 0.7546 | best 0.7546  *
+
+[19052.6s]   s1 e04  loss 0.9147 | val roc_auc 0.7567 | best 0.7567  *
+
+[19094.6s]   s1 e05  loss 0.8887 | val roc_auc 0.7609 | best 0.7609  *
+
+[19136.8s]   s1 e06  loss 0.8913 | val roc_auc 0.7469 | best 0.7609
+
+[19178.7s]   s1 e07  loss 0.8666 | val roc_auc 0.7645 | best 0.7645  *
+
+[19221.5s]   s1 e08  loss 0.8614 | val roc_auc 0.7593 | best 0.7645
+
+[19264.1s]   s1 e09  loss 0.8658 | val roc_auc 0.7610 | best 0.7645
+
+[19264.4s] --- main/image_mil/fold1 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[19311.1s]   s2 e00  loss 0.9570 | val roc_auc 0.8751 | best 0.8751  *
+
+[19359.8s]   s2 e01  loss 0.7253 | val roc_auc 0.9159 | best 0.9159  *
+
+[19407.8s]   s2 e02  loss 0.6222 | val roc_auc 0.9220 | best 0.9220  *
+
+[19455.8s]   s2 e03  loss 0.6045 | val roc_auc 0.8961 | best 0.9220
+
+[19502.6s]   s2 e04  loss 0.5344 | val roc_auc 0.9372 | best 0.9372  *
+
+[19549.0s]   s2 e05  loss 0.4829 | val roc_auc 0.9400 | best 0.9400  *
+
+[19595.3s]   s2 e06  loss 0.4539 | val roc_auc 0.9381 | best 0.9400
+
+[19640.5s]   s2 e07  loss 0.4125 | val roc_auc 0.9344 | best 0.9400
+
+[19686.5s]   s2 e08  loss 0.4055 | val roc_auc 0.9216 | best 0.9400
+
+[19732.7s]   s2 e09  loss 0.3279 | val roc_auc 0.9334 | best 0.9400
+
+[19733.2s]   early stop after 4 epochs without improvement
+
+[19733.4s] main/image_mil/fold1: finished. best val roc_auc = 0.9400 (stage 2, epoch 5)
+
+[19741.1s] fold 1 image_mil: held-out ROC-AUC = 0.9400
+
+[19741.1s] fold wall-clock 15.0 min | elapsed 5.52 h | budget left 2.78 h
+
+[19741.7s] main/image_mil/fold2: 24,098,754 parameters
+
+[19741.7s] --- main/image_mil/fold2 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[19782.6s]   s1 e00  loss 1.0162 | val roc_auc 0.6648 | best 0.6648  *
+
+[19823.8s]   s1 e01  loss 0.9722 | val roc_auc 0.6853 | best 0.6853  *
+
+[19864.5s]   s1 e02  loss 0.9194 | val roc_auc 0.7009 | best 0.7009  *
+
+[19904.0s]   s1 e03  loss 0.9177 | val roc_auc 0.7116 | best 0.7116  *
+
+[19944.3s]   s1 e04  loss 0.8995 | val roc_auc 0.7177 | best 0.7177  *
+
+[19984.0s]   s1 e05  loss 0.8950 | val roc_auc 0.7401 | best 0.7401  *
+
+[20022.9s]   s1 e06  loss 0.8935 | val roc_auc 0.7353 | best 0.7401
+
+[20062.3s]   s1 e07  loss 0.8777 | val roc_auc 0.7268 | best 0.7401
+
+[20101.0s]   s1 e08  loss 0.8778 | val roc_auc 0.7405 | best 0.7405  *
+
+[20140.3s]   s1 e09  loss 0.8648 | val roc_auc 0.7443 | best 0.7443  *
+
+[20140.6s] --- main/image_mil/fold2 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[20183.4s]   s2 e00  loss 0.9228 | val roc_auc 0.8599 | best 0.8599  *
+
+[20229.1s]   s2 e01  loss 0.7480 | val roc_auc 0.9034 | best 0.9034  *
+
+[20272.9s]   s2 e02  loss 0.6160 | val roc_auc 0.9098 | best 0.9098  *
+
+[20316.9s]   s2 e03  loss 0.5322 | val roc_auc 0.9249 | best 0.9249  *
+
+[20360.2s]   s2 e04  loss 0.5081 | val roc_auc 0.9221 | best 0.9249
+
+[20404.0s]   s2 e05  loss 0.5071 | val roc_auc 0.9305 | best 0.9305  *
+
+[20448.8s]   s2 e06  loss 0.4325 | val roc_auc 0.9349 | best 0.9349  *
+
+[20493.2s]   s2 e07  loss 0.4125 | val roc_auc 0.9324 | best 0.9349
+
+[20538.0s]   s2 e08  loss 0.3197 | val roc_auc 0.9221 | best 0.9349
+
+[20583.1s]   s2 e09  loss 0.3150 | val roc_auc 0.9289 | best 0.9349
+
+[20627.2s]   s2 e10  loss 0.3126 | val roc_auc 0.9297 | best 0.9349
+
+[20627.7s]   early stop after 4 epochs without improvement
+
+[20627.9s] main/image_mil/fold2: finished. best val roc_auc = 0.9349 (stage 2, epoch 6)
+
+[20635.2s] fold 2 image_mil: held-out ROC-AUC = 0.9349
+
+[20635.2s] fold wall-clock 14.9 min | elapsed 5.76 h | budget left 2.54 h
+
+[20635.8s] main/image_mil/fold3: 24,098,754 parameters
+
+[20635.8s] --- main/image_mil/fold3 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[20675.5s]   s1 e00  loss 1.0348 | val roc_auc 0.6916 | best 0.6916  *
+
+[20714.9s]   s1 e01  loss 1.0082 | val roc_auc 0.6976 | best 0.6976  *
+
+[20754.5s]   s1 e02  loss 0.9476 | val roc_auc 0.7030 | best 0.7030  *
+
+[20795.1s]   s1 e03  loss 0.9476 | val roc_auc 0.7164 | best 0.7164  *
+
+[20835.9s]   s1 e04  loss 0.9330 | val roc_auc 0.7266 | best 0.7266  *
+
+[20876.5s]   s1 e05  loss 0.9048 | val roc_auc 0.7371 | best 0.7371  *
+
+[20916.7s]   s1 e06  loss 0.9231 | val roc_auc 0.7323 | best 0.7371
+
+[20957.4s]   s1 e07  loss 0.9044 | val roc_auc 0.7485 | best 0.7485  *
+
+[20997.0s]   s1 e08  loss 0.8852 | val roc_auc 0.7517 | best 0.7517  *
+
+[21036.2s]   s1 e09  loss 0.8788 | val roc_auc 0.7547 | best 0.7547  *
+
+[21036.6s] --- main/image_mil/fold3 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[21079.4s]   s2 e00  loss 0.9864 | val roc_auc 0.8902 | best 0.8902  *
+
+[21123.5s]   s2 e01  loss 0.8290 | val roc_auc 0.9087 | best 0.9087  *
+
+[21167.1s]   s2 e02  loss 0.6643 | val roc_auc 0.9088 | best 0.9088  *
+
+[21211.8s]   s2 e03  loss 0.6297 | val roc_auc 0.9057 | best 0.9088
+
+[21254.7s]   s2 e04  loss 0.6313 | val roc_auc 0.9147 | best 0.9147  *
+
+[21298.0s]   s2 e05  loss 0.5261 | val roc_auc 0.9152 | best 0.9152  *
+
+[21341.3s]   s2 e06  loss 0.4958 | val roc_auc 0.9181 | best 0.9181  *
+
+[21384.4s]   s2 e07  loss 0.4525 | val roc_auc 0.9206 | best 0.9206  *
+
+[21429.5s]   s2 e08  loss 0.4506 | val roc_auc 0.9140 | best 0.9206
+
+[21476.1s]   s2 e09  loss 0.3719 | val roc_auc 0.9031 | best 0.9206
+
+[21523.0s]   s2 e10  loss 0.3343 | val roc_auc 0.9307 | best 0.9307  *
+
+[21570.9s]   s2 e11  loss 0.3300 | val roc_auc 0.9122 | best 0.9307
+
+[21619.2s]   s2 e12  loss 0.2902 | val roc_auc 0.9188 | best 0.9307
+
+[21666.7s]   s2 e13  loss 0.2772 | val roc_auc 0.9104 | best 0.9307
+
+[21714.7s]   s2 e14  loss 0.2763 | val roc_auc 0.9367 | best 0.9367  *
+
+[21715.9s] main/image_mil/fold3: finished. best val roc_auc = 0.9367 (stage 2, epoch 14)
+
+[21723.6s] fold 3 image_mil: held-out ROC-AUC = 0.9367
+
+[21723.6s] fold wall-clock 18.1 min | elapsed 6.07 h | budget left 2.23 h
+
+[21724.2s] main/image_mil/fold4: 24,098,754 parameters
+
+[21724.2s] --- main/image_mil/fold4 stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[21767.2s]   s1 e00  loss 1.0280 | val roc_auc 0.7102 | best 0.7102  *
+
+[21809.6s]   s1 e01  loss 0.9764 | val roc_auc 0.7181 | best 0.7181  *
+
+[21853.0s]   s1 e02  loss 0.9273 | val roc_auc 0.7320 | best 0.7320  *
+
+[21896.4s]   s1 e03  loss 0.9447 | val roc_auc 0.7426 | best 0.7426  *
+
+[21939.6s]   s1 e04  loss 0.8990 | val roc_auc 0.7427 | best 0.7427  *
+
+[21983.0s]   s1 e05  loss 0.9013 | val roc_auc 0.7405 | best 0.7427
+
+[22026.4s]   s1 e06  loss 0.8913 | val roc_auc 0.7484 | best 0.7484  *
+
+[22069.8s]   s1 e07  loss 0.8785 | val roc_auc 0.7477 | best 0.7484
+
+[22113.6s]   s1 e08  loss 0.8619 | val roc_auc 0.7494 | best 0.7494  *
+
+[22156.6s]   s1 e09  loss 0.8538 | val roc_auc 0.7530 | best 0.7530  *
+
+[22156.9s] --- main/image_mil/fold4 stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[22202.7s]   s2 e00  loss 1.0198 | val roc_auc 0.8441 | best 0.8441  *
+
+[22249.7s]   s2 e01  loss 0.7057 | val roc_auc 0.8952 | best 0.8952  *
+
+[22296.3s]   s2 e02  loss 0.6491 | val roc_auc 0.9171 | best 0.9171  *
+
+[22344.0s]   s2 e03  loss 0.5509 | val roc_auc 0.9217 | best 0.9217  *
+
+[22391.5s]   s2 e04  loss 0.5385 | val roc_auc 0.9312 | best 0.9312  *
+
+[22439.1s]   s2 e05  loss 0.4911 | val roc_auc 0.9249 | best 0.9312
+
+[22487.2s]   s2 e06  loss 0.4412 | val roc_auc 0.9357 | best 0.9357  *
+
+[22533.7s]   s2 e07  loss 0.3827 | val roc_auc 0.9251 | best 0.9357
+
+[22580.1s]   s2 e08  loss 0.3747 | val roc_auc 0.9239 | best 0.9357
+
+[22627.7s]   s2 e09  loss 0.3049 | val roc_auc 0.9342 | best 0.9357
+
+[22674.6s]   s2 e10  loss 0.2668 | val roc_auc 0.9312 | best 0.9357
+
+[22675.1s]   early stop after 4 epochs without improvement
+
+[22675.4s] main/image_mil/fold4: finished. best val roc_auc = 0.9357 (stage 2, epoch 6)
+
+[22683.0s] fold 4 image_mil: held-out ROC-AUC = 0.9357
+
+[22683.0s] fold wall-clock 16.0 min | elapsed 6.33 h | budget left 1.97 h
+
+
+
+models with all folds complete: ['rcaf', 'mr_mil', 'der_mil', 'lesion_mil', 'image_mil']
+
+
+
+==============================================================================
+
+CROSS-VALIDATION  |  rcaf
+
+==============================================================================
+
+[22683.0s] SKIP  cv/main/rcaf/fold0
+
+[22683.0s] SKIP  cv/main/rcaf/fold1
+
+[22683.0s] SKIP  cv/main/rcaf/fold2
+
+[22683.0s] SKIP  cv/main/rcaf/fold3
+
+[22683.0s] SKIP  cv/main/rcaf/fold4
+
+[22683.1s] rcaf: pooled OOF ROC-AUC 0.9912 | per-fold mean 0.9924 +/- 0.0020
+
+[22683.8s] calibration: T = 1.2389 | thresholds {'raw': 0.5, 'youden': 0.5249, 'sens90': 0.8237}
+
+
+
+==============================================================================
+
+SINGLE-SHOT TEST EVALUATION  |  rcaf
+
+==============================================================================
+
+[22684.4s] main/rcaf/final: 24,230,082 parameters
+
+[22684.4s] --- main/rcaf/final stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[22729.5s]   s1 e00  loss 0.3763 | val roc_auc 0.9890 | best 0.9890  *
+
+[22775.1s]   s1 e01  loss 0.2724 | val roc_auc 0.9910 | best 0.9910  *
+
+[22821.2s]   s1 e02  loss 0.2928 | val roc_auc 0.9938 | best 0.9938  *
+
+[22866.9s]   s1 e03  loss 0.2406 | val roc_auc 0.9919 | best 0.9938
+
+[22912.0s]   s1 e04  loss 0.2396 | val roc_auc 0.9891 | best 0.9938
+
+[22957.2s]   s1 e05  loss 0.2370 | val roc_auc 0.9877 | best 0.9938
+
+[22957.4s]   early stop after 3 epochs without improvement
+
+[22957.4s] --- main/rcaf/final stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[23018.7s]   s2 e00  loss 0.5035 | val roc_auc 0.9844 | best 0.9938
+
+[23080.4s]   s2 e01  loss 0.2268 | val roc_auc 0.9930 | best 0.9938
+
+[23142.3s]   s2 e02  loss 0.2133 | val roc_auc 0.9920 | best 0.9938
+
+[23203.5s]   s2 e03  loss 0.1921 | val roc_auc 0.9927 | best 0.9938
+
+[23204.1s]   early stop after 4 epochs without improvement
+
+[23204.4s] main/rcaf/final: finished. best val roc_auc = 0.9938 (stage 1, epoch 2)
+
+[23204.4s] final predictor: refit over 1 checkpoint(s)
+
+[23220.8s] rcaf test ROC-AUC = 0.9869  (PR-AUC 0.9885, F1@0.5 0.9327)
+
+[23220.8s] 
+
+== calibration (rcaf) ==
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.019803 0.028620    0.047844       0.059398
+
+Dev (OOF) After temp. scaling (T=1.239) 0.025716 0.028672    0.057355       0.064480
+
+ Test set            Temp. scaling only 0.039614 0.044997    0.040499       0.124780
+
+ Test set      + Prior-shift correction 0.026531 0.038838    0.077391       0.087341
+
+
+
+==============================================================================
+
+CROSS-VALIDATION  |  mr_mil
+
+==============================================================================
+
+[23220.8s] SKIP  cv/main/mr_mil/fold0
+
+[23220.8s] SKIP  cv/main/mr_mil/fold1
+
+[23220.8s] SKIP  cv/main/mr_mil/fold2
+
+[23220.8s] SKIP  cv/main/mr_mil/fold3
+
+[23220.8s] SKIP  cv/main/mr_mil/fold4
+
+[23220.8s] mr_mil: pooled OOF ROC-AUC 0.9287 | per-fold mean 0.9352 +/- 0.0023
+
+[23221.7s] calibration: T = 2.2460 | thresholds {'raw': 0.5, 'youden': 0.3536, 'sens90': 0.3558}
+
+
+
+==============================================================================
+
+SINGLE-SHOT TEST EVALUATION  |  mr_mil
+
+==============================================================================
+
+[23222.3s] main/mr_mil/final: 26,757,801 parameters
+
+[23222.3s] --- main/mr_mil/final stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[23273.1s]   s1 e00  loss 0.9238 | val roc_auc 0.7907 | best 0.7907  *
+
+[23324.9s]   s1 e01  loss 0.7917 | val roc_auc 0.8018 | best 0.8018  *
+
+[23376.7s]   s1 e02  loss 0.7665 | val roc_auc 0.8259 | best 0.8259  *
+
+[23428.1s]   s1 e03  loss 0.7311 | val roc_auc 0.8364 | best 0.8364  *
+
+[23478.5s]   s1 e04  loss 0.7067 | val roc_auc 0.8479 | best 0.8479  *
+
+[23529.4s]   s1 e05  loss 0.6742 | val roc_auc 0.8396 | best 0.8479
+
+[23580.7s]   s1 e06  loss 0.6616 | val roc_auc 0.8525 | best 0.8525  *
+
+[23632.9s]   s1 e07  loss 0.6482 | val roc_auc 0.8622 | best 0.8622  *
+
+[23683.2s]   s1 e08  loss 0.6426 | val roc_auc 0.8637 | best 0.8637  *
+
+[23733.3s]   s1 e09  loss 0.6263 | val roc_auc 0.8583 | best 0.8637
+
+[23733.6s] --- main/mr_mil/final stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[23788.5s]   s2 e00  loss 0.8137 | val roc_auc 0.9177 | best 0.9177  *
+
+[23844.5s]   s2 e01  loss 0.5786 | val roc_auc 0.8868 | best 0.9177
+
+[23900.6s]   s2 e02  loss 0.4978 | val roc_auc 0.9099 | best 0.9177
+
+[23956.1s]   s2 e03  loss 0.4622 | val roc_auc 0.9210 | best 0.9210  *
+
+[24013.5s]   s2 e04  loss 0.3934 | val roc_auc 0.9140 | best 0.9210
+
+[24070.1s]   s2 e05  loss 0.3633 | val roc_auc 0.9414 | best 0.9414  *
+
+[24127.5s]   s2 e06  loss 0.3372 | val roc_auc 0.9264 | best 0.9414
+
+[24183.8s]   s2 e07  loss 0.2797 | val roc_auc 0.9325 | best 0.9414
+
+[24238.9s]   s2 e08  loss 0.2371 | val roc_auc 0.9360 | best 0.9414
+
+[24294.8s]   s2 e09  loss 0.2418 | val roc_auc 0.9204 | best 0.9414
+
+[24295.4s]   early stop after 4 epochs without improvement
+
+[24295.7s] main/mr_mil/final: finished. best val roc_auc = 0.9414 (stage 2, epoch 5)
+
+[24295.7s] final predictor: refit over 1 checkpoint(s)
+
+[24312.4s] mr_mil test ROC-AUC = 0.9422  (PR-AUC 0.9326, F1@0.5 0.8530)
+
+[24312.4s] 
+
+== calibration (mr_mil) ==
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.092918 0.110152    0.138452       0.174865
+
+Dev (OOF) After temp. scaling (T=2.246) 0.067596 0.098153    0.176867       0.241031
+
+ Test set            Temp. scaling only 0.052472 0.098552    0.188851       0.260646
+
+ Test set      + Prior-shift correction 0.095971 0.108136    0.307371       0.145453
+
+
+
+==============================================================================
+
+CROSS-VALIDATION  |  der_mil
+
+==============================================================================
+
+[24312.4s] SKIP  cv/main/der_mil/fold0
+
+[24312.4s] SKIP  cv/main/der_mil/fold1
+
+[24312.4s] SKIP  cv/main/der_mil/fold2
+
+[24312.4s] SKIP  cv/main/der_mil/fold3
+
+[24312.4s] SKIP  cv/main/der_mil/fold4
+
+[24312.4s] der_mil: pooled OOF ROC-AUC 0.9280 | per-fold mean 0.9375 +/- 0.0030
+
+[24313.2s] calibration: T = 1.7170 | thresholds {'raw': 0.5, 'youden': 0.3839, 'sens90': 0.2814}
+
+
+
+==============================================================================
+
+SINGLE-SHOT TEST EVALUATION  |  der_mil
+
+==============================================================================
+
+[24313.8s] main/der_mil/final: 27,185,581 parameters
+
+[24313.8s] --- main/der_mil/final stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[24366.1s]   s1 e00  loss 0.9292 | val roc_auc 0.7937 | best 0.7937  *
+
+[24419.4s]   s1 e01  loss 0.8112 | val roc_auc 0.8024 | best 0.8024  *
+
+[24472.2s]   s1 e02  loss 0.7547 | val roc_auc 0.8253 | best 0.8253  *
+
+[24524.8s]   s1 e03  loss 0.7381 | val roc_auc 0.8423 | best 0.8423  *
+
+[24577.4s]   s1 e04  loss 0.7095 | val roc_auc 0.8451 | best 0.8451  *
+
+[24630.8s]   s1 e05  loss 0.6903 | val roc_auc 0.8407 | best 0.8451
+
+[24684.2s]   s1 e06  loss 0.6611 | val roc_auc 0.8546 | best 0.8546  *
+
+[24737.1s]   s1 e07  loss 0.6416 | val roc_auc 0.8670 | best 0.8670  *
+
+[24790.2s]   s1 e08  loss 0.6501 | val roc_auc 0.8633 | best 0.8670
+
+[24843.7s]   s1 e09  loss 0.6232 | val roc_auc 0.8547 | best 0.8670
+
+[24844.0s] --- main/der_mil/final stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[24902.3s]   s2 e00  loss 0.7966 | val roc_auc 0.9154 | best 0.9154  *
+
+[24961.8s]   s2 e01  loss 0.5672 | val roc_auc 0.9322 | best 0.9322  *
+
+[25021.2s]   s2 e02  loss 0.4949 | val roc_auc 0.9302 | best 0.9322
+
+[25079.2s]   s2 e03  loss 0.4333 | val roc_auc 0.9106 | best 0.9322
+
+[25137.6s]   s2 e04  loss 0.4017 | val roc_auc 0.9166 | best 0.9322
+
+[25196.9s]   s2 e05  loss 0.3642 | val roc_auc 0.9491 | best 0.9491  *
+
+[25255.9s]   s2 e06  loss 0.2947 | val roc_auc 0.9436 | best 0.9491
+
+[25314.1s]   s2 e07  loss 0.2647 | val roc_auc 0.9391 | best 0.9491
+
+[25371.3s]   s2 e08  loss 0.2303 | val roc_auc 0.9367 | best 0.9491
+
+[25429.0s]   s2 e09  loss 0.2359 | val roc_auc 0.9274 | best 0.9491
+
+[25429.7s]   early stop after 4 epochs without improvement
+
+[25429.9s] main/der_mil/final: finished. best val roc_auc = 0.9491 (stage 2, epoch 5)
+
+[25430.0s] final predictor: refit over 1 checkpoint(s)
+
+[25446.4s] der_mil test ROC-AUC = 0.9387  (PR-AUC 0.9301, F1@0.5 0.8162)
+
+[25446.4s] 
+
+== calibration (der_mil) ==
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.076281 0.104403    0.136325       0.208478
+
+Dev (OOF) After temp. scaling (T=1.717) 0.061197 0.097565    0.171810       0.251964
+
+ Test set            Temp. scaling only 0.089909 0.113017    0.106558       0.304686
+
+ Test set      + Prior-shift correction 0.036054 0.097491    0.171171       0.200940
+
+
+
+==============================================================================
+
+CROSS-VALIDATION  |  lesion_mil
+
+==============================================================================
+
+[25446.4s] SKIP  cv/main/lesion_mil/fold0
+
+[25446.4s] SKIP  cv/main/lesion_mil/fold1
+
+[25446.4s] SKIP  cv/main/lesion_mil/fold2
+
+[25446.4s] SKIP  cv/main/lesion_mil/fold3
+
+[25446.4s] SKIP  cv/main/lesion_mil/fold4
+
+[25446.4s] lesion_mil: pooled OOF ROC-AUC 0.9450 | per-fold mean 0.9469 +/- 0.0029
+
+[25447.2s] calibration: T = 1.8727 | thresholds {'raw': 0.5, 'youden': 0.5118, 'sens90': 0.4175}
+
+
+
+==============================================================================
+
+SINGLE-SHOT TEST EVALUATION  |  lesion_mil
+
+==============================================================================
+
+[25447.9s] main/lesion_mil/final: 24,098,754 parameters
+
+[25447.9s] --- main/lesion_mil/final stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[25490.6s]   s1 e00  loss 0.8374 | val roc_auc 0.8201 | best 0.8201  *
+
+[25534.6s]   s1 e01  loss 0.7169 | val roc_auc 0.8459 | best 0.8459  *
+
+[25578.1s]   s1 e02  loss 0.6914 | val roc_auc 0.8560 | best 0.8560  *
+
+[25621.5s]   s1 e03  loss 0.6788 | val roc_auc 0.8663 | best 0.8663  *
+
+[25664.6s]   s1 e04  loss 0.6616 | val roc_auc 0.8664 | best 0.8664  *
+
+[25707.0s]   s1 e05  loss 0.6166 | val roc_auc 0.8692 | best 0.8692  *
+
+[25749.6s]   s1 e06  loss 0.6402 | val roc_auc 0.8782 | best 0.8782  *
+
+[25791.8s]   s1 e07  loss 0.5981 | val roc_auc 0.8864 | best 0.8864  *
+
+[25834.8s]   s1 e08  loss 0.6019 | val roc_auc 0.8861 | best 0.8864
+
+[25877.6s]   s1 e09  loss 0.6169 | val roc_auc 0.8756 | best 0.8864
+
+[25877.8s] --- main/lesion_mil/final stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[25924.7s]   s2 e00  loss 0.9458 | val roc_auc 0.8532 | best 0.8864
+
+[25972.3s]   s2 e01  loss 0.6546 | val roc_auc 0.9329 | best 0.9329  *
+
+[26020.6s]   s2 e02  loss 0.5732 | val roc_auc 0.9352 | best 0.9352  *
+
+[26068.9s]   s2 e03  loss 0.5171 | val roc_auc 0.9333 | best 0.9352
+
+[26117.5s]   s2 e04  loss 0.5325 | val roc_auc 0.9297 | best 0.9352
+
+[26165.9s]   s2 e05  loss 0.4158 | val roc_auc 0.9261 | best 0.9352
+
+[26214.9s]   s2 e06  loss 0.3781 | val roc_auc 0.9288 | best 0.9352
+
+[26215.5s]   early stop after 4 epochs without improvement
+
+[26215.7s] main/lesion_mil/final: finished. best val roc_auc = 0.9352 (stage 2, epoch 2)
+
+[26215.8s] final predictor: refit over 1 checkpoint(s)
+
+[26230.9s] lesion_mil test ROC-AUC = 0.9554  (PR-AUC 0.9498, F1@0.5 0.8755)
+
+[26230.9s] 
+
+== calibration (lesion_mil) ==
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.085228 0.098502    0.146007       0.148961
+
+Dev (OOF) After temp. scaling (T=1.873) 0.078955 0.091466    0.176471       0.196471
+
+ Test set            Temp. scaling only 0.047334 0.085974    0.183599       0.210486
+
+ Test set      + Prior-shift correction 0.099514 0.103242    0.290172       0.114973
+
+
+
+==============================================================================
+
+CROSS-VALIDATION  |  image_mil
+
+==============================================================================
+
+[26230.9s] SKIP  cv/main/image_mil/fold0
+
+[26230.9s] SKIP  cv/main/image_mil/fold1
+
+[26230.9s] SKIP  cv/main/image_mil/fold2
+
+[26230.9s] SKIP  cv/main/image_mil/fold3
+
+[26230.9s] SKIP  cv/main/image_mil/fold4
+
+[26231.0s] image_mil: pooled OOF ROC-AUC 0.9321 | per-fold mean 0.9360 +/- 0.0023
+
+[26231.8s] calibration: T = 2.3135 | thresholds {'raw': 0.5, 'youden': 0.5423, 'sens90': 0.5035}
+
+
+
+==============================================================================
+
+SINGLE-SHOT TEST EVALUATION  |  image_mil
+
+==============================================================================
+
+[26232.4s] main/image_mil/final: 24,098,754 parameters
+
+[26232.4s] --- main/image_mil/final stage 1 (lr=1.0e-03, <=10 epochs, patience 3) ---
+
+[26275.0s]   s1 e00  loss 1.0400 | val roc_auc 0.6787 | best 0.6787  *
+
+[26318.4s]   s1 e01  loss 0.9562 | val roc_auc 0.6939 | best 0.6939  *
+
+[26362.0s]   s1 e02  loss 0.9187 | val roc_auc 0.6922 | best 0.6939
+
+[26405.0s]   s1 e03  loss 0.9042 | val roc_auc 0.7031 | best 0.7031  *
+
+[26448.2s]   s1 e04  loss 0.9067 | val roc_auc 0.7036 | best 0.7036  *
+
+[26491.1s]   s1 e05  loss 0.8788 | val roc_auc 0.7052 | best 0.7052  *
+
+[26535.0s]   s1 e06  loss 0.8837 | val roc_auc 0.7078 | best 0.7078  *
+
+[26579.1s]   s1 e07  loss 0.8588 | val roc_auc 0.7127 | best 0.7127  *
+
+[26622.5s]   s1 e08  loss 0.8498 | val roc_auc 0.7088 | best 0.7127
+
+[26665.6s]   s1 e09  loss 0.8755 | val roc_auc 0.7050 | best 0.7127
+
+[26665.8s] --- main/image_mil/final stage 2 (lr=1.0e-04, <=15 epochs, patience 4) ---
+
+[26712.8s]   s2 e00  loss 0.9628 | val roc_auc 0.8926 | best 0.8926  *
+
+[26760.5s]   s2 e01  loss 0.7103 | val roc_auc 0.9188 | best 0.9188  *
+
+[26808.5s]   s2 e02  loss 0.6197 | val roc_auc 0.9362 | best 0.9362  *
+
+[26855.7s]   s2 e03  loss 0.5716 | val roc_auc 0.9432 | best 0.9432  *
+
+[26903.3s]   s2 e04  loss 0.5583 | val roc_auc 0.9336 | best 0.9432
+
+[26950.6s]   s2 e05  loss 0.4896 | val roc_auc 0.9388 | best 0.9432
+
+[26997.9s]   s2 e06  loss 0.4536 | val roc_auc 0.9322 | best 0.9432
+
+[27045.7s]   s2 e07  loss 0.4218 | val roc_auc 0.9344 | best 0.9432
+
+[27046.2s]   early stop after 4 epochs without improvement
+
+[27046.5s] main/image_mil/final: finished. best val roc_auc = 0.9432 (stage 2, epoch 3)
+
+[27046.5s] final predictor: refit over 1 checkpoint(s)
+
+[27061.0s] image_mil test ROC-AUC = 0.9231  (PR-AUC 0.9012, F1@0.5 0.8447)
+
+[27061.0s] 
+
+== calibration (image_mil) ==
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.120811 0.127016    0.195438       0.119452
+
+Dev (OOF) After temp. scaling (T=2.313) 0.125525 0.113811    0.238556       0.193720
+
+ Test set            Temp. scaling only 0.103254 0.126674    0.353573       0.225849
+
+ Test set      + Prior-shift correction 0.226022 0.186937    0.534603       0.111406
+
+
+
+==============================================================================
+
+ROBUSTNESS AND COUNTERFACTUAL SUITE
+
+==============================================================================
+
+
+
+==============================================================================
+
+SHORTCUT SENSITIVITY (within-patient mask permutation)
+
+==============================================================================
+
+[27061.1s]   707/739 test patients have more than one frame
+
+[27078.7s]   rcaf           0.9865 -> 0.9868  (delta +0.0003)
+
+[27099.1s]   mr_mil         0.9427 -> 0.8977  (delta -0.0450)
+
+[27119.1s]   der_mil        0.9371 -> 0.8976  (delta -0.0394)
+
+[27136.6s]   lesion_mil     0.9540 -> 0.9297  (delta -0.0243)
+
+[27153.9s]   image_mil      0.9203 -> 0.9203  (delta +0.0000)
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  rcaf
+
+==============================================================================
+
+[27163.2s]   clean      ROC-AUC 0.9869  (delta +0.0000)
+
+[27172.5s]   dilate5    ROC-AUC 0.9853  (delta -0.0016)
+
+[27181.6s]   erode5     ROC-AUC 0.9872  (delta +0.0003)
+
+[27190.9s]   erode15    ROC-AUC 0.8072  (delta -0.1797)
+
+[27200.4s]   dilate15   ROC-AUC 0.9603  (delta -0.0265)
+
+[27209.8s]   zeros      ROC-AUC 0.5137  (delta -0.4732)
+
+[27244.8s] permutation invariance rcaf: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  rcaf
+
+==============================================================================
+
+[27267.4s]   drop highest_attention        mean |dp| = 0.0769 | ROC-AUC after = 0.9724
+
+[27281.7s]   drop lowest_attention         mean |dp| = 0.0360 | ROC-AUC after = 0.9853
+
+[27295.1s]   drop random                   mean |dp| = 0.0523 | ROC-AUC after = 0.9775
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  mr_mil
+
+==============================================================================
+
+[27305.0s]   clean      ROC-AUC 0.9422  (delta +0.0000)
+
+[27314.8s]   dilate5    ROC-AUC 0.9415  (delta -0.0007)
+
+[27324.8s]   erode5     ROC-AUC 0.9422  (delta +0.0000)
+
+[27334.9s]   erode15    ROC-AUC 0.8919  (delta -0.0502)
+
+[27345.5s]   dilate15   ROC-AUC 0.9278  (delta -0.0144)
+
+[27355.1s]   zeros      ROC-AUC 0.5000  (delta -0.4422)
+
+[27394.9s] permutation invariance mr_mil: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  mr_mil
+
+==============================================================================
+
+[27420.3s]   drop highest_reliability      mean |dp| = 0.0913 | ROC-AUC after = 0.9174
+
+[27435.5s]   drop lowest_reliability       mean |dp| = 0.0656 | ROC-AUC after = 0.9257
+
+[27450.8s]   drop random                   mean |dp| = 0.0725 | ROC-AUC after = 0.9229
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  der_mil
+
+==============================================================================
+
+[27461.3s]   clean      ROC-AUC 0.9387  (delta +0.0000)
+
+[27471.8s]   dilate5    ROC-AUC 0.9373  (delta -0.0014)
+
+[27482.5s]   erode5     ROC-AUC 0.9397  (delta +0.0010)
+
+[27493.5s]   erode15    ROC-AUC 0.9091  (delta -0.0296)
+
+[27504.6s]   dilate15   ROC-AUC 0.9189  (delta -0.0198)
+
+[27514.4s]   zeros      ROC-AUC 0.5000  (delta -0.4387)
+
+[27555.7s] permutation invariance der_mil: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  der_mil
+
+==============================================================================
+
+[27583.0s]   drop highest_reliability      mean |dp| = 0.0685 | ROC-AUC after = 0.9339
+
+[27600.2s]   drop lowest_reliability       mean |dp| = 0.1108 | ROC-AUC after = 0.9193
+
+[27615.4s]   drop random                   mean |dp| = 0.0786 | ROC-AUC after = 0.9161
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  lesion_mil
+
+==============================================================================
+
+[27624.4s]   clean      ROC-AUC 0.9554  (delta +0.0000)
+
+[27633.3s]   dilate5    ROC-AUC 0.9569  (delta +0.0014)
+
+[27642.2s]   erode5     ROC-AUC 0.9476  (delta -0.0078)
+
+[27651.6s]   erode15    ROC-AUC 0.7928  (delta -0.1626)
+
+[27660.8s]   dilate15   ROC-AUC 0.9193  (delta -0.0362)
+
+[27669.8s]   zeros      ROC-AUC 0.6957  (delta -0.2597)
+
+[27703.9s] permutation invariance lesion_mil: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  lesion_mil
+
+==============================================================================
+
+[27725.7s]   drop highest_attention        mean |dp| = 0.0753 | ROC-AUC after = 0.9451
+
+[27738.9s]   drop lowest_attention         mean |dp| = 0.0427 | ROC-AUC after = 0.9482
+
+[27752.1s]   drop random                   mean |dp| = 0.0573 | ROC-AUC after = 0.9526
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  image_mil
+
+==============================================================================
+
+[27760.7s]   clean      ROC-AUC 0.9231  (delta +0.0000)
+
+[27769.4s]   dilate5    ROC-AUC 0.9231  (delta +0.0000)
+
+[27778.1s]   erode5     ROC-AUC 0.9231  (delta +0.0000)
+
+[27787.0s]   erode15    ROC-AUC 0.9231  (delta +0.0000)
+
+[27796.1s]   dilate15   ROC-AUC 0.9231  (delta +0.0000)
+
+[27805.1s]   zeros      ROC-AUC 0.9231  (delta +0.0000)
+
+[27838.5s] permutation invariance image_mil: mean |dp| = 8.32e-08, max = 1.76e-04
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  image_mil
+
+==============================================================================
+
+[27860.2s]   drop highest_attention        mean |dp| = 0.0845 | ROC-AUC after = 0.9053
+
+[27874.4s]   drop lowest_attention         mean |dp| = 0.0478 | ROC-AUC after = 0.9019
+
+[27887.9s]   drop random                   mean |dp| = 0.0641 | ROC-AUC after = 0.9061
+
+
+
+==============================================================================
+
+FRAME CORRUPTION ROBUSTNESS
+
+==============================================================================
+
+[27906.1s]   rcaf           blur       sev 0.5  ROC-AUC 0.9862 (-0.0002)
+
+[27915.8s]   rcaf           blur       sev 1.0  ROC-AUC 0.9858 (-0.0007)
+
+[27926.3s]   rcaf           noise      sev 0.5  ROC-AUC 0.9821 (-0.0043)
+
+[27936.6s]   rcaf           noise      sev 1.0  ROC-AUC 0.9826 (-0.0039)
+
+[27945.7s]   rcaf           contrast   sev 0.5  ROC-AUC 0.9869 (+0.0005)
+
+[27955.1s]   rcaf           contrast   sev 1.0  ROC-AUC 0.9864 (-0.0000)
+
+[27964.3s]   rcaf           occlusion  sev 0.5  ROC-AUC 0.9855 (-0.0010)
+
+[27973.4s]   rcaf           occlusion  sev 1.0  ROC-AUC 0.9860 (-0.0005)
+
+[27982.5s]   rcaf           downres    sev 0.5  ROC-AUC 0.9843 (-0.0021)
+
+[27991.7s]   rcaf           downres    sev 1.0  ROC-AUC 0.9838 (-0.0026)
+
+[28012.5s]   mr_mil         blur       sev 0.5  ROC-AUC 0.9335 (-0.0092)
+
+[28023.0s]   mr_mil         blur       sev 1.0  ROC-AUC 0.9271 (-0.0156)
+
+[28034.8s]   mr_mil         noise      sev 0.5  ROC-AUC 0.9380 (-0.0047)
+
+[28046.5s]   mr_mil         noise      sev 1.0  ROC-AUC 0.9350 (-0.0076)
+
+[28056.9s]   mr_mil         contrast   sev 0.5  ROC-AUC 0.9435 (+0.0008)
+
+[28067.3s]   mr_mil         contrast   sev 1.0  ROC-AUC 0.9394 (-0.0033)
+
+[28077.6s]   mr_mil         occlusion  sev 0.5  ROC-AUC 0.9377 (-0.0050)
+
+[28088.1s]   mr_mil         occlusion  sev 1.0  ROC-AUC 0.9248 (-0.0179)
+
+[28098.6s]   mr_mil         downres    sev 0.5  ROC-AUC 0.9274 (-0.0152)
+
+[28109.0s]   mr_mil         downres    sev 1.0  ROC-AUC 0.9296 (-0.0131)
+
+[28130.3s]   der_mil        blur       sev 0.5  ROC-AUC 0.9299 (-0.0072)
+
+[28141.0s]   der_mil        blur       sev 1.0  ROC-AUC 0.9239 (-0.0132)
+
+[28153.1s]   der_mil        noise      sev 0.5  ROC-AUC 0.9294 (-0.0077)
+
+[28165.1s]   der_mil        noise      sev 1.0  ROC-AUC 0.9276 (-0.0095)
+
+[28175.9s]   der_mil        contrast   sev 0.5  ROC-AUC 0.9383 (+0.0012)
+
+[28186.5s]   der_mil        contrast   sev 1.0  ROC-AUC 0.9323 (-0.0048)
+
+[28197.0s]   der_mil        occlusion  sev 0.5  ROC-AUC 0.9304 (-0.0067)
+
+[28207.8s]   der_mil        occlusion  sev 1.0  ROC-AUC 0.9146 (-0.0224)
+
+[28218.4s]   der_mil        downres    sev 0.5  ROC-AUC 0.9203 (-0.0168)
+
+[28228.9s]   der_mil        downres    sev 1.0  ROC-AUC 0.9213 (-0.0158)
+
+[28246.4s]   lesion_mil     blur       sev 0.5  ROC-AUC 0.9472 (-0.0068)
+
+[28255.2s]   lesion_mil     blur       sev 1.0  ROC-AUC 0.9456 (-0.0084)
+
+[28265.2s]   lesion_mil     noise      sev 0.5  ROC-AUC 0.9465 (-0.0076)
+
+[28275.3s]   lesion_mil     noise      sev 1.0  ROC-AUC 0.9457 (-0.0083)
+
+[28284.0s]   lesion_mil     contrast   sev 0.5  ROC-AUC 0.9518 (-0.0022)
+
+[28292.8s]   lesion_mil     contrast   sev 1.0  ROC-AUC 0.9457 (-0.0083)
+
+[28301.7s]   lesion_mil     occlusion  sev 0.5  ROC-AUC 0.9509 (-0.0031)
+
+[28310.4s]   lesion_mil     occlusion  sev 1.0  ROC-AUC 0.9462 (-0.0078)
+
+[28319.2s]   lesion_mil     downres    sev 0.5  ROC-AUC 0.9440 (-0.0100)
+
+[28328.1s]   lesion_mil     downres    sev 1.0  ROC-AUC 0.9434 (-0.0106)
+
+[28345.3s]   image_mil      blur       sev 0.5  ROC-AUC 0.9176 (-0.0028)
+
+[28354.0s]   image_mil      blur       sev 1.0  ROC-AUC 0.9157 (-0.0046)
+
+[28364.0s]   image_mil      noise      sev 0.5  ROC-AUC 0.9144 (-0.0060)
+
+[28374.0s]   image_mil      noise      sev 1.0  ROC-AUC 0.9116 (-0.0087)
+
+[28382.8s]   image_mil      contrast   sev 0.5  ROC-AUC 0.9208 (+0.0005)
+
+[28391.6s]   image_mil      contrast   sev 1.0  ROC-AUC 0.9131 (-0.0072)
+
+[28400.3s]   image_mil      occlusion  sev 0.5  ROC-AUC 0.9171 (-0.0033)
+
+[28409.1s]   image_mil      occlusion  sev 1.0  ROC-AUC 0.9061 (-0.0143)
+
+[28418.0s]   image_mil      downres    sev 0.5  ROC-AUC 0.9117 (-0.0086)
+
+[28427.1s]   image_mil      downres    sev 1.0  ROC-AUC 0.9084 (-0.0119)
+
+
+
+==============================================================================
+
+EVIDENCE ABLATION (pixel level)  |  der_mil
+
+==============================================================================
+
+[28448.5s]   suppress core     ROC-AUC 0.5000 (-0.4387) | mean |dp| 0.3815
+
+[28459.3s]   suppress margin   ROC-AUC 0.9387 (+0.0000) | mean |dp| 0.0000
+
+[28469.8s]   suppress peri     ROC-AUC 0.9387 (+0.0000) | mean |dp| 0.0000
+
+[28480.2s]   suppress global   ROC-AUC 0.9387 (-0.0000) | mean |dp| 0.0000
+
+
+
+==============================================================================
+
+RELIABILITY RESPONSE TO A CORRUPTED VIEW  |  der_mil
+
+==============================================================================
+
+[28501.3s]   severity                               1.00000
+
+[28501.3s]   reliability_frame0_clean               0.60649
+
+[28501.3s]   reliability_frame0_corrupted           0.60650
+
+[28501.3s]   reliability_others_clean               0.12915
+
+[28501.3s]   reliability_others_corrupted           0.12915
+
+[28501.3s]   reliability_drop_on_corrupted          -0.00001
+
+[28501.3s]   reliability_drop_on_clean_peers        0.00000
+
+[28501.3s]   uncertainty_frame0_clean               0.25186
+
+[28501.3s]   uncertainty_frame0_corrupted           0.25188
+
+[28501.3s]   uncertainty_rise_on_corrupted          0.00002
+
+[28501.3s]   attention_frame0_clean                 0.38104
+
+[28501.3s]   attention_frame0_corrupted             0.36290
+
+
+
+==============================================================================
+
+RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  der_mil
+
+==============================================================================
+
+[28593.8s]   mean_within_patient_spearman           0.6653
+
+[28593.8s]   median_within_patient_spearman         0.6741
+
+[28593.8s]   frac_positive_spearman                 1.0000
+
+[28593.8s]   mean_within_patient_kendall            0.5365
+
+[28593.8s]   ttest_t                                116.5980
+
+[28593.8s]   ttest_p                                0.0000
+
+[28604.5s]   strongest agreement cases:
+
+[28604.5s]    patient_id  label         p   support  contradiction  correct
+
+0    00000722      0  0.139279  0.000002       0.746472        1
+
+1    00000694      1  0.608710  0.000002       0.746472        1
+
+2    00000135      1  0.284377  0.000002       0.746472        0
+
+3    00002956      0  0.000741  0.000002       0.746472        1
+
+4    00002965      0  0.061763  0.000002       0.746472        1
+
+5    00001481      0  0.247805  0.000002       0.746472        1
+
+6    00001211      1  0.997868  0.000002       0.746472        1
+
+7    00002188      1  0.999709  0.000002       0.746472        1
+
+8    00002004      0  0.000605  0.000002       0.746472        1
+
+9    00003504      0  0.000161  0.000002       0.746472        1
+
+10   00002223      0  0.002252  0.000002       0.746472        1
+
+11   00003099      0  0.159741  0.000002       0.746472        1
+
+[28604.5s]   strongest contradiction cases:
+
+[28604.5s]     patient_id  label         p   support  contradiction  correct
+
+695   00002751      1  0.003594  0.000001       0.746776        0
+
+696   00002752      0  0.001320  0.000001       0.746776        1
+
+697   00002107      1  0.203233  0.000001       0.746776        0
+
+698   00000304      1  0.988799  0.000001       0.746776        1
+
+699   00002426      1  0.443902  0.000001       0.746776        0
+
+700   00004758      0  0.554531  0.000001       0.746776        0
+
+701   00003602      0  0.000735  0.000001       0.746776        1
+
+702   00000454      1  0.553354  0.000001       0.746796        1
+
+703   00003613      1  0.004755  0.000001       0.746836        0
+
+704   00000126      1  0.827410  0.000001       0.746877        1
+
+705   00004724      1  0.005934  0.000001       0.746957        0
+
+706   00002832      1  0.092524  0.000001       0.746957        0
+
+[28604.5s]   accuracy | high agreement 0.906 (n=351) vs low agreement 0.772 (n=356)
+
+
+
+==============================================================================
+
+TABLES
+
+==============================================================================
+
+[28604.7s] 
+
+== development_comparison ==
+
+     model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n
+
+      rcaf        0.991198           0.992430          0.001955 0.980158     0.952109     0.968914   0.915570 0.933482 0.028620 3354
+
+lesion_mil        0.944968           0.946862          0.002867 0.870798     0.883694     0.865563   0.699458 0.780856 0.098502 3354
+
+ image_mil        0.932090           0.936018          0.002348 0.818621     0.901938     0.815906   0.634322 0.744821 0.127016 3354
+
+    mr_mil        0.928661           0.935177          0.002309 0.808041     0.850627     0.868389   0.695896 0.765521 0.110152 3354
+
+   der_mil        0.927960           0.937455          0.003028 0.818030     0.819840     0.878078   0.704212 0.757640 0.104403 3354
+
+[28636.1s] 
+
+== test_comparison ==
+
+     model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci
+
+      rcaf 0.986863 0.988544        0.5     0.883853     0.989637   0.987342 0.932735  0.939107 312 382   4  41 0.046508 739    0.477673 [0.979, 0.993] [0.983, 0.994] [0.847, 0.915] [0.979, 0.997] [0.975, 0.997] [0.912, 0.950]
+
+lesion_mil 0.955437 0.949788        0.5     0.886686     0.873057   0.864641 0.875524  0.879567 313 337  49  40 0.087030 739    0.477673 [0.942, 0.968] [0.933, 0.965] [0.856, 0.918] [0.837, 0.907] [0.834, 0.897] [0.852, 0.899]
+
+    mr_mil 0.942172 0.932569        0.5     0.838527     0.883420   0.868035 0.853026  0.861976 296 341  45  57 0.103669 739    0.477673 [0.926, 0.957] [0.912, 0.951] [0.799, 0.875] [0.850, 0.915] [0.836, 0.899] [0.826, 0.879]
+
+   der_mil 0.938719 0.930074        0.5     0.742210     0.930052   0.906574 0.816199  0.840325 262 359  27  91 0.121649 739    0.477673 [0.922, 0.954] [0.909, 0.949] [0.697, 0.788] [0.904, 0.953] [0.875, 0.937] [0.784, 0.846]
+
+ image_mil 0.923076 0.901246        0.5     0.932011     0.748705   0.772300 0.844673  0.836265 329 289  97  24 0.122849 739    0.477673 [0.904, 0.941] [0.872, 0.929] [0.904, 0.958] [0.705, 0.793] [0.742, 0.805] [0.821, 0.868]
+
+[28652.9s] 
+
+== head_to_head ==
+
+  baseline  oof_auc_proposed  oof_auc_baseline  wilcoxon_W  wilcoxon_p   cohens_d  folds_won  boot_mean_diff            boot_ci  test_auc_proposed  test_auc_baseline  delong_z     delong_p
+
+      rcaf          0.937455          0.992430         0.0     1.00000 -26.651931        0.0       -0.063191 [-0.0726, -0.0548]           0.938719           0.986863 -5.794488 6.852977e-09
+
+    mr_mil          0.937455          0.935177        11.0     0.21875   0.502776        0.6       -0.000617  [-0.0086, 0.0070]           0.938719           0.942172 -0.741481 4.584021e-01
+
+lesion_mil          0.937455          0.946862         0.0     1.00000  -2.470858        0.0       -0.016884 [-0.0258, -0.0083]           0.938719           0.955437 -2.346849 1.893291e-02
+
+ image_mil          0.937455          0.936018         9.0     0.40625   0.329561        0.4       -0.004115  [-0.0115, 0.0038]           0.938719           0.923076  2.264414 2.354865e-02
+
+[28652.9s] 
+
+== thresholds_der_mil ==
+
+    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn
+
+          Raw @ 0.5   0.500000     0.742210     0.930052   0.906574 0.816199 0.938719 0.121649 262  27 359  91
+
+Calibrated @ youden   0.383859     0.804533     0.911917   0.893082 0.846498 0.938719 0.113017 284  34 352  69
+
+Calibrated @ sens90   0.281446     0.864023     0.873057   0.861582 0.862801 0.938719 0.113017 305  49 337  48
+
+Prior-shifted @ 0.5   0.500000     0.864023     0.873057   0.861582 0.862801 0.938719 0.097491 305  49 337  48
+
+
+
+==============================================================================
+
+SESSION SUMMARY
+
+==============================================================================
+
+elapsed        : 7.99 h of 8.5 h budget
+
+folds trained  : 25 this session
+
+stopped early  : False
+
+
+
+registry on exit:
+
+  [DONE] cf/cases/main/der_mil             2026-08-27 00:54:29
+
+  [DONE] cf/evidence/main/der_mil          2026-08-27 00:52:25
+
+  [DONE] cf/influence/main/der_mil         2026-08-27 00:54:18
+
+  [DONE] cv/main/der_mil/fold0             2026-08-26 19:44:12
+
+  [DONE] cv/main/der_mil/fold1             2026-08-26 20:00:22
+
+  [DONE] cv/main/der_mil/fold2             2026-08-26 20:14:11
+
+  [DONE] cv/main/der_mil/fold3             2026-08-26 20:30:12
+
+  [DONE] cv/main/der_mil/fold4             2026-08-26 20:47:58
+
+  [DONE] cv/main/image_mil/fold0           2026-08-26 22:11:45
+
+  [DONE] cv/main/image_mil/fold1           2026-08-26 22:26:46
+
+  [DONE] cv/main/image_mil/fold2           2026-08-26 22:41:40
+
+  [DONE] cv/main/image_mil/fold3           2026-08-26 22:59:48
+
+  [DONE] cv/main/image_mil/fold4           2026-08-26 23:15:48
+
+  [DONE] cv/main/lesion_mil/fold0          2026-08-26 21:02:38
+
+  [DONE] cv/main/lesion_mil/fold1          2026-08-26 21:16:32
+
+  [DONE] cv/main/lesion_mil/fold2          2026-08-26 21:28:34
+
+  [DONE] cv/main/lesion_mil/fold3          2026-08-26 21:42:21
+
+  [DONE] cv/main/lesion_mil/fold4          2026-08-26 21:56:14
+
+  [DONE] cv/main/mr_mil/fold0              2026-08-26 18:23:39
+
+  [DONE] cv/main/mr_mil/fold1              2026-08-26 18:40:30
+
+  [DONE] cv/main/mr_mil/fold2              2026-08-26 18:55:34
+
+  [DONE] cv/main/mr_mil/fold3              2026-08-26 19:08:32
+
+  [DONE] cv/main/mr_mil/fold4              2026-08-26 19:26:44
+
+  [DONE] cv/main/rcaf/fold0                2026-08-26 17:15:07
+
+  [DONE] cv/main/rcaf/fold1                2026-08-26 17:33:00
+
+  [DONE] cv/main/rcaf/fold2                2026-08-26 17:45:48
+
+  [DONE] cv/main/rcaf/fold3                2026-08-26 17:57:47
+
+  [DONE] cv/main/rcaf/fold4                2026-08-26 18:09:05
+
+  [DONE] data/cache/main                   2026-08-26 16:59:16
+
+  [DONE] data/thyroidxl/main               2026-08-26 16:58:05
+
+  [DONE] refit/main/der_mil                2026-08-27 00:01:35
+
+  [DONE] refit/main/image_mil              2026-08-27 00:28:31
+
+  [DONE] refit/main/lesion_mil             2026-08-27 00:14:40
+
+  [DONE] refit/main/mr_mil                 2026-08-26 23:42:40
+
+  [DONE] refit/main/rcaf                   2026-08-26 23:24:29
+
+  [DONE] robust/corrupt/main               2026-08-27 00:51:32
+
+  [DONE] robust/framedrop/main/der_mil     2026-08-27 00:38:00
+
+  [DONE] robust/framedrop/main/image_mil   2026-08-27 00:42:32
+
+  [DONE] robust/framedrop/main/lesion_mil  2026-08-27 00:40:17
+
+  [DONE] robust/framedrop/main/mr_mil      2026-08-27 00:35:15
+
+  [DONE] robust/framedrop/main/rcaf        2026-08-27 00:32:40
+
+  [DONE] robust/mask/main/der_mil          2026-08-27 00:36:19
+
+  [DONE] robust/mask/main/image_mil        2026-08-27 00:41:10
+
+  [DONE] robust/mask/main/lesion_mil       2026-08-27 00:38:54
+
+  [DONE] robust/mask/main/mr_mil           2026-08-27 00:33:40
+
+  [DONE] robust/mask/main/rcaf             2026-08-27 00:31:14
+
+  [DONE] robust/perm/main/der_mil          2026-08-27 00:37:00
+
+  [DONE] robust/perm/main/image_mil        2026-08-27 00:41:43
+
+  [DONE] robust/perm/main/lesion_mil       2026-08-27 00:39:29
+
+  [DONE] robust/perm/main/mr_mil           2026-08-27 00:34:20
+
+  [DONE] robust/perm/main/rcaf             2026-08-27 00:31:49
+
+  [DONE] robust/relresponse/main/der_mil   2026-08-27 00:52:46
+
+  [DONE] robust/shortcut/main              2026-08-27 00:30:19
+
+  [DONE] test/main/der_mil                 2026-08-27 00:01:51
+
+  [DONE] test/main/image_mil               2026-08-27 00:28:46
+
+  [DONE] test/main/lesion_mil              2026-08-27 00:14:56
+
+  [DONE] test/main/mr_mil                  2026-08-26 23:42:57
+
+  [DONE] test/main/rcaf                    2026-08-26 23:24:45
+
+
+
+folds still to do: 0
+
+
+
+>>> All folds complete. <<<
+
+
+
+output: 23520 files, 12.87 GB
+
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+
+[NbConvertApp] Converting notebook __script__.ipynb to html
+
+[NbConvertApp] Writing 439751 bytes to __results__.html

@@ -1,0 +1,184 @@
+[{"stream_name":"stdout","time":0.767664603,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":0.767755164,"data":"run parameters: {'DERMIL_INFLUENCE_PATIENTS': '700', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}\n"}
+,{"stream_name":"stderr","time":6.026753725,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":6.02680772,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":6.026814502,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":6.02682529,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":6.026829042,"data":"    \n"}
+,{"stream_name":"stderr","time":6.026832223,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":6.026835721,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":6.026839146,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":6.026842491,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":6.026846047,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":6.026849283,"data":"    \n"}
+,{"stream_name":"stderr","time":6.02685232,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":6.02702584,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":6.027037142,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":6.027042808,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":6.027047804,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":6.027052696,"data":"\n"}
+,{"stream_name":"stderr","time":6.027057143,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":6.028719934,"data":"installing PyTorch with sm_60 support ...\n"}
+,{"stream_name":"stdout","time":308.749606962,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":308.749680163,"data":"run parameters: {'DERMIL_INFLUENCE_PATIENTS': '700', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}\n"}
+,{"stream_name":"stdout","time":308.749685645,"data":"thyroid : /kaggle/input/datasets/safaaqaisi/thyroidxl\n"}
+,{"stream_name":"stdout","time":308.74968963,"data":"  der_mil   \u003c- /kaggle/input/notebooks/choudhary15/dermil-train/checkpoints/hires/der_mil\n"}
+,{"stream_name":"stdout","time":308.749693832,"data":"  mr_mil    \u003c- /kaggle/input/notebooks/choudhary15/dermil-train/checkpoints/hires/mr_mil\n"}
+,{"stream_name":"stdout","time":308.749697413,"data":"config: evidence_mode=masked_input regions=('core', 'margin', 'peri', 'global')\n"}
+,{"stream_name":"stdout","time":308.749701196,"data":"\n"}
+,{"stream_name":"stdout","time":308.749704623,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":308.749708423,"data":"BUILDING THYROIDXL PATIENT MANIFEST\n"}
+,{"stream_name":"stdout","time":308.749711941,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":308.75485802,"data":"[    4.0s] ThyroidXL adapter: root = /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL\n"}
+,{"stream_name":"stdout","time":308.800655931,"data":"[    4.0s] ThyroidXL adapter: 3354 train / 739 test patients, 4093 in id2info\n"}
+,{"stream_name":"stdout","time":319.737450333,"data":"[   15.0s] ThyroidXL adapter: 4093 patients, 11635 frames\n"}
+,{"stream_name":"stdout","time":319.743141995,"data":"[   15.0s] ThyroidXL adapter: Table 1 reproduced exactly (3354/739 patients, 9541/2094 images, 877/353 malignant, TIRADS match)\n"}
+,{"stream_name":"stdout","time":319.755466457,"data":"[   15.0s] label provenance:\n"}
+,{"stream_name":"stdout","time":319.755495806,"data":"split            conclusion_text    n         source\n"}
+,{"stream_name":"stdout","time":319.755503458,"data":"  dev              Benign (FNAC) 2397           FNAC\n"}
+,{"stream_name":"stdout","time":319.755509942,"data":"  dev    Benign (Histopathology)   80 histopathology\n"}
+,{"stream_name":"stdout","time":319.755515223,"data":"  dev           Malignant (FNAC)  366           FNAC\n"}
+,{"stream_name":"stdout","time":319.75552031,"data":"  dev Malignant (Histopathology)  511 histopathology\n"}
+,{"stream_name":"stdout","time":319.755525465,"data":" test              Benign (FNAC)  372           FNAC\n"}
+,{"stream_name":"stdout","time":319.755536805,"data":" test    Benign (Histopathology)   14 histopathology\n"}
+,{"stream_name":"stdout","time":319.755540571,"data":" test           Malignant (FNAC)  156           FNAC\n"}
+,{"stream_name":"stdout","time":319.75554458,"data":" test Malignant (Histopathology)  197 histopathology\n"}
+,{"stream_name":"stdout","time":319.76000315,"data":"[   15.0s] leakage check: OK -- 4093 unique patients, no split overlap\n"}
+,{"stream_name":"stdout","time":319.775087439,"data":"[   15.0s] folds:\n"}
+,{"stream_name":"stdout","time":319.775124468,"data":"      size      mean\n"}
+,{"stream_name":"stdout","time":319.775138107,"data":"fold                \n"}
+,{"stream_name":"stdout","time":319.775142321,"data":"0      671  0.260805\n"}
+,{"stream_name":"stdout","time":319.775145777,"data":"1      671  0.260805\n"}
+,{"stream_name":"stdout","time":319.775149259,"data":"2      671  0.262295\n"}
+,{"stream_name":"stdout","time":319.775152703,"data":"3      671  0.262295\n"}
+,{"stream_name":"stdout","time":319.775156156,"data":"4      670  0.261194\n"}
+,{"stream_name":"stdout","time":319.780531098,"data":"[   15.0s] split validation: OK (dev=3354, test=739, folds=5)\n"}
+,{"stream_name":"stdout","time":319.891845544,"data":"[   15.1s] split validation: OK (dev=3354, test=739, folds=5)\n"}
+,{"stream_name":"stdout","time":320.061657897,"data":"[   15.3s] mask coverage: {'frames': 11635, 'pixel_mask': 1.0, 'bbox_only': 0.0, 'no_mask': 0.0}\n"}
+,{"stream_name":"stdout","time":320.069420657,"data":"                                          Development set                     Test set\n"}
+,{"stream_name":"stdout","time":320.069446957,"data":"Number of patients                                   3354                          739\n"}
+,{"stream_name":"stdout","time":320.069451505,"data":"Number of images                                     9541                         2094\n"}
+,{"stream_name":"stdout","time":320.069455116,"data":"Frames per patient (min-max)                         1-10                          1-8\n"}
+,{"stream_name":"stdout","time":320.069458485,"data":"Mean frames per patient                              2.84                         2.83\n"}
+,{"stream_name":"stdout","time":320.069461697,"data":"Median frames per patient                               3                            3\n"}
+,{"stream_name":"stdout","time":320.069464857,"data":"Benign patients, n (%)                       2477 (73.9%)                  386 (52.2%)\n"}
+,{"stream_name":"stdout","time":320.069493399,"data":"Malignant patients, n (%)                     877 (26.1%)                  353 (47.8%)\n"}
+,{"stream_name":"stdout","time":320.069498179,"data":"TIRADS 1, n                                            24                            0\n"}
+,{"stream_name":"stdout","time":320.069502511,"data":"TIRADS 2, n                                           328                           45\n"}
+,{"stream_name":"stdout","time":320.069506689,"data":"TIRADS 3, n                                          1090                          182\n"}
+,{"stream_name":"stdout","time":320.069511338,"data":"TIRADS 4, n                                          1024                          215\n"}
+,{"stream_name":"stdout","time":320.069515621,"data":"TIRADS 5, n                                           888                          297\n"}
+,{"stream_name":"stdout","time":320.069519375,"data":"Mean age, years               48.2 +/- 12.7 (range 12-94)  47.6 +/- 12.8 (range 14-84)\n"}
+,{"stream_name":"stdout","time":320.069523054,"data":"\n"}
+,{"stream_name":"stdout","time":320.069526512,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":320.069530229,"data":"BUILDING RESIZE CACHE (224 px)\n"}
+,{"stream_name":"stdout","time":320.069533792,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":320.41884467,"data":"[   15.6s] resize cache: 23270 files total, 0 already cached, 23270 to build\n"}
+,{"stream_name":"stdout","time":326.15219402,"data":"[   21.4s]   cached 2000/23270\n"}
+,{"stream_name":"stdout","time":331.112458448,"data":"[   26.3s]   cached 4000/23270\n"}
+,{"stream_name":"stdout","time":336.182181047,"data":"[   31.4s]   cached 6000/23270\n"}
+,{"stream_name":"stdout","time":341.255542722,"data":"[   36.5s]   cached 8000/23270\n"}
+,{"stream_name":"stdout","time":346.629033182,"data":"[   41.8s]   cached 10000/23270\n"}
+,{"stream_name":"stdout","time":351.740466967,"data":"[   47.0s]   cached 12000/23270\n"}
+,{"stream_name":"stdout","time":356.71462174,"data":"[   51.9s]   cached 14000/23270\n"}
+,{"stream_name":"stdout","time":361.699162195,"data":"[   56.9s]   cached 16000/23270\n"}
+,{"stream_name":"stdout","time":366.746165918,"data":"[   62.0s]   cached 18000/23270\n"}
+,{"stream_name":"stdout","time":371.842567326,"data":"[   67.1s]   cached 20000/23270\n"}
+,{"stream_name":"stdout","time":377.153686425,"data":"[   72.4s]   cached 22000/23270\n"}
+,{"stream_name":"stdout","time":380.836426798,"data":"[   76.1s] resize cache: ready -- 23270 files, 1.1GB on disk\n"}
+,{"stream_name":"stdout","time":380.976642647,"data":"[   76.2s] cache verify: {'checked': 40, 'bad_shape': 0, 'bad_mask': 0}\n"}
+,{"stream_name":"stdout","time":381.040308274,"data":"\n"}
+,{"stream_name":"stdout","time":381.040344025,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":381.040355697,"data":"RELIABILITY vs COUNTERFACTUAL INFLUENCE  (corrected)\n"}
+,{"stream_name":"stdout","time":381.040359801,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":381.04081793,"data":"\n"}
+,{"stream_name":"stdout","time":381.040828028,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":381.040833393,"data":"RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  der_mil\n"}
+,{"stream_name":"stdout","time":381.040837876,"data":"==============================================================================\n"}
+,{"stream_name":"stderr","time":381.497371705,"data":"Downloading: \"https://download.pytorch.org/models/resnet50-0676ba61.pth\" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth\n"}
+,{"stream_name":"stderr","time":382.199376518,"data":"\r  0%|          | 0.00/97.8M [00:00\u003c?, ?B/s]\r 12%|█▏        | 11.5M/97.8M [00:00\u003c00:00, 120MB/s]\r 28%|██▊       | 27.6M/97.8M [00:00\u003c00:00, 149MB/s]\r 45%|████▍     | 43.9M/97.8M [00:00\u003c00:00, 158MB/s]\r 61%|██████    | 59.9M/97.8M [00:00\u003c00:00, 162MB/s]\r 78%|███████▊  | 76.2M/97.8M [00:00\u003c00:00, 165MB/s]\r 95%|█████████▍| 92.9M/97.8M [00:00\u003c00:00, 168MB/s]\r100%|██████████| 97.8M/97.8M [00:00\u003c00:00, 164MB/s]\n"}
+,{"stream_name":"stdout","time":916.413486209,"data":"[  611.6s]   CROSS-VIEW  (per region, across frames; bags with \u003e= 3 frames)\n"}
+,{"stream_name":"stdout","time":916.413540686,"data":"[  611.6s]     patients 383 | correlations 1529\n"}
+,{"stream_name":"stdout","time":916.413547409,"data":"[  611.6s]     mean rho +0.0507 | median +0.2000 | frac positive 0.526 | p 0.0046\n"}
+,{"stream_name":"stdout","time":916.413552188,"data":"[  611.6s]       core     n= 383  mean rho -0.4137  frac+ 0.235\n"}
+,{"stream_name":"stdout","time":916.413556866,"data":"[  611.6s]       global   n= 380  mean rho +0.0827  frac+ 0.537\n"}
+,{"stream_name":"stdout","time":916.413566566,"data":"[  611.6s]       margin   n= 383  mean rho +0.3341  frac+ 0.697\n"}
+,{"stream_name":"stdout","time":916.413570015,"data":"[  611.6s]       peri     n= 383  mean rho +0.2001  frac+ 0.637\n"}
+,{"stream_name":"stdout","time":916.413572993,"data":"[  611.6s]   REGION PROFILE  (is influence merely a property of the region?)\n"}
+,{"stream_name":"stdout","time":916.413576169,"data":"[  611.6s]       core     mean R 0.2452  mean |dp| 0.01739\n"}
+,{"stream_name":"stdout","time":916.413579253,"data":"[  611.6s]       global   mean R 0.5684  mean |dp| 0.00039\n"}
+,{"stream_name":"stdout","time":916.413582462,"data":"[  611.6s]       margin   mean R 0.2169  mean |dp| 0.01588\n"}
+,{"stream_name":"stdout","time":916.413585468,"data":"[  611.6s]       peri     mean R 0.5681  mean |dp| 0.00055\n"}
+,{"stream_name":"stdout","time":916.413588393,"data":"[  611.6s]   POOLED TOKENS  (legacy, region-confounded)\n"}
+,{"stream_name":"stdout","time":916.413591333,"data":"[  611.6s]     mean rho -0.7580 | frac positive 0.000 | n 700\n"}
+,{"stream_name":"stdout","time":916.413594576,"data":"[  611.6s]   raw tokens -\u003e /kaggle/working/results/hires/der_mil/reliability_influence_tokens.csv (7936 rows)\n"}
+,{"stream_name":"stdout","time":916.43163496,"data":"\n"}
+,{"stream_name":"stdout","time":916.431680052,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":916.431686128,"data":"RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  mr_mil\n"}
+,{"stream_name":"stdout","time":916.431691486,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1429.949420072,"data":"[ 1125.2s]   CROSS-VIEW  (per region, across frames; bags with \u003e= 3 frames)\n"}
+,{"stream_name":"stdout","time":1429.949461291,"data":"[ 1125.2s]     patients 383 | correlations 1532\n"}
+,{"stream_name":"stdout","time":1429.949468079,"data":"[ 1125.2s]     mean rho +0.0102 | median +0.2000 | frac positive 0.505 | p 0.58\n"}
+,{"stream_name":"stdout","time":1429.949473424,"data":"[ 1125.2s]       core     n= 383  mean rho -0.2492  frac+ 0.345\n"}
+,{"stream_name":"stdout","time":1429.949478684,"data":"[ 1125.2s]       global   n= 383  mean rho +0.1885  frac+ 0.611\n"}
+,{"stream_name":"stdout","time":1429.949495709,"data":"[ 1125.2s]       margin   n= 383  mean rho +0.1046  frac+ 0.574\n"}
+,{"stream_name":"stdout","time":1429.949499761,"data":"[ 1125.2s]       peri     n= 383  mean rho -0.0033  frac+ 0.491\n"}
+,{"stream_name":"stdout","time":1429.949503271,"data":"[ 1125.2s]   REGION PROFILE  (is influence merely a property of the region?)\n"}
+,{"stream_name":"stdout","time":1429.949507001,"data":"[ 1125.2s]       core     mean R 0.5647  mean |dp| 0.01252\n"}
+,{"stream_name":"stdout","time":1429.94951099,"data":"[ 1125.2s]       global   mean R 0.3762  mean |dp| 0.00018\n"}
+,{"stream_name":"stdout","time":1429.94951515,"data":"[ 1125.2s]       margin   mean R 0.5498  mean |dp| 0.01242\n"}
+,{"stream_name":"stdout","time":1429.949518928,"data":"[ 1125.2s]       peri     mean R 0.5116  mean |dp| 0.00914\n"}
+,{"stream_name":"stdout","time":1429.949523267,"data":"[ 1125.2s]   POOLED TOKENS  (legacy, region-confounded)\n"}
+,{"stream_name":"stdout","time":1429.949527413,"data":"[ 1125.2s]     mean rho +0.6621 | frac positive 0.999 | n 700\n"}
+,{"stream_name":"stdout","time":1429.949531576,"data":"[ 1125.2s]   raw tokens -\u003e /kaggle/working/results/hires/mr_mil/reliability_influence_tokens.csv (7936 rows)\n"}
+,{"stream_name":"stdout","time":1429.999082266,"data":"\n"}
+,{"stream_name":"stdout","time":1429.999109243,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1429.99911406,"data":"VERDICT\n"}
+,{"stream_name":"stdout","time":1429.999118135,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1430.000012926,"data":"model       cross-rho      frac+        n          p   pooled-rho (old, confounded)\n"}
+,{"stream_name":"stdout","time":1430.00003165,"data":"der_mil        0.0507      0.526     1529     0.0046   -0.7580\n"}
+,{"stream_name":"stdout","time":1430.000036543,"data":"mr_mil         0.0102      0.505     1532       0.58   0.6621\n"}
+,{"stream_name":"stdout","time":1430.000041082,"data":"\n"}
+,{"stream_name":"stdout","time":1430.000045287,"data":"region profile (is influence merely a property of the region?)\n"}
+,{"stream_name":"stdout","time":1430.000049749,"data":"  der_mil    core     mean R 0.2452  mean |dp| 0.01739\n"}
+,{"stream_name":"stdout","time":1430.000054095,"data":"  der_mil    global   mean R 0.5684  mean |dp| 0.00039\n"}
+,{"stream_name":"stdout","time":1430.00005808,"data":"  der_mil    margin   mean R 0.2169  mean |dp| 0.01588\n"}
+,{"stream_name":"stdout","time":1430.000062169,"data":"  der_mil    peri     mean R 0.5681  mean |dp| 0.00055\n"}
+,{"stream_name":"stdout","time":1430.000066113,"data":"  mr_mil     core     mean R 0.5647  mean |dp| 0.01252\n"}
+,{"stream_name":"stdout","time":1430.000070258,"data":"  mr_mil     global   mean R 0.3762  mean |dp| 0.00018\n"}
+,{"stream_name":"stdout","time":1430.000074032,"data":"  mr_mil     margin   mean R 0.5498  mean |dp| 0.01242\n"}
+,{"stream_name":"stdout","time":1430.000077848,"data":"  mr_mil     peri     mean R 0.5116  mean |dp| 0.00914\n"}
+,{"stream_name":"stdout","time":1430.000082351,"data":"\n"}
+,{"stream_name":"stdout","time":1430.000086507,"data":"How to read this\n"}
+,{"stream_name":"stdout","time":1430.00009086,"data":"----------------\n"}
+,{"stream_name":"stdout","time":1430.000094864,"data":"cross-rho \u003e 0 with p \u003c 0.05 and frac+ well above 0.5\n"}
+,{"stream_name":"stdout","time":1430.000100037,"data":"    reliability predicts influence across views. DER-MIL's central claim holds\n"}
+,{"stream_name":"stdout","time":1430.000105083,"data":"    and DER-MIL is the proposed model; MR-MIL is its ablation.\n"}
+,{"stream_name":"stdout","time":1430.000118864,"data":"\n"}
+,{"stream_name":"stdout","time":1430.000122644,"data":"cross-rho ~ 0\n"}
+,{"stream_name":"stdout","time":1430.000126413,"data":"    the mechanism does not order evidence usefully. MR-MIL becomes the honest\n"}
+,{"stream_name":"stdout","time":1430.000130622,"data":"    proposal and the reliability head becomes a reported negative result.\n"}
+,{"stream_name":"stdout","time":1430.000133984,"data":"\n"}
+,{"stream_name":"stdout","time":1430.000137349,"data":"cross-rho \u003c 0\n"}
+,{"stream_name":"stdout","time":1430.000140698,"data":"    the mechanism is inverted. Worth one look at the reliability head's sign\n"}
+,{"stream_name":"stdout","time":1430.000145132,"data":"    before concluding, then report as a negative result.\n"}
+,{"stream_name":"stdout","time":1430.000149345,"data":"\n"}
+,{"stream_name":"stdout","time":1430.00015292,"data":"If the region profile shows high mean R where mean |dp| is near zero, that also\n"}
+,{"stream_name":"stdout","time":1430.000157228,"data":"confirms the old -0.75 was the region confound rather than a model failure.\n"}
+,{"stream_name":"stdout","time":1430.000161928,"data":"\n"}
+,{"stream_name":"stdout","time":1430.000165804,"data":"\n"}
+,{"stream_name":"stdout","time":1430.000169117,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1430.000173053,"data":"DONE in 21.2 min\n"}
+,{"stream_name":"stdout","time":1430.000177069,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1430.000448467,"data":"registry:\n"}
+,{"stream_name":"stdout","time":1430.000460536,"data":"  [DONE] cf/influence/hires/der_mil  2026-08-30 15:59:21\n"}
+,{"stream_name":"stdout","time":1430.000464418,"data":"  [DONE] cf/influence/hires/mr_mil   2026-08-30 16:07:55\n"}
+,{"stream_name":"stdout","time":1430.000467562,"data":"  [DONE] data/cache/hires            2026-08-30 15:50:26\n"}
+,{"stream_name":"stdout","time":1430.000471482,"data":"  [DONE] data/thyroidxl/hires        2026-08-30 15:49:24\n"}
+,{"stream_name":"stderr","time":1433.548907401,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1433.548945669,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1433.753694589,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1433.753728533,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1434.366582364,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1435.546821776,"data":"[NbConvertApp] Writing 445801 bytes to __results__.html\n"}
+]

@@ -1,0 +1,2 @@
+model,mask_type,n_eval,roc_auc,roc_auc_ci,pr_auc,pr_auc_ci,sensitivity,sensitivity_ci,specificity,specificity_ci,precision,precision_ci,f1,f1_ci
+der_mil,bbox,250,0.913984,[0.879-0.944],0.919415563893107,[0.887-0.947],0.992,[0.976-1.000],0.472,[0.392-0.560],0.6526315789473685,[0.621-0.694],0.7873015873015874,[0.760-0.818]

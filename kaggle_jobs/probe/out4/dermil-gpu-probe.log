@@ -1,0 +1,59 @@
+[{"stream_name":"stdout","time":6.127390735,"data":"preinstalled torch: 2.10.0+cu128\n"}
+,{"stream_name":"stderr","time":6.187213045,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":6.187262425,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":6.187268594,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":6.187272568,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":6.187276725,"data":"    \n"}
+,{"stream_name":"stderr","time":6.187280462,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":6.1872849,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":6.187289034,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":6.187294016,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":6.187306602,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":6.187310475,"data":"    \n"}
+,{"stream_name":"stderr","time":6.187313884,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":6.187506193,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":6.187526303,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":6.187529994,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":6.187533419,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":6.1875505,"data":"\n"}
+,{"stream_name":"stderr","time":6.187554909,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":6.188902387,"data":"device: Tesla P100-PCIE-16GB | sm_60 | 17.1 GB\n"}
+,{"stream_name":"stdout","time":6.188922726,"data":"torch supports: ['sm_70', 'sm_75', 'sm_80', 'sm_86', 'sm_90', 'sm_100', 'sm_120']\n"}
+,{"stream_name":"stdout","time":6.188926068,"data":"compatible: False\n"}
+,{"stream_name":"stdout","time":6.188928537,"data":"\n"}
+,{"stream_name":"stdout","time":6.188937097,"data":"=== installing a Pascal-compatible PyTorch (sm_60) ===\n"}
+,{"stream_name":"stdout","time":162.319555351,"data":"pip rc=0 in 2.6 min\n"}
+,{"stream_name":"stdout","time":162.319593774,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 780.4/780.4 MB 2.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319598789,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.3/7.3 MB 114.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319602211,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.7/23.7 MB 216.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319605541,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 823.6/823.6 kB 215.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319608798,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.1/14.1 MB 144.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319622756,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 2.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319625584,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 410.6/410.6 MB 84.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319628077,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.6/121.6 MB 145.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319630549,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.5/56.5 MB 174.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319633023,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 124.2/124.2 MB 144.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319635584,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.0/196.0 MB 101.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319638125,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 125.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.31964189,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.1/99.1 kB 121.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319644507,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.6/209.6 MB 7.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319646949,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 53.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":162.319649426,"data":"\n"}
+,{"stream_name":"stdout","time":162.319651632,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stdout","time":162.319654142,"data":"torchaudio 2.10.0+cu128 requires torch==2.10.0, but you have torch 2.5.1+cu121 which is incompatible.\n"}
+,{"stream_name":"stdout","time":162.319656467,"data":"\n"}
+,{"stream_name":"stdout","time":170.199016178,"data":"torch now: 2.5.1+cu121 | arch list: ['sm_50', 'sm_60', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'sm_90']\n"}
+,{"stream_name":"stdout","time":170.199089576,"data":"device: Tesla P100-PCIE-16GB sm_60\n"}
+,{"stream_name":"stdout","time":170.199095018,"data":"GPU COMPUTE OK: 20x 2048^2 matmul in 0.085s\n"}
+,{"stream_name":"stdout","time":170.199098272,"data":"RESNET50 TRAIN batch  24: 0.128s/step =   187 img/s | PEAK VRAM 1.53 GB\n"}
+,{"stream_name":"stdout","time":170.199101373,"data":"RESNET50 TRAIN batch  48: 0.204s/step =   235 img/s | PEAK VRAM 2.60 GB\n"}
+,{"stream_name":"stdout","time":170.199104565,"data":"\n"}
+,{"stream_name":"stdout","time":170.199107341,"data":"\n"}
+,{"stream_name":"stdout","time":170.199110548,"data":"total probe time: 2.8 min\n"}
+,{"stream_name":"stderr","time":173.587950261,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":173.587979138,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":173.802430615,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":173.802467975,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":174.406956814,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":175.560794035,"data":"[NbConvertApp] Writing 283722 bytes to __results__.html\n"}
+]

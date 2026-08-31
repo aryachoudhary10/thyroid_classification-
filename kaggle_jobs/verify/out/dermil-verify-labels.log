@@ -1,0 +1,100 @@
+[{"stream_name":"stdout","time":74.490049454,"data":"ThyroidXL root: /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL\n"}
+,{"stream_name":"stdout","time":74.490129099,"data":"TN5000    root: /kaggle/input/datasets/abdullahelafifi/main-data/Main data\n"}
+,{"stream_name":"stdout","time":74.490158694,"data":"\n"}
+,{"stream_name":"stdout","time":74.490163729,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.490168189,"data":"1. PATIENT LISTS\n"}
+,{"stream_name":"stdout","time":74.490172055,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.497430548,"data":"train patients: 3354 | test patients: 739\n"}
+,{"stream_name":"stdout","time":74.497886643,"data":"overlap (must be 0): 0\n"}
+,{"stream_name":"stdout","time":74.498052905,"data":"\n"}
+,{"stream_name":"stdout","time":74.498062905,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.498067381,"data":"2. id2info_eng.json STRUCTURE AND LABEL ENCODING\n"}
+,{"stream_name":"stdout","time":74.498071746,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.544412276,"data":"patients in id2info: 4093\n"}
+,{"stream_name":"stdout","time":74.545703003,"data":"covers all train+test: True | missing: 0\n"}
+,{"stream_name":"stdout","time":74.546742683,"data":"\n"}
+,{"stream_name":"stdout","time":74.546770877,"data":"'conclusion' code distribution: {1: 708, 2: 522, 3: 2769, 4: 94}\n"}
+,{"stream_name":"stdout","time":74.549236239,"data":"\n"}
+,{"stream_name":"stdout","time":74.549261004,"data":"code -\u003e Conclusion string:\n"}
+,{"stream_name":"stdout","time":74.551435029,"data":"   1     Malignant (Histopathology) - 1                  708\n"}
+,{"stream_name":"stdout","time":74.55146073,"data":"   2     Malignant (FNAC) - 2                            522\n"}
+,{"stream_name":"stdout","time":74.551466597,"data":"   3     Benign (FNAC) - 3                              2769\n"}
+,{"stream_name":"stdout","time":74.551470911,"data":"   4     Benign (Histopathology) - 4                      94\n"}
+,{"stream_name":"stdout","time":74.551980098,"data":"\n"}
+,{"stream_name":"stdout","time":74.55199314,"data":"patients with a second nodule: 0\n"}
+,{"stream_name":"stdout","time":74.55199756,"data":"\n"}
+,{"stream_name":"stdout","time":74.552001607,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.552006017,"data":"3. WHICH MAPPING REPRODUCES THE PAPER? (dev 877/3354, test 353/739)\n"}
+,{"stream_name":"stdout","time":74.552010175,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.552523876,"data":"candidate malignant code sets, evaluated against Table 1:\n"}
+,{"stream_name":"stdout","time":74.5525393,"data":"\n"}
+,{"stream_name":"stdout","time":74.557305829,"data":"   malignant = [1, 2]       dev  877 (26.1%)  test 353 (47.8%)  \u003c\u003c\u003c EXACT MATCH\n"}
+,{"stream_name":"stdout","time":74.566117516,"data":"\n"}
+,{"stream_name":"stdout","time":74.566169316,"data":"RESOLVED malignant code set: [1, 2]\n"}
+,{"stream_name":"stdout","time":74.566176144,"data":"\n"}
+,{"stream_name":"stdout","time":74.566179906,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.566184041,"data":"4. TIRADS DISTRIBUTION vs TABLE 1\n"}
+,{"stream_name":"stdout","time":74.566188065,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.566209655,"data":"paper dev : T1=24  T2=328 T3=1090 T4=1024 T5=888\n"}
+,{"stream_name":"stdout","time":74.566213427,"data":"paper test: T1=0   T2=45  T3=182  T4=215  T5=297\n"}
+,{"stream_name":"stdout","time":74.566217416,"data":"\n"}
+,{"stream_name":"stdout","time":74.568220181,"data":"dev   ours: {1: 24, 2: 328, 3: 1090, 4: 1024, 5: 888}\n"}
+,{"stream_name":"stdout","time":74.568723612,"data":"test  ours: {2: 45, 3: 182, 4: 215, 5: 297}\n"}
+,{"stream_name":"stdout","time":74.570971211,"data":"\n"}
+,{"stream_name":"stdout","time":74.571001933,"data":"age: n=4093 mean=64.9 min=12 max=2005   | gender codes: {2: 3650, 1: 443}\n"}
+,{"stream_name":"stdout","time":74.571015705,"data":"paper: mean age 48.1 +/- 12.7 (range 12-94), female 3650 (89.2%)\n"}
+,{"stream_name":"stdout","time":74.571020348,"data":"\n"}
+,{"stream_name":"stdout","time":74.571024654,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.571028671,"data":"5. FRAMES PER PATIENT vs TABLE 1 (dev mean 2.84, test 2.83, max 10)\n"}
+,{"stream_name":"stdout","time":74.571032769,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.598404183,"data":"dev   images=9541  patients=3354  mean=2.84  median=3  min=1  max=10\n"}
+,{"stream_name":"stdout","time":74.598443586,"data":"      patients whose id2info image list != files on disk: 0\n"}
+,{"stream_name":"stdout","time":74.604170331,"data":"test  images=2094  patients=739  mean=2.83  median=3  min=1  max=8\n"}
+,{"stream_name":"stdout","time":74.604205807,"data":"      patients whose id2info image list != files on disk: 0\n"}
+,{"stream_name":"stdout","time":74.604211037,"data":"\n"}
+,{"stream_name":"stdout","time":74.604214962,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":74.604218991,"data":"6. MASK PAIRING AND PIXEL VALUES\n"}
+,{"stream_name":"stdout","time":74.604223115,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":75.092268958,"data":"train images=9541 masks=9541  exact stem matches=9541  unmatched images=0\n"}
+,{"stream_name":"stdout","time":75.917851684,"data":"      mask unique values (60 sampled): [0, 255]\n"}
+,{"stream_name":"stdout","time":75.917893196,"data":"      lesion area fraction: mean 0.0675  min 0.0091  max 0.3886\n"}
+,{"stream_name":"stdout","time":75.917898814,"data":"      mask sizes: {(532, 727): 32, (541, 581): 7, (537, 647): 19, (432, 727): 1}\n"}
+,{"stream_name":"stdout","time":75.944357806,"data":"      example image shape (532, 727, 3) dtype uint8\n"}
+,{"stream_name":"stdout","time":75.953240833,"data":"test  images=2094 masks=2094  exact stem matches=2094  unmatched images=0\n"}
+,{"stream_name":"stdout","time":76.695837695,"data":"      mask unique values (60 sampled): [0, 255]\n"}
+,{"stream_name":"stdout","time":76.695877993,"data":"      lesion area fraction: mean 0.0476  min 0.0076  max 0.1795\n"}
+,{"stream_name":"stdout","time":76.695883312,"data":"      mask sizes: {(532, 727): 35, (537, 647): 13, (541, 581): 8, (547, 485): 2}\n"}
+,{"stream_name":"stdout","time":76.716272947,"data":"      example image shape (532, 727, 3) dtype uint8\n"}
+,{"stream_name":"stdout","time":76.716465098,"data":"\n"}
+,{"stream_name":"stdout","time":76.716474634,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":76.716498034,"data":"7. labels_orig CLASS STRINGS (per-image polygon labels)\n"}
+,{"stream_name":"stdout","time":76.716501187,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":79.276064105,"data":"label strings (800 sampled): {'actinh': 623, 'lanhtinh': 177}\n"}
+,{"stream_name":"stdout","time":81.800770706,"data":"YOLO class ids in labels/*.txt (800 sampled): {'1': 623, '0': 177}\n"}
+,{"stream_name":"stdout","time":81.800810754,"data":"\n"}
+,{"stream_name":"stdout","time":81.800814812,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":81.800817777,"data":"8. TN5000 OFFICIAL SPLITS AND CLASSES\n"}
+,{"stream_name":"stdout","time":81.800820388,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":81.810792821,"data":"  test.txt      1000 ids   e.g. ['001503', '000093', '001847']\n"}
+,{"stream_name":"stdout","time":81.815760926,"data":"  train.txt     3500 ids   e.g. ['001469', '001392', '004755']\n"}
+,{"stream_name":"stdout","time":81.819659488,"data":"  trainval.txt  4000 ids   e.g. ['001469', '001392', '004755']\n"}
+,{"stream_name":"stdout","time":81.82241965,"data":"  val.txt        500 ids   e.g. ['001131', '001970', '001990']\n"}
+,{"stream_name":"stdout","time":101.426026195,"data":"\n"}
+,{"stream_name":"stdout","time":101.42606837,"data":"  VOC class distribution: {'1': 3574, '0': 1426}\n"}
+,{"stream_name":"stdout","time":101.426073006,"data":"  objects per image     : {1: 5000}\n"}
+,{"stream_name":"stdout","time":105.449315532,"data":"  test.txt     class balance: {'1': 731, '0': 269}\n"}
+,{"stream_name":"stdout","time":105.451716459,"data":"  train.txt    class balance: {'1': 2468, '0': 1032}\n"}
+,{"stream_name":"stdout","time":105.454419227,"data":"  trainval.txt class balance: {'1': 2843, '0': 1157}\n"}
+,{"stream_name":"stdout","time":105.455675142,"data":"  val.txt      class balance: {'1': 375, '0': 125}\n"}
+,{"stream_name":"stdout","time":105.455701411,"data":"\n"}
+,{"stream_name":"stdout","time":105.455707823,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":105.455713456,"data":"9. DONE\n"}
+,{"stream_name":"stdout","time":105.455718103,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":105.45621262,"data":"wrote /kaggle/working/verify.json\n"}
+,{"stream_name":"stderr","time":108.595953356,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":108.596018319,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":109.074998117,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":109.075034604,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":111.301796835,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":113.172505273,"data":"[NbConvertApp] Writing 340734 bytes to __results__.html\n"}
+]

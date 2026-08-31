@@ -1,0 +1,839 @@
+[{"stream_name":"stdout","time":0.98791631,"data":"\n"}
+,{"stream_name":"stdout","time":0.988004743,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":0.98801276,"data":"0. WHAT IS MOUNTED\n"}
+,{"stream_name":"stdout","time":0.988018048,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":0.988023559,"data":"mounts: ['datasets']\n"}
+,{"stream_name":"stdout","time":0.988028505,"data":"\n"}
+,{"stream_name":"stdout","time":0.988034255,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":0.988039257,"data":"1. TREE: datasets\n"}
+,{"stream_name":"stdout","time":0.988044417,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":148.528547053,"data":"total files (excluding .cache): 56571\n"}
+,{"stream_name":"stdout","time":148.530308193,"data":"  safaaqaisi/thyroidxl/ThyroidXL/train/labels             9541   {'.txt': 9541}\n"}
+,{"stream_name":"stdout","time":148.530340943,"data":"        e.g. 00002637_900099C6_1.txt\n"}
+,{"stream_name":"stdout","time":148.530349004,"data":"        e.g. 00000781_DC50215C_0.txt\n"}
+,{"stream_name":"stdout","time":148.53035541,"data":"        e.g. 00000213_817A8A4F_1.txt\n"}
+,{"stream_name":"stdout","time":148.530361781,"data":"  safaaqaisi/thyroidxl/ThyroidXL/train/images             9541   {'.png': 9541}\n"}
+,{"stream_name":"stdout","time":148.530368361,"data":"        e.g. 00000772_11E671F0_1.png\n"}
+,{"stream_name":"stdout","time":148.530373475,"data":"        e.g. 00003573_85DD3394_1.png\n"}
+,{"stream_name":"stdout","time":148.530379165,"data":"        e.g. 00003642_98B81A59_1.png\n"}
+,{"stream_name":"stdout","time":148.530385336,"data":"  safaaqaisi/thyroidxl/ThyroidXL/train/labels_orig        9541   {'.json': 9541}\n"}
+,{"stream_name":"stdout","time":148.530391196,"data":"        e.g. 00003408_D55F7DE5_3.json\n"}
+,{"stream_name":"stdout","time":148.530397578,"data":"        e.g. 00004040_E980A7CD_3.json\n"}
+,{"stream_name":"stdout","time":148.530404115,"data":"        e.g. 00004171_B214860F_2.json\n"}
+,{"stream_name":"stdout","time":148.530410538,"data":"  safaaqaisi/thyroidxl/ThyroidXL/train/masks              9541   {'.png': 9541}\n"}
+,{"stream_name":"stdout","time":148.530417684,"data":"        e.g. 00000772_11E671F0_1.png\n"}
+,{"stream_name":"stdout","time":148.530423479,"data":"        e.g. 00003573_85DD3394_1.png\n"}
+,{"stream_name":"stdout","time":148.530429981,"data":"        e.g. 00003642_98B81A59_1.png\n"}
+,{"stream_name":"stdout","time":148.530436691,"data":"  abdullahelafifi/main-data/Main data/Annotations         5000   {'.xml': 5000}\n"}
+,{"stream_name":"stdout","time":148.530443084,"data":"        e.g. 000802.xml\n"}
+,{"stream_name":"stdout","time":148.530449306,"data":"        e.g. 003031.xml\n"}
+,{"stream_name":"stdout","time":148.530459095,"data":"        e.g. 004041.xml\n"}
+,{"stream_name":"stdout","time":148.530465929,"data":"  abdullahelafifi/main-data/Main data/JPEGImages          5000   {'.jpg': 5000}\n"}
+,{"stream_name":"stdout","time":148.530472728,"data":"        e.g. 000304.jpg\n"}
+,{"stream_name":"stdout","time":148.530479164,"data":"        e.g. 001940.jpg\n"}
+,{"stream_name":"stdout","time":148.530485293,"data":"        e.g. 001229.jpg\n"}
+,{"stream_name":"stdout","time":148.530490316,"data":"  safaaqaisi/thyroidxl/ThyroidXL/test/labels              2094   {'.txt': 2094}\n"}
+,{"stream_name":"stdout","time":148.53049596,"data":"        e.g. 00000220_F5DB44BF_0.txt\n"}
+,{"stream_name":"stdout","time":148.530522523,"data":"        e.g. 00001191_D5B1B01C_1.txt\n"}
+,{"stream_name":"stdout","time":148.530541258,"data":"        e.g. 00000903_DCE38CBF_1.txt\n"}
+,{"stream_name":"stdout","time":148.53054671,"data":"  safaaqaisi/thyroidxl/ThyroidXL/test/images              2094   {'.png': 2094}\n"}
+,{"stream_name":"stdout","time":148.530551631,"data":"        e.g. 00000252_53F1BE2B_2.png\n"}
+,{"stream_name":"stdout","time":148.530556636,"data":"        e.g. 00003384_1CCF4465_0.png\n"}
+,{"stream_name":"stdout","time":148.53056177,"data":"        e.g. 00004097_2CB10D3E_2.png\n"}
+,{"stream_name":"stdout","time":148.530566644,"data":"  safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig         2094   {'.json': 2094}\n"}
+,{"stream_name":"stdout","time":148.53057095,"data":"        e.g. 00001993_FF6B7C27_2.json\n"}
+,{"stream_name":"stdout","time":148.530574663,"data":"        e.g. 00001637_65E18528_3.json\n"}
+,{"stream_name":"stdout","time":148.530578993,"data":"        e.g. 00000215_564DFC1D_0.json\n"}
+,{"stream_name":"stdout","time":148.530605556,"data":"  safaaqaisi/thyroidxl/ThyroidXL/test/masks               2094   {'.png': 2094}\n"}
+,{"stream_name":"stdout","time":148.530611279,"data":"        e.g. 00000252_53F1BE2B_2.png\n"}
+,{"stream_name":"stdout","time":148.53061568,"data":"        e.g. 00003384_1CCF4465_0.png\n"}
+,{"stream_name":"stdout","time":148.530620694,"data":"        e.g. 00004097_2CB10D3E_2.png\n"}
+,{"stream_name":"stdout","time":148.531127209,"data":"  safaaqaisi/thyroidxl/ThyroidXL/stats/figures/visuali       8   {'.png': 8}\n"}
+,{"stream_name":"stdout","time":148.531139499,"data":"        e.g. 00000127_513DDC30_0.png\n"}
+,{"stream_name":"stdout","time":148.531142756,"data":"        e.g. 00000127_1914A778_1.png\n"}
+,{"stream_name":"stdout","time":148.531145611,"data":"        e.g. 00000132_3D938012_2.png\n"}
+,{"stream_name":"stdout","time":148.531148416,"data":"  safaaqaisi/thyroidxl/ThyroidXL/stats/figures               7   {'.png': 7}\n"}
+,{"stream_name":"stdout","time":148.531151243,"data":"        e.g. gender_counts.png\n"}
+,{"stream_name":"stdout","time":148.531154094,"data":"        e.g. trainset_age_distribution.png\n"}
+,{"stream_name":"stdout","time":148.531156785,"data":"        e.g. testset_age_distribution.png\n"}
+,{"stream_name":"stdout","time":148.531159579,"data":"  safaaqaisi/thyroidxl/ThyroidXL                             6   {'.ipynb': 4, '.md': 1, '': 1}\n"}
+,{"stream_name":"stdout","time":148.531162466,"data":"        e.g. calculate_mean_and_std.ipynb\n"}
+,{"stream_name":"stdout","time":148.531165126,"data":"        e.g. visualization.ipynb\n"}
+,{"stream_name":"stdout","time":148.5311679,"data":"        e.g. README.md\n"}
+,{"stream_name":"stdout","time":148.531170609,"data":"  abdullahelafifi/main-data/Main data/ImageSets/Main         4   {'.txt': 4}\n"}
+,{"stream_name":"stdout","time":148.53118915,"data":"        e.g. val.txt\n"}
+,{"stream_name":"stdout","time":148.531193849,"data":"        e.g. test.txt\n"}
+,{"stream_name":"stdout","time":148.531198425,"data":"        e.g. train.txt\n"}
+,{"stream_name":"stdout","time":148.531202573,"data":"  safaaqaisi/thyroidxl/ThyroidXL/stats                       4   {'.txt': 2, '.json': 2}\n"}
+,{"stream_name":"stdout","time":148.531207964,"data":"        e.g. test_patients.txt\n"}
+,{"stream_name":"stdout","time":148.531211995,"data":"        e.g. id2info_eng.json\n"}
+,{"stream_name":"stdout","time":148.531215712,"data":"        e.g. new_id2info.json\n"}
+,{"stream_name":"stdout","time":148.531219674,"data":"  safaaqaisi/thyroidxl/ThyroidXL/test                        1   {'.json': 1}\n"}
+,{"stream_name":"stdout","time":148.531223989,"data":"        e.g. test_annotations.json\n"}
+,{"stream_name":"stdout","time":148.531238791,"data":"  safaaqaisi/thyroidxl/ThyroidXL/train                       1   {'.json': 1}\n"}
+,{"stream_name":"stdout","time":148.531242851,"data":"        e.g. train_annotations.json\n"}
+,{"stream_name":"stdout","time":148.531247112,"data":"\n"}
+,{"stream_name":"stdout","time":148.531250586,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":148.531254914,"data":"2. TEXT / TABULAR FILES: datasets\n"}
+,{"stream_name":"stdout","time":148.531259431,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":151.341441607,"data":"\n"}
+,{"stream_name":"stdout","time":151.341506558,"data":"--- abdullahelafifi/main-data/Main data/Annotations/000001.xml  (629 bytes) ---\n"}
+,{"stream_name":"stdout","time":151.347288438,"data":"\u003cannotation\u003e\n"}
+,{"stream_name":"stdout","time":151.347334356,"data":"\t\u003cfolder\u003eVOC2007\u003c/folder\u003e\n"}
+,{"stream_name":"stdout","time":151.347341444,"data":"\t\u003cfilename\u003e000001.jpg\u003c/filename\u003e\n"}
+,{"stream_name":"stdout","time":151.347347374,"data":"\t\u003csource\u003e\n"}
+,{"stream_name":"stdout","time":151.347352245,"data":"\t\t\u003cdatabase\u003eMy Database\u003c/database\u003e\n"}
+,{"stream_name":"stdout","time":151.347357262,"data":"\t\t\u003cannotation\u003eVOC2007\u003c/annotation\u003e\n"}
+,{"stream_name":"stdout","time":151.347362168,"data":"\t\t\u003cimage\u003eflickr\u003c/image\u003e\n"}
+,{"stream_name":"stdout","time":151.347366739,"data":"\t\t\u003cflickrid\u003eNULL\u003c/flickrid\u003e\n"}
+,{"stream_name":"stdout","time":151.347372001,"data":"\t\u003c/source\u003e\n"}
+,{"stream_name":"stdout","time":151.347376296,"data":"\t\u003cowner\u003e\n"}
+,{"stream_name":"stdout","time":151.347380082,"data":"\t\t\u003cflickrid\u003eNULL\u003c/flickrid\u003e\n"}
+,{"stream_name":"stdout","time":151.347384388,"data":"\t\t\u003cname\u003exiaoxianyu\u003c/name\u003e\n"}
+,{"stream_name":"stdout","time":151.347388759,"data":"\t\u003c/owner\u003e\n"}
+,{"stream_name":"stdout","time":151.347393368,"data":"\t\u003csize\u003e\n"}
+,{"stream_name":"stdout","time":151.347397651,"data":"\t\t\u003cwidth\u003e718\u003c/width\u003e\n"}
+,{"stream_name":"stdout","time":151.347402068,"data":"\t\t\u003cheight\u003e500\u003c/height\u003e\n"}
+,{"stream_name":"stdout","time":151.347406071,"data":"\t\t\u003cdepth\u003e3\u003c/depth\u003e\n"}
+,{"stream_name":"stdout","time":151.347410045,"data":"\t\u003c/size\u003e\n"}
+,{"stream_name":"stdout","time":151.347413823,"data":"\t\u003csegmented\u003e0\u003c/segmented\u003e\n"}
+,{"stream_name":"stdout","time":151.347418092,"data":"\t\u003cobject\u003e\n"}
+,{"stream_name":"stdout","time":151.347422423,"data":"\t\t\u003cname\u003e0\u003c/name\u003e\n"}
+,{"stream_name":"stdout","time":151.347426922,"data":"\t\t\u003cpose\u003eUnspecified\u003c/pose\u003e\n"}
+,{"stream_name":"stdout","time":151.347431833,"data":"\t\t\u003ctruncated\u003e0\u003c/truncated\u003e\n"}
+,{"stream_name":"stdout","time":151.347436994,"data":"\t\t\u003cdifficult\u003e0\u003c/difficult\u003e\n"}
+,{"stream_name":"stdout","time":151.347441222,"data":"\t\t\u003cbndbox\u003e\n"}
+,{"stream_name":"stdout","time":151.347445602,"data":"\t\t\t\u003cxmin\u003e223\u003c/xmin\u003e\n"}
+,{"stream_name":"stdout","time":151.347450025,"data":"\t\t\t\u003cymin\u003e90\u003c/ymin\u003e\n"}
+,{"stream_name":"stdout","time":151.347471047,"data":"\t\t\t\u003cxmax\u003e286\u003c/xmax\u003e\n"}
+,{"stream_name":"stdout","time":151.347475919,"data":"\t\t\t\u003cymax\u003e131\u003c/ymax\u003e\n"}
+,{"stream_name":"stdout","time":151.347480635,"data":"\t\t\u003c/bndbox\u003e\n"}
+,{"stream_name":"stdout","time":151.347484811,"data":"\t\u003c/object\u003e\n"}
+,{"stream_name":"stdout","time":151.347488878,"data":"\u003c/annotation\u003e\n"}
+,{"stream_name":"stdout","time":151.347499662,"data":"\n"}
+,{"stream_name":"stdout","time":151.347507457,"data":"\n"}
+,{"stream_name":"stdout","time":151.34751175,"data":"--- abdullahelafifi/main-data/Main data/Annotations/000002.xml  (629 bytes) ---\n"}
+,{"stream_name":"stdout","time":151.360795015,"data":"\u003cannotation\u003e\n"}
+,{"stream_name":"stdout","time":151.360838798,"data":"\t\u003cfolder\u003eVOC2007\u003c/folder\u003e\n"}
+,{"stream_name":"stdout","time":151.360846009,"data":"\t\u003cfilename\u003e000002.jpg\u003c/filename\u003e\n"}
+,{"stream_name":"stdout","time":151.360851739,"data":"\t\u003csource\u003e\n"}
+,{"stream_name":"stdout","time":151.360856809,"data":"\t\t\u003cdatabase\u003eMy Database\u003c/database\u003e\n"}
+,{"stream_name":"stdout","time":151.360861381,"data":"\t\t\u003cannotation\u003eVOC2007\u003c/annotation\u003e\n"}
+,{"stream_name":"stdout","time":151.360865645,"data":"\t\t\u003cimage\u003eflickr\u003c/image\u003e\n"}
+,{"stream_name":"stdout","time":151.360869778,"data":"\t\t\u003cflickrid\u003eNULL\u003c/flickrid\u003e\n"}
+,{"stream_name":"stdout","time":151.360873894,"data":"\t\u003c/source\u003e\n"}
+,{"stream_name":"stdout","time":151.360877824,"data":"\t\u003cowner\u003e\n"}
+,{"stream_name":"stdout","time":151.360881626,"data":"\t\t\u003cflickrid\u003eNULL\u003c/flickrid\u003e\n"}
+,{"stream_name":"stdout","time":151.360885705,"data":"\t\t\u003cname\u003exiaoxianyu\u003c/name\u003e\n"}
+,{"stream_name":"stdout","time":151.360889853,"data":"\t\u003c/owner\u003e\n"}
+,{"stream_name":"stdout","time":151.360893853,"data":"\t\u003csize\u003e\n"}
+,{"stream_name":"stdout","time":151.360897734,"data":"\t\t\u003cwidth\u003e718\u003c/width\u003e\n"}
+,{"stream_name":"stdout","time":151.360903921,"data":"\t\t\u003cheight\u003e500\u003c/height\u003e\n"}
+,{"stream_name":"stdout","time":151.360908099,"data":"\t\t\u003cdepth\u003e3\u003c/depth\u003e\n"}
+,{"stream_name":"stdout","time":151.36092159,"data":"\t\u003c/size\u003e\n"}
+,{"stream_name":"stdout","time":151.360926776,"data":"\t\u003csegmented\u003e0\u003c/segmented\u003e\n"}
+,{"stream_name":"stdout","time":151.36093207,"data":"\t\u003cobject\u003e\n"}
+,{"stream_name":"stdout","time":151.360936492,"data":"\t\t\u003cname\u003e0\u003c/name\u003e\n"}
+,{"stream_name":"stdout","time":151.360944807,"data":"\t\t\u003cpose\u003eUnspecified\u003c/pose\u003e\n"}
+,{"stream_name":"stdout","time":151.360948676,"data":"\t\t\u003ctruncated\u003e0\u003c/truncated\u003e\n"}
+,{"stream_name":"stdout","time":151.360952622,"data":"\t\t\u003cdifficult\u003e0\u003c/difficult\u003e\n"}
+,{"stream_name":"stdout","time":151.360956487,"data":"\t\t\u003cbndbox\u003e\n"}
+,{"stream_name":"stdout","time":151.360960423,"data":"\t\t\t\u003cxmin\u003e488\u003c/xmin\u003e\n"}
+,{"stream_name":"stdout","time":151.360965004,"data":"\t\t\t\u003cymin\u003e90\u003c/ymin\u003e\n"}
+,{"stream_name":"stdout","time":151.360969235,"data":"\t\t\t\u003cxmax\u003e539\u003c/xmax\u003e\n"}
+,{"stream_name":"stdout","time":151.360990232,"data":"\t\t\t\u003cymax\u003e130\u003c/ymax\u003e\n"}
+,{"stream_name":"stdout","time":151.360994672,"data":"\t\t\u003c/bndbox\u003e\n"}
+,{"stream_name":"stdout","time":151.360999896,"data":"\t\u003c/object\u003e\n"}
+,{"stream_name":"stdout","time":151.361004293,"data":"\u003c/annotation\u003e\n"}
+,{"stream_name":"stdout","time":151.361008284,"data":"\n"}
+,{"stream_name":"stdout","time":151.478238634,"data":"\n"}
+,{"stream_name":"stdout","time":151.478290088,"data":"--- abdullahelafifi/main-data/Main data/ImageSets/Main/test.txt  (7000 bytes) ---\n"}
+,{"stream_name":"stdout","time":151.486012052,"data":"001503\n"}
+,{"stream_name":"stdout","time":151.486052074,"data":"000093\n"}
+,{"stream_name":"stdout","time":151.486057354,"data":"001847\n"}
+,{"stream_name":"stdout","time":151.486061239,"data":"000955\n"}
+,{"stream_name":"stdout","time":151.486065112,"data":"003733\n"}
+,{"stream_name":"stdout","time":151.486068887,"data":"004420\n"}
+,{"stream_name":"stdout","time":151.486072777,"data":"001653\n"}
+,{"stream_name":"stdout","time":151.486076838,"data":"000339\n"}
+,{"stream_name":"stdout","time":151.486082861,"data":"004963\n"}
+,{"stream_name":"stdout","time":151.48609082,"data":"003036\n"}
+,{"stream_name":"stdout","time":151.486093766,"data":"004092\n"}
+,{"stream_name":"stdout","time":151.486096361,"data":"004147\n"}
+,{"stream_name":"stdout","time":151.486099051,"data":"004727\n"}
+,{"stream_name":"stdout","time":151.486101612,"data":"004326\n"}
+,{"stream_name":"stdout","time":151.48610425,"data":"000822\n"}
+,{"stream_name":"stdout","time":151.48610694,"data":"000349\n"}
+,{"stream_name":"stdout","time":151.486109536,"data":"004996\n"}
+,{"stream_name":"stdout","time":151.486112323,"data":"002811\n"}
+,{"stream_name":"stdout","time":151.486114973,"data":"004439\n"}
+,{"stream_name":"stdout","time":151.486118083,"data":"000415\n"}
+,{"stream_name":"stdout","time":151.486120935,"data":"004284\n"}
+,{"stream_name":"stdout","time":151.486123499,"data":"000153\n"}
+,{"stream_name":"stdout","time":151.486126061,"data":"004677\n"}
+,{"stream_name":"stdout","time":151.486128656,"data":"000779\n"}
+,{"stream_name":"stdout","time":151.486131315,"data":"000745\n"}
+,{"stream_name":"stdout","time":151.486133872,"data":"001261\n"}
+,{"stream_name":"stdout","time":151.486136424,"data":"003657\n"}
+,{"stream_name":"stdout","time":151.486138979,"data":"003302\n"}
+,{"stream_name":"stdout","time":151.486141614,"data":"003235\n"}
+,{"stream_name":"stdout","time":151.486144158,"data":"003545\n"}
+,{"stream_name":"stdout","time":151.486146707,"data":"000009\n"}
+,{"stream_name":"stdout","time":151.486149298,"data":"003323\n"}
+,{"stream_name":"stdout","time":151.486152067,"data":"001307\n"}
+,{"stream_name":"stdout","time":151.486160081,"data":"003527\n"}
+,{"stream_name":"stdout","time":151.486177425,"data":"000695\n"}
+,{"stream_name":"stdout","time":151.486182063,"data":"002088\n"}
+,{"stream_name":"stdout","time":151.486186912,"data":"001891\n"}
+,{"stream_name":"stdout","time":151.486190675,"data":"000788\n"}
+,{"stream_name":"stdout","time":151.486194587,"data":"002496\n"}
+,{"stream_name":"stdout","time":151.486199067,"data":"001462\n"}
+,{"stream_name":"stdout","time":151.486203011,"data":"002456\n"}
+,{"stream_name":"stdout","time":151.486206864,"data":"003040\n"}
+,{"stream_name":"stdout","time":151.486210587,"data":"001579\n"}
+,{"stream_name":"stdout","time":151.486214367,"data":"000046\n"}
+,{"stream_name":"stdout","time":151.486233455,"data":"000968\n"}
+,{"stream_name":"stdout","time":151.486237341,"data":"000846\n"}
+,{"stream_name":"stdout","time":151.48624113,"data":"002365\n"}
+,{"stream_name":"stdout","time":151.486245076,"data":"002829\n"}
+,{"stream_name":"stdout","time":151.486249446,"data":"001155\n"}
+,{"stream_name":"stdout","time":151.486253995,"data":"001716\n"}
+,{"stream_name":"stdout","time":151.486258332,"data":"003787\n"}
+,{"stream_name":"stdout","time":151.486263162,"data":"003559\n"}
+,{"stream_name":"stdout","time":151.486266644,"data":"002669\n"}
+,{"stream_name":"stdout","time":151.486270307,"data":"001482\n"}
+,{"stream_name":"stdout","time":151.486273843,"data":"003647\n"}
+,{"stream_name":"stdout","time":151.486277594,"data":"003952\n"}
+,{"stream_name":"stdout","time":151.486281375,"data":"001288\n"}
+,{"stream_name":"stdout","time":151.486284833,"data":"001049\n"}
+,{"stream_name":"stdout","time":151.48628856,"data":"003426\n"}
+,{"stream_name":"stdout","time":151.486292329,"data":"001153\n"}
+,{"stream_name":"stdout","time":151.486295932,"data":"003313\n"}
+,{"stream_name":"stdout","time":151.486299453,"data":"001549\n"}
+,{"stream_name":"stdout","time":151.486303644,"data":"003397\n"}
+,{"stream_name":"stdout","time":151.486308006,"data":"003092\n"}
+,{"stream_name":"stdout","time":151.486312105,"data":"003023\n"}
+,{"stream_name":"stdout","time":151.486316305,"data":"004570\n"}
+,{"stream_name":"stdout","time":151.486320792,"data":"001368\n"}
+,{"stream_name":"stdout","time":151.486324804,"data":"000387\n"}
+,{"stream_name":"stdout","time":151.486329125,"data":"002956\n"}
+,{"stream_name":"stdout","time":151.486333285,"data":"004712\n"}
+,{"stream_name":"stdout","time":151.486337859,"data":"000756\n"}
+,{"stream_name":"stdout","time":151.486342153,"data":"000689\n"}
+,{"stream_name":"stdout","time":151.486346716,"data":"004668\n"}
+,{"stream_name":"stdout","time":151.48635097,"data":"004013\n"}
+,{"stream_name":"stdout","time":151.486355728,"data":"003741\n"}
+,{"stream_name":"stdout","time":151.486359771,"data":"004650\n"}
+,{"stream_name":"stdout","time":151.486364374,"data":"002306\n"}
+,{"stream_name":"stdout","time":151.486367673,"data":"001021\n"}
+,{"stream_name":"stdout","time":151.48637125,"data":"001491\n"}
+,{"stream_name":"stdout","time":151.486375433,"data":"002448\n"}
+,{"stream_name":"stdout","time":151.486379869,"data":"000537\n"}
+,{"stream_name":"stdout","time":151.4863838,"data":"003154\n"}
+,{"stream_name":"stdout","time":151.486387825,"data":"003817\n"}
+,{"stream_name":"stdout","time":151.486392112,"data":"001241\n"}
+,{"stream_name":"stdout","time":151.486396305,"data":"002660\n"}
+,{"stream_name":"stdout","time":151.486400656,"data":"002966\n"}
+,{"stream_name":"stdout","time":151.486405204,"data":"004105\n"}
+,{"stream_name":"stdout","time":151.48641004,"data":"000222\n"}
+,{"stream_name":"stdout","time":151.486414308,"data":"002662\n"}
+,{"stream_name":"stdout","time":151.486418889,"data":"002939\n"}
+,{"stream_name":"stdout","time":151.486423238,"data":"000797\n"}
+,{"stream_name":"stdout","time":151.486427583,"data":"001347\n"}
+,{"stream_name":"stdout","time":151.486431527,"data":"001229\n"}
+,{"stream_name":"stdout","time":151.486436155,"data":"001215\n"}
+,{"stream_name":"stdout","time":151.486440063,"data":"004102\n"}
+,{"stream_name":"stdout","time":151.486443942,"data":"000988\n"}
+,{"stream_name":"stdout","time":151.486448439,"data":"004176\n"}
+,{"stream_name":"stdout","time":151.486459571,"data":"003632\n"}
+,{"stream_name":"stdout","time":151.486463779,"data":"002780\n"}
+,{"stream_name":"stdout","time":151.486467769,"data":"000890\n"}
+,{"stream_name":"stdout","time":151.486472271,"data":"003172\n"}
+,{"stream_name":"stdout","time":151.486476485,"data":"004094\n"}
+,{"stream_name":"stdout","time":151.486481044,"data":"001858\n"}
+,{"stream_name":"stdout","time":151.486485543,"data":"004438\n"}
+,{"stream_name":"stdout","time":151.486489931,"data":"002212\n"}
+,{"stream_name":"stdout","time":151.486493791,"data":"002166\n"}
+,{"stream_name":"stdout","time":151.486498758,"data":"000541\n"}
+,{"stream_name":"stdout","time":151.486503216,"data":"004299\n"}
+,{"stream_name":"stdout","time":151.486507347,"data":"000154\n"}
+,{"stream_name":"stdout","time":151.48651125,"data":"001597\n"}
+,{"stream_name":"stdout","time":151.486515074,"data":"004417\n"}
+,{"stream_name":"stdout","time":151.486519415,"data":"003169\n"}
+,{"stream_name":"stdout","time":151.486523591,"data":"002724\n"}
+,{"stream_name":"stdout","time":151.486527593,"data":"003663\n"}
+,{"stream_name":"stdout","time":151.486532052,"data":"000244\n"}
+,{"stream_name":"stdout","time":151.486536682,"data":"001834\n"}
+,{"stream_name":"stdout","time":151.486540777,"data":"001365\n"}
+,{"stream_name":"stdout","time":151.486544995,"data":"002678\n"}
+,{"stream_name":"stdout","time":151.48654925,"data":"002916\n"}
+,{"stream_name":"stdout","time":151.486553754,"data":"002435\n"}
+,{"stream_name":"stdout","time":151.486558279,"data":"002364\n"}
+,{"stream_name":"stdout","time":151.486562971,"data":"004549\n"}
+,{"stream_name":"stdout","time":151.486567528,"data":"000690\n"}
+,{"stream_name":"stdout","time":151.486571967,"data":"003119\n"}
+,{"stream_name":"stdout","time":151.486576247,"data":"003401\n"}
+,{"stream_name":"stdout","time":151.486580438,"data":"004049\n"}
+,{"stream_name":"stdout","time":151.486589439,"data":"003683\n"}
+,{"stream_name":"stdout","time":151.486612108,"data":"003079\n"}
+,{"stream_name":"stdout","time":151.486616168,"data":"0006\n"}
+,{"stream_name":"stdout","time":151.487125465,"data":"\n"}
+,{"stream_name":"stdout","time":151.487139041,"data":"--- abdullahelafifi/main-data/Main data/ImageSets/Main/train.txt  (24500 bytes) ---\n"}
+,{"stream_name":"stdout","time":151.494241257,"data":"001469\n"}
+,{"stream_name":"stdout","time":151.494282318,"data":"001392\n"}
+,{"stream_name":"stdout","time":151.494295879,"data":"004755\n"}
+,{"stream_name":"stdout","time":151.494299585,"data":"003890\n"}
+,{"stream_name":"stdout","time":151.494303144,"data":"000557\n"}
+,{"stream_name":"stdout","time":151.494324868,"data":"000819\n"}
+,{"stream_name":"stdout","time":151.494329912,"data":"001543\n"}
+,{"stream_name":"stdout","time":151.494334147,"data":"004263\n"}
+,{"stream_name":"stdout","time":151.494339364,"data":"000196\n"}
+,{"stream_name":"stdout","time":151.494344403,"data":"004252\n"}
+,{"stream_name":"stdout","time":151.494348963,"data":"003622\n"}
+,{"stream_name":"stdout","time":151.494353251,"data":"002336\n"}
+,{"stream_name":"stdout","time":151.494357494,"data":"002908\n"}
+,{"stream_name":"stdout","time":151.494361707,"data":"001609\n"}
+,{"stream_name":"stdout","time":151.494365944,"data":"003350\n"}
+,{"stream_name":"stdout","time":151.494370263,"data":"003719\n"}
+,{"stream_name":"stdout","time":151.494374463,"data":"003017\n"}
+,{"stream_name":"stdout","time":151.494378745,"data":"001147\n"}
+,{"stream_name":"stdout","time":151.494383055,"data":"004708\n"}
+,{"stream_name":"stdout","time":151.494404374,"data":"003637\n"}
+,{"stream_name":"stdout","time":151.494409148,"data":"001563\n"}
+,{"stream_name":"stdout","time":151.494414239,"data":"003501\n"}
+,{"stream_name":"stdout","time":151.494418908,"data":"003357\n"}
+,{"stream_name":"stdout","time":151.494424231,"data":"003910\n"}
+,{"stream_name":"stdout","time":151.494429586,"data":"002445\n"}
+,{"stream_name":"stdout","time":151.494434657,"data":"000045\n"}
+,{"stream_name":"stdout","time":151.494439689,"data":"000158\n"}
+,{"stream_name":"stdout","time":151.494444919,"data":"002544\n"}
+,{"stream_name":"stdout","time":151.494449842,"data":"001506\n"}
+,{"stream_name":"stdout","time":151.494454463,"data":"003451\n"}
+,{"stream_name":"stdout","time":151.494458685,"data":"002741\n"}
+,{"stream_name":"stdout","time":151.494462981,"data":"002141\n"}
+,{"stream_name":"stdout","time":151.494467191,"data":"001136\n"}
+,{"stream_name":"stdout","time":151.494471429,"data":"004490\n"}
+,{"stream_name":"stdout","time":151.494475809,"data":"003727\n"}
+,{"stream_name":"stdout","time":151.494479977,"data":"003104\n"}
+,{"stream_name":"stdout","time":151.494484208,"data":"001114\n"}
+,{"stream_name":"stdout","time":151.494488489,"data":"001849\n"}
+,{"stream_name":"stdout","time":151.494492643,"data":"000480\n"}
+,{"stream_name":"stdout","time":151.494499142,"data":"000869\n"}
+,{"stream_name":"stdout","time":151.49450385,"data":"002922\n"}
+,{"stream_name":"stdout","time":151.494510606,"data":"001424\n"}
+,{"stream_name":"stdout","time":151.494515327,"data":"003860\n"}
+,{"stream_name":"stdout","time":151.494520148,"data":"001433\n"}
+,{"stream_name":"stdout","time":151.494525254,"data":"004768\n"}
+,{"stream_name":"stdout","time":151.494530635,"data":"001636\n"}
+,{"stream_name":"stdout","time":151.494535968,"data":"004861\n"}
+,{"stream_name":"stdout","time":151.494541421,"data":"000622\n"}
+,{"stream_name":"stdout","time":151.494545589,"data":"003260\n"}
+,{"stream_name":"stdout","time":151.494549834,"data":"000346\n"}
+,{"stream_name":"stdout","time":151.494554273,"data":"003568\n"}
+,{"stream_name":"stdout","time":151.494569269,"data":"004800\n"}
+,{"stream_name":"stdout","time":151.494606272,"data":"000930\n"}
+,{"stream_name":"stdout","time":151.494616292,"data":"000340\n"}
+,{"stream_name":"stdout","time":151.494620666,"data":"004137\n"}
+,{"stream_name":"stdout","time":151.494624929,"data":"002972\n"}
+,{"stream_name":"stdout","time":151.494629068,"data":"004652\n"}
+,{"stream_name":"stdout","time":151.494633268,"data":"000211\n"}
+,{"stream_name":"stdout","time":151.494643008,"data":"004805\n"}
+,{"stream_name":"stdout","time":151.494648198,"data":"000007\n"}
+,{"stream_name":"stdout","time":151.494652853,"data":"004584\n"}
+,{"stream_name":"stdout","time":151.494657832,"data":"002940\n"}
+,{"stream_name":"stdout","time":151.49466261,"data":"000619\n"}
+,{"stream_name":"stdout","time":151.494667482,"data":"001250\n"}
+,{"stream_name":"stdout","time":151.494671889,"data":"003894\n"}
+,{"stream_name":"stdout","time":151.494676957,"data":"003125\n"}
+,{"stream_name":"stdout","time":151.494681931,"data":"001544\n"}
+,{"stream_name":"stdout","time":151.494686935,"data":"002344\n"}
+,{"stream_name":"stdout","time":151.494691609,"data":"003980\n"}
+,{"stream_name":"stdout","time":151.494696211,"data":"001953\n"}
+,{"stream_name":"stdout","time":151.494700017,"data":"004187\n"}
+,{"stream_name":"stdout","time":151.494703873,"data":"003530\n"}
+,{"stream_name":"stdout","time":151.494715419,"data":"002612\n"}
+,{"stream_name":"stdout","time":151.494719427,"data":"004683\n"}
+,{"stream_name":"stdout","time":151.4947236,"data":"001356\n"}
+,{"stream_name":"stdout","time":151.494727858,"data":"000883\n"}
+,{"stream_name":"stdout","time":151.494731929,"data":"001635\n"}
+,{"stream_name":"stdout","time":151.494736448,"data":"001277\n"}
+,{"stream_name":"stdout","time":151.494740765,"data":"002302\n"}
+,{"stream_name":"stdout","time":151.494744951,"data":"001531\n"}
+,{"stream_name":"stdout","time":151.494749153,"data":"001089\n"}
+,{"stream_name":"stdout","time":151.494753362,"data":"004839\n"}
+,{"stream_name":"stdout","time":151.494757423,"data":"002355\n"}
+,{"stream_name":"stdout","time":151.494762364,"data":"001222\n"}
+,{"stream_name":"stdout","time":151.494766591,"data":"001472\n"}
+,{"stream_name":"stdout","time":151.494770877,"data":"002719\n"}
+,{"stream_name":"stdout","time":151.494774838,"data":"004360\n"}
+,{"stream_name":"stdout","time":151.494779059,"data":"000963\n"}
+,{"stream_name":"stdout","time":151.494783178,"data":"003450\n"}
+,{"stream_name":"stdout","time":151.494787429,"data":"001366\n"}
+,{"stream_name":"stdout","time":151.494792291,"data":"000295\n"}
+,{"stream_name":"stdout","time":151.494796966,"data":"003641\n"}
+,{"stream_name":"stdout","time":151.494801624,"data":"001164\n"}
+,{"stream_name":"stdout","time":151.494806275,"data":"000625\n"}
+,{"stream_name":"stdout","time":151.494811098,"data":"000733\n"}
+,{"stream_name":"stdout","time":151.49481587,"data":"003250\n"}
+,{"stream_name":"stdout","time":151.494820402,"data":"002024\n"}
+,{"stream_name":"stdout","time":151.49483146,"data":"000243\n"}
+,{"stream_name":"stdout","time":151.494836408,"data":"002170\n"}
+,{"stream_name":"stdout","time":151.494841399,"data":"001149\n"}
+,{"stream_name":"stdout","time":151.494846194,"data":"003335\n"}
+,{"stream_name":"stdout","time":151.494851406,"data":"001592\n"}
+,{"stream_name":"stdout","time":151.494856783,"data":"004480\n"}
+,{"stream_name":"stdout","time":151.494861719,"data":"002003\n"}
+,{"stream_name":"stdout","time":151.494866335,"data":"003947\n"}
+,{"stream_name":"stdout","time":151.494871272,"data":"002934\n"}
+,{"stream_name":"stdout","time":151.494875604,"data":"002866\n"}
+,{"stream_name":"stdout","time":151.494879823,"data":"000285\n"}
+,{"stream_name":"stdout","time":151.494884078,"data":"003956\n"}
+,{"stream_name":"stdout","time":151.494888208,"data":"004208\n"}
+,{"stream_name":"stdout","time":151.494892469,"data":"002988\n"}
+,{"stream_name":"stdout","time":151.494896557,"data":"003913\n"}
+,{"stream_name":"stdout","time":151.494900788,"data":"000090\n"}
+,{"stream_name":"stdout","time":151.494905151,"data":"000248\n"}
+,{"stream_name":"stdout","time":151.494909689,"data":"001735\n"}
+,{"stream_name":"stdout","time":151.494914046,"data":"002968\n"}
+,{"stream_name":"stdout","time":151.494918231,"data":"001659\n"}
+,{"stream_name":"stdout","time":151.494922325,"data":"003542\n"}
+,{"stream_name":"stdout","time":151.494927438,"data":"001680\n"}
+,{"stream_name":"stdout","time":151.49493231,"data":"004229\n"}
+,{"stream_name":"stdout","time":151.494937458,"data":"004442\n"}
+,{"stream_name":"stdout","time":151.494943007,"data":"000084\n"}
+,{"stream_name":"stdout","time":151.49494827,"data":"003529\n"}
+,{"stream_name":"stdout","time":151.494952597,"data":"002265\n"}
+,{"stream_name":"stdout","time":151.494957013,"data":"001577\n"}
+,{"stream_name":"stdout","time":151.494968008,"data":"004467\n"}
+,{"stream_name":"stdout","time":151.494972339,"data":"000631\n"}
+,{"stream_name":"stdout","time":151.494976643,"data":"004675\n"}
+,{"stream_name":"stdout","time":151.494981043,"data":"0043\n"}
+,{"stream_name":"stdout","time":154.217649223,"data":"\n"}
+,{"stream_name":"stdout","time":154.217722839,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/README.md  (3326 bytes) ---\n"}
+,{"stream_name":"stdout","time":154.22120529,"data":"# Citation\n"}
+,{"stream_name":"stdout","time":154.221250293,"data":"\n"}
+,{"stream_name":"stdout","time":154.221258042,"data":"If you use this dataset in your research, please cite:\n"}
+,{"stream_name":"stdout","time":154.221263585,"data":"\n"}
+,{"stream_name":"stdout","time":154.221268437,"data":"```bibtex\n"}
+,{"stream_name":"stdout","time":154.221273512,"data":"@inproceedings{10.1007/978-3-032-05182-0_60,\n"}
+,{"stream_name":"stdout","time":154.221278824,"data":"  author = {Duong, Viet Hung and Vu, Huan and Phan, Huong Duong and Nguyen, Duc Quyen and Pham, Duc Hao and Le, Quang Toan and Nguyen, Ba Sy and Do, Tien Dung and Dinh, Viet Sang and Nguyen, Tien Cuong and Pham, Huy Hoang and Ngo, Dien Hy},\n"}
+,{"stream_name":"stdout","time":154.221287018,"data":"  title = {ThyroidXL: Advancing Thyroid Nodule Diagnosis with an Expert-Labeled, Pathology-Validated Dataset},\n"}
+,{"stream_name":"stdout","time":154.221292323,"data":"  year = {2025},\n"}
+,{"stream_name":"stdout","time":154.221298728,"data":"  isbn = {978-3-032-05181-3},\n"}
+,{"stream_name":"stdout","time":154.221304064,"data":"  publisher = {Springer-Verlag},\n"}
+,{"stream_name":"stdout","time":154.22130944,"data":"  address = {Berlin, Heidelberg},\n"}
+,{"stream_name":"stdout","time":154.221315421,"data":"  url = {https://doi.org/10.1007/978-3-032-05182-0_60},\n"}
+,{"stream_name":"stdout","time":154.221320807,"data":"  doi = {10.1007/978-3-032-05182-0_60}\n"}
+,{"stream_name":"stdout","time":154.221328754,"data":"}\n"}
+,{"stream_name":"stdout","time":154.22133376,"data":"```\n"}
+,{"stream_name":"stdout","time":154.221338723,"data":"\n"}
+,{"stream_name":"stdout","time":154.221343712,"data":"# ThyroidXL Dataset\n"}
+,{"stream_name":"stdout","time":154.221348637,"data":"\n"}
+,{"stream_name":"stdout","time":154.22135359,"data":"The ThyroidXL dataset. The annotations are provided for classification, detection and segmentation tasks.\n"}
+,{"stream_name":"stdout","time":154.221358962,"data":"\n"}
+,{"stream_name":"stdout","time":154.221364634,"data":"## Dataset stats\n"}
+,{"stream_name":"stdout","time":154.221370731,"data":"- Total number of patients: 4093 (patients)\n"}
+,{"stream_name":"stdout","time":154.22137696,"data":"- Total number of im\n"}
+,{"stream_name":"stdout","time":177.785981681,"data":"\n"}
+,{"stream_name":"stdout","time":177.786072401,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/stats/id2info_eng.json  (2398102 bytes) ---\n"}
+,{"stream_name":"stdout","time":177.78975494,"data":"{\n"}
+,{"stream_name":"stdout","time":177.789798131,"data":"    \"00000058\": {\n"}
+,{"stream_name":"stdout","time":177.789803798,"data":"        \"age\": 60,\n"}
+,{"stream_name":"stdout","time":177.789825128,"data":"        \"gender\": 2,\n"}
+,{"stream_name":"stdout","time":177.789832021,"data":"        \"conclusion\": 3,\n"}
+,{"stream_name":"stdout","time":177.789838437,"data":"        \"nodule_1\": {\n"}
+,{"stream_name":"stdout","time":177.789844708,"data":"            \"Position\": \"Left lobe-upper third\",\n"}
+,{"stream_name":"stdout","time":177.789850934,"data":"            \"Width\": 22.0,\n"}
+,{"stream_name":"stdout","time":177.789856638,"data":"            \"Height\": 14.0,\n"}
+,{"stream_name":"stdout","time":177.789879947,"data":"            \"Depth\": null,\n"}
+,{"stream_name":"stdout","time":177.789888483,"data":"            \"TIRADS\": 4,\n"}
+,{"stream_name":"stdout","time":177.789891361,"data":"            \"FNAC\": \"2\",\n"}
+,{"stream_name":"stdout","time":177.789894194,"data":"            \"Conclusion\": \"Benign (FNAC) - 3\",\n"}
+,{"stream_name":"stdout","time":177.789897066,"data":"            \"Histopathology\": null\n"}
+,{"stream_name":"stdout","time":177.789899873,"data":"        },\n"}
+,{"stream_name":"stdout","time":177.789902529,"data":"        \"nodule_2\": null,\n"}
+,{"stream_name":"stdout","time":177.789905273,"data":"        \"images\": [\n"}
+,{"stream_name":"stdout","time":177.789908054,"data":"            \"00000058_2201CE11_0.png\",\n"}
+,{"stream_name":"stdout","time":177.789928777,"data":"            \"00000058_A73CED93_1.png\"\n"}
+,{"stream_name":"stdout","time":177.789934033,"data":"        ]\n"}
+,{"stream_name":"stdout","time":177.789938715,"data":"    },\n"}
+,{"stream_name":"stdout","time":177.789943386,"data":"    \"00000126\": {\n"}
+,{"stream_name":"stdout","time":177.789948066,"data":"        \"age\": 56,\n"}
+,{"stream_name":"stdout","time":177.789951881,"data":"        \"gender\": 2,\n"}
+,{"stream_name":"stdout","time":177.789955795,"data":"        \"conclusion\": 1,\n"}
+,{"stream_name":"stdout","time":177.78995979,"data":"        \"nodule_1\": {\n"}
+,{"stream_name":"stdout","time":177.789963869,"data":"            \"Position\": \"Right lobe-middle third\",\n"}
+,{"stream_name":"stdout","time":177.789967975,"data":"            \"Width\": 5.0,\n"}
+,{"stream_name":"stdout","time":177.789971857,"data":"            \"Height\": 5.0,\n"}
+,{"stream_name":"stdout","time":177.789975805,"data":"            \"Depth\": null,\n"}
+,{"stream_name":"stdout","time":177.789979674,"data":"            \"TIRADS\": 5,\n"}
+,{"stream_name":"stdout","time":177.789983537,"data":"            \"FNAC\": \"6\",\n"}
+,{"stream_name":"stdout","time":177.789987497,"data":"            \"Conclusion\": \"Malignant (Histopathology) - 1\",\n"}
+,{"stream_name":"stdout","time":177.789991684,"data":"            \"Histopathology\": \"Pa\n"}
+,{"stream_name":"stdout","time":177.791771682,"data":"\n"}
+,{"stream_name":"stdout","time":177.79180937,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/stats/new_id2info.json  (2268732 bytes) ---\n"}
+,{"stream_name":"stdout","time":177.795491739,"data":"{\n"}
+,{"stream_name":"stdout","time":177.795549702,"data":"    \"00000001\": {\n"}
+,{"stream_name":"stdout","time":177.795556623,"data":"        \"age\": 47,\n"}
+,{"stream_name":"stdout","time":177.795562071,"data":"        \"gender\": 2,\n"}
+,{"stream_name":"stdout","time":177.795566863,"data":"        \"conclusion\": 1,\n"}
+,{"stream_name":"stdout","time":177.795571689,"data":"        \"nodule_1\": {\n"}
+,{"stream_name":"stdout","time":177.795576565,"data":"            \"Position\": \"Th\\u00f9y Ph\\u1ea3i-1/3 gi\\u1eefa\",\n"}
+,{"stream_name":"stdout","time":177.795613412,"data":"            \"Width\": 7.0,\n"}
+,{"stream_name":"stdout","time":177.795618556,"data":"            \"Height\": 9.0,\n"}
+,{"stream_name":"stdout","time":177.795622648,"data":"            \"Depth\": null,\n"}
+,{"stream_name":"stdout","time":177.795626697,"data":"            \"TIRADS\": 5,\n"}
+,{"stream_name":"stdout","time":177.795630896,"data":"            \"FNAC\": 6,\n"}
+,{"stream_name":"stdout","time":177.795634988,"data":"            \"MBH\": \"vi UTBMTG th\\u1ec3 nh\\u00fa\",\n"}
+,{"stream_name":"stdout","time":177.795639209,"data":"            \"Conclusion\": \"Ung thu MBH (1)\"\n"}
+,{"stream_name":"stdout","time":177.795658521,"data":"        },\n"}
+,{"stream_name":"stdout","time":177.795662403,"data":"        \"nodule_2\": null\n"}
+,{"stream_name":"stdout","time":177.795666072,"data":"    },\n"}
+,{"stream_name":"stdout","time":177.795669925,"data":"    \"00000002\": {\n"}
+,{"stream_name":"stdout","time":177.795673614,"data":"        \"age\": 57,\n"}
+,{"stream_name":"stdout","time":177.795677541,"data":"        \"gender\": 1,\n"}
+,{"stream_name":"stdout","time":177.795682296,"data":"        \"conclusion\": 1,\n"}
+,{"stream_name":"stdout","time":177.79568746,"data":"        \"nodule_1\": {\n"}
+,{"stream_name":"stdout","time":177.795692122,"data":"            \"Position\": \"Th\\u00f9y Ph\\u1ea3i-1/3 gi\\u1eefa\",\n"}
+,{"stream_name":"stdout","time":177.79569743,"data":"            \"Width\": 4.0,\n"}
+,{"stream_name":"stdout","time":177.795702162,"data":"            \"Height\": 4.0,\n"}
+,{"stream_name":"stdout","time":177.795706202,"data":"            \"Depth\": null,\n"}
+,{"stream_name":"stdout","time":177.79571004,"data":"            \"TIRADS\": 5,\n"}
+,{"stream_name":"stdout","time":177.795714019,"data":"            \"FNAC\": 6,\n"}
+,{"stream_name":"stdout","time":177.795717964,"data":"            \"MBH\": \"vi UTBMTG th\\u1ec3 nh\\u00fa\",\n"}
+,{"stream_name":"stdout","time":177.795722197,"data":"            \"Conclusion\": \"Ung thu MBH (1)\"\n"}
+,{"stream_name":"stdout","time":177.795726376,"data":"        },\n"}
+,{"stream_name":"stdout","time":177.795737116,"data":"        \"nodule_2\": null\n"}
+,{"stream_name":"stdout","time":177.795740991,"data":"    },\n"}
+,{"stream_name":"stdout","time":177.795743648,"data":"    \"00000003\": {\n"}
+,{"stream_name":"stdout","time":177.795746468,"data":"        \"age\": 38,\n"}
+,{"stream_name":"stdout","time":177.796879444,"data":"\n"}
+,{"stream_name":"stdout","time":177.796909655,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/stats/test_patients.txt  (7390 bytes) ---\n"}
+,{"stream_name":"stdout","time":177.801793963,"data":"00001400\n"}
+,{"stream_name":"stdout","time":177.801854105,"data":"00003221\n"}
+,{"stream_name":"stdout","time":177.801861863,"data":"00001534\n"}
+,{"stream_name":"stdout","time":177.801866639,"data":"00004374\n"}
+,{"stream_name":"stdout","time":177.801870949,"data":"00002306\n"}
+,{"stream_name":"stdout","time":177.801875174,"data":"00001968\n"}
+,{"stream_name":"stdout","time":177.801879514,"data":"00002224\n"}
+,{"stream_name":"stdout","time":177.801883077,"data":"00002944\n"}
+,{"stream_name":"stdout","time":177.801886517,"data":"00003197\n"}
+,{"stream_name":"stdout","time":177.80189016,"data":"00003738\n"}
+,{"stream_name":"stdout","time":177.801893566,"data":"00002441\n"}
+,{"stream_name":"stdout","time":177.801897609,"data":"00003403\n"}
+,{"stream_name":"stdout","time":177.80190182,"data":"00001464\n"}
+,{"stream_name":"stdout","time":177.801906294,"data":"00003686\n"}
+,{"stream_name":"stdout","time":177.801910662,"data":"00001553\n"}
+,{"stream_name":"stdout","time":177.801914944,"data":"00004617\n"}
+,{"stream_name":"stdout","time":177.801918781,"data":"00003341\n"}
+,{"stream_name":"stdout","time":177.801922869,"data":"00002725\n"}
+,{"stream_name":"stdout","time":177.801926336,"data":"00001002\n"}
+,{"stream_name":"stdout","time":177.801930086,"data":"00002956\n"}
+,{"stream_name":"stdout","time":177.801934054,"data":"00002235\n"}
+,{"stream_name":"stdout","time":177.8019378,"data":"00002922\n"}
+,{"stream_name":"stdout","time":177.801941678,"data":"00003999\n"}
+,{"stream_name":"stdout","time":177.80196318,"data":"00002007\n"}
+,{"stream_name":"stdout","time":177.801967799,"data":"00003365\n"}
+,{"stream_name":"stdout","time":177.801971805,"data":"00002223\n"}
+,{"stream_name":"stdout","time":177.801975834,"data":"00003059\n"}
+,{"stream_name":"stdout","time":177.801979807,"data":"00004513\n"}
+,{"stream_name":"stdout","time":177.801984146,"data":"00002504\n"}
+,{"stream_name":"stdout","time":177.801988205,"data":"00002333\n"}
+,{"stream_name":"stdout","time":177.801992483,"data":"00002490\n"}
+,{"stream_name":"stdout","time":177.801996664,"data":"00002016\n"}
+,{"stream_name":"stdout","time":177.802000737,"data":"00002599\n"}
+,{"stream_name":"stdout","time":177.802004704,"data":"00003482\n"}
+,{"stream_name":"stdout","time":177.802008811,"data":"00003515\n"}
+,{"stream_name":"stdout","time":177.802013169,"data":"00001173\n"}
+,{"stream_name":"stdout","time":177.802017237,"data":"00002186\n"}
+,{"stream_name":"stdout","time":177.802021187,"data":"00003641\n"}
+,{"stream_name":"stdout","time":177.80202561,"data":"00004006\n"}
+,{"stream_name":"stdout","time":177.802029806,"data":"00002587\n"}
+,{"stream_name":"stdout","time":177.802034114,"data":"00003716\n"}
+,{"stream_name":"stdout","time":177.802038247,"data":"00003882\n"}
+,{"stream_name":"stdout","time":177.802042318,"data":"00004687\n"}
+,{"stream_name":"stdout","time":177.802046277,"data":"00002622\n"}
+,{"stream_name":"stdout","time":177.802050406,"data":"00004557\n"}
+,{"stream_name":"stdout","time":177.802054503,"data":"00002473\n"}
+,{"stream_name":"stdout","time":177.802058577,"data":"00003048\n"}
+,{"stream_name":"stdout","time":177.802062677,"data":"00002176\n"}
+,{"stream_name":"stdout","time":177.802066631,"data":"00002965\n"}
+,{"stream_name":"stdout","time":177.802070729,"data":"00001220\n"}
+,{"stream_name":"stdout","time":177.802074634,"data":"00001774\n"}
+,{"stream_name":"stdout","time":177.802078594,"data":"00004060\n"}
+,{"stream_name":"stdout","time":177.802082606,"data":"00004753\n"}
+,{"stream_name":"stdout","time":177.802086802,"data":"00003034\n"}
+,{"stream_name":"stdout","time":177.802091413,"data":"00002884\n"}
+,{"stream_name":"stdout","time":177.802095295,"data":"00002511\n"}
+,{"stream_name":"stdout","time":177.80209906300001,"data":"00002069\n"}
+,{"stream_name":"stdout","time":177.802102841,"data":"00001436\n"}
+,{"stream_name":"stdout","time":177.802106752,"data":"00001815\n"}
+,{"stream_name":"stdout","time":177.80211058,"data":"00002889\n"}
+,{"stream_name":"stdout","time":177.802114681,"data":"00004775\n"}
+,{"stream_name":"stdout","time":177.802118678,"data":"00004354\n"}
+,{"stream_name":"stdout","time":177.802122655,"data":"00003628\n"}
+,{"stream_name":"stdout","time":177.802127169,"data":"00004716\n"}
+,{"stream_name":"stdout","time":177.802131307,"data":"00001538\n"}
+,{"stream_name":"stdout","time":177.802135388,"data":"00003956\n"}
+,{"stream_name":"stdout","time":177.802139343,"data":"00002351\n"}
+,{"stream_name":"stdout","time":177.802143337,"data":"00000220\n"}
+,{"stream_name":"stdout","time":177.802147436,"data":"00002061\n"}
+,{"stream_name":"stdout","time":177.802151412,"data":"00001590\n"}
+,{"stream_name":"stdout","time":177.80215549,"data":"00001763\n"}
+,{"stream_name":"stdout","time":177.80215937,"data":"00003938\n"}
+,{"stream_name":"stdout","time":177.802163367,"data":"00002660\n"}
+,{"stream_name":"stdout","time":177.802167339,"data":"00003851\n"}
+,{"stream_name":"stdout","time":177.802171423,"data":"00003338\n"}
+,{"stream_name":"stdout","time":177.802180497,"data":"00001559\n"}
+,{"stream_name":"stdout","time":177.802184834,"data":"00003877\n"}
+,{"stream_name":"stdout","time":177.802188841,"data":"00004251\n"}
+,{"stream_name":"stdout","time":177.802192845,"data":"00003256\n"}
+,{"stream_name":"stdout","time":177.802196907,"data":"00003675\n"}
+,{"stream_name":"stdout","time":177.80220102,"data":"00003053\n"}
+,{"stream_name":"stdout","time":177.802205028,"data":"00002916\n"}
+,{"stream_name":"stdout","time":177.802208383,"data":"00002536\n"}
+,{"stream_name":"stdout","time":177.802212369,"data":"00003612\n"}
+,{"stream_name":"stdout","time":177.802216406,"data":"00003311\n"}
+,{"stream_name":"stdout","time":177.802220446,"data":"00003355\n"}
+,{"stream_name":"stdout","time":177.802224339,"data":"00003385\n"}
+,{"stream_name":"stdout","time":177.802228135,"data":"00003535\n"}
+,{"stream_name":"stdout","time":177.802231848,"data":"00002509\n"}
+,{"stream_name":"stdout","time":177.802235692,"data":"00003351\n"}
+,{"stream_name":"stdout","time":177.80223928,"data":"00004097\n"}
+,{"stream_name":"stdout","time":177.802243019,"data":"00001793\n"}
+,{"stream_name":"stdout","time":177.80224677,"data":"00004024\n"}
+,{"stream_name":"stdout","time":177.802250466,"data":"00003157\n"}
+,{"stream_name":"stdout","time":177.802258364,"data":"00001218\n"}
+,{"stream_name":"stdout","time":177.802262905,"data":"00000639\n"}
+,{"stream_name":"stdout","time":177.802267057,"data":"00002079\n"}
+,{"stream_name":"stdout","time":177.802271004,"data":"00003451\n"}
+,{"stream_name":"stdout","time":177.802274874,"data":"00004585\n"}
+,{"stream_name":"stdout","time":177.802283505,"data":"00002017\n"}
+,{"stream_name":"stdout","time":177.802287785,"data":"\n"}
+,{"stream_name":"stdout","time":177.802842815,"data":"\n"}
+,{"stream_name":"stdout","time":177.80285815,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/stats/train_patients.txt  (33540 bytes) ---\n"}
+,{"stream_name":"stdout","time":177.806942634,"data":"00000058\n"}
+,{"stream_name":"stdout","time":177.806971068,"data":"00000127\n"}
+,{"stream_name":"stdout","time":177.806975814,"data":"00000140\n"}
+,{"stream_name":"stdout","time":177.8069799,"data":"00000141\n"}
+,{"stream_name":"stdout","time":177.806983791,"data":"00000162\n"}
+,{"stream_name":"stdout","time":177.80698762,"data":"00000176\n"}
+,{"stream_name":"stdout","time":177.806991686,"data":"00000182\n"}
+,{"stream_name":"stdout","time":177.80699741,"data":"00000196\n"}
+,{"stream_name":"stdout","time":177.807018153,"data":"00000199\n"}
+,{"stream_name":"stdout","time":177.807023518,"data":"00000204\n"}
+,{"stream_name":"stdout","time":177.807028045,"data":"00000207\n"}
+,{"stream_name":"stdout","time":177.807032651,"data":"00000229\n"}
+,{"stream_name":"stdout","time":177.807037355,"data":"00000234\n"}
+,{"stream_name":"stdout","time":177.807041891,"data":"00000237\n"}
+,{"stream_name":"stdout","time":177.807045571,"data":"00000239\n"}
+,{"stream_name":"stdout","time":177.807049403,"data":"00000245\n"}
+,{"stream_name":"stdout","time":177.807053244,"data":"00000247\n"}
+,{"stream_name":"stdout","time":177.807056971,"data":"00000248\n"}
+,{"stream_name":"stdout","time":177.807060756,"data":"00000251\n"}
+,{"stream_name":"stdout","time":177.807064557,"data":"00000256\n"}
+,{"stream_name":"stdout","time":177.80706831,"data":"00000262\n"}
+,{"stream_name":"stdout","time":177.807072794,"data":"00000268\n"}
+,{"stream_name":"stdout","time":177.807077067,"data":"00000269\n"}
+,{"stream_name":"stdout","time":177.807098368,"data":"00000270\n"}
+,{"stream_name":"stdout","time":177.807102627,"data":"00000271\n"}
+,{"stream_name":"stdout","time":177.807106392,"data":"00000277\n"}
+,{"stream_name":"stdout","time":177.807111017,"data":"00000288\n"}
+,{"stream_name":"stdout","time":177.807115833,"data":"00000289\n"}
+,{"stream_name":"stdout","time":177.807120722,"data":"00000292\n"}
+,{"stream_name":"stdout","time":177.807125291,"data":"00000297\n"}
+,{"stream_name":"stdout","time":177.807129654,"data":"00000299\n"}
+,{"stream_name":"stdout","time":177.807152289,"data":"00000311\n"}
+,{"stream_name":"stdout","time":177.807156484,"data":"00000322\n"}
+,{"stream_name":"stdout","time":177.807160253,"data":"00000324\n"}
+,{"stream_name":"stdout","time":177.807164092,"data":"00000327\n"}
+,{"stream_name":"stdout","time":177.80716792,"data":"00000331\n"}
+,{"stream_name":"stdout","time":177.807172359,"data":"00000333\n"}
+,{"stream_name":"stdout","time":177.807176976,"data":"00000341\n"}
+,{"stream_name":"stdout","time":177.807180904,"data":"00000343\n"}
+,{"stream_name":"stdout","time":177.807185602,"data":"00000344\n"}
+,{"stream_name":"stdout","time":177.807189579,"data":"00000359\n"}
+,{"stream_name":"stdout","time":177.807193241,"data":"00000362\n"}
+,{"stream_name":"stdout","time":177.807204809,"data":"00000370\n"}
+,{"stream_name":"stdout","time":177.807209756,"data":"00000378\n"}
+,{"stream_name":"stdout","time":177.807214252,"data":"00000427\n"}
+,{"stream_name":"stdout","time":177.807218441,"data":"00000435\n"}
+,{"stream_name":"stdout","time":177.807223337,"data":"00000442\n"}
+,{"stream_name":"stdout","time":177.807227365,"data":"00000449\n"}
+,{"stream_name":"stdout","time":177.807231137,"data":"00000456\n"}
+,{"stream_name":"stdout","time":177.807234929,"data":"00000459\n"}
+,{"stream_name":"stdout","time":177.807238717,"data":"00000461\n"}
+,{"stream_name":"stdout","time":177.807243378,"data":"00000462\n"}
+,{"stream_name":"stdout","time":177.807247655,"data":"00000467\n"}
+,{"stream_name":"stdout","time":177.807251738,"data":"00000470\n"}
+,{"stream_name":"stdout","time":177.807256139,"data":"00000475\n"}
+,{"stream_name":"stdout","time":177.807259648,"data":"00000508\n"}
+,{"stream_name":"stdout","time":177.807263542,"data":"00000509\n"}
+,{"stream_name":"stdout","time":177.807267252,"data":"00000530\n"}
+,{"stream_name":"stdout","time":177.807271008,"data":"00000535\n"}
+,{"stream_name":"stdout","time":177.807274886,"data":"00000536\n"}
+,{"stream_name":"stdout","time":177.807278657,"data":"00000538\n"}
+,{"stream_name":"stdout","time":177.807282342,"data":"00000539\n"}
+,{"stream_name":"stdout","time":177.807286103,"data":"00000540\n"}
+,{"stream_name":"stdout","time":177.807289983,"data":"00000553\n"}
+,{"stream_name":"stdout","time":177.807294303,"data":"00000554\n"}
+,{"stream_name":"stdout","time":177.807298791,"data":"00000556\n"}
+,{"stream_name":"stdout","time":177.807303393,"data":"00000557\n"}
+,{"stream_name":"stdout","time":177.807307809,"data":"00000558\n"}
+,{"stream_name":"stdout","time":177.80731242,"data":"00000560\n"}
+,{"stream_name":"stdout","time":177.807316151,"data":"00000561\n"}
+,{"stream_name":"stdout","time":177.807319507,"data":"00000564\n"}
+,{"stream_name":"stdout","time":177.807322881,"data":"00000568\n"}
+,{"stream_name":"stdout","time":177.807326708,"data":"00000570\n"}
+,{"stream_name":"stdout","time":177.807330764,"data":"00000571\n"}
+,{"stream_name":"stdout","time":177.807339634,"data":"00000572\n"}
+,{"stream_name":"stdout","time":177.807350595,"data":"00000574\n"}
+,{"stream_name":"stdout","time":177.807354965,"data":"00000577\n"}
+,{"stream_name":"stdout","time":177.807359191,"data":"00000579\n"}
+,{"stream_name":"stdout","time":177.80736352,"data":"00000584\n"}
+,{"stream_name":"stdout","time":177.807367441,"data":"00000590\n"}
+,{"stream_name":"stdout","time":177.807371867,"data":"00000592\n"}
+,{"stream_name":"stdout","time":177.807376085,"data":"00000593\n"}
+,{"stream_name":"stdout","time":177.807380354,"data":"00000596\n"}
+,{"stream_name":"stdout","time":177.807384623,"data":"00000597\n"}
+,{"stream_name":"stdout","time":177.807389225,"data":"00000599\n"}
+,{"stream_name":"stdout","time":177.807393464,"data":"00000600\n"}
+,{"stream_name":"stdout","time":177.807398299,"data":"00000601\n"}
+,{"stream_name":"stdout","time":177.807402518,"data":"00000602\n"}
+,{"stream_name":"stdout","time":177.807406539,"data":"00000604\n"}
+,{"stream_name":"stdout","time":177.807410707,"data":"00000606\n"}
+,{"stream_name":"stdout","time":177.807415122,"data":"00000607\n"}
+,{"stream_name":"stdout","time":177.807419614,"data":"00000608\n"}
+,{"stream_name":"stdout","time":177.807423996,"data":"00000612\n"}
+,{"stream_name":"stdout","time":177.807428261,"data":"00000622\n"}
+,{"stream_name":"stdout","time":177.807432411,"data":"00000629\n"}
+,{"stream_name":"stdout","time":177.807436917,"data":"00000631\n"}
+,{"stream_name":"stdout","time":177.8074404,"data":"00000632\n"}
+,{"stream_name":"stdout","time":177.807444879,"data":"00000635\n"}
+,{"stream_name":"stdout","time":177.807449199,"data":"00000636\n"}
+,{"stream_name":"stdout","time":177.80745356,"data":"00000642\n"}
+,{"stream_name":"stdout","time":177.807457794,"data":"\n"}
+,{"stream_name":"stdout","time":177.813465685,"data":"\n"}
+,{"stream_name":"stdout","time":177.813510785,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/test_annotations.json  (1538725 bytes) ---\n"}
+,{"stream_name":"stdout","time":177.817106097,"data":"{\"info\": {\"00001400\": {\"age\": 56, \"gender\": 2, \"conclusion\": 3, \"nodule_1\": {\"Position\": \"Left lobe-middle third\", \"Width\": 12.0, \"Height\": 7.0, \"Depth\": null, \"TIRADS\": 2, \"FNAC\": \"2\", \"Conclusion\": \"Benign (FNAC) - 3\", \"Histopathology\": null}, \"nodule_2\": null, \"images\": [\"00001400_81A1A425_0.png\", \"00001400_BF19BD85_1.png\"]}, \"00003221\": {\"age\": 56, \"gender\": 2, \"conclusion\": 3, \"nodule_1\": {\"Position\": \"Left lobe-lower third\", \"Width\": 10.0, \"Height\": 10.0, \"Depth\": null, \"TIRADS\": 4, \"FNAC\": \"2\", \"Conclusion\": \"Benign (FNAC) - 3\", \"Histopathology\": null}, \"nodule_2\": null, \"images\": [\"00003221_2CFF7167_1.png\", \"00003221_3D50F49D_0.png\", \"00003221_F650545C_2.png\"]}, \"00001534\": {\"age\": 41, \"gender\": 2, \"conclusion\": 3, \"nodule_1\": {\"Position\": \"Right lobe-middle third\", \"Width\": 9.0, \"Height\": 15.0, \"Depth\": null, \"TIRADS\": 3, \"FNAC\": \"2\", \"Conclusion\": \"Benign (FNAC) - 3\", \"Histopat\n"}
+,{"stream_name":"stdout","time":179.143218956,"data":"\n"}
+,{"stream_name":"stdout","time":179.143275522,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels/00000126_418A6BA8_0.txt  (39 bytes) ---\n"}
+,{"stream_name":"stdout","time":179.149062326,"data":"1 0.497937 0.327068 0.134801 0.135338\n"}
+,{"stream_name":"stdout","time":179.149111412,"data":"\n"}
+,{"stream_name":"stdout","time":179.149152379,"data":"\n"}
+,{"stream_name":"stdout","time":179.149174509,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels/00000126_93A48D44_1.txt  (39 bytes) ---\n"}
+,{"stream_name":"stdout","time":179.152767897,"data":"1 0.602476 0.329887 0.126547 0.137218\n"}
+,{"stream_name":"stdout","time":179.152827695,"data":"\n"}
+,{"stream_name":"stdout","time":181.735368254,"data":"\n"}
+,{"stream_name":"stdout","time":181.735445897,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000126_418A6BA8_0.json  (285 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.738739925,"data":"{\"label\": \"actinh\", \"bbox\": [313, 138, 411, 210], \"all_points_x\": [399, 399, 386, 367, 357, 322, 313, 313, 322, 341, 352, 368, 377, 391, 398, 405, 411, 402, 398, 398], \"all_points_y\": [168, 154, 144, 138, 144, 171, 179, 192, 199, 201, 209, 210, 210, 210, 210, 203, 190, 181, 177, 173]}\n"}
+,{"stream_name":"stdout","time":181.738889135,"data":"\n"}
+,{"stream_name":"stdout","time":181.738895251,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000126_93A48D44_1.json  (325 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.741461599,"data":"{\"label\": \"actinh\", \"bbox\": [392, 139, 484, 212], \"all_points_x\": [482, 474, 466, 454, 447, 435, 427, 422, 417, 415, 411, 404, 395, 392, 394, 399, 412, 439, 449, 457, 474, 480, 483, 484], \"all_points_y\": [170, 155, 145, 139, 139, 142, 147, 153, 162, 166, 179, 185, 192, 197, 206, 209, 210, 210, 212, 212, 212, 209, 198, 183]}\n"}
+,{"stream_name":"stdout","time":181.741527153,"data":"\n"}
+,{"stream_name":"stdout","time":181.741534464,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000126_F5B674D4_2.json  (295 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.745064398,"data":"{\"label\": \"actinh\", \"bbox\": [340, 141, 446, 222], \"all_points_x\": [446, 430, 415, 402, 381, 375, 368, 355, 344, 340, 340, 346, 359, 374, 385, 401, 418, 432, 439, 441, 446], \"all_points_y\": [175, 169, 160, 145, 141, 153, 168, 179, 187, 197, 205, 212, 217, 218, 222, 221, 216, 214, 210, 209, 186]}\n"}
+,{"stream_name":"stdout","time":181.745152009,"data":"\n"}
+,{"stream_name":"stdout","time":181.7451697,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000133_06511586_1.json  (365 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.748922492,"data":"{\"label\": \"actinh\", \"bbox\": [264, 112, 367, 187], \"all_points_x\": [362, 342, 337, 328, 316, 304, 288, 280, 273, 270, 275, 287, 292, 281, 277, 267, 264, 264, 283, 299, 312, 325, 337, 344, 359, 362, 367, 366], \"all_points_y\": [143, 138, 128, 122, 115, 112, 112, 112, 114, 124, 135, 141, 143, 148, 152, 157, 170, 177, 187, 185, 180, 177, 168, 168, 166, 160, 154, 149]}\n"}
+,{"stream_name":"stdout","time":181.749002449,"data":"\n"}
+,{"stream_name":"stdout","time":181.749017859,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000133_3E6D85F0_2.json  (313 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.752293534,"data":"{\"label\": \"actinh\", \"bbox\": [196, 99, 316, 176], \"all_points_x\": [316, 296, 275, 271, 260, 246, 233, 212, 201, 196, 196, 201, 210, 234, 249, 273, 285, 296, 308, 313, 313, 313, 313], \"all_points_y\": [123, 120, 113, 109, 100, 99, 101, 120, 135, 149, 154, 166, 172, 175, 176, 172, 161, 152, 152, 148, 140, 138, 133]}\n"}
+,{"stream_name":"stdout","time":181.752392845,"data":"\n"}
+,{"stream_name":"stdout","time":181.75243127,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000133_BB205501_0.json  (350 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.755647106,"data":"{\"label\": \"actinh\", \"bbox\": [197, 94, 328, 161], \"all_points_x\": [325, 327, 317, 307, 298, 287, 276, 268, 257, 237, 225, 221, 208, 199, 197, 214, 215, 229, 248, 267, 289, 300, 309, 317, 319, 328, 326], \"all_points_y\": [120, 104, 105, 106, 107, 103, 96, 95, 95, 94, 106, 115, 123, 130, 144, 155, 160, 160, 161, 161, 156, 148, 148, 143, 138, 129, 128]}\n"}
+,{"stream_name":"stdout","time":181.755781174,"data":"\n"}
+,{"stream_name":"stdout","time":181.755808322,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000135_1086B4FC_0.json  (364 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.758819339,"data":"{\"label\": \"actinh\", \"bbox\": [131, 59, 359, 252], \"all_points_x\": [331, 306, 293, 258, 241, 222, 192, 174, 156, 142, 131, 132, 145, 160, 168, 167, 168, 213, 262, 289, 311, 336, 349, 354, 359, 357, 351, 345, 343], \"all_points_y\": [97, 89, 74, 68, 69, 66, 61, 59, 63, 70, 103, 116, 133, 149, 176, 196, 222, 252, 251, 247, 244, 233, 223, 204, 171, 149, 128, 118, 116]}\n"}
+,{"stream_name":"stdout","time":181.758868869,"data":"\n"}
+,{"stream_name":"stdout","time":181.75887534700001,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000135_E1284749_1.json  (376 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.762013602,"data":"{\"label\": \"actinh\", \"bbox\": [45, 58, 417, 232], \"all_points_x\": [370, 341, 293, 233, 210, 186, 156, 102, 70, 45, 81, 83, 72, 76, 91, 101, 140, 151, 164, 188, 204, 233, 258, 294, 319, 335, 363, 393, 414, 417, 387], \"all_points_y\": [73, 69, 58, 67, 67, 64, 64, 65, 81, 115, 134, 139, 154, 162, 173, 182, 217, 222, 230, 232, 221, 225, 225, 209, 187, 161, 158, 150, 127, 110, 80]}\n"}
+,{"stream_name":"stdout","time":181.762042993,"data":"\n"}
+,{"stream_name":"stdout","time":181.762048237,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_AACD94CF_2.json  (335 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.765218646,"data":"{\"label\": \"actinh\", \"bbox\": [214, 106, 339, 190], \"all_points_x\": [319, 311, 299, 281, 270, 253, 239, 227, 214, 214, 216, 221, 228, 243, 266, 272, 281, 293, 307, 320, 332, 339, 339, 329, 328], \"all_points_y\": [137, 122, 116, 117, 111, 106, 106, 110, 123, 130, 140, 152, 159, 168, 181, 187, 188, 190, 183, 176, 164, 157, 144, 131, 131]}\n"}
+,{"stream_name":"stdout","time":181.765404452,"data":"\n"}
+,{"stream_name":"stdout","time":181.765429029,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_B99D7730_3.json  (332 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.769969043,"data":"{\"label\": \"actinh\", \"bbox\": [189, 94, 326, 200], \"all_points_x\": [311, 304, 300, 285, 260, 250, 244, 238, 224, 219, 209, 201, 197, 189, 192, 227, 238, 250, 289, 315, 325, 326, 325, 321, 319], \"all_points_y\": [141, 131, 121, 115, 118, 118, 108, 101, 94, 99, 108, 118, 129, 138, 152, 169, 176, 189, 200, 200, 193, 181, 165, 158, 158]}\n"}
+,{"stream_name":"stdout","time":181.770068304,"data":"\n"}
+,{"stream_name":"stdout","time":181.770079634,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_E179C3BE_0.json  (261 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.773075713,"data":"{\"label\": \"actinh\", \"bbox\": [185, 87, 338, 188], \"all_points_x\": [325, 302, 291, 271, 257, 203, 189, 185, 192, 226, 256, 270, 290, 307, 322, 333, 338, 338], \"all_points_y\": [117, 104, 95, 88, 87, 106, 109, 120, 137, 162, 186, 188, 177, 167, 158, 150, 138, 124]}\n"}
+,{"stream_name":"stdout","time":181.77311751,"data":"\n"}
+,{"stream_name":"stdout","time":181.773124564,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_EFBBB3DB_1.json  (347 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.777014273,"data":"{\"label\": \"actinh\", \"bbox\": [205, 81, 352, 205], \"all_points_x\": [349, 348, 340, 331, 316, 306, 298, 289, 277, 259, 226, 208, 205, 216, 233, 246, 259, 259, 269, 279, 291, 300, 309, 329, 337, 346, 352], \"all_points_y\": [131, 111, 102, 94, 94, 99, 93, 86, 81, 85, 110, 120, 133, 143, 150, 154, 160, 176, 200, 205, 202, 191, 181, 168, 161, 150, 139]}\n"}
+,{"stream_name":"stdout","time":181.777101355,"data":"\n"}
+,{"stream_name":"stdout","time":181.777158352,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000142_03684A2F_0.json  (305 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.780390895,"data":"{\"label\": \"actinh\", \"bbox\": [349, 134, 416, 265], \"all_points_x\": [416, 400, 389, 379, 366, 353, 349, 349, 349, 349, 349, 350, 350, 350, 357, 374, 389, 396, 405, 415, 415, 415], \"all_points_y\": [160, 149, 136, 134, 134, 143, 153, 166, 181, 191, 202, 217, 232, 249, 259, 265, 262, 244, 227, 205, 176, 169]}\n"}
+,{"stream_name":"stdout","time":181.780452326,"data":"\n"}
+,{"stream_name":"stdout","time":181.780474469,"data":"--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000142_048D72A3_1.json  (365 bytes) ---\n"}
+,{"stream_name":"stdout","time":181.783638179,"data":"{\"label\": \"actinh\", \"bbox\": [232, 141, 323, 274], \"all_points_x\": [313, 304, 299, 294, 284, 272, 255, 245, 232, 232, 232, 232, 237, 238, 239, 242, 252, 266, 282, 293, 302, 308, 319, 323, 314, 312, 313, 315], \"all_points_y\": [192, 179, 166, 154, 145, 141, 141, 141, 150, 160, 173, 187, 198, 212, 227, 245, 256, 262, 269, 274, 274, 274, 273, 262, 248, 227, 211, 200]}\n"}
+,{"stream_name":"stdout","time":201.676699245,"data":"\n"}
+,{"stream_name":"stdout","time":201.676775648,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":201.676786062,"data":"3. THYROIDXL: FILENAME CONVENTION AND PATIENT GROUPING\n"}
+,{"stream_name":"stdout","time":201.676792084,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":201.67679772,"data":"\n"}
+,{"stream_name":"stdout","time":201.676802746,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":201.676814669,"data":"5. TN5000: OFFICIAL SPLIT AND VOC ANNOTATIONS\n"}
+,{"stream_name":"stdout","time":201.676818592,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":204.55676071,"data":"ImageSets/Main contents: ['test.txt', 'train.txt', 'trainval.txt', 'val.txt']\n"}
+,{"stream_name":"stdout","time":204.560046678,"data":"\n"}
+,{"stream_name":"stdout","time":204.560109499,"data":"  test.txt : 1000 lines\n"}
+,{"stream_name":"stdout","time":204.560119117,"data":"    first 5: ['001503', '000093', '001847', '000955', '003733']\n"}
+,{"stream_name":"stdout","time":204.562182653,"data":"\n"}
+,{"stream_name":"stdout","time":204.562230473,"data":"  train.txt : 3500 lines\n"}
+,{"stream_name":"stdout","time":204.562239787,"data":"    first 5: ['001469', '001392', '004755', '003890', '000557']\n"}
+,{"stream_name":"stdout","time":204.570342465,"data":"\n"}
+,{"stream_name":"stdout","time":204.570395208,"data":"  trainval.txt : 4000 lines\n"}
+,{"stream_name":"stdout","time":204.57040424,"data":"    first 5: ['001469', '001392', '004755', '003890', '000557']\n"}
+,{"stream_name":"stdout","time":204.578587468,"data":"\n"}
+,{"stream_name":"stdout","time":204.578651355,"data":"  val.txt : 500 lines\n"}
+,{"stream_name":"stdout","time":204.57866932,"data":"    first 5: ['001131', '001970', '001990', '000973', '000474']\n"}
+,{"stream_name":"stdout","time":256.607489693,"data":"\n"}
+,{"stream_name":"stdout","time":256.607566839,"data":"--- full VOC example 000001.xml ---\n"}
+,{"stream_name":"stdout","time":256.609323827,"data":"\u003cannotation\u003e\n"}
+,{"stream_name":"stdout","time":256.609349631,"data":"\t\u003cfolder\u003eVOC2007\u003c/folder\u003e\n"}
+,{"stream_name":"stdout","time":256.60935726,"data":"\t\u003cfilename\u003e000001.jpg\u003c/filename\u003e\n"}
+,{"stream_name":"stdout","time":256.609363055,"data":"\t\u003csource\u003e\n"}
+,{"stream_name":"stdout","time":256.60936839,"data":"\t\t\u003cdatabase\u003eMy Database\u003c/database\u003e\n"}
+,{"stream_name":"stdout","time":256.609373799,"data":"\t\t\u003cannotation\u003eVOC2007\u003c/annotation\u003e\n"}
+,{"stream_name":"stdout","time":256.609420004,"data":"\t\t\u003cimage\u003eflickr\u003c/image\u003e\n"}
+,{"stream_name":"stdout","time":256.609426359,"data":"\t\t\u003cflickrid\u003eNULL\u003c/flickrid\u003e\n"}
+,{"stream_name":"stdout","time":256.609431399,"data":"\t\u003c/source\u003e\n"}
+,{"stream_name":"stdout","time":256.609435993,"data":"\t\u003cowner\u003e\n"}
+,{"stream_name":"stdout","time":256.60944001,"data":"\t\t\u003cflickrid\u003eNULL\u003c/flickrid\u003e\n"}
+,{"stream_name":"stdout","time":256.609444108,"data":"\t\t\u003cname\u003exiaoxianyu\u003c/name\u003e\n"}
+,{"stream_name":"stdout","time":256.609448322,"data":"\t\u003c/owner\u003e\n"}
+,{"stream_name":"stdout","time":256.609452927,"data":"\t\u003csize\u003e\n"}
+,{"stream_name":"stdout","time":256.609457638,"data":"\t\t\u003cwidth\u003e718\u003c/width\u003e\n"}
+,{"stream_name":"stdout","time":256.609462939,"data":"\t\t\u003cheight\u003e500\u003c/height\u003e\n"}
+,{"stream_name":"stdout","time":256.609467708,"data":"\t\t\u003cdepth\u003e3\u003c/depth\u003e\n"}
+,{"stream_name":"stdout","time":256.60947258,"data":"\t\u003c/size\u003e\n"}
+,{"stream_name":"stdout","time":256.609476626,"data":"\t\u003csegmented\u003e0\u003c/segmented\u003e\n"}
+,{"stream_name":"stdout","time":256.609480819,"data":"\t\u003cobject\u003e\n"}
+,{"stream_name":"stdout","time":256.609484807,"data":"\t\t\u003cname\u003e0\u003c/name\u003e\n"}
+,{"stream_name":"stdout","time":256.60948891,"data":"\t\t\u003cpose\u003eUnspecified\u003c/pose\u003e\n"}
+,{"stream_name":"stdout","time":256.609492957,"data":"\t\t\u003ctruncated\u003e0\u003c/truncated\u003e\n"}
+,{"stream_name":"stdout","time":256.609497031,"data":"\t\t\u003cdifficult\u003e0\u003c/difficult\u003e\n"}
+,{"stream_name":"stdout","time":256.60950163,"data":"\t\t\u003cbndbox\u003e\n"}
+,{"stream_name":"stdout","time":256.609506266,"data":"\t\t\t\u003cxmin\u003e223\u003c/xmin\u003e\n"}
+,{"stream_name":"stdout","time":256.609511224,"data":"\t\t\t\u003cymin\u003e90\u003c/ymin\u003e\n"}
+,{"stream_name":"stdout","time":256.60951611,"data":"\t\t\t\u003cxmax\u003e286\u003c/xmax\u003e\n"}
+,{"stream_name":"stdout","time":256.609520808,"data":"\t\t\t\u003cymax\u003e131\u003c/ymax\u003e\n"}
+,{"stream_name":"stdout","time":256.609678491,"data":"\t\t\u003c/bndbox\u003e\n"}
+,{"stream_name":"stdout","time":256.609690402,"data":"\t\u003c/object\u003e\n"}
+,{"stream_name":"stdout","time":256.609694623,"data":"\u003c/annotation\u003e\n"}
+,{"stream_name":"stdout","time":256.609698773,"data":"\n"}
+,{"stream_name":"stdout","time":290.060328781,"data":"\n"}
+,{"stream_name":"stdout","time":290.060400088,"data":"VOC object \u003cname\u003e distribution across 5000 files: {'1': 3574, '0': 1426}\n"}
+,{"stream_name":"stdout","time":290.06040984,"data":"\n"}
+,{"stream_name":"stdout","time":290.060416017,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":290.060422364,"data":"6. SUMMARY WRITTEN\n"}
+,{"stream_name":"stdout","time":290.060427696,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":290.061141879,"data":"wrote /kaggle/working/inspect.json\n"}
+,{"stream_name":"stdout","time":290.061168553,"data":"keys: ['mounts', 'tn5000_classes', 'tn5000_splits', 'tree']\n"}
+,{"stream_name":"stderr","time":292.958416354,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":292.958518196,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":293.356453115,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":293.356493304,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":295.018400506,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":296.577140318,"data":"[NbConvertApp] Writing 331208 bytes to __results__.html\n"}
+]

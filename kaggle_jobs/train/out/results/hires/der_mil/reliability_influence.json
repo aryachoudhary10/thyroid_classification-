@@ -1,0 +1,86 @@
+{
+  "model": "der_mil",
+  "cross_view": {
+    "n": 1529,
+    "mean_spearman": 0.0507437463582822,
+    "median_spearman": 0.19999999999999998,
+    "frac_positive": 0.52648790058862,
+    "mean_kendall": 0.044494962938951686,
+    "ttest_t": 2.8381669731584416,
+    "ttest_p": 0.004597312962337628,
+    "n_patients": 383,
+    "min_frames": 3,
+    "per_region": {
+      "core": {
+        "n": 383,
+        "mean_spearman": -0.41370473563648336,
+        "median_spearman": -0.5,
+        "frac_positive": 0.2349869451697128,
+        "mean_kendall": -0.37316101677266394,
+        "ttest_t": -12.545953670324359,
+        "ttest_p": 1.7961355504272585e-30
+      },
+      "global": {
+        "n": 380,
+        "mean_spearman": 0.08269308049876575,
+        "median_spearman": 0.19999999999999998,
+        "frac_positive": 0.5368421052631579,
+        "mean_kendall": 0.08010457788882343,
+        "ttest_t": 2.55117306775216,
+        "ttest_p": 0.011128160874451072
+      },
+      "margin": {
+        "n": 383,
+        "mean_spearman": 0.33409513722792933,
+        "median_spearman": 0.5,
+        "frac_positive": 0.6971279373368147,
+        "mean_kendall": 0.3001285661945215,
+        "ttest_t": 10.605561817860544,
+        "ttest_p": 3.31469798181777e-23
+      },
+      "peri": {
+        "n": 383,
+        "mean_spearman": 0.20014175922391303,
+        "median_spearman": 0.39999999999999997,
+        "frac_positive": 0.6370757180156658,
+        "mean_kendall": 0.1711866509329838,
+        "ttest_t": 5.889986096275736,
+        "ttest_p": 8.475516464674353e-09
+      }
+    }
+  },
+  "region_profile": {
+    "core": {
+      "mean_R": 0.2451818767679675,
+      "mean_influence": 0.017389097819380868
+    },
+    "global": {
+      "mean_R": 0.5683669050734851,
+      "mean_influence": 0.00039333927771812956
+    },
+    "margin": {
+      "mean_R": 0.21691147123854007,
+      "mean_influence": 0.015879731393720103
+    },
+    "peri": {
+      "mean_R": 0.5680626836274901,
+      "mean_influence": 0.0005535160650226551
+    }
+  },
+  "pooled_tokens": {
+    "n": 700,
+    "mean_spearman": -0.7580465359122058,
+    "median_spearman": -0.7637532746273004,
+    "frac_positive": 0.0,
+    "mean_kendall": -0.569268322399193,
+    "ttest_t": -178.25993220225746,
+    "ttest_p": 0.0,
+    "note": "frames and regions ranked together; dominated by the region axis whenever regions differ systematically in influence, and satisfiable by a single-frame bag -- a confound diagnostic, not a test of the cross-view claim"
+  },
+  "tokens_csv": "/kaggle/working/results/hires/der_mil/reliability_influence_tokens.csv",
+  "n_patients_analysed": 700,
+  "mean_within_patient_spearman": -0.7580465359122058,
+  "median_within_patient_spearman": -0.7637532746273004,
+  "frac_positive_spearman": 0.0,
+  "mean_within_patient_kendall": -0.569268322399193
+}

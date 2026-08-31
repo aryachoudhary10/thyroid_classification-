@@ -1,0 +1,1675 @@
+
+
+==============================================================================
+
+0. WHAT IS MOUNTED
+
+==============================================================================
+
+mounts: ['datasets']
+
+
+
+==============================================================================
+
+1. TREE: datasets
+
+==============================================================================
+
+total files (excluding .cache): 56571
+
+  safaaqaisi/thyroidxl/ThyroidXL/train/labels             9541   {'.txt': 9541}
+
+        e.g. 00002637_900099C6_1.txt
+
+        e.g. 00000781_DC50215C_0.txt
+
+        e.g. 00000213_817A8A4F_1.txt
+
+  safaaqaisi/thyroidxl/ThyroidXL/train/images             9541   {'.png': 9541}
+
+        e.g. 00000772_11E671F0_1.png
+
+        e.g. 00003573_85DD3394_1.png
+
+        e.g. 00003642_98B81A59_1.png
+
+  safaaqaisi/thyroidxl/ThyroidXL/train/labels_orig        9541   {'.json': 9541}
+
+        e.g. 00003408_D55F7DE5_3.json
+
+        e.g. 00004040_E980A7CD_3.json
+
+        e.g. 00004171_B214860F_2.json
+
+  safaaqaisi/thyroidxl/ThyroidXL/train/masks              9541   {'.png': 9541}
+
+        e.g. 00000772_11E671F0_1.png
+
+        e.g. 00003573_85DD3394_1.png
+
+        e.g. 00003642_98B81A59_1.png
+
+  abdullahelafifi/main-data/Main data/Annotations         5000   {'.xml': 5000}
+
+        e.g. 000802.xml
+
+        e.g. 003031.xml
+
+        e.g. 004041.xml
+
+  abdullahelafifi/main-data/Main data/JPEGImages          5000   {'.jpg': 5000}
+
+        e.g. 000304.jpg
+
+        e.g. 001940.jpg
+
+        e.g. 001229.jpg
+
+  safaaqaisi/thyroidxl/ThyroidXL/test/labels              2094   {'.txt': 2094}
+
+        e.g. 00000220_F5DB44BF_0.txt
+
+        e.g. 00001191_D5B1B01C_1.txt
+
+        e.g. 00000903_DCE38CBF_1.txt
+
+  safaaqaisi/thyroidxl/ThyroidXL/test/images              2094   {'.png': 2094}
+
+        e.g. 00000252_53F1BE2B_2.png
+
+        e.g. 00003384_1CCF4465_0.png
+
+        e.g. 00004097_2CB10D3E_2.png
+
+  safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig         2094   {'.json': 2094}
+
+        e.g. 00001993_FF6B7C27_2.json
+
+        e.g. 00001637_65E18528_3.json
+
+        e.g. 00000215_564DFC1D_0.json
+
+  safaaqaisi/thyroidxl/ThyroidXL/test/masks               2094   {'.png': 2094}
+
+        e.g. 00000252_53F1BE2B_2.png
+
+        e.g. 00003384_1CCF4465_0.png
+
+        e.g. 00004097_2CB10D3E_2.png
+
+  safaaqaisi/thyroidxl/ThyroidXL/stats/figures/visuali       8   {'.png': 8}
+
+        e.g. 00000127_513DDC30_0.png
+
+        e.g. 00000127_1914A778_1.png
+
+        e.g. 00000132_3D938012_2.png
+
+  safaaqaisi/thyroidxl/ThyroidXL/stats/figures               7   {'.png': 7}
+
+        e.g. gender_counts.png
+
+        e.g. trainset_age_distribution.png
+
+        e.g. testset_age_distribution.png
+
+  safaaqaisi/thyroidxl/ThyroidXL                             6   {'.ipynb': 4, '.md': 1, '': 1}
+
+        e.g. calculate_mean_and_std.ipynb
+
+        e.g. visualization.ipynb
+
+        e.g. README.md
+
+  abdullahelafifi/main-data/Main data/ImageSets/Main         4   {'.txt': 4}
+
+        e.g. val.txt
+
+        e.g. test.txt
+
+        e.g. train.txt
+
+  safaaqaisi/thyroidxl/ThyroidXL/stats                       4   {'.txt': 2, '.json': 2}
+
+        e.g. test_patients.txt
+
+        e.g. id2info_eng.json
+
+        e.g. new_id2info.json
+
+  safaaqaisi/thyroidxl/ThyroidXL/test                        1   {'.json': 1}
+
+        e.g. test_annotations.json
+
+  safaaqaisi/thyroidxl/ThyroidXL/train                       1   {'.json': 1}
+
+        e.g. train_annotations.json
+
+
+
+==============================================================================
+
+2. TEXT / TABULAR FILES: datasets
+
+==============================================================================
+
+
+
+--- abdullahelafifi/main-data/Main data/Annotations/000001.xml  (629 bytes) ---
+
+<annotation>
+
+	<folder>VOC2007</folder>
+
+	<filename>000001.jpg</filename>
+
+	<source>
+
+		<database>My Database</database>
+
+		<annotation>VOC2007</annotation>
+
+		<image>flickr</image>
+
+		<flickrid>NULL</flickrid>
+
+	</source>
+
+	<owner>
+
+		<flickrid>NULL</flickrid>
+
+		<name>xiaoxianyu</name>
+
+	</owner>
+
+	<size>
+
+		<width>718</width>
+
+		<height>500</height>
+
+		<depth>3</depth>
+
+	</size>
+
+	<segmented>0</segmented>
+
+	<object>
+
+		<name>0</name>
+
+		<pose>Unspecified</pose>
+
+		<truncated>0</truncated>
+
+		<difficult>0</difficult>
+
+		<bndbox>
+
+			<xmin>223</xmin>
+
+			<ymin>90</ymin>
+
+			<xmax>286</xmax>
+
+			<ymax>131</ymax>
+
+		</bndbox>
+
+	</object>
+
+</annotation>
+
+
+
+
+
+--- abdullahelafifi/main-data/Main data/Annotations/000002.xml  (629 bytes) ---
+
+<annotation>
+
+	<folder>VOC2007</folder>
+
+	<filename>000002.jpg</filename>
+
+	<source>
+
+		<database>My Database</database>
+
+		<annotation>VOC2007</annotation>
+
+		<image>flickr</image>
+
+		<flickrid>NULL</flickrid>
+
+	</source>
+
+	<owner>
+
+		<flickrid>NULL</flickrid>
+
+		<name>xiaoxianyu</name>
+
+	</owner>
+
+	<size>
+
+		<width>718</width>
+
+		<height>500</height>
+
+		<depth>3</depth>
+
+	</size>
+
+	<segmented>0</segmented>
+
+	<object>
+
+		<name>0</name>
+
+		<pose>Unspecified</pose>
+
+		<truncated>0</truncated>
+
+		<difficult>0</difficult>
+
+		<bndbox>
+
+			<xmin>488</xmin>
+
+			<ymin>90</ymin>
+
+			<xmax>539</xmax>
+
+			<ymax>130</ymax>
+
+		</bndbox>
+
+	</object>
+
+</annotation>
+
+
+
+
+
+--- abdullahelafifi/main-data/Main data/ImageSets/Main/test.txt  (7000 bytes) ---
+
+001503
+
+000093
+
+001847
+
+000955
+
+003733
+
+004420
+
+001653
+
+000339
+
+004963
+
+003036
+
+004092
+
+004147
+
+004727
+
+004326
+
+000822
+
+000349
+
+004996
+
+002811
+
+004439
+
+000415
+
+004284
+
+000153
+
+004677
+
+000779
+
+000745
+
+001261
+
+003657
+
+003302
+
+003235
+
+003545
+
+000009
+
+003323
+
+001307
+
+003527
+
+000695
+
+002088
+
+001891
+
+000788
+
+002496
+
+001462
+
+002456
+
+003040
+
+001579
+
+000046
+
+000968
+
+000846
+
+002365
+
+002829
+
+001155
+
+001716
+
+003787
+
+003559
+
+002669
+
+001482
+
+003647
+
+003952
+
+001288
+
+001049
+
+003426
+
+001153
+
+003313
+
+001549
+
+003397
+
+003092
+
+003023
+
+004570
+
+001368
+
+000387
+
+002956
+
+004712
+
+000756
+
+000689
+
+004668
+
+004013
+
+003741
+
+004650
+
+002306
+
+001021
+
+001491
+
+002448
+
+000537
+
+003154
+
+003817
+
+001241
+
+002660
+
+002966
+
+004105
+
+000222
+
+002662
+
+002939
+
+000797
+
+001347
+
+001229
+
+001215
+
+004102
+
+000988
+
+004176
+
+003632
+
+002780
+
+000890
+
+003172
+
+004094
+
+001858
+
+004438
+
+002212
+
+002166
+
+000541
+
+004299
+
+000154
+
+001597
+
+004417
+
+003169
+
+002724
+
+003663
+
+000244
+
+001834
+
+001365
+
+002678
+
+002916
+
+002435
+
+002364
+
+004549
+
+000690
+
+003119
+
+003401
+
+004049
+
+003683
+
+003079
+
+0006
+
+
+
+--- abdullahelafifi/main-data/Main data/ImageSets/Main/train.txt  (24500 bytes) ---
+
+001469
+
+001392
+
+004755
+
+003890
+
+000557
+
+000819
+
+001543
+
+004263
+
+000196
+
+004252
+
+003622
+
+002336
+
+002908
+
+001609
+
+003350
+
+003719
+
+003017
+
+001147
+
+004708
+
+003637
+
+001563
+
+003501
+
+003357
+
+003910
+
+002445
+
+000045
+
+000158
+
+002544
+
+001506
+
+003451
+
+002741
+
+002141
+
+001136
+
+004490
+
+003727
+
+003104
+
+001114
+
+001849
+
+000480
+
+000869
+
+002922
+
+001424
+
+003860
+
+001433
+
+004768
+
+001636
+
+004861
+
+000622
+
+003260
+
+000346
+
+003568
+
+004800
+
+000930
+
+000340
+
+004137
+
+002972
+
+004652
+
+000211
+
+004805
+
+000007
+
+004584
+
+002940
+
+000619
+
+001250
+
+003894
+
+003125
+
+001544
+
+002344
+
+003980
+
+001953
+
+004187
+
+003530
+
+002612
+
+004683
+
+001356
+
+000883
+
+001635
+
+001277
+
+002302
+
+001531
+
+001089
+
+004839
+
+002355
+
+001222
+
+001472
+
+002719
+
+004360
+
+000963
+
+003450
+
+001366
+
+000295
+
+003641
+
+001164
+
+000625
+
+000733
+
+003250
+
+002024
+
+000243
+
+002170
+
+001149
+
+003335
+
+001592
+
+004480
+
+002003
+
+003947
+
+002934
+
+002866
+
+000285
+
+003956
+
+004208
+
+002988
+
+003913
+
+000090
+
+000248
+
+001735
+
+002968
+
+001659
+
+003542
+
+001680
+
+004229
+
+004442
+
+000084
+
+003529
+
+002265
+
+001577
+
+004467
+
+000631
+
+004675
+
+0043
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/README.md  (3326 bytes) ---
+
+# Citation
+
+
+
+If you use this dataset in your research, please cite:
+
+
+
+```bibtex
+
+@inproceedings{10.1007/978-3-032-05182-0_60,
+
+  author = {Duong, Viet Hung and Vu, Huan and Phan, Huong Duong and Nguyen, Duc Quyen and Pham, Duc Hao and Le, Quang Toan and Nguyen, Ba Sy and Do, Tien Dung and Dinh, Viet Sang and Nguyen, Tien Cuong and Pham, Huy Hoang and Ngo, Dien Hy},
+
+  title = {ThyroidXL: Advancing Thyroid Nodule Diagnosis with an Expert-Labeled, Pathology-Validated Dataset},
+
+  year = {2025},
+
+  isbn = {978-3-032-05181-3},
+
+  publisher = {Springer-Verlag},
+
+  address = {Berlin, Heidelberg},
+
+  url = {https://doi.org/10.1007/978-3-032-05182-0_60},
+
+  doi = {10.1007/978-3-032-05182-0_60}
+
+}
+
+```
+
+
+
+# ThyroidXL Dataset
+
+
+
+The ThyroidXL dataset. The annotations are provided for classification, detection and segmentation tasks.
+
+
+
+## Dataset stats
+
+- Total number of patients: 4093 (patients)
+
+- Total number of im
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/stats/id2info_eng.json  (2398102 bytes) ---
+
+{
+
+    "00000058": {
+
+        "age": 60,
+
+        "gender": 2,
+
+        "conclusion": 3,
+
+        "nodule_1": {
+
+            "Position": "Left lobe-upper third",
+
+            "Width": 22.0,
+
+            "Height": 14.0,
+
+            "Depth": null,
+
+            "TIRADS": 4,
+
+            "FNAC": "2",
+
+            "Conclusion": "Benign (FNAC) - 3",
+
+            "Histopathology": null
+
+        },
+
+        "nodule_2": null,
+
+        "images": [
+
+            "00000058_2201CE11_0.png",
+
+            "00000058_A73CED93_1.png"
+
+        ]
+
+    },
+
+    "00000126": {
+
+        "age": 56,
+
+        "gender": 2,
+
+        "conclusion": 1,
+
+        "nodule_1": {
+
+            "Position": "Right lobe-middle third",
+
+            "Width": 5.0,
+
+            "Height": 5.0,
+
+            "Depth": null,
+
+            "TIRADS": 5,
+
+            "FNAC": "6",
+
+            "Conclusion": "Malignant (Histopathology) - 1",
+
+            "Histopathology": "Pa
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/stats/new_id2info.json  (2268732 bytes) ---
+
+{
+
+    "00000001": {
+
+        "age": 47,
+
+        "gender": 2,
+
+        "conclusion": 1,
+
+        "nodule_1": {
+
+            "Position": "Th\u00f9y Ph\u1ea3i-1/3 gi\u1eefa",
+
+            "Width": 7.0,
+
+            "Height": 9.0,
+
+            "Depth": null,
+
+            "TIRADS": 5,
+
+            "FNAC": 6,
+
+            "MBH": "vi UTBMTG th\u1ec3 nh\u00fa",
+
+            "Conclusion": "Ung thu MBH (1)"
+
+        },
+
+        "nodule_2": null
+
+    },
+
+    "00000002": {
+
+        "age": 57,
+
+        "gender": 1,
+
+        "conclusion": 1,
+
+        "nodule_1": {
+
+            "Position": "Th\u00f9y Ph\u1ea3i-1/3 gi\u1eefa",
+
+            "Width": 4.0,
+
+            "Height": 4.0,
+
+            "Depth": null,
+
+            "TIRADS": 5,
+
+            "FNAC": 6,
+
+            "MBH": "vi UTBMTG th\u1ec3 nh\u00fa",
+
+            "Conclusion": "Ung thu MBH (1)"
+
+        },
+
+        "nodule_2": null
+
+    },
+
+    "00000003": {
+
+        "age": 38,
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/stats/test_patients.txt  (7390 bytes) ---
+
+00001400
+
+00003221
+
+00001534
+
+00004374
+
+00002306
+
+00001968
+
+00002224
+
+00002944
+
+00003197
+
+00003738
+
+00002441
+
+00003403
+
+00001464
+
+00003686
+
+00001553
+
+00004617
+
+00003341
+
+00002725
+
+00001002
+
+00002956
+
+00002235
+
+00002922
+
+00003999
+
+00002007
+
+00003365
+
+00002223
+
+00003059
+
+00004513
+
+00002504
+
+00002333
+
+00002490
+
+00002016
+
+00002599
+
+00003482
+
+00003515
+
+00001173
+
+00002186
+
+00003641
+
+00004006
+
+00002587
+
+00003716
+
+00003882
+
+00004687
+
+00002622
+
+00004557
+
+00002473
+
+00003048
+
+00002176
+
+00002965
+
+00001220
+
+00001774
+
+00004060
+
+00004753
+
+00003034
+
+00002884
+
+00002511
+
+00002069
+
+00001436
+
+00001815
+
+00002889
+
+00004775
+
+00004354
+
+00003628
+
+00004716
+
+00001538
+
+00003956
+
+00002351
+
+00000220
+
+00002061
+
+00001590
+
+00001763
+
+00003938
+
+00002660
+
+00003851
+
+00003338
+
+00001559
+
+00003877
+
+00004251
+
+00003256
+
+00003675
+
+00003053
+
+00002916
+
+00002536
+
+00003612
+
+00003311
+
+00003355
+
+00003385
+
+00003535
+
+00002509
+
+00003351
+
+00004097
+
+00001793
+
+00004024
+
+00003157
+
+00001218
+
+00000639
+
+00002079
+
+00003451
+
+00004585
+
+00002017
+
+
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/stats/train_patients.txt  (33540 bytes) ---
+
+00000058
+
+00000127
+
+00000140
+
+00000141
+
+00000162
+
+00000176
+
+00000182
+
+00000196
+
+00000199
+
+00000204
+
+00000207
+
+00000229
+
+00000234
+
+00000237
+
+00000239
+
+00000245
+
+00000247
+
+00000248
+
+00000251
+
+00000256
+
+00000262
+
+00000268
+
+00000269
+
+00000270
+
+00000271
+
+00000277
+
+00000288
+
+00000289
+
+00000292
+
+00000297
+
+00000299
+
+00000311
+
+00000322
+
+00000324
+
+00000327
+
+00000331
+
+00000333
+
+00000341
+
+00000343
+
+00000344
+
+00000359
+
+00000362
+
+00000370
+
+00000378
+
+00000427
+
+00000435
+
+00000442
+
+00000449
+
+00000456
+
+00000459
+
+00000461
+
+00000462
+
+00000467
+
+00000470
+
+00000475
+
+00000508
+
+00000509
+
+00000530
+
+00000535
+
+00000536
+
+00000538
+
+00000539
+
+00000540
+
+00000553
+
+00000554
+
+00000556
+
+00000557
+
+00000558
+
+00000560
+
+00000561
+
+00000564
+
+00000568
+
+00000570
+
+00000571
+
+00000572
+
+00000574
+
+00000577
+
+00000579
+
+00000584
+
+00000590
+
+00000592
+
+00000593
+
+00000596
+
+00000597
+
+00000599
+
+00000600
+
+00000601
+
+00000602
+
+00000604
+
+00000606
+
+00000607
+
+00000608
+
+00000612
+
+00000622
+
+00000629
+
+00000631
+
+00000632
+
+00000635
+
+00000636
+
+00000642
+
+
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/test_annotations.json  (1538725 bytes) ---
+
+{"info": {"00001400": {"age": 56, "gender": 2, "conclusion": 3, "nodule_1": {"Position": "Left lobe-middle third", "Width": 12.0, "Height": 7.0, "Depth": null, "TIRADS": 2, "FNAC": "2", "Conclusion": "Benign (FNAC) - 3", "Histopathology": null}, "nodule_2": null, "images": ["00001400_81A1A425_0.png", "00001400_BF19BD85_1.png"]}, "00003221": {"age": 56, "gender": 2, "conclusion": 3, "nodule_1": {"Position": "Left lobe-lower third", "Width": 10.0, "Height": 10.0, "Depth": null, "TIRADS": 4, "FNAC": "2", "Conclusion": "Benign (FNAC) - 3", "Histopathology": null}, "nodule_2": null, "images": ["00003221_2CFF7167_1.png", "00003221_3D50F49D_0.png", "00003221_F650545C_2.png"]}, "00001534": {"age": 41, "gender": 2, "conclusion": 3, "nodule_1": {"Position": "Right lobe-middle third", "Width": 9.0, "Height": 15.0, "Depth": null, "TIRADS": 3, "FNAC": "2", "Conclusion": "Benign (FNAC) - 3", "Histopat
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels/00000126_418A6BA8_0.txt  (39 bytes) ---
+
+1 0.497937 0.327068 0.134801 0.135338
+
+
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels/00000126_93A48D44_1.txt  (39 bytes) ---
+
+1 0.602476 0.329887 0.126547 0.137218
+
+
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000126_418A6BA8_0.json  (285 bytes) ---
+
+{"label": "actinh", "bbox": [313, 138, 411, 210], "all_points_x": [399, 399, 386, 367, 357, 322, 313, 313, 322, 341, 352, 368, 377, 391, 398, 405, 411, 402, 398, 398], "all_points_y": [168, 154, 144, 138, 144, 171, 179, 192, 199, 201, 209, 210, 210, 210, 210, 203, 190, 181, 177, 173]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000126_93A48D44_1.json  (325 bytes) ---
+
+{"label": "actinh", "bbox": [392, 139, 484, 212], "all_points_x": [482, 474, 466, 454, 447, 435, 427, 422, 417, 415, 411, 404, 395, 392, 394, 399, 412, 439, 449, 457, 474, 480, 483, 484], "all_points_y": [170, 155, 145, 139, 139, 142, 147, 153, 162, 166, 179, 185, 192, 197, 206, 209, 210, 210, 212, 212, 212, 209, 198, 183]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000126_F5B674D4_2.json  (295 bytes) ---
+
+{"label": "actinh", "bbox": [340, 141, 446, 222], "all_points_x": [446, 430, 415, 402, 381, 375, 368, 355, 344, 340, 340, 346, 359, 374, 385, 401, 418, 432, 439, 441, 446], "all_points_y": [175, 169, 160, 145, 141, 153, 168, 179, 187, 197, 205, 212, 217, 218, 222, 221, 216, 214, 210, 209, 186]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000133_06511586_1.json  (365 bytes) ---
+
+{"label": "actinh", "bbox": [264, 112, 367, 187], "all_points_x": [362, 342, 337, 328, 316, 304, 288, 280, 273, 270, 275, 287, 292, 281, 277, 267, 264, 264, 283, 299, 312, 325, 337, 344, 359, 362, 367, 366], "all_points_y": [143, 138, 128, 122, 115, 112, 112, 112, 114, 124, 135, 141, 143, 148, 152, 157, 170, 177, 187, 185, 180, 177, 168, 168, 166, 160, 154, 149]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000133_3E6D85F0_2.json  (313 bytes) ---
+
+{"label": "actinh", "bbox": [196, 99, 316, 176], "all_points_x": [316, 296, 275, 271, 260, 246, 233, 212, 201, 196, 196, 201, 210, 234, 249, 273, 285, 296, 308, 313, 313, 313, 313], "all_points_y": [123, 120, 113, 109, 100, 99, 101, 120, 135, 149, 154, 166, 172, 175, 176, 172, 161, 152, 152, 148, 140, 138, 133]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000133_BB205501_0.json  (350 bytes) ---
+
+{"label": "actinh", "bbox": [197, 94, 328, 161], "all_points_x": [325, 327, 317, 307, 298, 287, 276, 268, 257, 237, 225, 221, 208, 199, 197, 214, 215, 229, 248, 267, 289, 300, 309, 317, 319, 328, 326], "all_points_y": [120, 104, 105, 106, 107, 103, 96, 95, 95, 94, 106, 115, 123, 130, 144, 155, 160, 160, 161, 161, 156, 148, 148, 143, 138, 129, 128]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000135_1086B4FC_0.json  (364 bytes) ---
+
+{"label": "actinh", "bbox": [131, 59, 359, 252], "all_points_x": [331, 306, 293, 258, 241, 222, 192, 174, 156, 142, 131, 132, 145, 160, 168, 167, 168, 213, 262, 289, 311, 336, 349, 354, 359, 357, 351, 345, 343], "all_points_y": [97, 89, 74, 68, 69, 66, 61, 59, 63, 70, 103, 116, 133, 149, 176, 196, 222, 252, 251, 247, 244, 233, 223, 204, 171, 149, 128, 118, 116]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000135_E1284749_1.json  (376 bytes) ---
+
+{"label": "actinh", "bbox": [45, 58, 417, 232], "all_points_x": [370, 341, 293, 233, 210, 186, 156, 102, 70, 45, 81, 83, 72, 76, 91, 101, 140, 151, 164, 188, 204, 233, 258, 294, 319, 335, 363, 393, 414, 417, 387], "all_points_y": [73, 69, 58, 67, 67, 64, 64, 65, 81, 115, 134, 139, 154, 162, 173, 182, 217, 222, 230, 232, 221, 225, 225, 209, 187, 161, 158, 150, 127, 110, 80]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_AACD94CF_2.json  (335 bytes) ---
+
+{"label": "actinh", "bbox": [214, 106, 339, 190], "all_points_x": [319, 311, 299, 281, 270, 253, 239, 227, 214, 214, 216, 221, 228, 243, 266, 272, 281, 293, 307, 320, 332, 339, 339, 329, 328], "all_points_y": [137, 122, 116, 117, 111, 106, 106, 110, 123, 130, 140, 152, 159, 168, 181, 187, 188, 190, 183, 176, 164, 157, 144, 131, 131]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_B99D7730_3.json  (332 bytes) ---
+
+{"label": "actinh", "bbox": [189, 94, 326, 200], "all_points_x": [311, 304, 300, 285, 260, 250, 244, 238, 224, 219, 209, 201, 197, 189, 192, 227, 238, 250, 289, 315, 325, 326, 325, 321, 319], "all_points_y": [141, 131, 121, 115, 118, 118, 108, 101, 94, 99, 108, 118, 129, 138, 152, 169, 176, 189, 200, 200, 193, 181, 165, 158, 158]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_E179C3BE_0.json  (261 bytes) ---
+
+{"label": "actinh", "bbox": [185, 87, 338, 188], "all_points_x": [325, 302, 291, 271, 257, 203, 189, 185, 192, 226, 256, 270, 290, 307, 322, 333, 338, 338], "all_points_y": [117, 104, 95, 88, 87, 106, 109, 120, 137, 162, 186, 188, 177, 167, 158, 150, 138, 124]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000136_EFBBB3DB_1.json  (347 bytes) ---
+
+{"label": "actinh", "bbox": [205, 81, 352, 205], "all_points_x": [349, 348, 340, 331, 316, 306, 298, 289, 277, 259, 226, 208, 205, 216, 233, 246, 259, 259, 269, 279, 291, 300, 309, 329, 337, 346, 352], "all_points_y": [131, 111, 102, 94, 94, 99, 93, 86, 81, 85, 110, 120, 133, 143, 150, 154, 160, 176, 200, 205, 202, 191, 181, 168, 161, 150, 139]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000142_03684A2F_0.json  (305 bytes) ---
+
+{"label": "actinh", "bbox": [349, 134, 416, 265], "all_points_x": [416, 400, 389, 379, 366, 353, 349, 349, 349, 349, 349, 350, 350, 350, 357, 374, 389, 396, 405, 415, 415, 415], "all_points_y": [160, 149, 136, 134, 134, 143, 153, 166, 181, 191, 202, 217, 232, 249, 259, 265, 262, 244, 227, 205, 176, 169]}
+
+
+
+--- safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig/00000142_048D72A3_1.json  (365 bytes) ---
+
+{"label": "actinh", "bbox": [232, 141, 323, 274], "all_points_x": [313, 304, 299, 294, 284, 272, 255, 245, 232, 232, 232, 232, 237, 238, 239, 242, 252, 266, 282, 293, 302, 308, 319, 323, 314, 312, 313, 315], "all_points_y": [192, 179, 166, 154, 145, 141, 141, 141, 150, 160, 173, 187, 198, 212, 227, 245, 256, 262, 269, 274, 274, 274, 273, 262, 248, 227, 211, 200]}
+
+
+
+==============================================================================
+
+3. THYROIDXL: FILENAME CONVENTION AND PATIENT GROUPING
+
+==============================================================================
+
+
+
+==============================================================================
+
+5. TN5000: OFFICIAL SPLIT AND VOC ANNOTATIONS
+
+==============================================================================
+
+ImageSets/Main contents: ['test.txt', 'train.txt', 'trainval.txt', 'val.txt']
+
+
+
+  test.txt : 1000 lines
+
+    first 5: ['001503', '000093', '001847', '000955', '003733']
+
+
+
+  train.txt : 3500 lines
+
+    first 5: ['001469', '001392', '004755', '003890', '000557']
+
+
+
+  trainval.txt : 4000 lines
+
+    first 5: ['001469', '001392', '004755', '003890', '000557']
+
+
+
+  val.txt : 500 lines
+
+    first 5: ['001131', '001970', '001990', '000973', '000474']
+
+
+
+--- full VOC example 000001.xml ---
+
+<annotation>
+
+	<folder>VOC2007</folder>
+
+	<filename>000001.jpg</filename>
+
+	<source>
+
+		<database>My Database</database>
+
+		<annotation>VOC2007</annotation>
+
+		<image>flickr</image>
+
+		<flickrid>NULL</flickrid>
+
+	</source>
+
+	<owner>
+
+		<flickrid>NULL</flickrid>
+
+		<name>xiaoxianyu</name>
+
+	</owner>
+
+	<size>
+
+		<width>718</width>
+
+		<height>500</height>
+
+		<depth>3</depth>
+
+	</size>
+
+	<segmented>0</segmented>
+
+	<object>
+
+		<name>0</name>
+
+		<pose>Unspecified</pose>
+
+		<truncated>0</truncated>
+
+		<difficult>0</difficult>
+
+		<bndbox>
+
+			<xmin>223</xmin>
+
+			<ymin>90</ymin>
+
+			<xmax>286</xmax>
+
+			<ymax>131</ymax>
+
+		</bndbox>
+
+	</object>
+
+</annotation>
+
+
+
+
+
+VOC object <name> distribution across 5000 files: {'1': 3574, '0': 1426}
+
+
+
+==============================================================================
+
+6. SUMMARY WRITTEN
+
+==============================================================================
+
+wrote /kaggle/working/inspect.json
+
+keys: ['mounts', 'tn5000_classes', 'tn5000_splits', 'tree']
+
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+
+[NbConvertApp] Converting notebook __script__.ipynb to html
+
+[NbConvertApp] Writing 331208 bytes to __results__.html

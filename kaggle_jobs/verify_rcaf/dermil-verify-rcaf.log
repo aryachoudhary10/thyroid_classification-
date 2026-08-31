@@ -1,0 +1,117 @@
+[{"stream_name":"stdout","time":0.760322412,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":0.761364829,"data":"run parameters: {'DERMIL_CACHE': '1', 'DERMIL_MODELS': 'rcaf', 'DERMIL_RUN': 'main'}\n"}
+,{"stream_name":"stderr","time":5.804700706,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":5.804747365,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":5.804753991,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":5.804758766,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":5.804763656,"data":"    \n"}
+,{"stream_name":"stderr","time":5.804768634,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":5.804800926,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":5.804809203,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":5.804823173,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":5.804828329,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":5.80483265,"data":"    \n"}
+,{"stream_name":"stderr","time":5.804836764,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":5.804843333,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":5.804848201,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":5.804854471,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":5.804862354,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":5.804865786,"data":"\n"}
+,{"stream_name":"stderr","time":5.804868613,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":5.806519388,"data":"installing PyTorch with sm_60 support ...\n"}
+,{"stream_name":"stdout","time":282.410761579,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":282.410866221,"data":"run parameters: {'DERMIL_CACHE': '1', 'DERMIL_MODELS': 'rcaf', 'DERMIL_RUN': 'main'}\n"}
+,{"stream_name":"stdout","time":282.410871712,"data":"thyroid : /kaggle/input/datasets/safaaqaisi/thyroidxl\n"}
+,{"stream_name":"stdout","time":282.410876215,"data":"reading checkpoints from /kaggle/input/datasets/choudhary15/dermil-rcaf-ckpt\n"}
+,{"stream_name":"stdout","time":282.410880589,"data":"config: evidence_mode=roi_pool regions=('core', 'margin', 'peri', 'global') fusion=softmax\n"}
+,{"stream_name":"stdout","time":282.41088509,"data":"\n"}
+,{"stream_name":"stdout","time":282.410889656,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":282.410897075,"data":"BUILDING THYROIDXL PATIENT MANIFEST\n"}
+,{"stream_name":"stdout","time":282.410900131,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":282.415050541,"data":"[    3.7s] ThyroidXL adapter: root = /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL\n"}
+,{"stream_name":"stdout","time":282.484549645,"data":"[    3.7s] ThyroidXL adapter: 3354 train / 739 test patients, 4093 in id2info\n"}
+,{"stream_name":"stdout","time":296.271092986,"data":"[   17.5s] ThyroidXL adapter: 4093 patients, 11635 frames\n"}
+,{"stream_name":"stdout","time":296.276513303,"data":"[   17.5s] ThyroidXL adapter: Table 1 reproduced exactly (3354/739 patients, 9541/2094 images, 877/353 malignant, TIRADS match)\n"}
+,{"stream_name":"stdout","time":296.290557063,"data":"[   17.5s] label provenance:\n"}
+,{"stream_name":"stdout","time":296.290579388,"data":"split            conclusion_text    n         source\n"}
+,{"stream_name":"stdout","time":296.29058638,"data":"  dev              Benign (FNAC) 2397           FNAC\n"}
+,{"stream_name":"stdout","time":296.290591789,"data":"  dev    Benign (Histopathology)   80 histopathology\n"}
+,{"stream_name":"stdout","time":296.290597169,"data":"  dev           Malignant (FNAC)  366           FNAC\n"}
+,{"stream_name":"stdout","time":296.290610056,"data":"  dev Malignant (Histopathology)  511 histopathology\n"}
+,{"stream_name":"stdout","time":296.290614346,"data":" test              Benign (FNAC)  372           FNAC\n"}
+,{"stream_name":"stdout","time":296.290617828,"data":" test    Benign (Histopathology)   14 histopathology\n"}
+,{"stream_name":"stdout","time":296.290621666,"data":" test           Malignant (FNAC)  156           FNAC\n"}
+,{"stream_name":"stdout","time":296.290625055,"data":" test Malignant (Histopathology)  197 histopathology\n"}
+,{"stream_name":"stdout","time":296.294956582,"data":"[   17.5s] leakage check: OK -- 4093 unique patients, no split overlap\n"}
+,{"stream_name":"stdout","time":296.31050476,"data":"[   17.5s] folds:\n"}
+,{"stream_name":"stdout","time":296.310527427,"data":"      size      mean\n"}
+,{"stream_name":"stdout","time":296.310534387,"data":"fold                \n"}
+,{"stream_name":"stdout","time":296.310539733,"data":"0      671  0.260805\n"}
+,{"stream_name":"stdout","time":296.310544784,"data":"1      671  0.260805\n"}
+,{"stream_name":"stdout","time":296.310551825,"data":"2      671  0.262295\n"}
+,{"stream_name":"stdout","time":296.310560381,"data":"3      671  0.262295\n"}
+,{"stream_name":"stdout","time":296.310564135,"data":"4      670  0.261194\n"}
+,{"stream_name":"stdout","time":296.315816351,"data":"[   17.6s] split validation: OK (dev=3354, test=739, folds=5)\n"}
+,{"stream_name":"stdout","time":296.426627597,"data":"[   17.7s] split validation: OK (dev=3354, test=739, folds=5)\n"}
+,{"stream_name":"stdout","time":296.57131862,"data":"[   17.8s] mask coverage: {'frames': 11635, 'pixel_mask': 1.0, 'bbox_only': 0.0, 'no_mask': 0.0}\n"}
+,{"stream_name":"stdout","time":296.578206977,"data":"                                          Development set                     Test set\n"}
+,{"stream_name":"stdout","time":296.578227037,"data":"Number of patients                                   3354                          739\n"}
+,{"stream_name":"stdout","time":296.578233267,"data":"Number of images                                     9541                         2094\n"}
+,{"stream_name":"stdout","time":296.578238516,"data":"Frames per patient (min-max)                         1-10                          1-8\n"}
+,{"stream_name":"stdout","time":296.578243844,"data":"Mean frames per patient                              2.84                         2.83\n"}
+,{"stream_name":"stdout","time":296.578248289,"data":"Median frames per patient                               3                            3\n"}
+,{"stream_name":"stdout","time":296.578253065,"data":"Benign patients, n (%)                       2477 (73.9%)                  386 (52.2%)\n"}
+,{"stream_name":"stdout","time":296.578259318,"data":"Malignant patients, n (%)                     877 (26.1%)                  353 (47.8%)\n"}
+,{"stream_name":"stdout","time":296.57826662,"data":"TIRADS 1, n                                            24                            0\n"}
+,{"stream_name":"stdout","time":296.578281466,"data":"TIRADS 2, n                                           328                           45\n"}
+,{"stream_name":"stdout","time":296.578283916,"data":"TIRADS 3, n                                          1090                          182\n"}
+,{"stream_name":"stdout","time":296.578286106,"data":"TIRADS 4, n                                          1024                          215\n"}
+,{"stream_name":"stdout","time":296.57828843,"data":"TIRADS 5, n                                           888                          297\n"}
+,{"stream_name":"stdout","time":296.578290658,"data":"Mean age, years               48.2 +/- 12.7 (range 12-94)  47.6 +/- 12.8 (range 14-84)\n"}
+,{"stream_name":"stdout","time":296.578292936,"data":"\n"}
+,{"stream_name":"stdout","time":296.578295162,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":296.578297653,"data":"BUILDING RESIZE CACHE (224 px)\n"}
+,{"stream_name":"stdout","time":296.578300188,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":296.923139801,"data":"[   18.2s] resize cache: 23270 files total, 0 already cached, 23270 to build\n"}
+,{"stream_name":"stdout","time":302.504970331,"data":"[   23.7s]   cached 2000/23270\n"}
+,{"stream_name":"stdout","time":307.51782907,"data":"[   28.8s]   cached 4000/23270\n"}
+,{"stream_name":"stdout","time":312.555651043,"data":"[   33.8s]   cached 6000/23270\n"}
+,{"stream_name":"stdout","time":317.599967309,"data":"[   38.8s]   cached 8000/23270\n"}
+,{"stream_name":"stdout","time":322.618765405,"data":"[   43.9s]   cached 10000/23270\n"}
+,{"stream_name":"stdout","time":327.704693807,"data":"[   48.9s]   cached 12000/23270\n"}
+,{"stream_name":"stdout","time":332.761758998,"data":"[   54.0s]   cached 14000/23270\n"}
+,{"stream_name":"stdout","time":337.84794498,"data":"[   59.1s]   cached 16000/23270\n"}
+,{"stream_name":"stdout","time":343.403902515,"data":"[   64.6s]   cached 18000/23270\n"}
+,{"stream_name":"stdout","time":348.64749859,"data":"[   69.9s]   cached 20000/23270\n"}
+,{"stream_name":"stdout","time":353.798970271,"data":"[   75.0s]   cached 22000/23270\n"}
+,{"stream_name":"stdout","time":357.28954479,"data":"[   78.5s] resize cache: ready -- 23270 files, 1.1GB on disk\n"}
+,{"stream_name":"stdout","time":357.394531915,"data":"[   78.6s] cache verify: {'checked': 40, 'bad_shape': 0, 'bad_mask': 0}\n"}
+,{"stream_name":"stdout","time":357.451463585,"data":"\n"}
+,{"stream_name":"stdout","time":357.451514067,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":357.451521096,"data":"REGENERATING PREDICTIONS: rcaf\n"}
+,{"stream_name":"stdout","time":357.451525878,"data":"==============================================================================\n"}
+,{"stream_name":"stderr","time":357.843230971,"data":"Downloading: \"https://download.pytorch.org/models/resnet50-0676ba61.pth\" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth\n"}
+,{"stream_name":"stderr","time":358.398951894,"data":"\r  0%|          | 0.00/97.8M [00:00\u003c?, ?B/s]\r 16%|█▌        | 15.5M/97.8M [00:00\u003c00:00, 162MB/s]\r 38%|███▊      | 36.8M/97.8M [00:00\u003c00:00, 197MB/s]\r 59%|█████▊    | 57.2M/97.8M [00:00\u003c00:00, 205MB/s]\r 80%|████████  | 78.5M/97.8M [00:00\u003c00:00, 212MB/s]\r100%|██████████| 97.8M/97.8M [00:00\u003c00:00, 209MB/s]\n"}
+,{"stream_name":"stdout","time":386.34484733,"data":"[  107.6s]   fold0: 671 patients, ROC-AUC 0.9939\n"}
+,{"stream_name":"stdout","time":397.247392369,"data":"[  118.5s]   fold1: 671 patients, ROC-AUC 0.9929\n"}
+,{"stream_name":"stdout","time":407.171289237,"data":"[  128.4s]   fold2: 671 patients, ROC-AUC 0.9887\n"}
+,{"stream_name":"stdout","time":415.984676988,"data":"[  137.2s]   fold3: 671 patients, ROC-AUC 0.9927\n"}
+,{"stream_name":"stdout","time":424.192536861,"data":"[  145.4s]   fold4: 670 patients, ROC-AUC 0.9940\n"}
+,{"stream_name":"stdout","time":424.222281745,"data":"[  145.5s]   POOLED OOF ROC-AUC 0.9912 | per-fold mean 0.9924 +/- 0.0020\n"}
+,{"stream_name":"stdout","time":438.709231431,"data":"[  159.9s]   TEST ROC-AUC 0.9869 [0.9793, 0.9933] | PR-AUC 0.9885 | F1 0.9327\n"}
+,{"stream_name":"stdout","time":438.709279325,"data":"\n"}
+,{"stream_name":"stdout","time":438.709285649,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":438.709290298,"data":"HEAD TO HEAD\n"}
+,{"stream_name":"stdout","time":438.70929466,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":438.709754788,"data":"\n"}
+,{"stream_name":"stdout","time":438.709767021,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":438.709772843,"data":"DONE in 4.6 min\n"}
+,{"stream_name":"stdout","time":438.709777797,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":438.710841953,"data":"output files: 82\n"}
+,{"stream_name":"stderr","time":442.206774788,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":442.206838555,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":442.43829558,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":442.438328161,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":443.075930046,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":444.300269301,"data":"[NbConvertApp] Writing 432474 bytes to __results__.html\n"}
+]

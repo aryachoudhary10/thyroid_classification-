@@ -1,0 +1,433 @@
+[{"stream_name":"stdout","time":1.327300988,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":1.327363186,"data":"run parameters: {'DERMIL_BASELINE': 'rcaf', 'DERMIL_BUDGET_HOURS': '8.5', 'DERMIL_CACHE': '1', 'DERMIL_EVIDENCE_MODE': 'masked_input', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}\n"}
+,{"stream_name":"stderr","time":8.148399176,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":8.148497571,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":8.148503343,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":8.148507036,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":8.148510792,"data":"    \n"}
+,{"stream_name":"stderr","time":8.148514159,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":8.148517473,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":8.148521026,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":8.148524264,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":8.148527807,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":8.148531476,"data":"    \n"}
+,{"stream_name":"stderr","time":8.148534911,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":8.148542925,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":8.148546984,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":8.148551275,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":8.148554895,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":8.148558319,"data":"\n"}
+,{"stream_name":"stderr","time":8.148561721,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":8.150304491,"data":"installing PyTorch with sm_60 support ...\n"}
+,{"stream_name":"stdout","time":439.696156625,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":439.696228145,"data":"run parameters: {'DERMIL_BASELINE': 'rcaf', 'DERMIL_BUDGET_HOURS': '8.5', 'DERMIL_CACHE': '1', 'DERMIL_EVIDENCE_MODE': 'masked_input', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}\n"}
+,{"stream_name":"stdout","time":439.69623666,"data":"thyroid : /kaggle/input/datasets/safaaqaisi/thyroidxl\n"}
+,{"stream_name":"stdout","time":439.69624203,"data":"tn5000  : /kaggle/input/datasets/abdullahelafifi/main-data/Main data\n"}
+,{"stream_name":"stdout","time":439.696246518,"data":"  rcaf      \u003c- /kaggle/input/datasets/choudhary15/dermil-rcaf-ckpt/main/rcaf\n"}
+,{"stream_name":"stdout","time":439.696251414,"data":"  der_mil   \u003c- /kaggle/input/notebooks/choudhary15/dermil-train/checkpoints/hires/der_mil\n"}
+,{"stream_name":"stdout","time":439.69625595,"data":"  mr_mil    \u003c- /kaggle/input/notebooks/choudhary15/dermil-train/checkpoints/hires/mr_mil\n"}
+,{"stream_name":"stdout","time":439.69626016,"data":"config: evidence_mode=masked_input regions=('core', 'margin', 'peri', 'global')\n"}
+,{"stream_name":"stdout","time":439.696264465,"data":"\n"}
+,{"stream_name":"stdout","time":439.69626846,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":439.696285489,"data":"BUILDING THYROIDXL PATIENT MANIFEST\n"}
+,{"stream_name":"stdout","time":439.69628971,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":439.701384825,"data":"[    4.3s] ThyroidXL adapter: root = /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL\n"}
+,{"stream_name":"stdout","time":439.749482717,"data":"[    4.3s] ThyroidXL adapter: 3354 train / 739 test patients, 4093 in id2info\n"}
+,{"stream_name":"stdout","time":454.904823364,"data":"[   19.5s] ThyroidXL adapter: 4093 patients, 11635 frames\n"}
+,{"stream_name":"stdout","time":454.909640204,"data":"[   19.5s] ThyroidXL adapter: Table 1 reproduced exactly (3354/739 patients, 9541/2094 images, 877/353 malignant, TIRADS match)\n"}
+,{"stream_name":"stdout","time":454.923127764,"data":"[   19.5s] label provenance:\n"}
+,{"stream_name":"stdout","time":454.923169563,"data":"split            conclusion_text    n         source\n"}
+,{"stream_name":"stdout","time":454.92317636,"data":"  dev              Benign (FNAC) 2397           FNAC\n"}
+,{"stream_name":"stdout","time":454.923181596,"data":"  dev    Benign (Histopathology)   80 histopathology\n"}
+,{"stream_name":"stdout","time":454.923186552,"data":"  dev           Malignant (FNAC)  366           FNAC\n"}
+,{"stream_name":"stdout","time":454.923191886,"data":"  dev Malignant (Histopathology)  511 histopathology\n"}
+,{"stream_name":"stdout","time":454.923197257,"data":" test              Benign (FNAC)  372           FNAC\n"}
+,{"stream_name":"stdout","time":454.923202487,"data":" test    Benign (Histopathology)   14 histopathology\n"}
+,{"stream_name":"stdout","time":454.923207839,"data":" test           Malignant (FNAC)  156           FNAC\n"}
+,{"stream_name":"stdout","time":454.923213353,"data":" test Malignant (Histopathology)  197 histopathology\n"}
+,{"stream_name":"stdout","time":454.927541529,"data":"[   19.5s] leakage check: OK -- 4093 unique patients, no split overlap\n"}
+,{"stream_name":"stdout","time":454.942816313,"data":"[   19.5s] folds:\n"}
+,{"stream_name":"stdout","time":454.942849181,"data":"      size      mean\n"}
+,{"stream_name":"stdout","time":454.942855206,"data":"fold                \n"}
+,{"stream_name":"stdout","time":454.942880172,"data":"0      671  0.260805\n"}
+,{"stream_name":"stdout","time":454.942886264,"data":"1      671  0.260805\n"}
+,{"stream_name":"stdout","time":454.94289161,"data":"2      671  0.262295\n"}
+,{"stream_name":"stdout","time":454.942896897,"data":"3      671  0.262295\n"}
+,{"stream_name":"stdout","time":454.942902477,"data":"4      670  0.261194\n"}
+,{"stream_name":"stdout","time":454.947615943,"data":"[   19.5s] split validation: OK (dev=3354, test=739, folds=5)\n"}
+,{"stream_name":"stdout","time":455.052737917,"data":"[   19.6s] split validation: OK (dev=3354, test=739, folds=5)\n"}
+,{"stream_name":"stdout","time":455.214207414,"data":"[   19.8s] mask coverage: {'frames': 11635, 'pixel_mask': 1.0, 'bbox_only': 0.0, 'no_mask': 0.0}\n"}
+,{"stream_name":"stdout","time":455.222023254,"data":"                                          Development set                     Test set\n"}
+,{"stream_name":"stdout","time":455.222051754,"data":"Number of patients                                   3354                          739\n"}
+,{"stream_name":"stdout","time":455.2220582,"data":"Number of images                                     9541                         2094\n"}
+,{"stream_name":"stdout","time":455.22206331,"data":"Frames per patient (min-max)                         1-10                          1-8\n"}
+,{"stream_name":"stdout","time":455.222080987,"data":"Mean frames per patient                              2.84                         2.83\n"}
+,{"stream_name":"stdout","time":455.222088797,"data":"Median frames per patient                               3                            3\n"}
+,{"stream_name":"stdout","time":455.222097363,"data":"Benign patients, n (%)                       2477 (73.9%)                  386 (52.2%)\n"}
+,{"stream_name":"stdout","time":455.22210538,"data":"Malignant patients, n (%)                     877 (26.1%)                  353 (47.8%)\n"}
+,{"stream_name":"stdout","time":455.22211356,"data":"TIRADS 1, n                                            24                            0\n"}
+,{"stream_name":"stdout","time":455.222120315,"data":"TIRADS 2, n                                           328                           45\n"}
+,{"stream_name":"stdout","time":455.222128212,"data":"TIRADS 3, n                                          1090                          182\n"}
+,{"stream_name":"stdout","time":455.222135204,"data":"TIRADS 4, n                                          1024                          215\n"}
+,{"stream_name":"stdout","time":455.222142457,"data":"TIRADS 5, n                                           888                          297\n"}
+,{"stream_name":"stdout","time":455.222150254,"data":"Mean age, years               48.2 +/- 12.7 (range 12-94)  47.6 +/- 12.8 (range 14-84)\n"}
+,{"stream_name":"stdout","time":455.222155834,"data":"\n"}
+,{"stream_name":"stdout","time":455.222159595,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":455.222163484,"data":"BUILDING RESIZE CACHE (224 px)\n"}
+,{"stream_name":"stdout","time":455.222167358,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":455.571129432,"data":"[   20.1s] resize cache: 23270 files total, 0 already cached, 23270 to build\n"}
+,{"stream_name":"stdout","time":461.793194005,"data":"[   26.4s]   cached 2000/23270\n"}
+,{"stream_name":"stdout","time":467.206892714,"data":"[   31.8s]   cached 4000/23270\n"}
+,{"stream_name":"stdout","time":472.882383626,"data":"[   37.4s]   cached 6000/23270\n"}
+,{"stream_name":"stdout","time":478.344096014,"data":"[   42.9s]   cached 8000/23270\n"}
+,{"stream_name":"stdout","time":483.69122447,"data":"[   48.2s]   cached 10000/23270\n"}
+,{"stream_name":"stdout","time":489.033522369,"data":"[   53.6s]   cached 12000/23270\n"}
+,{"stream_name":"stdout","time":494.559548925,"data":"[   59.1s]   cached 14000/23270\n"}
+,{"stream_name":"stdout","time":500.106559489,"data":"[   64.7s]   cached 16000/23270\n"}
+,{"stream_name":"stdout","time":505.586183096,"data":"[   70.1s]   cached 18000/23270\n"}
+,{"stream_name":"stdout","time":511.36328768,"data":"[   75.9s]   cached 20000/23270\n"}
+,{"stream_name":"stdout","time":516.841688433,"data":"[   81.4s]   cached 22000/23270\n"}
+,{"stream_name":"stdout","time":520.670269919,"data":"[   85.2s] resize cache: ready -- 23270 files, 1.1GB on disk\n"}
+,{"stream_name":"stdout","time":520.774335473,"data":"[   85.3s] cache verify: {'checked': 40, 'bad_shape': 0, 'bad_mask': 0}\n"}
+,{"stream_name":"stdout","time":520.833664292,"data":"\n"}
+,{"stream_name":"stdout","time":520.833705555,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":520.833712541,"data":"1-2. PREDICTIONS AND DEVELOPMENT-ONLY CALIBRATION\n"}
+,{"stream_name":"stdout","time":520.833718159,"data":"==============================================================================\n"}
+,{"stream_name":"stderr","time":521.283062235,"data":"Downloading: \"https://download.pytorch.org/models/resnet50-0676ba61.pth\" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth\n"}
+,{"stream_name":"stderr","time":521.931372854,"data":"\r  0%|          | 0.00/97.8M [00:00\u003c?, ?B/s]\r 10%|█         | 10.1M/97.8M [00:00\u003c00:00, 106MB/s]\r 32%|███▏      | 30.9M/97.8M [00:00\u003c00:00, 171MB/s]\r 54%|█████▍    | 52.6M/97.8M [00:00\u003c00:00, 197MB/s]\r 75%|███████▌  | 73.5M/97.8M [00:00\u003c00:00, 205MB/s]\r 98%|█████████▊| 95.6M/97.8M [00:00\u003c00:00, 215MB/s]\r100%|██████████| 97.8M/97.8M [00:00\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stdout","time":614.762548694,"data":"[  179.3s] der_mil   pooled OOF ROC-AUC 0.9923\n"}
+,{"stream_name":"stdout","time":615.269401479,"data":"[  179.8s] calibration: T = 1.1348 | thresholds {'raw': 0.5, 'youden': 0.5262, 'sens90': 0.8385}\n"}
+,{"stream_name":"stdout","time":631.666514071,"data":"[  196.2s] \n"}
+,{"stream_name":"stdout","time":631.666586577,"data":"calibration (der_mil)\n"}
+,{"stream_name":"stdout","time":631.666595025,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":631.666600603,"data":"Dev (OOF)          Before temp. scaling 0.019839 0.028444    0.048205       0.060933\n"}
+,{"stream_name":"stdout","time":631.666606233,"data":"Dev (OOF) After temp. scaling (T=1.135) 0.023355 0.028370    0.054129       0.063560\n"}
+,{"stream_name":"stdout","time":631.666611154,"data":" Test set            Temp. scaling only 0.081704 0.065278    0.008599       0.180449\n"}
+,{"stream_name":"stdout","time":631.666615362,"data":" Test set      + Prior-shift correction 0.058928 0.051004    0.017320       0.140437\n"}
+,{"stream_name":"stdout","time":631.66957073,"data":"[  196.2s] \n"}
+,{"stream_name":"stdout","time":631.669601386,"data":"operating points (der_mil)\n"}
+,{"stream_name":"stdout","time":631.669608934,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":631.669615258,"data":"          Raw @ 0.5   0.500000     0.835694     0.994819   0.993266 0.907692 0.991094 0.066738 295   2 384  58\n"}
+,{"stream_name":"stdout","time":631.66962008,"data":"Calibrated @ youden   0.526196     0.835694     0.997409   0.996622 0.909091 0.991094 0.065278 295   1 385  58\n"}
+,{"stream_name":"stdout","time":631.669625707,"data":"Calibrated @ sens90   0.838497     0.759207     1.000000   1.000000 0.863124 0.991094 0.065278 268   0 386  85\n"}
+,{"stream_name":"stdout","time":704.061321313,"data":"[  268.6s] mr_mil    pooled OOF ROC-AUC 0.9929\n"}
+,{"stream_name":"stdout","time":704.582287469,"data":"[  269.1s] calibration: T = 1.1641 | thresholds {'raw': 0.5, 'youden': 0.3836, 'sens90': 0.8887}\n"}
+,{"stream_name":"stdout","time":721.052945268,"data":"[  285.6s] \n"}
+,{"stream_name":"stdout","time":721.053017614,"data":"calibration (mr_mil)\n"}
+,{"stream_name":"stdout","time":721.053027203,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":721.053032774,"data":"Dev (OOF)          Before temp. scaling 0.023030 0.029392    0.050902       0.055694\n"}
+,{"stream_name":"stdout","time":721.053037996,"data":"Dev (OOF) After temp. scaling (T=1.164) 0.027514 0.029119    0.057817       0.058074\n"}
+,{"stream_name":"stdout","time":721.053043022,"data":" Test set            Temp. scaling only 0.013435 0.022997    0.030566       0.058639\n"}
+,{"stream_name":"stdout","time":721.053047978,"data":" Test set      + Prior-shift correction 0.016993 0.022065    0.056139       0.040431\n"}
+,{"stream_name":"stdout","time":721.056357738,"data":"[  285.6s] \n"}
+,{"stream_name":"stdout","time":721.056407376,"data":"operating points (mr_mil)\n"}
+,{"stream_name":"stdout","time":721.056414266,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":721.056418657,"data":"          Raw @ 0.5   0.500000     0.954674     0.989637   0.988270 0.971182  0.99425 0.023106 337   4 382  16\n"}
+,{"stream_name":"stdout","time":721.056423136,"data":"Calibrated @ youden   0.383575     0.963173     0.981865   0.979827 0.971429  0.99425 0.022997 340   7 379  13\n"}
+,{"stream_name":"stdout","time":721.056426876,"data":"Calibrated @ sens90   0.888661     0.889518     0.994819   0.993671 0.938714  0.99425 0.022997 314   2 384  39\n"}
+,{"stream_name":"stdout","time":780.719943578,"data":"[  345.3s] rcaf      pooled OOF ROC-AUC 0.9912\n"}
+,{"stream_name":"stdout","time":781.396018619,"data":"[  346.0s] calibration: T = 1.2385 | thresholds {'raw': 0.5, 'youden': 0.5249, 'sens90': 0.8238}\n"}
+,{"stream_name":"stdout","time":790.640080624,"data":"[  355.2s] \n"}
+,{"stream_name":"stdout","time":790.640127988,"data":"calibration (rcaf)\n"}
+,{"stream_name":"stdout","time":790.640136295,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":790.640142651,"data":"Dev (OOF)          Before temp. scaling 0.019803 0.028620    0.047845       0.059398\n"}
+,{"stream_name":"stdout","time":790.640148392,"data":"Dev (OOF) After temp. scaling (T=1.239) 0.025706 0.028671    0.057339       0.064471\n"}
+,{"stream_name":"stdout","time":790.640153947,"data":" Test set            Temp. scaling only 0.039619 0.044999    0.040481       0.124771\n"}
+,{"stream_name":"stdout","time":790.640159424,"data":" Test set      + Prior-shift correction 0.026514 0.038837    0.077353       0.087343\n"}
+,{"stream_name":"stdout","time":790.643350002,"data":"[  355.2s] \n"}
+,{"stream_name":"stdout","time":790.64339,"data":"operating points (rcaf)\n"}
+,{"stream_name":"stdout","time":790.643398111,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":790.643405176,"data":"          Raw @ 0.5   0.500000     0.883853     0.989637   0.987342 0.932735 0.986863 0.046508 312   4 382  41\n"}
+,{"stream_name":"stdout","time":790.643411877,"data":"Calibrated @ youden   0.524891     0.881020     0.989637   0.987302 0.931138 0.986863 0.044999 311   4 382  42\n"}
+,{"stream_name":"stdout","time":790.64341859,"data":"Calibrated @ sens90   0.823795     0.830028     0.997409   0.996599 0.905719 0.986863 0.044999 293   1 385  60\n"}
+,{"stream_name":"stdout","time":790.647017313,"data":"\n"}
+,{"stream_name":"stdout","time":790.647051298,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":790.647058273,"data":"PAIRED DeLong ON THE TEST COHORT\n"}
+,{"stream_name":"stdout","time":790.647064067,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":790.679925515,"data":"  der_mil   0.9911 vs mr_mil    0.9942 | diff -0.0032 | z=-1.86 p=0.0623\n"}
+,{"stream_name":"stdout","time":790.67997392,"data":"  der_mil   0.9911 vs rcaf      0.9869 | diff +0.0042 | z=+2.28 p=0.0226\n"}
+,{"stream_name":"stdout","time":790.679993138,"data":"  mr_mil    0.9942 vs rcaf      0.9869 | diff +0.0074 | z=+3.15 p=0.0017\n"}
+,{"stream_name":"stdout","time":790.679999479,"data":"\n"}
+,{"stream_name":"stdout","time":790.68000489,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":790.680029474,"data":"3. ROBUSTNESS AND COUNTERFACTUAL SUITE (final models)\n"}
+,{"stream_name":"stdout","time":790.680033963,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":790.680038265,"data":"\n"}
+,{"stream_name":"stdout","time":790.68004216,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":790.680046382,"data":"SHORTCUT SENSITIVITY (within-patient mask permutation)\n"}
+,{"stream_name":"stdout","time":790.680050621,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":790.682443122,"data":"[  355.2s]   707/739 test patients have more than one frame\n"}
+,{"stream_name":"stdout","time":823.10293237,"data":"[  387.7s]   der_mil        0.9910 -\u003e 0.9892  (delta -0.0017)\n"}
+,{"stream_name":"stdout","time":856.469854067,"data":"[  421.0s]   mr_mil         0.9940 -\u003e 0.9946  (delta +0.0006)\n"}
+,{"stream_name":"stdout","time":874.679828661,"data":"[  439.2s]   rcaf           0.9865 -\u003e 0.9878  (delta +0.0013)\n"}
+,{"stream_name":"stdout","time":874.683277399,"data":"\n"}
+,{"stream_name":"stdout","time":874.683299957,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":874.683307418,"data":"MASK QUALITY SENSITIVITY  |  der_mil\n"}
+,{"stream_name":"stdout","time":874.683313388,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":891.359836112,"data":"[  455.9s]   clean      ROC-AUC 0.9911  (delta +0.0000)\n"}
+,{"stream_name":"stdout","time":907.899582383,"data":"[  472.5s]   dilate5    ROC-AUC 0.9881  (delta -0.0030)\n"}
+,{"stream_name":"stdout","time":924.396140246,"data":"[  489.0s]   erode5     ROC-AUC 0.9901  (delta -0.0010)\n"}
+,{"stream_name":"stdout","time":941.087461394,"data":"[  505.6s]   erode15    ROC-AUC 0.8111  (delta -0.1800)\n"}
+,{"stream_name":"stdout","time":957.748272405,"data":"[  522.3s]   dilate15   ROC-AUC 0.9507  (delta -0.0404)\n"}
+,{"stream_name":"stdout","time":973.792142275,"data":"[  538.4s]   zeros      ROC-AUC 0.5899  (delta -0.4012)\n"}
+,{"stream_name":"stdout","time":1037.587357821,"data":"[  602.1s] permutation invariance der_mil: mean |dp| = 0.00e+00, max = 0.00e+00\n"}
+,{"stream_name":"stdout","time":1037.588520036,"data":"\n"}
+,{"stream_name":"stdout","time":1037.588551801,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1037.588558866,"data":"FRAME REMOVAL  |  der_mil\n"}
+,{"stream_name":"stdout","time":1037.588564243,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1075.272959924,"data":"[  639.8s]   drop highest_reliability      mean |dp| = 0.0399 | ROC-AUC after = 0.9758\n"}
+,{"stream_name":"stdout","time":1096.476771519,"data":"[  661.0s]   drop lowest_reliability       mean |dp| = 0.0611 | ROC-AUC after = 0.9839\n"}
+,{"stream_name":"stdout","time":1117.840825233,"data":"[  682.4s]   drop random                   mean |dp| = 0.0535 | ROC-AUC after = 0.9829\n"}
+,{"stream_name":"stdout","time":1117.844192274,"data":"\n"}
+,{"stream_name":"stdout","time":1117.844216802,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1117.844223215,"data":"MASK QUALITY SENSITIVITY  |  mr_mil\n"}
+,{"stream_name":"stdout","time":1117.844228538,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1134.333007092,"data":"[  698.9s]   clean      ROC-AUC 0.9942  (delta +0.0000)\n"}
+,{"stream_name":"stdout","time":1151.099287058,"data":"[  715.7s]   dilate5    ROC-AUC 0.9956  (delta +0.0014)\n"}
+,{"stream_name":"stdout","time":1167.853654442,"data":"[  732.4s]   erode5     ROC-AUC 0.9945  (delta +0.0002)\n"}
+,{"stream_name":"stdout","time":1184.95354469,"data":"[  749.5s]   erode15    ROC-AUC 0.9418  (delta -0.0525)\n"}
+,{"stream_name":"stdout","time":1202.239905752,"data":"[  766.8s]   dilate15   ROC-AUC 0.9646  (delta -0.0297)\n"}
+,{"stream_name":"stdout","time":1218.420912209,"data":"[  783.0s]   zeros      ROC-AUC 0.6379  (delta -0.3563)\n"}
+,{"stream_name":"stdout","time":1283.612777549,"data":"[  848.2s] permutation invariance mr_mil: mean |dp| = 0.00e+00, max = 0.00e+00\n"}
+,{"stream_name":"stdout","time":1283.613930088,"data":"\n"}
+,{"stream_name":"stdout","time":1283.613950961,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1283.613955349,"data":"FRAME REMOVAL  |  mr_mil\n"}
+,{"stream_name":"stdout","time":1283.613958977,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1321.587081944,"data":"[  886.1s]   drop highest_reliability      mean |dp| = 0.0204 | ROC-AUC after = 0.9942\n"}
+,{"stream_name":"stdout","time":1345.567497915,"data":"[  910.1s]   drop lowest_reliability       mean |dp| = 0.0675 | ROC-AUC after = 0.9821\n"}
+,{"stream_name":"stdout","time":1366.784597088,"data":"[  931.3s]   drop random                   mean |dp| = 0.0340 | ROC-AUC after = 0.9900\n"}
+,{"stream_name":"stdout","time":1366.788205059,"data":"\n"}
+,{"stream_name":"stdout","time":1366.78822822,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1366.788234985,"data":"MASK QUALITY SENSITIVITY  |  rcaf\n"}
+,{"stream_name":"stdout","time":1366.788240657,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1375.930147185,"data":"[  940.5s]   clean      ROC-AUC 0.9869  (delta +0.0000)\n"}
+,{"stream_name":"stdout","time":1385.113177084,"data":"[  949.7s]   dilate5    ROC-AUC 0.9853  (delta -0.0016)\n"}
+,{"stream_name":"stdout","time":1394.303698999,"data":"[  958.9s]   erode5     ROC-AUC 0.9872  (delta +0.0003)\n"}
+,{"stream_name":"stdout","time":1403.728313173,"data":"[  968.3s]   erode15    ROC-AUC 0.8072  (delta -0.1797)\n"}
+,{"stream_name":"stdout","time":1413.097820019,"data":"[  977.7s]   dilate15   ROC-AUC 0.9603  (delta -0.0265)\n"}
+,{"stream_name":"stdout","time":1422.136750826,"data":"[  986.7s]   zeros      ROC-AUC 0.5137  (delta -0.4732)\n"}
+,{"stream_name":"stdout","time":1457.321165953,"data":"[ 1021.9s] permutation invariance rcaf: mean |dp| = 0.00e+00, max = 0.00e+00\n"}
+,{"stream_name":"stdout","time":1457.322287067,"data":"\n"}
+,{"stream_name":"stdout","time":1457.322305742,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1457.322315463,"data":"FRAME REMOVAL  |  rcaf\n"}
+,{"stream_name":"stdout","time":1457.322319057,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1480.081065575,"data":"[ 1044.6s]   drop highest_attention        mean |dp| = 0.0769 | ROC-AUC after = 0.9724\n"}
+,{"stream_name":"stdout","time":1493.804381568,"data":"[ 1058.4s]   drop lowest_attention         mean |dp| = 0.0360 | ROC-AUC after = 0.9853\n"}
+,{"stream_name":"stdout","time":1506.900817576,"data":"[ 1071.5s]   drop random                   mean |dp| = 0.0523 | ROC-AUC after = 0.9775\n"}
+,{"stream_name":"stdout","time":1506.903910244,"data":"\n"}
+,{"stream_name":"stdout","time":1506.903937647,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1506.903941226,"data":"EVIDENCE ABLATION (pixel level)  |  der_mil\n"}
+,{"stream_name":"stdout","time":1506.903943724,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1538.868165552,"data":"[ 1103.4s]   suppress core     ROC-AUC 0.9866 (-0.0045) | mean |dp| 0.1099\n"}
+,{"stream_name":"stdout","time":1555.063578823,"data":"[ 1119.6s]   suppress margin   ROC-AUC 0.9819 (-0.0092) | mean |dp| 0.1201\n"}
+,{"stream_name":"stdout","time":1571.255219375,"data":"[ 1135.8s]   suppress peri     ROC-AUC 0.9910 (-0.0001) | mean |dp| 0.0014\n"}
+,{"stream_name":"stdout","time":1587.501899246,"data":"[ 1152.1s]   suppress global   ROC-AUC 0.9911 (+0.0000) | mean |dp| 0.0005\n"}
+,{"stream_name":"stdout","time":1587.504925175,"data":"\n"}
+,{"stream_name":"stdout","time":1587.504948419,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1587.504958028,"data":"RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  der_mil\n"}
+,{"stream_name":"stdout","time":1587.504961741,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1897.095999372,"data":"[ 1461.7s]   mean_within_patient_spearman           -0.7515\n"}
+,{"stream_name":"stdout","time":1897.096062842,"data":"[ 1461.7s]   median_within_patient_spearman         -0.7619\n"}
+,{"stream_name":"stdout","time":1897.096071773,"data":"[ 1461.7s]   frac_positive_spearman                 0.0000\n"}
+,{"stream_name":"stdout","time":1897.096077732,"data":"[ 1461.7s]   mean_within_patient_kendall            -0.5601\n"}
+,{"stream_name":"stdout","time":1897.096083219,"data":"[ 1461.7s]   ttest_t                                -132.7671\n"}
+,{"stream_name":"stdout","time":1897.096088939,"data":"[ 1461.7s]   ttest_p                                0.0000\n"}
+,{"stream_name":"stdout","time":1897.127892091,"data":"\n"}
+,{"stream_name":"stdout","time":1897.127934004,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1897.127944358,"data":"EVIDENCE ABLATION (pixel level)  |  mr_mil\n"}
+,{"stream_name":"stdout","time":1897.127948253,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1930.85330995,"data":"[ 1495.4s]   suppress core     ROC-AUC 0.9914 (-0.0029) | mean |dp| 0.0444\n"}
+,{"stream_name":"stdout","time":1947.626286291,"data":"[ 1512.2s]   suppress margin   ROC-AUC 0.9919 (-0.0023) | mean |dp| 0.1005\n"}
+,{"stream_name":"stdout","time":1964.499105104,"data":"[ 1529.1s]   suppress peri     ROC-AUC 0.9948 (+0.0006) | mean |dp| 0.0405\n"}
+,{"stream_name":"stdout","time":1981.195958802,"data":"[ 1545.8s]   suppress global   ROC-AUC 0.9943 (+0.0000) | mean |dp| 0.0001\n"}
+,{"stream_name":"stdout","time":1981.199452691,"data":"\n"}
+,{"stream_name":"stdout","time":1981.199506793,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1981.19951797,"data":"RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  mr_mil\n"}
+,{"stream_name":"stdout","time":1981.199525395,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2275.471107839,"data":"[ 1840.0s]   mean_within_patient_spearman           0.6671\n"}
+,{"stream_name":"stdout","time":2275.47119918,"data":"[ 1840.0s]   median_within_patient_spearman         0.7029\n"}
+,{"stream_name":"stdout","time":2275.471205793,"data":"[ 1840.0s]   frac_positive_spearman                 1.0000\n"}
+,{"stream_name":"stdout","time":2275.471209882,"data":"[ 1840.0s]   mean_within_patient_kendall            0.5024\n"}
+,{"stream_name":"stdout","time":2275.471213846,"data":"[ 1840.0s]   ttest_t                                74.6332\n"}
+,{"stream_name":"stdout","time":2275.471217818,"data":"[ 1840.0s]   ttest_p                                0.0000\n"}
+,{"stream_name":"stdout","time":2275.507610647,"data":"\n"}
+,{"stream_name":"stdout","time":2275.507668386,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2275.507674654,"data":"4. TN5000 EXTERNAL VALIDATION\n"}
+,{"stream_name":"stdout","time":2275.507679444,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2275.517480921,"data":"\n"}
+,{"stream_name":"stdout","time":2275.517505364,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2275.517512689,"data":"TN5000 MANIFEST\n"}
+,{"stream_name":"stdout","time":2275.517520364,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2275.538955566,"data":"[ 1840.1s] TN5000 adapter: root = /kaggle/input/datasets/abdullahelafifi/main-data/Main data\n"}
+,{"stream_name":"stdout","time":2275.57081791,"data":"[ 1840.1s] TN5000 adapter: official train split = 3500 ids\n"}
+,{"stream_name":"stdout","time":2275.598203,"data":"[ 1840.2s] TN5000 adapter: official val   split = 500 ids\n"}
+,{"stream_name":"stdout","time":2275.608645777,"data":"[ 1840.2s] TN5000 adapter: official test  split = 1000 ids\n"}
+,{"stream_name":"stdout","time":2332.694517795,"data":"[ 1897.3s] TN5000 adapter: 5000 images -- 3574 malignant / 1426 benign\n"}
+,{"stream_name":"stdout","time":2332.694573668,"data":"[ 1897.3s] TN5000 adapter: class mapping consistent with the source paper (paper 3572/1428, mirror 3574/1426)\n"}
+,{"stream_name":"stdout","time":2332.716816657,"data":"[ 1897.3s] official split balance:\n"}
+,{"stream_name":"stdout","time":2332.716855877,"data":"split  benign  malignant  total\n"}
+,{"stream_name":"stdout","time":2332.716884579,"data":" test     269        731   1000\n"}
+,{"stream_name":"stdout","time":2332.716892257,"data":"train    1032       2468   3500\n"}
+,{"stream_name":"stdout","time":2332.716898412,"data":"  val     125        375    500\n"}
+,{"stream_name":"stdout","time":2332.716918039,"data":"[ 1897.3s] TN5000: 5000 images, 71.5% malignant\n"}
+,{"stream_name":"stdout","time":2332.924636353,"data":"[ 1897.5s] mask coverage: {'frames': 5000, 'pixel_mask': 0.0, 'bbox_only': 1.0, 'no_mask': 0.0}\n"}
+,{"stream_name":"stdout","time":2332.977513168,"data":"[ 1897.5s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)\n"}
+,{"stream_name":"stdout","time":2332.983280118,"data":"[ 1897.5s] TN5000 adapter: withheld 1000 official test images from adaptation\n"}
+,{"stream_name":"stdout","time":2332.983560534,"data":"[ 1897.5s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)\n"}
+,{"stream_name":"stdout","time":2332.983634931,"data":"\n"}
+,{"stream_name":"stdout","time":2332.983642774,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2332.983648196,"data":"TN5000 ZERO-SHOT (no domain adaptation)\n"}
+,{"stream_name":"stdout","time":2332.983653478,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2389.880604375,"data":"[ 1954.4s]   der_mil   zero-shot AUC 0.7860 [0.7263, 0.8417] | F1 0.7379\n"}
+,{"stream_name":"stdout","time":2433.054165244,"data":"[ 1997.6s]   mr_mil    zero-shot AUC 0.8175 [0.7642, 0.8674] | F1 0.6720\n"}
+,{"stream_name":"stdout","time":2458.413652324,"data":"[ 2023.0s]   rcaf      zero-shot AUC 0.7353 [0.6724, 0.7935] | F1 0.7347\n"}
+,{"stream_name":"stdout","time":2458.417726202,"data":"\n"}
+,{"stream_name":"stdout","time":2458.417748417,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2458.417754703,"data":"TN5000 DOMAIN ADAPTATION: der_mil\n"}
+,{"stream_name":"stdout","time":2458.417765529,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2458.424717033,"data":"[ 2023.0s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)\n"}
+,{"stream_name":"stdout","time":2458.43177012,"data":"[ 2023.0s] TN5000 adapter: withheld 1000 official test images from adaptation\n"}
+,{"stream_name":"stdout","time":2458.432254753,"data":"[ 2023.0s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)\n"}
+,{"stream_name":"stdout","time":2458.436587759,"data":"\n"}
+,{"stream_name":"stdout","time":2458.436609496,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2458.436616618,"data":"TN5000 DOMAIN ADAPTATION  |  der_mil  (bbox masks)\n"}
+,{"stream_name":"stdout","time":2458.436621732,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":2459.041240429,"data":"[ 2023.6s]   loaded ThyroidXL weights (0 missing, 0 unexpected)\n"}
+,{"stream_name":"stdout","time":2540.388852921,"data":"[ 2104.9s]   epoch 00  lr 1.00e-05  unfreeze 1  loss 0.1702  val AUC 0.7890  *\n"}
+,{"stream_name":"stdout","time":2630.588601758,"data":"[ 2195.1s]   epoch 01  lr 2.00e-05  unfreeze 1  loss 0.1104  val AUC 0.8494  *\n"}
+,{"stream_name":"stdout","time":2708.922294805,"data":"[ 2273.5s]   epoch 02  lr 3.00e-05  unfreeze 1  loss 0.0870  val AUC 0.8579  *\n"}
+,{"stream_name":"stdout","time":2799.633954404,"data":"[ 2364.2s]   epoch 03  lr 4.00e-05  unfreeze 2  loss 0.1231  val AUC 0.8911  *\n"}
+,{"stream_name":"stdout","time":2891.854911481,"data":"[ 2456.4s]   epoch 04  lr 5.00e-05  unfreeze 2  loss 0.0810  val AUC 0.8930  *\n"}
+,{"stream_name":"stdout","time":2981.719810455,"data":"[ 2546.3s]   epoch 05  lr 5.00e-05  unfreeze 2  loss 0.0624  val AUC 0.8866\n"}
+,{"stream_name":"stdout","time":3082.815844565,"data":"[ 2647.4s]   epoch 06  lr 4.75e-05  unfreeze 3  loss 0.0571  val AUC 0.8667\n"}
+,{"stream_name":"stdout","time":3180.927261851,"data":"[ 2745.5s]   epoch 07  lr 4.06e-05  unfreeze 3  loss 0.0404  val AUC 0.8769\n"}
+,{"stream_name":"stdout","time":3278.456526687,"data":"[ 2843.0s]   epoch 08  lr 3.06e-05  unfreeze 3  loss 0.0184  val AUC 0.8817\n"}
+,{"stream_name":"stdout","time":3375.633411428,"data":"[ 2940.2s]   epoch 09  lr 1.94e-05  unfreeze 3  loss 0.0107  val AUC 0.8755\n"}
+,{"stream_name":"stdout","time":3474.065524437,"data":"[ 3038.6s]   epoch 10  lr 9.41e-06  unfreeze 3  loss 0.0049  val AUC 0.8814\n"}
+,{"stream_name":"stdout","time":3572.41424129,"data":"[ 3137.0s]   epoch 11  lr 2.48e-06  unfreeze 3  loss 0.0024  val AUC 0.8753\n"}
+,{"stream_name":"stdout","time":3615.979484312,"data":"[ 3180.5s]   der_mil / bbox masks: AUC 0.914 [0.879-0.944]\n"}
+,{"stream_name":"stdout","time":3615.991634537,"data":"[ 3180.6s] \n"}
+,{"stream_name":"stdout","time":3615.99169317,"data":"  model mask_type  n_eval  roc_auc    roc_auc_ci   pr_auc     pr_auc_ci  sensitivity sensitivity_ci  specificity specificity_ci  precision  precision_ci       f1         f1_ci\n"}
+,{"stream_name":"stdout","time":3615.991702747,"data":"der_mil      bbox     250 0.913984 [0.879-0.944] 0.919416 [0.887-0.947]        0.992  [0.976-1.000]        0.472  [0.392-0.560]   0.652632 [0.621-0.694] 0.787302 [0.760-0.818]\n"}
+,{"stream_name":"stdout","time":3615.991709834,"data":"\n"}
+,{"stream_name":"stdout","time":3615.991716046,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":3615.991720511,"data":"TN5000 DOMAIN ADAPTATION: mr_mil\n"}
+,{"stream_name":"stdout","time":3615.991724915,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":3615.999165016,"data":"[ 3180.6s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)\n"}
+,{"stream_name":"stdout","time":3616.006128028,"data":"[ 3180.6s] TN5000 adapter: withheld 1000 official test images from adaptation\n"}
+,{"stream_name":"stdout","time":3616.006474907,"data":"[ 3180.6s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)\n"}
+,{"stream_name":"stdout","time":3616.010669407,"data":"\n"}
+,{"stream_name":"stdout","time":3616.010690137,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":3616.010695878,"data":"TN5000 DOMAIN ADAPTATION  |  mr_mil  (bbox masks)\n"}
+,{"stream_name":"stdout","time":3616.010700583,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":3616.755041411,"data":"[ 3181.3s]   loaded ThyroidXL weights (0 missing, 0 unexpected)\n"}
+,{"stream_name":"stdout","time":3691.993928717,"data":"[ 3256.6s]   epoch 00  lr 1.00e-05  unfreeze 1  loss 0.3083  val AUC 0.7807  *\n"}
+,{"stream_name":"stdout","time":3769.220701942,"data":"[ 3333.8s]   epoch 01  lr 2.00e-05  unfreeze 1  loss 0.1173  val AUC 0.8167  *\n"}
+,{"stream_name":"stdout","time":3846.809413989,"data":"[ 3411.4s]   epoch 02  lr 3.00e-05  unfreeze 1  loss 0.0926  val AUC 0.8405  *\n"}
+,{"stream_name":"stdout","time":3932.296003296,"data":"[ 3496.9s]   epoch 03  lr 4.00e-05  unfreeze 2  loss 0.0906  val AUC 0.8679  *\n"}
+,{"stream_name":"stdout","time":4027.553297549,"data":"[ 3592.1s]   epoch 04  lr 5.00e-05  unfreeze 2  loss 0.0664  val AUC 0.8778  *\n"}
+,{"stream_name":"stdout","time":4111.596256147,"data":"[ 3676.2s]   epoch 05  lr 5.00e-05  unfreeze 2  loss 0.0531  val AUC 0.8674\n"}
+,{"stream_name":"stdout","time":4216.422853531,"data":"[ 3781.0s]   epoch 06  lr 4.75e-05  unfreeze 3  loss 0.0519  val AUC 0.8453\n"}
+,{"stream_name":"stdout","time":4312.525428216,"data":"[ 3877.1s]   epoch 07  lr 4.06e-05  unfreeze 3  loss 0.0352  val AUC 0.8715\n"}
+,{"stream_name":"stdout","time":4410.465672259,"data":"[ 3975.0s]   epoch 08  lr 3.06e-05  unfreeze 3  loss 0.0191  val AUC 0.8914  *\n"}
+,{"stream_name":"stdout","time":4519.332419704,"data":"[ 4083.9s]   epoch 09  lr 1.94e-05  unfreeze 3  loss 0.0095  val AUC 0.8799\n"}
+,{"stream_name":"stdout","time":4617.727082686,"data":"[ 4182.3s]   epoch 10  lr 9.41e-06  unfreeze 3  loss 0.0048  val AUC 0.8849\n"}
+,{"stream_name":"stdout","time":4716.302031041,"data":"[ 4280.9s]   epoch 11  lr 2.48e-06  unfreeze 3  loss 0.0027  val AUC 0.8738\n"}
+,{"stream_name":"stdout","time":4761.106948602,"data":"[ 4325.7s]   mr_mil / bbox masks: AUC 0.908 [0.870-0.944]\n"}
+,{"stream_name":"stdout","time":4761.118460538,"data":"[ 4325.7s] \n"}
+,{"stream_name":"stdout","time":4761.118484289,"data":" model mask_type  n_eval  roc_auc    roc_auc_ci   pr_auc     pr_auc_ci  sensitivity sensitivity_ci  specificity specificity_ci  precision  precision_ci       f1         f1_ci\n"}
+,{"stream_name":"stdout","time":4761.11851493,"data":"mr_mil      bbox     250 0.908224 [0.870-0.944] 0.890922 [0.838-0.944]        0.888  [0.832-0.936]        0.808  [0.736-0.872]   0.822222 [0.768-0.878] 0.853846 [0.809-0.895]\n"}
+,{"stream_name":"stdout","time":4761.118521122,"data":"\n"}
+,{"stream_name":"stdout","time":4761.118525159,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":4761.118529359,"data":"TN5000 DOMAIN ADAPTATION: rcaf\n"}
+,{"stream_name":"stdout","time":4761.118533352,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":4761.12402904,"data":"[ 4325.7s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)\n"}
+,{"stream_name":"stdout","time":4761.130734592,"data":"[ 4325.7s] TN5000 adapter: withheld 1000 official test images from adaptation\n"}
+,{"stream_name":"stdout","time":4761.131297778,"data":"[ 4325.7s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)\n"}
+,{"stream_name":"stdout","time":4761.135538422,"data":"\n"}
+,{"stream_name":"stdout","time":4761.135553088,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":4761.135562947,"data":"TN5000 DOMAIN ADAPTATION  |  rcaf  (bbox masks)\n"}
+,{"stream_name":"stdout","time":4761.135566033,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":4761.735518106,"data":"[ 4326.3s]   loaded ThyroidXL weights (0 missing, 0 unexpected)\n"}
+,{"stream_name":"stdout","time":4815.560752921,"data":"[ 4380.1s]   epoch 00  lr 1.00e-05  unfreeze 1  loss 0.1197  val AUC 0.8468  *\n"}
+,{"stream_name":"stdout","time":4856.097708751,"data":"[ 4420.7s]   epoch 01  lr 2.00e-05  unfreeze 1  loss 0.0684  val AUC 0.8674  *\n"}
+,{"stream_name":"stdout","time":4896.708026664,"data":"[ 4461.3s]   epoch 02  lr 3.00e-05  unfreeze 1  loss 0.0508  val AUC 0.8578\n"}
+,{"stream_name":"stdout","time":4944.67834226,"data":"[ 4509.2s]   epoch 03  lr 4.00e-05  unfreeze 2  loss 0.0653  val AUC 0.8934  *\n"}
+,{"stream_name":"stdout","time":4990.478134035,"data":"[ 4555.0s]   epoch 04  lr 5.00e-05  unfreeze 2  loss 0.0449  val AUC 0.8939  *\n"}
+,{"stream_name":"stdout","time":5036.989122818,"data":"[ 4601.5s]   epoch 05  lr 5.00e-05  unfreeze 2  loss 0.0287  val AUC 0.9014  *\n"}
+,{"stream_name":"stdout","time":5090.250938794,"data":"[ 4654.8s]   epoch 06  lr 4.75e-05  unfreeze 3  loss 0.0292  val AUC 0.8770\n"}
+,{"stream_name":"stdout","time":5140.666791248,"data":"[ 4705.2s]   epoch 07  lr 4.06e-05  unfreeze 3  loss 0.0150  val AUC 0.9009\n"}
+,{"stream_name":"stdout","time":5191.130242861,"data":"[ 4755.7s]   epoch 08  lr 3.06e-05  unfreeze 3  loss 0.0075  val AUC 0.8948\n"}
+,{"stream_name":"stdout","time":5242.607239847,"data":"[ 4807.2s]   epoch 09  lr 1.94e-05  unfreeze 3  loss 0.0035  val AUC 0.9080  *\n"}
+,{"stream_name":"stdout","time":5294.7084878,"data":"[ 4859.3s]   epoch 10  lr 9.41e-06  unfreeze 3  loss 0.0012  val AUC 0.8978\n"}
+,{"stream_name":"stdout","time":5345.499606644,"data":"[ 4910.1s]   epoch 11  lr 2.48e-06  unfreeze 3  loss 0.0005  val AUC 0.9084  *\n"}
+,{"stream_name":"stdout","time":5372.815664172,"data":"[ 4937.4s]   rcaf / bbox masks: AUC 0.960 [0.939-0.978]\n"}
+,{"stream_name":"stdout","time":5372.82703554,"data":"[ 4937.4s] \n"}
+,{"stream_name":"stdout","time":5372.827094353,"data":"model mask_type  n_eval  roc_auc    roc_auc_ci   pr_auc     pr_auc_ci  sensitivity sensitivity_ci  specificity specificity_ci  precision  precision_ci       f1         f1_ci\n"}
+,{"stream_name":"stdout","time":5372.827121254,"data":" rcaf      bbox     250 0.960064 [0.939-0.978] 0.962017 [0.942-0.979]         0.96  [0.920-0.992]        0.808  [0.728-0.872]   0.833333 [0.781-0.882] 0.892193 [0.859-0.924]\n"}
+,{"stream_name":"stdout","time":5372.827127061,"data":"\n"}
+,{"stream_name":"stdout","time":5372.827130927,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5372.827134899,"data":"REPORT\n"}
+,{"stream_name":"stdout","time":5372.827138684,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5372.827142659,"data":"\n"}
+,{"stream_name":"stdout","time":5372.827146347,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5372.827152262,"data":"TABLES\n"}
+,{"stream_name":"stdout","time":5372.827159402,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5372.916250106,"data":"[ 4937.5s] \n"}
+,{"stream_name":"stdout","time":5372.916315538,"data":"== development_comparison ==\n"}
+,{"stream_name":"stdout","time":5372.916323137,"data":"  model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n\n"}
+,{"stream_name":"stdout","time":5372.916328351,"data":" mr_mil        0.992869           0.994337          0.002170 0.983804     0.948689     0.965281   0.906318 0.927019 0.029392 3354\n"}
+,{"stream_name":"stdout","time":5372.916333233,"data":"der_mil        0.992309           0.993394          0.001990 0.982467     0.949829     0.971740   0.922481 0.935955 0.028444 3354\n"}
+,{"stream_name":"stdout","time":5372.916338914,"data":"   rcaf        0.991198           0.992430          0.001955 0.980158     0.952109     0.968914   0.915570 0.933482 0.028620 3354\n"}
+,{"stream_name":"stdout","time":5391.280448018,"data":"[ 4955.8s] \n"}
+,{"stream_name":"stdout","time":5391.280505806,"data":"== test_comparison ==\n"}
+,{"stream_name":"stdout","time":5391.280514151,"data":"  model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci\n"}
+,{"stream_name":"stdout","time":5391.280526343,"data":" mr_mil 0.994250 0.994590        0.5     0.954674     0.989637   0.988270 0.971182  0.972936 337 382   4  16 0.023106 739    0.477673 [0.990, 0.998] [0.991, 0.998] [0.932, 0.975] [0.979, 0.997] [0.976, 0.997] [0.958, 0.983]\n"}
+,{"stream_name":"stdout","time":5391.280533223,"data":"der_mil 0.991094 0.992173        0.5     0.835694     0.994819   0.993266 0.907692  0.918809 295 384   2  58 0.066738 739    0.477673 [0.984, 0.996] [0.987, 0.996] [0.796, 0.873] [0.987, 1.000] [0.983, 1.000] [0.884, 0.929]\n"}
+,{"stream_name":"stdout","time":5391.28053983,"data":"   rcaf 0.986863 0.988544        0.5     0.883853     0.989637   0.987342 0.932735  0.939107 312 382   4  41 0.046508 739    0.477673 [0.979, 0.993] [0.983, 0.994] [0.847, 0.915] [0.979, 0.997] [0.975, 0.997] [0.912, 0.950]\n"}
+,{"stream_name":"stdout","time":5399.909679731,"data":"[ 4964.5s] \n"}
+,{"stream_name":"stdout","time":5399.909724911,"data":"== head_to_head ==\n"}
+,{"stream_name":"stdout","time":5399.90973291,"data":"baseline  oof_auc_proposed  oof_auc_baseline  wilcoxon_W  wilcoxon_p  cohens_d  folds_won  boot_mean_diff           boot_ci  test_auc_proposed  test_auc_baseline  delong_z  delong_p\n"}
+,{"stream_name":"stdout","time":5399.909739948,"data":"  mr_mil          0.993394          0.994337         1.0     0.96875 -0.918262        0.2       -0.000535 [-0.0022, 0.0011]           0.991094           0.994250 -1.863867  0.062340\n"}
+,{"stream_name":"stdout","time":5399.909759619,"data":"    rcaf          0.993394          0.992430        12.0     0.15625  0.582286        0.6        0.001130 [-0.0012, 0.0037]           0.991094           0.986863  2.280047  0.022605\n"}
+,{"stream_name":"stdout","time":5399.926734315,"data":"[ 4964.5s] \n"}
+,{"stream_name":"stdout","time":5399.926777994,"data":"== thresholds_der_mil ==\n"}
+,{"stream_name":"stdout","time":5399.926784762,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":5399.926789931,"data":"          Raw @ 0.5   0.500000     0.835694     0.994819   0.993266 0.907692 0.991094 0.066738 295   2 384  58\n"}
+,{"stream_name":"stdout","time":5399.926794299,"data":"Calibrated @ youden   0.526196     0.835694     0.997409   0.996622 0.909091 0.991094 0.065278 295   1 385  58\n"}
+,{"stream_name":"stdout","time":5399.926798637,"data":"Calibrated @ sens90   0.838497     0.759207     1.000000   1.000000 0.863124 0.991094 0.065278 268   0 386  85\n"}
+,{"stream_name":"stdout","time":5399.937555897,"data":"\n"}
+,{"stream_name":"stdout","time":5399.937594007,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5399.937601829,"data":"DONE in 1.45 h\n"}
+,{"stream_name":"stdout","time":5399.937607078,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5399.942701328,"data":"registry:\n"}
+,{"stream_name":"stdout","time":5399.942735004,"data":"  [DONE] cf/evidence/hires/der_mil        2026-08-28 15:31:11\n"}
+,{"stream_name":"stdout","time":5399.942741783,"data":"  [DONE] cf/evidence/hires/mr_mil         2026-08-28 15:37:45\n"}
+,{"stream_name":"stdout","time":5399.942746682,"data":"  [DONE] cf/influence/hires/der_mil       2026-08-28 15:36:21\n"}
+,{"stream_name":"stdout","time":5399.942750779,"data":"  [DONE] cf/influence/hires/mr_mil        2026-08-28 15:42:39\n"}
+,{"stream_name":"stdout","time":5399.942755068,"data":"  [DONE] data/cache/hires                 2026-08-28 15:13:25\n"}
+,{"stream_name":"stdout","time":5399.942759114,"data":"  [DONE] data/thyroidxl/hires             2026-08-28 15:12:19\n"}
+,{"stream_name":"stdout","time":5399.942763199,"data":"  [DONE] robust/framedrop/hires/der_mil   2026-08-28 15:23:22\n"}
+,{"stream_name":"stdout","time":5399.942767224,"data":"  [DONE] robust/framedrop/hires/mr_mil    2026-08-28 15:27:31\n"}
+,{"stream_name":"stdout","time":5399.94277311,"data":"  [DONE] robust/framedrop/hires/rcaf      2026-08-28 15:29:51\n"}
+,{"stream_name":"stdout","time":5399.942781378,"data":"  [DONE] robust/mask/hires/der_mil        2026-08-28 15:20:58\n"}
+,{"stream_name":"stdout","time":5399.94278416,"data":"  [DONE] robust/mask/hires/mr_mil         2026-08-28 15:25:02\n"}
+,{"stream_name":"stdout","time":5399.942786984,"data":"  [DONE] robust/mask/hires/rcaf           2026-08-28 15:28:26\n"}
+,{"stream_name":"stdout","time":5399.942789798,"data":"  [DONE] robust/perm/hires/der_mil        2026-08-28 15:22:02\n"}
+,{"stream_name":"stdout","time":5399.942792613,"data":"  [DONE] robust/perm/hires/mr_mil         2026-08-28 15:26:08\n"}
+,{"stream_name":"stdout","time":5399.942795343,"data":"  [DONE] robust/perm/hires/rcaf           2026-08-28 15:29:01\n"}
+,{"stream_name":"stdout","time":5399.942798117,"data":"  [DONE] robust/shortcut/hires            2026-08-28 15:19:19\n"}
+,{"stream_name":"stdout","time":5399.94280072,"data":"  [DONE] tn5000/adapt/hires/der_mil/bbox  2026-08-28 16:04:17\n"}
+,{"stream_name":"stdout","time":5399.942814087,"data":"  [DONE] tn5000/adapt/hires/mr_mil/bbox   2026-08-28 16:23:21\n"}
+,{"stream_name":"stdout","time":5399.942817025,"data":"  [DONE] tn5000/adapt/hires/rcaf/bbox     2026-08-28 16:33:51\n"}
+,{"stream_name":"stdout","time":5399.942819642,"data":"  [DONE] tn5000/eval/hires/der_mil        2026-08-28 16:05:00\n"}
+,{"stream_name":"stdout","time":5399.942822327,"data":"  [DONE] tn5000/eval/hires/mr_mil         2026-08-28 16:24:05\n"}
+,{"stream_name":"stdout","time":5399.942825021,"data":"  [DONE] tn5000/eval/hires/rcaf           2026-08-28 16:34:17\n"}
+,{"stream_name":"stdout","time":5399.94282767,"data":"  [DONE] tn5000/manifest/hires            2026-08-28 15:43:37\n"}
+,{"stream_name":"stdout","time":5399.942830366,"data":"output files: 137\n"}
+,{"stream_name":"stderr","time":5405.782137332,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5405.782192709,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5406.147704566,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5406.147747803,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5407.564005343,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5409.106527079,"data":"[NbConvertApp] Writing 449155 bytes to __results__.html\n"}
+]

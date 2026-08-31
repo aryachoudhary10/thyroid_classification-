@@ -1,0 +1,129 @@
+{
+  "roots": {
+    "thyroidxl": "/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL",
+    "tn5000": "/kaggle/input/datasets/abdullahelafifi/main-data/Main data"
+  },
+  "n_train_patients": 3354,
+  "n_test_patients": 739,
+  "patient_overlap": 0,
+  "conclusion_codes": {
+    "3": 2769,
+    "1": 708,
+    "2": 522,
+    "4": 94
+  },
+  "code_to_string": {
+    "3": {
+      "Benign (FNAC) - 3": 2769
+    },
+    "1": {
+      "Malignant (Histopathology) - 1": 708
+    },
+    "2": {
+      "Malignant (FNAC) - 2": 522
+    },
+    "4": {
+      "Benign (Histopathology) - 4": 94
+    }
+  },
+  "patients_with_nodule_2": 0,
+  "malignant_codes": [
+    1,
+    2
+  ],
+  "tirads": {
+    "dev": {
+      "4": 1024,
+      "3": 1090,
+      "5": 888,
+      "2": 328,
+      "1": 24
+    },
+    "test": {
+      "2": 45,
+      "4": 215,
+      "3": 182,
+      "5": 297
+    }
+  },
+  "age_mean": 64.85756169069143,
+  "gender_counts": {
+    "2": 3650,
+    "1": 443
+  },
+  "frames": {
+    "dev": {
+      "images": 9541,
+      "patients": 3354,
+      "mean": 2.8446630888491353,
+      "max": 10,
+      "min": 1,
+      "list_vs_disk_mismatch": 0
+    },
+    "test": {
+      "images": 2094,
+      "patients": 739,
+      "mean": 2.8335588633288227,
+      "max": 8,
+      "min": 1,
+      "list_vs_disk_mismatch": 0
+    }
+  },
+  "masks": {
+    "train": {
+      "unmatched": 0,
+      "values": [
+        0,
+        255
+      ],
+      "mean_area_frac": 0.06747218927205147
+    },
+    "test": {
+      "unmatched": 0,
+      "values": [
+        0,
+        255
+      ],
+      "mean_area_frac": 0.04758229760955356
+    }
+  },
+  "labels_orig_strings": {
+    "actinh": 623,
+    "lanhtinh": 177
+  },
+  "yolo_classes": {
+    "1": 623,
+    "0": 177
+  },
+  "tn5000_splits": {
+    "test.txt": 1000,
+    "train.txt": 3500,
+    "trainval.txt": 4000,
+    "val.txt": 500
+  },
+  "tn5000_classes": {
+    "0": 1426,
+    "1": 3574
+  },
+  "tn5000_objects_per_image": {
+    "1": 5000
+  },
+  "tn5000_split_balance": {
+    "test.txt": {
+      "1": 731,
+      "0": 269
+    },
+    "train.txt": {
+      "1": 2468,
+      "0": 1032
+    },
+    "trainval.txt": {
+      "1": 2843,
+      "0": 1157
+    },
+    "val.txt": {
+      "1": 375,
+      "0": 125
+    }
+  }
+}

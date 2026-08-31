@@ -1,0 +1,82 @@
+ThyroidXL root: /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL
+TN5000    root: /kaggle/input/datasets/abdullahelafifi/main-data/Main data
+==============================================================================
+1. PATIENT LISTS
+==============================================================================
+train patients: 3354 | test patients: 739
+overlap (must be 0): 0
+==============================================================================
+2. id2info_eng.json STRUCTURE AND LABEL ENCODING
+==============================================================================
+patients in id2info: 4093
+covers all train+test: True | missing: 0
+'conclusion' code distribution: {1: 708, 2: 522, 3: 2769, 4: 94}
+code -> Conclusion string:
+   1     Malignant (Histopathology) - 1                  708
+   2     Malignant (FNAC) - 2                            522
+   3     Benign (FNAC) - 3                              2769
+   4     Benign (Histopathology) - 4                      94
+patients with a second nodule: 0
+==============================================================================
+3. WHICH MAPPING REPRODUCES THE PAPER? (dev 877/3354, test 353/739)
+==============================================================================
+candidate malignant code sets, evaluated against Table 1:
+   malignant = [1, 2]       dev  877 (26.1%)  test 353 (47.8%)  <<< EXACT MATCH
+RESOLVED malignant code set: [1, 2]
+==============================================================================
+4. TIRADS DISTRIBUTION vs TABLE 1
+==============================================================================
+paper dev : T1=24  T2=328 T3=1090 T4=1024 T5=888
+paper test: T1=0   T2=45  T3=182  T4=215  T5=297
+dev   ours: {1: 24, 2: 328, 3: 1090, 4: 1024, 5: 888}
+test  ours: {2: 45, 3: 182, 4: 215, 5: 297}
+age: n=4093 mean=64.9 min=12 max=2005   | gender codes: {2: 3650, 1: 443}
+paper: mean age 48.1 +/- 12.7 (range 12-94), female 3650 (89.2%)
+==============================================================================
+5. FRAMES PER PATIENT vs TABLE 1 (dev mean 2.84, test 2.83, max 10)
+==============================================================================
+dev   images=9541  patients=3354  mean=2.84  median=3  min=1  max=10
+      patients whose id2info image list != files on disk: 0
+test  images=2094  patients=739  mean=2.83  median=3  min=1  max=8
+      patients whose id2info image list != files on disk: 0
+==============================================================================
+6. MASK PAIRING AND PIXEL VALUES
+==============================================================================
+train images=9541 masks=9541  exact stem matches=9541  unmatched images=0
+      mask unique values (60 sampled): [0, 255]
+      lesion area fraction: mean 0.0675  min 0.0091  max 0.3886
+      mask sizes: {(532, 727): 32, (541, 581): 7, (537, 647): 19, (432, 727): 1}
+      example image shape (532, 727, 3) dtype uint8
+test  images=2094 masks=2094  exact stem matches=2094  unmatched images=0
+      mask unique values (60 sampled): [0, 255]
+      lesion area fraction: mean 0.0476  min 0.0076  max 0.1795
+      mask sizes: {(532, 727): 35, (537, 647): 13, (541, 581): 8, (547, 485): 2}
+      example image shape (532, 727, 3) dtype uint8
+==============================================================================
+7. labels_orig CLASS STRINGS (per-image polygon labels)
+==============================================================================
+label strings (800 sampled): {'actinh': 623, 'lanhtinh': 177}
+YOLO class ids in labels/*.txt (800 sampled): {'1': 623, '0': 177}
+==============================================================================
+8. TN5000 OFFICIAL SPLITS AND CLASSES
+==============================================================================
+  test.txt      1000 ids   e.g. ['001503', '000093', '001847']
+  train.txt     3500 ids   e.g. ['001469', '001392', '004755']
+  trainval.txt  4000 ids   e.g. ['001469', '001392', '004755']
+  val.txt        500 ids   e.g. ['001131', '001970', '001990']
+  VOC class distribution: {'1': 3574, '0': 1426}
+  objects per image     : {1: 5000}
+  test.txt     class balance: {'1': 731, '0': 269}
+  train.txt    class balance: {'1': 2468, '0': 1032}
+  trainval.txt class balance: {'1': 2843, '0': 1157}
+  val.txt      class balance: {'1': 375, '0': 125}
+==============================================================================
+9. DONE
+==============================================================================
+wrote /kaggle/working/verify.json
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 340734 bytes to __results__.html

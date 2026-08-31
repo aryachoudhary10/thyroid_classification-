@@ -1,0 +1,863 @@
+embedded source extracted to /kaggle/working/_code
+
+run parameters: {'DERMIL_BASELINE': 'rcaf', 'DERMIL_BUDGET_HOURS': '8.5', 'DERMIL_CACHE': '1', 'DERMIL_EVIDENCE_MODE': 'masked_input', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.
+
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+
+    (7.0) - (12.0)
+
+    
+
+  queued_call()
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+    Please install PyTorch with a following CUDA
+
+    configurations:  12.6 following instructions at
+
+    https://pytorch.org/get-started/locally/
+
+    
+
+  queued_call()
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.
+
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+
+If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+
+
+  queued_call()
+
+installing PyTorch with sm_60 support ...
+
+embedded source extracted to /kaggle/working/_code
+
+run parameters: {'DERMIL_BASELINE': 'rcaf', 'DERMIL_BUDGET_HOURS': '8.5', 'DERMIL_CACHE': '1', 'DERMIL_EVIDENCE_MODE': 'masked_input', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}
+
+thyroid : /kaggle/input/datasets/safaaqaisi/thyroidxl
+
+tn5000  : /kaggle/input/datasets/abdullahelafifi/main-data/Main data
+
+  rcaf      <- /kaggle/input/datasets/choudhary15/dermil-rcaf-ckpt/main/rcaf
+
+  der_mil   <- /kaggle/input/notebooks/choudhary15/dermil-train/checkpoints/hires/der_mil
+
+  mr_mil    <- /kaggle/input/notebooks/choudhary15/dermil-train/checkpoints/hires/mr_mil
+
+config: evidence_mode=masked_input regions=('core', 'margin', 'peri', 'global')
+
+
+
+==============================================================================
+
+BUILDING THYROIDXL PATIENT MANIFEST
+
+==============================================================================
+
+[    4.3s] ThyroidXL adapter: root = /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL
+
+[    4.3s] ThyroidXL adapter: 3354 train / 739 test patients, 4093 in id2info
+
+[   19.5s] ThyroidXL adapter: 4093 patients, 11635 frames
+
+[   19.5s] ThyroidXL adapter: Table 1 reproduced exactly (3354/739 patients, 9541/2094 images, 877/353 malignant, TIRADS match)
+
+[   19.5s] label provenance:
+
+split            conclusion_text    n         source
+
+  dev              Benign (FNAC) 2397           FNAC
+
+  dev    Benign (Histopathology)   80 histopathology
+
+  dev           Malignant (FNAC)  366           FNAC
+
+  dev Malignant (Histopathology)  511 histopathology
+
+ test              Benign (FNAC)  372           FNAC
+
+ test    Benign (Histopathology)   14 histopathology
+
+ test           Malignant (FNAC)  156           FNAC
+
+ test Malignant (Histopathology)  197 histopathology
+
+[   19.5s] leakage check: OK -- 4093 unique patients, no split overlap
+
+[   19.5s] folds:
+
+      size      mean
+
+fold                
+
+0      671  0.260805
+
+1      671  0.260805
+
+2      671  0.262295
+
+3      671  0.262295
+
+4      670  0.261194
+
+[   19.5s] split validation: OK (dev=3354, test=739, folds=5)
+
+[   19.6s] split validation: OK (dev=3354, test=739, folds=5)
+
+[   19.8s] mask coverage: {'frames': 11635, 'pixel_mask': 1.0, 'bbox_only': 0.0, 'no_mask': 0.0}
+
+                                          Development set                     Test set
+
+Number of patients                                   3354                          739
+
+Number of images                                     9541                         2094
+
+Frames per patient (min-max)                         1-10                          1-8
+
+Mean frames per patient                              2.84                         2.83
+
+Median frames per patient                               3                            3
+
+Benign patients, n (%)                       2477 (73.9%)                  386 (52.2%)
+
+Malignant patients, n (%)                     877 (26.1%)                  353 (47.8%)
+
+TIRADS 1, n                                            24                            0
+
+TIRADS 2, n                                           328                           45
+
+TIRADS 3, n                                          1090                          182
+
+TIRADS 4, n                                          1024                          215
+
+TIRADS 5, n                                           888                          297
+
+Mean age, years               48.2 +/- 12.7 (range 12-94)  47.6 +/- 12.8 (range 14-84)
+
+
+
+==============================================================================
+
+BUILDING RESIZE CACHE (224 px)
+
+==============================================================================
+
+[   20.1s] resize cache: 23270 files total, 0 already cached, 23270 to build
+
+[   26.4s]   cached 2000/23270
+
+[   31.8s]   cached 4000/23270
+
+[   37.4s]   cached 6000/23270
+
+[   42.9s]   cached 8000/23270
+
+[   48.2s]   cached 10000/23270
+
+[   53.6s]   cached 12000/23270
+
+[   59.1s]   cached 14000/23270
+
+[   64.7s]   cached 16000/23270
+
+[   70.1s]   cached 18000/23270
+
+[   75.9s]   cached 20000/23270
+
+[   81.4s]   cached 22000/23270
+
+[   85.2s] resize cache: ready -- 23270 files, 1.1GB on disk
+
+[   85.3s] cache verify: {'checked': 40, 'bad_shape': 0, 'bad_mask': 0}
+
+
+
+==============================================================================
+
+1-2. PREDICTIONS AND DEVELOPMENT-ONLY CALIBRATION
+
+==============================================================================
+
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+
+  0%|          | 0.00/97.8M [00:00<?, ?B/s] 10%|?         | 10.1M/97.8M [00:00<00:00, 106MB/s] 32%|????      | 30.9M/97.8M [00:00<00:00, 171MB/s] 54%|??????    | 52.6M/97.8M [00:00<00:00, 197MB/s] 75%|????????  | 73.5M/97.8M [00:00<00:00, 205MB/s] 98%|??????????| 95.6M/97.8M [00:00<00:00, 215MB/s]100%|??????????| 97.8M/97.8M [00:00<00:00, 200MB/s]
+
+[  179.3s] der_mil   pooled OOF ROC-AUC 0.9923
+
+[  179.8s] calibration: T = 1.1348 | thresholds {'raw': 0.5, 'youden': 0.5262, 'sens90': 0.8385}
+
+[  196.2s] 
+
+calibration (der_mil)
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.019839 0.028444    0.048205       0.060933
+
+Dev (OOF) After temp. scaling (T=1.135) 0.023355 0.028370    0.054129       0.063560
+
+ Test set            Temp. scaling only 0.081704 0.065278    0.008599       0.180449
+
+ Test set      + Prior-shift correction 0.058928 0.051004    0.017320       0.140437
+
+[  196.2s] 
+
+operating points (der_mil)
+
+    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn
+
+          Raw @ 0.5   0.500000     0.835694     0.994819   0.993266 0.907692 0.991094 0.066738 295   2 384  58
+
+Calibrated @ youden   0.526196     0.835694     0.997409   0.996622 0.909091 0.991094 0.065278 295   1 385  58
+
+Calibrated @ sens90   0.838497     0.759207     1.000000   1.000000 0.863124 0.991094 0.065278 268   0 386  85
+
+[  268.6s] mr_mil    pooled OOF ROC-AUC 0.9929
+
+[  269.1s] calibration: T = 1.1641 | thresholds {'raw': 0.5, 'youden': 0.3836, 'sens90': 0.8887}
+
+[  285.6s] 
+
+calibration (mr_mil)
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.023030 0.029392    0.050902       0.055694
+
+Dev (OOF) After temp. scaling (T=1.164) 0.027514 0.029119    0.057817       0.058074
+
+ Test set            Temp. scaling only 0.013435 0.022997    0.030566       0.058639
+
+ Test set      + Prior-shift correction 0.016993 0.022065    0.056139       0.040431
+
+[  285.6s] 
+
+operating points (mr_mil)
+
+    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn
+
+          Raw @ 0.5   0.500000     0.954674     0.989637   0.988270 0.971182  0.99425 0.023106 337   4 382  16
+
+Calibrated @ youden   0.383575     0.963173     0.981865   0.979827 0.971429  0.99425 0.022997 340   7 379  13
+
+Calibrated @ sens90   0.888661     0.889518     0.994819   0.993671 0.938714  0.99425 0.022997 314   2 384  39
+
+[  345.3s] rcaf      pooled OOF ROC-AUC 0.9912
+
+[  346.0s] calibration: T = 1.2385 | thresholds {'raw': 0.5, 'youden': 0.5249, 'sens90': 0.8238}
+
+[  355.2s] 
+
+calibration (rcaf)
+
+   cohort                     condition      ece    brier  ece_benign  ece_malignant
+
+Dev (OOF)          Before temp. scaling 0.019803 0.028620    0.047845       0.059398
+
+Dev (OOF) After temp. scaling (T=1.239) 0.025706 0.028671    0.057339       0.064471
+
+ Test set            Temp. scaling only 0.039619 0.044999    0.040481       0.124771
+
+ Test set      + Prior-shift correction 0.026514 0.038837    0.077353       0.087343
+
+[  355.2s] 
+
+operating points (rcaf)
+
+    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn
+
+          Raw @ 0.5   0.500000     0.883853     0.989637   0.987342 0.932735 0.986863 0.046508 312   4 382  41
+
+Calibrated @ youden   0.524891     0.881020     0.989637   0.987302 0.931138 0.986863 0.044999 311   4 382  42
+
+Calibrated @ sens90   0.823795     0.830028     0.997409   0.996599 0.905719 0.986863 0.044999 293   1 385  60
+
+
+
+==============================================================================
+
+PAIRED DeLong ON THE TEST COHORT
+
+==============================================================================
+
+  der_mil   0.9911 vs mr_mil    0.9942 | diff -0.0032 | z=-1.86 p=0.0623
+
+  der_mil   0.9911 vs rcaf      0.9869 | diff +0.0042 | z=+2.28 p=0.0226
+
+  mr_mil    0.9942 vs rcaf      0.9869 | diff +0.0074 | z=+3.15 p=0.0017
+
+
+
+==============================================================================
+
+3. ROBUSTNESS AND COUNTERFACTUAL SUITE (final models)
+
+==============================================================================
+
+
+
+==============================================================================
+
+SHORTCUT SENSITIVITY (within-patient mask permutation)
+
+==============================================================================
+
+[  355.2s]   707/739 test patients have more than one frame
+
+[  387.7s]   der_mil        0.9910 -> 0.9892  (delta -0.0017)
+
+[  421.0s]   mr_mil         0.9940 -> 0.9946  (delta +0.0006)
+
+[  439.2s]   rcaf           0.9865 -> 0.9878  (delta +0.0013)
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  der_mil
+
+==============================================================================
+
+[  455.9s]   clean      ROC-AUC 0.9911  (delta +0.0000)
+
+[  472.5s]   dilate5    ROC-AUC 0.9881  (delta -0.0030)
+
+[  489.0s]   erode5     ROC-AUC 0.9901  (delta -0.0010)
+
+[  505.6s]   erode15    ROC-AUC 0.8111  (delta -0.1800)
+
+[  522.3s]   dilate15   ROC-AUC 0.9507  (delta -0.0404)
+
+[  538.4s]   zeros      ROC-AUC 0.5899  (delta -0.4012)
+
+[  602.1s] permutation invariance der_mil: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  der_mil
+
+==============================================================================
+
+[  639.8s]   drop highest_reliability      mean |dp| = 0.0399 | ROC-AUC after = 0.9758
+
+[  661.0s]   drop lowest_reliability       mean |dp| = 0.0611 | ROC-AUC after = 0.9839
+
+[  682.4s]   drop random                   mean |dp| = 0.0535 | ROC-AUC after = 0.9829
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  mr_mil
+
+==============================================================================
+
+[  698.9s]   clean      ROC-AUC 0.9942  (delta +0.0000)
+
+[  715.7s]   dilate5    ROC-AUC 0.9956  (delta +0.0014)
+
+[  732.4s]   erode5     ROC-AUC 0.9945  (delta +0.0002)
+
+[  749.5s]   erode15    ROC-AUC 0.9418  (delta -0.0525)
+
+[  766.8s]   dilate15   ROC-AUC 0.9646  (delta -0.0297)
+
+[  783.0s]   zeros      ROC-AUC 0.6379  (delta -0.3563)
+
+[  848.2s] permutation invariance mr_mil: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  mr_mil
+
+==============================================================================
+
+[  886.1s]   drop highest_reliability      mean |dp| = 0.0204 | ROC-AUC after = 0.9942
+
+[  910.1s]   drop lowest_reliability       mean |dp| = 0.0675 | ROC-AUC after = 0.9821
+
+[  931.3s]   drop random                   mean |dp| = 0.0340 | ROC-AUC after = 0.9900
+
+
+
+==============================================================================
+
+MASK QUALITY SENSITIVITY  |  rcaf
+
+==============================================================================
+
+[  940.5s]   clean      ROC-AUC 0.9869  (delta +0.0000)
+
+[  949.7s]   dilate5    ROC-AUC 0.9853  (delta -0.0016)
+
+[  958.9s]   erode5     ROC-AUC 0.9872  (delta +0.0003)
+
+[  968.3s]   erode15    ROC-AUC 0.8072  (delta -0.1797)
+
+[  977.7s]   dilate15   ROC-AUC 0.9603  (delta -0.0265)
+
+[  986.7s]   zeros      ROC-AUC 0.5137  (delta -0.4732)
+
+[ 1021.9s] permutation invariance rcaf: mean |dp| = 0.00e+00, max = 0.00e+00
+
+
+
+==============================================================================
+
+FRAME REMOVAL  |  rcaf
+
+==============================================================================
+
+[ 1044.6s]   drop highest_attention        mean |dp| = 0.0769 | ROC-AUC after = 0.9724
+
+[ 1058.4s]   drop lowest_attention         mean |dp| = 0.0360 | ROC-AUC after = 0.9853
+
+[ 1071.5s]   drop random                   mean |dp| = 0.0523 | ROC-AUC after = 0.9775
+
+
+
+==============================================================================
+
+EVIDENCE ABLATION (pixel level)  |  der_mil
+
+==============================================================================
+
+[ 1103.4s]   suppress core     ROC-AUC 0.9866 (-0.0045) | mean |dp| 0.1099
+
+[ 1119.6s]   suppress margin   ROC-AUC 0.9819 (-0.0092) | mean |dp| 0.1201
+
+[ 1135.8s]   suppress peri     ROC-AUC 0.9910 (-0.0001) | mean |dp| 0.0014
+
+[ 1152.1s]   suppress global   ROC-AUC 0.9911 (+0.0000) | mean |dp| 0.0005
+
+
+
+==============================================================================
+
+RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  der_mil
+
+==============================================================================
+
+[ 1461.7s]   mean_within_patient_spearman           -0.7515
+
+[ 1461.7s]   median_within_patient_spearman         -0.7619
+
+[ 1461.7s]   frac_positive_spearman                 0.0000
+
+[ 1461.7s]   mean_within_patient_kendall            -0.5601
+
+[ 1461.7s]   ttest_t                                -132.7671
+
+[ 1461.7s]   ttest_p                                0.0000
+
+
+
+==============================================================================
+
+EVIDENCE ABLATION (pixel level)  |  mr_mil
+
+==============================================================================
+
+[ 1495.4s]   suppress core     ROC-AUC 0.9914 (-0.0029) | mean |dp| 0.0444
+
+[ 1512.2s]   suppress margin   ROC-AUC 0.9919 (-0.0023) | mean |dp| 0.1005
+
+[ 1529.1s]   suppress peri     ROC-AUC 0.9948 (+0.0006) | mean |dp| 0.0405
+
+[ 1545.8s]   suppress global   ROC-AUC 0.9943 (+0.0000) | mean |dp| 0.0001
+
+
+
+==============================================================================
+
+RELIABILITY vs COUNTERFACTUAL INFLUENCE  |  mr_mil
+
+==============================================================================
+
+[ 1840.0s]   mean_within_patient_spearman           0.6671
+
+[ 1840.0s]   median_within_patient_spearman         0.7029
+
+[ 1840.0s]   frac_positive_spearman                 1.0000
+
+[ 1840.0s]   mean_within_patient_kendall            0.5024
+
+[ 1840.0s]   ttest_t                                74.6332
+
+[ 1840.0s]   ttest_p                                0.0000
+
+
+
+==============================================================================
+
+4. TN5000 EXTERNAL VALIDATION
+
+==============================================================================
+
+
+
+==============================================================================
+
+TN5000 MANIFEST
+
+==============================================================================
+
+[ 1840.1s] TN5000 adapter: root = /kaggle/input/datasets/abdullahelafifi/main-data/Main data
+
+[ 1840.1s] TN5000 adapter: official train split = 3500 ids
+
+[ 1840.2s] TN5000 adapter: official val   split = 500 ids
+
+[ 1840.2s] TN5000 adapter: official test  split = 1000 ids
+
+[ 1897.3s] TN5000 adapter: 5000 images -- 3574 malignant / 1426 benign
+
+[ 1897.3s] TN5000 adapter: class mapping consistent with the source paper (paper 3572/1428, mirror 3574/1426)
+
+[ 1897.3s] official split balance:
+
+split  benign  malignant  total
+
+ test     269        731   1000
+
+train    1032       2468   3500
+
+  val     125        375    500
+
+[ 1897.3s] TN5000: 5000 images, 71.5% malignant
+
+[ 1897.5s] mask coverage: {'frames': 5000, 'pixel_mask': 0.0, 'bbox_only': 1.0, 'no_mask': 0.0}
+
+[ 1897.5s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)
+
+[ 1897.5s] TN5000 adapter: withheld 1000 official test images from adaptation
+
+[ 1897.5s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)
+
+
+
+==============================================================================
+
+TN5000 ZERO-SHOT (no domain adaptation)
+
+==============================================================================
+
+[ 1954.4s]   der_mil   zero-shot AUC 0.7860 [0.7263, 0.8417] | F1 0.7379
+
+[ 1997.6s]   mr_mil    zero-shot AUC 0.8175 [0.7642, 0.8674] | F1 0.6720
+
+[ 2023.0s]   rcaf      zero-shot AUC 0.7353 [0.6724, 0.7935] | F1 0.7347
+
+
+
+==============================================================================
+
+TN5000 DOMAIN ADAPTATION: der_mil
+
+==============================================================================
+
+[ 2023.0s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)
+
+[ 2023.0s] TN5000 adapter: withheld 1000 official test images from adaptation
+
+[ 2023.0s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)
+
+
+
+==============================================================================
+
+TN5000 DOMAIN ADAPTATION  |  der_mil  (bbox masks)
+
+==============================================================================
+
+[ 2023.6s]   loaded ThyroidXL weights (0 missing, 0 unexpected)
+
+[ 2104.9s]   epoch 00  lr 1.00e-05  unfreeze 1  loss 0.1702  val AUC 0.7890  *
+
+[ 2195.1s]   epoch 01  lr 2.00e-05  unfreeze 1  loss 0.1104  val AUC 0.8494  *
+
+[ 2273.5s]   epoch 02  lr 3.00e-05  unfreeze 1  loss 0.0870  val AUC 0.8579  *
+
+[ 2364.2s]   epoch 03  lr 4.00e-05  unfreeze 2  loss 0.1231  val AUC 0.8911  *
+
+[ 2456.4s]   epoch 04  lr 5.00e-05  unfreeze 2  loss 0.0810  val AUC 0.8930  *
+
+[ 2546.3s]   epoch 05  lr 5.00e-05  unfreeze 2  loss 0.0624  val AUC 0.8866
+
+[ 2647.4s]   epoch 06  lr 4.75e-05  unfreeze 3  loss 0.0571  val AUC 0.8667
+
+[ 2745.5s]   epoch 07  lr 4.06e-05  unfreeze 3  loss 0.0404  val AUC 0.8769
+
+[ 2843.0s]   epoch 08  lr 3.06e-05  unfreeze 3  loss 0.0184  val AUC 0.8817
+
+[ 2940.2s]   epoch 09  lr 1.94e-05  unfreeze 3  loss 0.0107  val AUC 0.8755
+
+[ 3038.6s]   epoch 10  lr 9.41e-06  unfreeze 3  loss 0.0049  val AUC 0.8814
+
+[ 3137.0s]   epoch 11  lr 2.48e-06  unfreeze 3  loss 0.0024  val AUC 0.8753
+
+[ 3180.5s]   der_mil / bbox masks: AUC 0.914 [0.879-0.944]
+
+[ 3180.6s] 
+
+  model mask_type  n_eval  roc_auc    roc_auc_ci   pr_auc     pr_auc_ci  sensitivity sensitivity_ci  specificity specificity_ci  precision  precision_ci       f1         f1_ci
+
+der_mil      bbox     250 0.913984 [0.879-0.944] 0.919416 [0.887-0.947]        0.992  [0.976-1.000]        0.472  [0.392-0.560]   0.652632 [0.621-0.694] 0.787302 [0.760-0.818]
+
+
+
+==============================================================================
+
+TN5000 DOMAIN ADAPTATION: mr_mil
+
+==============================================================================
+
+[ 3180.6s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)
+
+[ 3180.6s] TN5000 adapter: withheld 1000 official test images from adaptation
+
+[ 3180.6s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)
+
+
+
+==============================================================================
+
+TN5000 DOMAIN ADAPTATION  |  mr_mil  (bbox masks)
+
+==============================================================================
+
+[ 3181.3s]   loaded ThyroidXL weights (0 missing, 0 unexpected)
+
+[ 3256.6s]   epoch 00  lr 1.00e-05  unfreeze 1  loss 0.3083  val AUC 0.7807  *
+
+[ 3333.8s]   epoch 01  lr 2.00e-05  unfreeze 1  loss 0.1173  val AUC 0.8167  *
+
+[ 3411.4s]   epoch 02  lr 3.00e-05  unfreeze 1  loss 0.0926  val AUC 0.8405  *
+
+[ 3496.9s]   epoch 03  lr 4.00e-05  unfreeze 2  loss 0.0906  val AUC 0.8679  *
+
+[ 3592.1s]   epoch 04  lr 5.00e-05  unfreeze 2  loss 0.0664  val AUC 0.8778  *
+
+[ 3676.2s]   epoch 05  lr 5.00e-05  unfreeze 2  loss 0.0531  val AUC 0.8674
+
+[ 3781.0s]   epoch 06  lr 4.75e-05  unfreeze 3  loss 0.0519  val AUC 0.8453
+
+[ 3877.1s]   epoch 07  lr 4.06e-05  unfreeze 3  loss 0.0352  val AUC 0.8715
+
+[ 3975.0s]   epoch 08  lr 3.06e-05  unfreeze 3  loss 0.0191  val AUC 0.8914  *
+
+[ 4083.9s]   epoch 09  lr 1.94e-05  unfreeze 3  loss 0.0095  val AUC 0.8799
+
+[ 4182.3s]   epoch 10  lr 9.41e-06  unfreeze 3  loss 0.0048  val AUC 0.8849
+
+[ 4280.9s]   epoch 11  lr 2.48e-06  unfreeze 3  loss 0.0027  val AUC 0.8738
+
+[ 4325.7s]   mr_mil / bbox masks: AUC 0.908 [0.870-0.944]
+
+[ 4325.7s] 
+
+ model mask_type  n_eval  roc_auc    roc_auc_ci   pr_auc     pr_auc_ci  sensitivity sensitivity_ci  specificity specificity_ci  precision  precision_ci       f1         f1_ci
+
+mr_mil      bbox     250 0.908224 [0.870-0.944] 0.890922 [0.838-0.944]        0.888  [0.832-0.936]        0.808  [0.736-0.872]   0.822222 [0.768-0.878] 0.853846 [0.809-0.895]
+
+
+
+==============================================================================
+
+TN5000 DOMAIN ADAPTATION: rcaf
+
+==============================================================================
+
+[ 4325.7s] TN5000 adapter: drawing the evaluation subset from the official val split (500 images)
+
+[ 4325.7s] TN5000 adapter: withheld 1000 official test images from adaptation
+
+[ 4325.7s] TN5000 adapter: adapt on 3750 images, evaluate on 250 (125 malignant / 125 benign)
+
+
+
+==============================================================================
+
+TN5000 DOMAIN ADAPTATION  |  rcaf  (bbox masks)
+
+==============================================================================
+
+[ 4326.3s]   loaded ThyroidXL weights (0 missing, 0 unexpected)
+
+[ 4380.1s]   epoch 00  lr 1.00e-05  unfreeze 1  loss 0.1197  val AUC 0.8468  *
+
+[ 4420.7s]   epoch 01  lr 2.00e-05  unfreeze 1  loss 0.0684  val AUC 0.8674  *
+
+[ 4461.3s]   epoch 02  lr 3.00e-05  unfreeze 1  loss 0.0508  val AUC 0.8578
+
+[ 4509.2s]   epoch 03  lr 4.00e-05  unfreeze 2  loss 0.0653  val AUC 0.8934  *
+
+[ 4555.0s]   epoch 04  lr 5.00e-05  unfreeze 2  loss 0.0449  val AUC 0.8939  *
+
+[ 4601.5s]   epoch 05  lr 5.00e-05  unfreeze 2  loss 0.0287  val AUC 0.9014  *
+
+[ 4654.8s]   epoch 06  lr 4.75e-05  unfreeze 3  loss 0.0292  val AUC 0.8770
+
+[ 4705.2s]   epoch 07  lr 4.06e-05  unfreeze 3  loss 0.0150  val AUC 0.9009
+
+[ 4755.7s]   epoch 08  lr 3.06e-05  unfreeze 3  loss 0.0075  val AUC 0.8948
+
+[ 4807.2s]   epoch 09  lr 1.94e-05  unfreeze 3  loss 0.0035  val AUC 0.9080  *
+
+[ 4859.3s]   epoch 10  lr 9.41e-06  unfreeze 3  loss 0.0012  val AUC 0.8978
+
+[ 4910.1s]   epoch 11  lr 2.48e-06  unfreeze 3  loss 0.0005  val AUC 0.9084  *
+
+[ 4937.4s]   rcaf / bbox masks: AUC 0.960 [0.939-0.978]
+
+[ 4937.4s] 
+
+model mask_type  n_eval  roc_auc    roc_auc_ci   pr_auc     pr_auc_ci  sensitivity sensitivity_ci  specificity specificity_ci  precision  precision_ci       f1         f1_ci
+
+ rcaf      bbox     250 0.960064 [0.939-0.978] 0.962017 [0.942-0.979]         0.96  [0.920-0.992]        0.808  [0.728-0.872]   0.833333 [0.781-0.882] 0.892193 [0.859-0.924]
+
+
+
+==============================================================================
+
+REPORT
+
+==============================================================================
+
+
+
+==============================================================================
+
+TABLES
+
+==============================================================================
+
+[ 4937.5s] 
+
+== development_comparison ==
+
+  model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n
+
+ mr_mil        0.992869           0.994337          0.002170 0.983804     0.948689     0.965281   0.906318 0.927019 0.029392 3354
+
+der_mil        0.992309           0.993394          0.001990 0.982467     0.949829     0.971740   0.922481 0.935955 0.028444 3354
+
+   rcaf        0.991198           0.992430          0.001955 0.980158     0.952109     0.968914   0.915570 0.933482 0.028620 3354
+
+[ 4955.8s] 
+
+== test_comparison ==
+
+  model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci
+
+ mr_mil 0.994250 0.994590        0.5     0.954674     0.989637   0.988270 0.971182  0.972936 337 382   4  16 0.023106 739    0.477673 [0.990, 0.998] [0.991, 0.998] [0.932, 0.975] [0.979, 0.997] [0.976, 0.997] [0.958, 0.983]
+
+der_mil 0.991094 0.992173        0.5     0.835694     0.994819   0.993266 0.907692  0.918809 295 384   2  58 0.066738 739    0.477673 [0.984, 0.996] [0.987, 0.996] [0.796, 0.873] [0.987, 1.000] [0.983, 1.000] [0.884, 0.929]
+
+   rcaf 0.986863 0.988544        0.5     0.883853     0.989637   0.987342 0.932735  0.939107 312 382   4  41 0.046508 739    0.477673 [0.979, 0.993] [0.983, 0.994] [0.847, 0.915] [0.979, 0.997] [0.975, 0.997] [0.912, 0.950]
+
+[ 4964.5s] 
+
+== head_to_head ==
+
+baseline  oof_auc_proposed  oof_auc_baseline  wilcoxon_W  wilcoxon_p  cohens_d  folds_won  boot_mean_diff           boot_ci  test_auc_proposed  test_auc_baseline  delong_z  delong_p
+
+  mr_mil          0.993394          0.994337         1.0     0.96875 -0.918262        0.2       -0.000535 [-0.0022, 0.0011]           0.991094           0.994250 -1.863867  0.062340
+
+    rcaf          0.993394          0.992430        12.0     0.15625  0.582286        0.6        0.001130 [-0.0012, 0.0037]           0.991094           0.986863  2.280047  0.022605
+
+[ 4964.5s] 
+
+== thresholds_der_mil ==
+
+    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn
+
+          Raw @ 0.5   0.500000     0.835694     0.994819   0.993266 0.907692 0.991094 0.066738 295   2 384  58
+
+Calibrated @ youden   0.526196     0.835694     0.997409   0.996622 0.909091 0.991094 0.065278 295   1 385  58
+
+Calibrated @ sens90   0.838497     0.759207     1.000000   1.000000 0.863124 0.991094 0.065278 268   0 386  85
+
+
+
+==============================================================================
+
+DONE in 1.45 h
+
+==============================================================================
+
+registry:
+
+  [DONE] cf/evidence/hires/der_mil        2026-08-28 15:31:11
+
+  [DONE] cf/evidence/hires/mr_mil         2026-08-28 15:37:45
+
+  [DONE] cf/influence/hires/der_mil       2026-08-28 15:36:21
+
+  [DONE] cf/influence/hires/mr_mil        2026-08-28 15:42:39
+
+  [DONE] data/cache/hires                 2026-08-28 15:13:25
+
+  [DONE] data/thyroidxl/hires             2026-08-28 15:12:19
+
+  [DONE] robust/framedrop/hires/der_mil   2026-08-28 15:23:22
+
+  [DONE] robust/framedrop/hires/mr_mil    2026-08-28 15:27:31
+
+  [DONE] robust/framedrop/hires/rcaf      2026-08-28 15:29:51
+
+  [DONE] robust/mask/hires/der_mil        2026-08-28 15:20:58
+
+  [DONE] robust/mask/hires/mr_mil         2026-08-28 15:25:02
+
+  [DONE] robust/mask/hires/rcaf           2026-08-28 15:28:26
+
+  [DONE] robust/perm/hires/der_mil        2026-08-28 15:22:02
+
+  [DONE] robust/perm/hires/mr_mil         2026-08-28 15:26:08
+
+  [DONE] robust/perm/hires/rcaf           2026-08-28 15:29:01
+
+  [DONE] robust/shortcut/hires            2026-08-28 15:19:19
+
+  [DONE] tn5000/adapt/hires/der_mil/bbox  2026-08-28 16:04:17
+
+  [DONE] tn5000/adapt/hires/mr_mil/bbox   2026-08-28 16:23:21
+
+  [DONE] tn5000/adapt/hires/rcaf/bbox     2026-08-28 16:33:51
+
+  [DONE] tn5000/eval/hires/der_mil        2026-08-28 16:05:00
+
+  [DONE] tn5000/eval/hires/mr_mil         2026-08-28 16:24:05
+
+  [DONE] tn5000/eval/hires/rcaf           2026-08-28 16:34:17
+
+  [DONE] tn5000/manifest/hires            2026-08-28 15:43:37
+
+output files: 137
+
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+
+[NbConvertApp] Converting notebook __script__.ipynb to html
+
+[NbConvertApp] Writing 449155 bytes to __results__.html

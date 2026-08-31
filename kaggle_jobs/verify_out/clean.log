@@ -1,0 +1,257 @@
+embedded source extracted to /kaggle/working/_code
+
+run parameters: {'DERMIL_CACHE': '1', 'DERMIL_EVIDENCE_MODE': 'masked_input', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.
+
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+
+    (7.0) - (12.0)
+
+    
+
+  queued_call()
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+    Please install PyTorch with a following CUDA
+
+    configurations:  12.6 following instructions at
+
+    https://pytorch.org/get-started/locally/
+
+    
+
+  queued_call()
+
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: 
+
+Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.
+
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+
+If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+
+
+  queued_call()
+
+installing PyTorch with sm_60 support ...
+
+embedded source extracted to /kaggle/working/_code
+
+run parameters: {'DERMIL_CACHE': '1', 'DERMIL_EVIDENCE_MODE': 'masked_input', 'DERMIL_MODELS': 'der_mil,mr_mil', 'DERMIL_RUN': 'hires'}
+
+thyroid : /kaggle/input/datasets/safaaqaisi/thyroidxl
+
+restored checkpoints from /kaggle/input/notebooks/choudhary15/dermil-train
+
+config: evidence_mode=masked_input regions=('core', 'margin', 'peri', 'global') fusion=softmax
+
+
+
+==============================================================================
+
+BUILDING THYROIDXL PATIENT MANIFEST
+
+==============================================================================
+
+[    5.5s] ThyroidXL adapter: root = /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL
+
+[    5.6s] ThyroidXL adapter: 3354 train / 739 test patients, 4093 in id2info
+
+[   17.1s] ThyroidXL adapter: 4093 patients, 11635 frames
+
+[   17.1s] ThyroidXL adapter: Table 1 reproduced exactly (3354/739 patients, 9541/2094 images, 877/353 malignant, TIRADS match)
+
+[   17.1s] label provenance:
+
+split            conclusion_text    n         source
+
+  dev              Benign (FNAC) 2397           FNAC
+
+  dev    Benign (Histopathology)   80 histopathology
+
+  dev           Malignant (FNAC)  366           FNAC
+
+  dev Malignant (Histopathology)  511 histopathology
+
+ test              Benign (FNAC)  372           FNAC
+
+ test    Benign (Histopathology)   14 histopathology
+
+ test           Malignant (FNAC)  156           FNAC
+
+ test Malignant (Histopathology)  197 histopathology
+
+[   17.1s] leakage check: OK -- 4093 unique patients, no split overlap
+
+[   17.1s] folds:
+
+      size      mean
+
+fold                
+
+0      671  0.260805
+
+1      671  0.260805
+
+2      671  0.262295
+
+3      671  0.262295
+
+4      670  0.261194
+
+[   17.1s] split validation: OK (dev=3354, test=739, folds=5)
+
+[   17.2s] split validation: OK (dev=3354, test=739, folds=5)
+
+[   17.4s] mask coverage: {'frames': 11635, 'pixel_mask': 1.0, 'bbox_only': 0.0, 'no_mask': 0.0}
+
+                                          Development set                     Test set
+
+Number of patients                                   3354                          739
+
+Number of images                                     9541                         2094
+
+Frames per patient (min-max)                         1-10                          1-8
+
+Mean frames per patient                              2.84                         2.83
+
+Median frames per patient                               3                            3
+
+Benign patients, n (%)                       2477 (73.9%)                  386 (52.2%)
+
+Malignant patients, n (%)                     877 (26.1%)                  353 (47.8%)
+
+TIRADS 1, n                                            24                            0
+
+TIRADS 2, n                                           328                           45
+
+TIRADS 3, n                                          1090                          182
+
+TIRADS 4, n                                          1024                          215
+
+TIRADS 5, n                                           888                          297
+
+Mean age, years               48.2 +/- 12.7 (range 12-94)  47.6 +/- 12.8 (range 14-84)
+
+
+
+==============================================================================
+
+BUILDING RESIZE CACHE (224 px)
+
+==============================================================================
+
+[   17.8s] resize cache: 23270 files total, 0 already cached, 23270 to build
+
+[   24.3s]   cached 2000/23270
+
+[   30.3s]   cached 4000/23270
+
+[   36.3s]   cached 6000/23270
+
+[   42.1s]   cached 8000/23270
+
+[   48.1s]   cached 10000/23270
+
+[   54.2s]   cached 12000/23270
+
+[   60.1s]   cached 14000/23270
+
+[   65.9s]   cached 16000/23270
+
+[   71.8s]   cached 18000/23270
+
+[   77.7s]   cached 20000/23270
+
+[   83.6s]   cached 22000/23270
+
+[   87.7s] resize cache: ready -- 23270 files, 1.1GB on disk
+
+[   87.8s] cache verify: {'checked': 40, 'bad_shape': 0, 'bad_mask': 0}
+
+
+
+==============================================================================
+
+REGENERATING PREDICTIONS: der_mil
+
+==============================================================================
+
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+
+  0%|          | 0.00/97.8M [00:00<?, ?B/s] 10%|?         | 9.62M/97.8M [00:00<00:00, 101MB/s] 31%|???       | 30.2M/97.8M [00:00<00:00, 169MB/s] 52%|??????    | 50.9M/97.8M [00:00<00:00, 190MB/s] 73%|????????  | 71.4M/97.8M [00:00<00:00, 200MB/s] 94%|??????????| 91.9M/97.8M [00:00<00:00, 205MB/s]100%|??????????| 97.8M/97.8M [00:00<00:00, 193MB/s]
+
+[  119.7s]   fold0: 671 patients, ROC-AUC 0.9930
+
+[  137.0s]   fold1: 671 patients, ROC-AUC 0.9921
+
+[  153.2s]   fold2: 671 patients, ROC-AUC 0.9908
+
+[  168.9s]   fold3: 671 patients, ROC-AUC 0.9946
+
+[  184.1s]   fold4: 670 patients, ROC-AUC 0.9965
+
+[  184.2s]   POOLED OOF ROC-AUC 0.9923 | per-fold mean 0.9934 +/- 0.0020
+
+[  207.0s]   TEST ROC-AUC 0.9911 [0.9843, 0.9961] | PR-AUC 0.9922 | F1 0.9077
+
+
+
+==============================================================================
+
+REGENERATING PREDICTIONS: mr_mil
+
+==============================================================================
+
+[  221.5s]   fold0: 671 patients, ROC-AUC 0.9938
+
+[  236.4s]   fold1: 671 patients, ROC-AUC 0.9936
+
+[  251.2s]   fold2: 671 patients, ROC-AUC 0.9909
+
+[  266.3s]   fold3: 671 patients, ROC-AUC 0.9969
+
+[  281.8s]   fold4: 670 patients, ROC-AUC 0.9964
+
+[  281.8s]   POOLED OOF ROC-AUC 0.9929 | per-fold mean 0.9943 +/- 0.0022
+
+[  304.2s]   TEST ROC-AUC 0.9942 [0.9898, 0.9977] | PR-AUC 0.9946 | F1 0.9712
+
+
+
+==============================================================================
+
+HEAD TO HEAD
+
+==============================================================================
+
+OOF   der_mil   0.9923 vs mr_mil    0.9929 | diff -0.0006 | DeLong z=-0.68 p=0.4936
+
+TEST  der_mil   0.9911 vs mr_mil    0.9942 | diff -0.0031 | DeLong z=-1.86 p=0.0628
+
+
+
+==============================================================================
+
+DONE in 8.7 min
+
+==============================================================================
+
+output files: 120
+
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+
+[NbConvertApp] Converting notebook __script__.ipynb to html
+
+[NbConvertApp] Writing 430491 bytes to __results__.html

@@ -12,26 +12,24 @@ results/
 *.pth
 
 # --- Kaggle job outputs fetched locally (gigabytes) ---
-# The bulk artefacts are excluded by kind rather than by job, so a new job's
-# output directory is ignored automatically instead of being noticed after it
-# has already been staged.
-kaggle_jobs/**/out/
-kaggle_jobs/**/out2/
-kaggle_jobs/**/out3/
-kaggle_jobs/**/out4/
-kaggle_jobs/**/out_hires/
+# Excluded by KIND, not by job, so a new job's output directory is ignored
+# automatically. Note these are deliberately not whole-directory excludes of
+# out/ or *_out/: git does not descend into an excluded directory, so the
+# result tables and logs re-included below could never be reached.
 kaggle_jobs/**/_code/
 kaggle_jobs/**/dermil_cache/
+kaggle_jobs/**/checkpoints/
 kaggle_jobs/**/registry/
 kaggle_jobs/rcaf_ckpt/
-kaggle_jobs/arms_out/
-kaggle_jobs/verify_out/
-kaggle_jobs/verify_rcaf/
-*.log
 
-# NOTE: the `results/` rule above also excludes kaggle_jobs/*/results/, which
-# holds the result tables the paper reports. Those are small and cost GPU hours
-# to regenerate, so if you want them versioned, add an exception here.
+# ...but the result tables and session logs ARE versioned. They are a few MB,
+# they are the numbers the paper reports, and regenerating them costs GPU
+# hours. The directory negation must come before the contents negation.
+!kaggle_jobs/**/results/
+!kaggle_jobs/**/results/**
+!kaggle_jobs/**/*.log
+!kaggle_jobs/**/*.json
+!kaggle_jobs/**/*.csv
 
 # --- generated: rebuild with `python kaggle_jobs/launch.py bundle` ---
 kaggle_jobs/train/kernel_main.py

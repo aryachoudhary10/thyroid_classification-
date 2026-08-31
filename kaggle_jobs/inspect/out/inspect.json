@@ -1,0 +1,256 @@
+{
+  "mounts": [
+    "datasets"
+  ],
+  "tree": {
+    "datasets": {
+      "safaaqaisi/thyroidxl/ThyroidXL/train/labels": {
+        "n": 9541,
+        "ext": {
+          ".txt": 9541
+        },
+        "samples": [
+          "00002637_900099C6_1.txt",
+          "00000781_DC50215C_0.txt",
+          "00000213_817A8A4F_1.txt",
+          "00001964_B8700201_0.txt"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/train/images": {
+        "n": 9541,
+        "ext": {
+          ".png": 9541
+        },
+        "samples": [
+          "00000772_11E671F0_1.png",
+          "00003573_85DD3394_1.png",
+          "00003642_98B81A59_1.png",
+          "00004389_5DE750F3_3.png"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/train/labels_orig": {
+        "n": 9541,
+        "ext": {
+          ".json": 9541
+        },
+        "samples": [
+          "00003408_D55F7DE5_3.json",
+          "00004040_E980A7CD_3.json",
+          "00004171_B214860F_2.json",
+          "00002924_99BCD2B6_0.json"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/train/masks": {
+        "n": 9541,
+        "ext": {
+          ".png": 9541
+        },
+        "samples": [
+          "00000772_11E671F0_1.png",
+          "00003573_85DD3394_1.png",
+          "00003642_98B81A59_1.png",
+          "00004389_5DE750F3_3.png"
+        ]
+      },
+      "abdullahelafifi/main-data/Main data/Annotations": {
+        "n": 5000,
+        "ext": {
+          ".xml": 5000
+        },
+        "samples": [
+          "000802.xml",
+          "003031.xml",
+          "004041.xml",
+          "001545.xml"
+        ]
+      },
+      "abdullahelafifi/main-data/Main data/JPEGImages": {
+        "n": 5000,
+        "ext": {
+          ".jpg": 5000
+        },
+        "samples": [
+          "000304.jpg",
+          "001940.jpg",
+          "001229.jpg",
+          "000875.jpg"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/test/labels": {
+        "n": 2094,
+        "ext": {
+          ".txt": 2094
+        },
+        "samples": [
+          "00000220_F5DB44BF_0.txt",
+          "00001191_D5B1B01C_1.txt",
+          "00000903_DCE38CBF_1.txt",
+          "00002986_7062F914_5.txt"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/test/images": {
+        "n": 2094,
+        "ext": {
+          ".png": 2094
+        },
+        "samples": [
+          "00000252_53F1BE2B_2.png",
+          "00003384_1CCF4465_0.png",
+          "00004097_2CB10D3E_2.png",
+          "00002161_669AE517_1.png"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/test/labels_orig": {
+        "n": 2094,
+        "ext": {
+          ".json": 2094
+        },
+        "samples": [
+          "00001993_FF6B7C27_2.json",
+          "00001637_65E18528_3.json",
+          "00000215_564DFC1D_0.json",
+          "00000203_94882FA0_3.json"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/test/masks": {
+        "n": 2094,
+        "ext": {
+          ".png": 2094
+        },
+        "samples": [
+          "00000252_53F1BE2B_2.png",
+          "00003384_1CCF4465_0.png",
+          "00004097_2CB10D3E_2.png",
+          "00002161_669AE517_1.png"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/stats/figures/visualization": {
+        "n": 8,
+        "ext": {
+          ".png": 8
+        },
+        "samples": [
+          "00000127_513DDC30_0.png",
+          "00000127_1914A778_1.png",
+          "00000132_3D938012_2.png",
+          "00000132_E89E8C65_1.png"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/stats/figures": {
+        "n": 7,
+        "ext": {
+          ".png": 7
+        },
+        "samples": [
+          "gender_counts.png",
+          "trainset_age_distribution.png",
+          "testset_age_distribution.png",
+          "test_tirads_image_distribution.png"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL": {
+        "n": 6,
+        "ext": {
+          ".ipynb": 4,
+          ".md": 1,
+          "": 1
+        },
+        "samples": [
+          "calculate_mean_and_std.ipynb",
+          "visualization.ipynb",
+          "README.md",
+          "data_stats.ipynb"
+        ]
+      },
+      "abdullahelafifi/main-data/Main data/ImageSets/Main": {
+        "n": 4,
+        "ext": {
+          ".txt": 4
+        },
+        "samples": [
+          "val.txt",
+          "test.txt",
+          "train.txt",
+          "trainval.txt"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/stats": {
+        "n": 4,
+        "ext": {
+          ".txt": 2,
+          ".json": 2
+        },
+        "samples": [
+          "test_patients.txt",
+          "id2info_eng.json",
+          "new_id2info.json",
+          "train_patients.txt"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/test": {
+        "n": 1,
+        "ext": {
+          ".json": 1
+        },
+        "samples": [
+          "test_annotations.json"
+        ]
+      },
+      "safaaqaisi/thyroidxl/ThyroidXL/train": {
+        "n": 1,
+        "ext": {
+          ".json": 1
+        },
+        "samples": [
+          "train_annotations.json"
+        ]
+      }
+    }
+  },
+  "tn5000_splits": {
+    "test.txt": {
+      "lines": 1000,
+      "head": [
+        "001503",
+        "000093",
+        "001847",
+        "000955",
+        "003733"
+      ]
+    },
+    "train.txt": {
+      "lines": 3500,
+      "head": [
+        "001469",
+        "001392",
+        "004755",
+        "003890",
+        "000557"
+      ]
+    },
+    "trainval.txt": {
+      "lines": 4000,
+      "head": [
+        "001469",
+        "001392",
+        "004755",
+        "003890",
+        "000557"
+      ]
+    },
+    "val.txt": {
+      "lines": 500,
+      "head": [
+        "001131",
+        "001970",
+        "001990",
+        "000973",
+        "000474"
+      ]
+    }
+  },
+  "tn5000_classes": {
+    "0": 1426,
+    "1": 3574
+  }
+}

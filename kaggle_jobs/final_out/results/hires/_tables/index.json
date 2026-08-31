@@ -1,0 +1,6 @@
+{
+  "development_comparison": "/kaggle/working/results/hires/_tables/development_comparison.csv",
+  "test_comparison": "/kaggle/working/results/hires/_tables/test_comparison.csv",
+  "head_to_head": "/kaggle/working/results/hires/_tables/head_to_head.csv",
+  "thresholds_der_mil": "/kaggle/working/results/hires/_tables/thresholds_der_mil.csv"
+}

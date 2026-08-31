@@ -1,0 +1,10 @@
+{
+  "model": "der_mil",
+  "n_patients_analysed": 400,
+  "mean_within_patient_spearman": -0.7515316073341374,
+  "median_within_patient_spearman": -0.7619047619047621,
+  "frac_positive_spearman": 0.0,
+  "mean_within_patient_kendall": -0.5601279884684289,
+  "ttest_t": -132.7670934699857,
+  "ttest_p": 0.0
+}
