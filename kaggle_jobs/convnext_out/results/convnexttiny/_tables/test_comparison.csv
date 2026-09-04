@@ -1,0 +1,2 @@
+model,roc_auc,pr_auc,threshold,sensitivity,specificity,precision,f1,accuracy,tp,tn,fp,fn,brier,n,prevalence,roc_auc_ci,pr_auc_ci,sensitivity_ci,specificity_ci,precision_ci,f1_ci
+der_mil,0.9919931306785656,0.9924623925410595,0.5,0.9206798866855525,0.9844559585492227,0.9818731117824774,0.9502923976608187,0.9539918809201624,325,380,6,28,0.03348014281326008,739,0.4776725304465494,"[0.987, 0.996]","[0.988, 0.996]","[0.892, 0.946]","[0.972, 0.995]","[0.967, 0.994]","[0.932, 0.966]"

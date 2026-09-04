@@ -186,6 +186,10 @@ EVIDENCE_MODE = os.environ.get("DERMIL_EVIDENCE_MODE", "")
 # of RCAF's two branches: lesion == x*M, global == x.
 REGIONS = os.environ.get("DERMIL_REGIONS", "")
 EVIDENCE_FUSION = os.environ.get("DERMIL_EVIDENCE_FUSION", "")
+# Backbone sweep (arm 3). Checkpoints are backbone-shaped, so a swap needs its
+# own DERMIL_RUN -- otherwise the registry reports the ResNet-50 folds as done,
+# skips training, and then tries to load those weights into the new trunk.
+BACKBONE = os.environ.get("DERMIL_BACKBONE", "")
 cfg.data.thyroidxl_root = THYROID
 cfg.data.tn5000_root = TN5000
 cfg.data.num_workers = 4
@@ -208,6 +212,15 @@ if REGIONS:
 if EVIDENCE_FUSION:
     cfg.model.evidence_fusion = EVIDENCE_FUSION
     print("evidence_fusion override -> %s" % EVIDENCE_FUSION)
+if BACKBONE:
+    if BACKBONE != "resnet50" and cfg.run.run_name in ("main", "hires"):
+        raise SystemExit(
+            "refusing to run backbone '%s' under DERMIL_RUN=%s: those namespaces "
+            "hold ResNet-50 checkpoints and the registry would skip training and "
+            "then load incompatible weights. Use e.g. DERMIL_RUN=%s."
+            % (BACKBONE, cfg.run.run_name, BACKBONE.replace("_", "")))
+    cfg.model.backbone = BACKBONE
+    print("backbone override -> %s" % BACKBONE)
 
 set_seed(cfg.run.seed)
 registry = StageRegistry(cfg.run.ckpt_root)
