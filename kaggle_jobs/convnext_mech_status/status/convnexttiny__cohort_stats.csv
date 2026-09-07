@@ -1,0 +1,14 @@
+,Development set,Test set
+Number of patients,3354,739
+Number of images,9541,2094
+Frames per patient (min-max),1-10,1-8
+Mean frames per patient,2.84,2.83
+Median frames per patient,3,3
+"Benign patients, n (%)",2477 (73.9%),386 (52.2%)
+"Malignant patients, n (%)",877 (26.1%),353 (47.8%)
+"TIRADS 1, n",24,0
+"TIRADS 2, n",328,45
+"TIRADS 3, n",1090,182
+"TIRADS 4, n",1024,215
+"TIRADS 5, n",888,297
+"Mean age, years",48.2 +/- 12.7 (range 12-94),47.6 +/- 12.8 (range 14-84)

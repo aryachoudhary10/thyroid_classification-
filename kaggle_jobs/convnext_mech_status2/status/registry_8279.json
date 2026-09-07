@@ -1,0 +1,393 @@
+{
+  "data/thyroidxl/convnexttiny": {
+    "done": true,
+    "finished_at": "2026-09-04 17:46:51",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/manifest.csv",
+      "n_patients": 4093
+    }
+  },
+  "data/cache/convnexttiny": {
+    "done": true,
+    "finished_at": "2026-09-07 15:27:19",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/manifest_cached.csv",
+      "files": 23270,
+      "built": 23270,
+      "failed": 0,
+      "bytes": 1227780264
+    }
+  },
+  "cv/convnexttiny/der_mil/fold0": {
+    "done": true,
+    "finished_at": "2026-09-02 20:54:49",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/der_mil/oof_fold0.csv",
+      "roc_auc": 0.9916129032258064,
+      "best_val": 0.9916129032258064,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/fold0/best.pt"
+    }
+  },
+  "cv/convnexttiny/der_mil/fold1": {
+    "done": true,
+    "finished_at": "2026-09-02 21:45:54",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/der_mil/oof_fold1.csv",
+      "roc_auc": 0.9909907834101382,
+      "best_val": 0.9909907834101382,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/fold1/best.pt"
+    }
+  },
+  "cv/convnexttiny/der_mil/fold2": {
+    "done": true,
+    "finished_at": "2026-09-02 22:34:09",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/der_mil/oof_fold2.csv",
+      "roc_auc": 0.9871441689623508,
+      "best_val": 0.9871441689623507,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/fold2/best.pt"
+    }
+  },
+  "cv/convnexttiny/der_mil/fold3": {
+    "done": true,
+    "finished_at": "2026-09-02 23:32:31",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/der_mil/oof_fold3.csv",
+      "roc_auc": 0.9955406336088154,
+      "best_val": 0.9955406336088154,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/fold3/best.pt"
+    }
+  },
+  "cv/convnexttiny/der_mil/fold4": {
+    "done": true,
+    "finished_at": "2026-09-03 00:33:55",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/der_mil/oof_fold4.csv",
+      "roc_auc": 0.9963001443001442,
+      "best_val": 0.9963001443001444,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/fold4/best.pt"
+    }
+  },
+  "refit/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-03 01:10:04",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/final/best.pt"
+    }
+  },
+  "test/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-03 01:10:47",
+    "artifacts": {
+      "predictions": "/kaggle/working/results/convnexttiny/der_mil/test_predictions.csv",
+      "roc_auc": 0.9919931306785656,
+      "ckpts": [
+        "/kaggle/working/checkpoints/convnexttiny/der_mil/final/best.pt"
+      ]
+    }
+  },
+  "tn5000/manifest/convnexttiny": {
+    "done": true,
+    "finished_at": "2026-09-06 09:49:21",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/tn5000_manifest.csv",
+      "n": 5000
+    }
+  },
+  "tn5000/adapt/convnexttiny/der_mil/pixel": {
+    "done": true,
+    "finished_at": "2026-09-03 01:41:47",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/tn5000_pixel/best.pt",
+      "best_val_auc": 0.9231644567583613
+    }
+  },
+  "tn5000/adapt/convnexttiny/der_mil/bbox": {
+    "done": true,
+    "finished_at": "2026-09-03 02:12:54",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/der_mil/tn5000_bbox/best.pt",
+      "best_val_auc": 0.9246363546408074
+    }
+  },
+  "tn5000/eval/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-03 02:13:45",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/der_mil/tn5000_results.csv"
+    }
+  },
+  "cv/convnexttiny/lesion_mil/fold0": {
+    "done": true,
+    "finished_at": "2026-09-04 18:05:30",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/lesion_mil/oof_fold0.csv",
+      "roc_auc": 0.9535023041474654,
+      "best_val": 0.9535023041474654,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold0/best.pt"
+    }
+  },
+  "cv/convnexttiny/lesion_mil/fold1": {
+    "done": true,
+    "finished_at": "2026-09-04 18:25:19",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/lesion_mil/oof_fold1.csv",
+      "roc_auc": 0.9493951612903225,
+      "best_val": 0.9493951612903225,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold1/best.pt"
+    }
+  },
+  "cv/convnexttiny/lesion_mil/fold2": {
+    "done": true,
+    "finished_at": "2026-09-04 18:42:49",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/lesion_mil/oof_fold2.csv",
+      "roc_auc": 0.9474747474747475,
+      "best_val": 0.9474747474747475,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold2/best.pt"
+    }
+  },
+  "cv/convnexttiny/lesion_mil/fold3": {
+    "done": true,
+    "finished_at": "2026-09-04 19:01:38",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/lesion_mil/oof_fold3.csv",
+      "roc_auc": 0.9503213957759411,
+      "best_val": 0.9503213957759411,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold3/best.pt"
+    }
+  },
+  "cv/convnexttiny/lesion_mil/fold4": {
+    "done": true,
+    "finished_at": "2026-09-04 19:27:21",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/lesion_mil/oof_fold4.csv",
+      "roc_auc": 0.9564444444444445,
+      "best_val": 0.9554978354978354,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold4/best.pt"
+    }
+  },
+  "cv/convnexttiny/mr_mil/fold0": {
+    "done": true,
+    "finished_at": "2026-09-04 20:57:47",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/mr_mil/oof_fold0.csv",
+      "roc_auc": 0.9944815668202766,
+      "best_val": 0.9944815668202764,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/fold0/best.pt"
+    }
+  },
+  "cv/convnexttiny/mr_mil/fold1": {
+    "done": true,
+    "finished_at": "2026-09-04 22:00:17",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/mr_mil/oof_fold1.csv",
+      "roc_auc": 0.9899366359447005,
+      "best_val": 0.9899366359447005,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/fold1/best.pt"
+    }
+  },
+  "cv/convnexttiny/mr_mil/fold2": {
+    "done": true,
+    "finished_at": "2026-09-04 22:57:41",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/mr_mil/oof_fold2.csv",
+      "roc_auc": 0.9893882001836547,
+      "best_val": 0.9893882001836547,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/fold2/best.pt"
+    }
+  },
+  "cv/convnexttiny/mr_mil/fold3": {
+    "done": true,
+    "finished_at": "2026-09-05 00:28:13",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/mr_mil/oof_fold3.csv",
+      "roc_auc": 0.9969696969696971,
+      "best_val": 0.996969696969697,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/fold3/best.pt"
+    }
+  },
+  "refit/convnexttiny/lesion_mil": {
+    "done": true,
+    "finished_at": "2026-09-05 00:43:50",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/lesion_mil/final/best.pt"
+    }
+  },
+  "test/convnexttiny/lesion_mil": {
+    "done": true,
+    "finished_at": "2026-09-05 00:44:07",
+    "artifacts": {
+      "predictions": "/kaggle/working/results/convnexttiny/lesion_mil/test_predictions.csv",
+      "roc_auc": 0.9459628058536014,
+      "ckpts": [
+        "/kaggle/working/checkpoints/convnexttiny/lesion_mil/final/best.pt"
+      ]
+    }
+  },
+  "cv/convnexttiny/mr_mil/fold4": {
+    "done": true,
+    "finished_at": "2026-09-05 19:11:02",
+    "artifacts": {
+      "oof_csv": "/kaggle/working/results/convnexttiny/mr_mil/oof_fold4.csv",
+      "roc_auc": 0.9958672438672439,
+      "best_val": 0.9958672438672439,
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/fold4/best.pt"
+    }
+  },
+  "refit/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-05 20:11:32",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/final/best.pt"
+    }
+  },
+  "test/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-05 20:12:15",
+    "artifacts": {
+      "predictions": "/kaggle/working/results/convnexttiny/mr_mil/test_predictions.csv",
+      "roc_auc": 0.9937765122047879,
+      "ckpts": [
+        "/kaggle/working/checkpoints/convnexttiny/mr_mil/final/best.pt"
+      ]
+    }
+  },
+  "tn5000/adapt/convnexttiny/mr_mil/pixel": {
+    "done": true,
+    "finished_at": "2026-09-06 10:19:38",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/tn5000_pixel/best.pt",
+      "best_val_auc": 0.9209627943795765
+    }
+  },
+  "tn5000/adapt/convnexttiny/mr_mil/bbox": {
+    "done": true,
+    "finished_at": "2026-09-06 10:50:44",
+    "artifacts": {
+      "ckpt": "/kaggle/working/checkpoints/convnexttiny/mr_mil/tn5000_bbox/best.pt",
+      "best_val_auc": 0.9218286166633683
+    }
+  },
+  "tn5000/eval/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-06 10:51:36",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/mr_mil/tn5000_results.csv"
+    }
+  },
+  "robust/shortcut/convnexttiny": {
+    "done": true,
+    "finished_at": "2026-09-07 15:30:27",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/shortcut.csv"
+    }
+  },
+  "robust/mask/convnexttiny/lesion_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:31:35",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/lesion_mil/mask_quality.csv"
+    }
+  },
+  "robust/perm/convnexttiny/lesion_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:32:18",
+    "artifacts": {
+      "json": "/kaggle/working/results/convnexttiny/lesion_mil/permutation_invariance.json"
+    }
+  },
+  "robust/framedrop/convnexttiny/lesion_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:33:18",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/lesion_mil/frame_removal.csv"
+    }
+  },
+  "robust/mask/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:37:00",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/mr_mil/mask_quality.csv"
+    }
+  },
+  "robust/perm/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:39:25",
+    "artifacts": {
+      "json": "/kaggle/working/results/convnexttiny/mr_mil/permutation_invariance.json"
+    }
+  },
+  "robust/framedrop/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:41:43",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/mr_mil/frame_removal.csv"
+    }
+  },
+  "robust/mask/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:45:27",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/der_mil/mask_quality.csv"
+    }
+  },
+  "robust/perm/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:47:53",
+    "artifacts": {
+      "json": "/kaggle/working/results/convnexttiny/der_mil/permutation_invariance.json"
+    }
+  },
+  "robust/framedrop/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 15:50:11",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/der_mil/frame_removal.csv"
+    }
+  },
+  "robust/corrupt/convnexttiny": {
+    "done": true,
+    "finished_at": "2026-09-07 16:05:33",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/frame_corruption.csv"
+    }
+  },
+  "cf/evidence/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 16:08:39",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/der_mil/evidence_ablation.csv"
+    }
+  },
+  "robust/relresponse/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 16:09:53",
+    "artifacts": {
+      "json": "/kaggle/working/results/convnexttiny/der_mil/reliability_response.json"
+    }
+  },
+  "cf/influence/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 16:17:46",
+    "artifacts": {
+      "json": "/kaggle/working/results/convnexttiny/der_mil/reliability_influence.json",
+      "tokens_csv": "/kaggle/working/results/convnexttiny/der_mil/reliability_influence_tokens.csv"
+    }
+  },
+  "cf/cases/convnexttiny/der_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 16:18:22",
+    "artifacts": {
+      "csv": "/kaggle/working/results/convnexttiny/der_mil/agreement_cases.csv"
+    }
+  },
+  "cf/influence/convnexttiny/mr_mil": {
+    "done": true,
+    "finished_at": "2026-09-07 16:31:39",
+    "artifacts": {
+      "json": "/kaggle/working/results/convnexttiny/mr_mil/reliability_influence.json",
+      "tokens_csv": "/kaggle/working/results/convnexttiny/mr_mil/reliability_influence_tokens.csv"
+    }
+  }
+}

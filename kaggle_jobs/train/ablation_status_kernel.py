@@ -80,13 +80,21 @@ print("results roots seen:", res_roots or "NONE")
 
 import pandas as pd  # noqa: E402
 
+# Run-level files (shortcut.csv, cohort_stats.csv, *_summary.json) sit
+# directly in the run root, not under a per-model subdirectory, so a
+# directory-substring match on WANT never catches them; matched by name here
+# instead, regardless of which directory they are found in.
+RUN_LEVEL_NAMES = ("shortcut.csv", "cohort_stats.csv", "manifest.csv",
+                   "mechanism_summary.json", "final_summary.json")
+
 seen_any = False
 for root in res_roots:
     for dp, _dn, fn in os.walk(root):
         rel = os.path.relpath(dp, root)
-        if not any(w in rel for w in WANT) and "_tables" not in rel:
-            continue
+        dir_ok = any(w in rel for w in WANT) or "_tables" in rel
         for f in sorted(fn):
+            if not dir_ok and f not in RUN_LEVEL_NAMES:
+                continue
             src = os.path.join(dp, f)
             dst_name = os.path.relpath(src, root).replace(os.sep, "__")
             try:

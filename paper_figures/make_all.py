@@ -11,13 +11,10 @@ import time
 
 MODULES = [
     "fig01_dataset", "fig02_performance", "fig03_ablation",
-    "fig05_calibration", "fig07_significance",
-    "fig08_external", "fig09_computational", "fig10_architecture",
-    "fig11_error_analysis",
+    "fig04_mechanism", "fig05_calibration", "fig06_robustness",
+    "fig07_significance", "fig08_external", "fig09_computational",
+    "fig10_architecture", "fig11_error_analysis",
 ]
-# Note: no fig04 (reliability mechanism) or fig06 (robustness) here -- those
-# analyses were only ever run on the ResNet-50 baseline and have no ConvNeXt-
-# Tiny equivalent to build. See resnet50_supplementary/ for both.
 
 
 def main() -> None:

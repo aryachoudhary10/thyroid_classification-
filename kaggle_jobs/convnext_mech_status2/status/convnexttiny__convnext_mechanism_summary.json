@@ -1,0 +1,9 @@
+{
+  "models_covered": [
+    "lesion_mil",
+    "mr_mil",
+    "der_mil"
+  ],
+  "proposed": "der_mil",
+  "run": "convnexttiny"
+}

@@ -1,6 +1,6 @@
 {
-  "id": "choudhary15/dermil-linrel-status",
-  "title": "dermil linrel status",
+  "id": "choudhary15/dermil-convnext-mechanism-status",
+  "title": "dermil convnext mechanism status",
   "code_file": "kernel_main.py",
   "language": "python",
   "kernel_type": "script",
@@ -14,7 +14,7 @@
   ],
   "competition_sources": [],
   "kernel_sources": [
-    "choudhary15/dermil-linrel"
+    "choudhary15/dermil-convnext-mechanism"
   ],
   "model_sources": []
 }

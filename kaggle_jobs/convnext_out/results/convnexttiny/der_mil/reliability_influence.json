@@ -1,0 +1,77 @@
+{
+  "model": "der_mil",
+  "cross_view": {
+    "n": 481,
+    "mean_spearman": 0.28723771554029454,
+    "median_spearman": 0.5,
+    "frac_positive": 0.6611226611226612,
+    "mean_kendall": 0.2671550816054922,
+    "ttest_t": 9.0532226635623,
+    "ttest_p": 3.487073870031079e-18,
+    "n_patients": 223,
+    "min_frames": 3,
+    "per_region": {
+      "core": {
+        "n": 223,
+        "mean_spearman": 0.5070761703513138,
+        "median_spearman": 0.7999999999999999,
+        "frac_positive": 0.7668161434977578,
+        "mean_kendall": 0.48702836984278575,
+        "ttest_t": 12.442384870491574,
+        "ttest_p": 2.5936509935561516e-27
+      },
+      "margin": {
+        "n": 223,
+        "mean_spearman": 0.1784112748238309,
+        "median_spearman": 0.49999999999999994,
+        "frac_positive": 0.6188340807174888,
+        "mean_kendall": 0.15210335255178303,
+        "ttest_t": 3.8872917717766944,
+        "ttest_p": 0.0001338879182262316
+      },
+      "peri": {
+        "n": 35,
+        "mean_spearman": -0.4200674028335884,
+        "median_spearman": -0.7745966692414834,
+        "frac_positive": 0.2571428571428571,
+        "mean_kendall": -0.4007079954784887,
+        "ttest_t": -3.7439205867875542,
+        "ttest_p": 0.0006701647520032397
+      }
+    }
+  },
+  "region_profile": {
+    "core": {
+      "mean_R": 0.49747875217299103,
+      "mean_influence": 0.011345868336297325
+    },
+    "global": {
+      "mean_R": 0.5650986135268526,
+      "mean_influence": 0.0004122567872977344
+    },
+    "margin": {
+      "mean_R": 0.47200287551606807,
+      "mean_influence": 0.08242729805495297
+    },
+    "peri": {
+      "mean_R": 0.565056606221304,
+      "mean_influence": 0.00021912012479241347
+    }
+  },
+  "pooled_tokens": {
+    "n": 400,
+    "mean_spearman": -0.7887805131720808,
+    "median_spearman": -0.7622377622377624,
+    "frac_positive": 0.0,
+    "mean_kendall": -0.6038085109362747,
+    "ttest_t": -138.35006514213512,
+    "ttest_p": 0.0,
+    "note": "frames and regions ranked together; dominated by the region axis whenever regions differ systematically in influence, and satisfiable by a single-frame bag -- a confound diagnostic, not a test of the cross-view claim"
+  },
+  "tokens_csv": "/kaggle/working/results/convnexttiny/der_mil/reliability_influence_tokens.csv",
+  "n_patients_analysed": 400,
+  "mean_within_patient_spearman": -0.7887805131720808,
+  "median_within_patient_spearman": -0.7622377622377624,
+  "frac_positive_spearman": 0.0,
+  "mean_within_patient_kendall": -0.6038085109362747
+}

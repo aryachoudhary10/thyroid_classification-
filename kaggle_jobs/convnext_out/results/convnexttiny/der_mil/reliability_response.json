@@ -1,0 +1,17 @@
+{
+  "model": "der_mil",
+  "corruption": "blur",
+  "severity": 1.0,
+  "n_patients": 707,
+  "reliability_frame0_clean": 0.48227614164352417,
+  "reliability_frame0_corrupted": 0.47435569763183594,
+  "reliability_others_clean": 0.10253012180328369,
+  "reliability_others_corrupted": 0.10252682119607925,
+  "reliability_drop_on_corrupted": 0.007920442149043083,
+  "reliability_drop_on_clean_peers": 3.3071867164835567e-06,
+  "uncertainty_frame0_clean": 0.44435665011405945,
+  "uncertainty_frame0_corrupted": 0.4442838728427887,
+  "uncertainty_rise_on_corrupted": -7.275193638633937e-05,
+  "attention_frame0_clean": 0.3729211688041687,
+  "attention_frame0_corrupted": 0.36967962980270386
+}

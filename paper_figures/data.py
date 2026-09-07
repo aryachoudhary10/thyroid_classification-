@@ -111,6 +111,35 @@ CONVNEXT_OOF = {
     m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m, "oof.csv")
     for m in ("lesion_mil", "mr_mil", "der_mil")
 }
+CONVNEXT_TN5000_ALL = {
+    m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m, "tn5000_results.csv")
+    for m in ("mr_mil", "der_mil")
+}
+CONVNEXT_TN5000_PRED_ALL = {
+    (m, variant): os.path.join(KJ, "convnext_out", "results", "convnexttiny", m,
+                               "tn5000_predictions_%s.csv" % variant)
+    for m in ("mr_mil", "der_mil") for variant in ("bbox", "pixel")
+}
+CONVNEXT_EVIDENCE_ABLATION = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                                          "der_mil", "evidence_ablation.csv")
+CONVNEXT_RELIABILITY_JSON = {
+    m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m,
+                    "reliability_influence.json")
+    for m in ("mr_mil", "der_mil")
+}
+CONVNEXT_RELIABILITY_TOKENS = {
+    m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m,
+                    "reliability_influence_tokens.csv")
+    for m in ("mr_mil", "der_mil")
+}
+CONVNEXT_MASK_QUALITY = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                                     "der_mil", "mask_quality.csv")
+CONVNEXT_FRAME_REMOVAL = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                                      "der_mil", "frame_removal.csv")
+CONVNEXT_PERMUTATION = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                                    "der_mil", "permutation_invariance.json")
+CONVNEXT_SHORTCUT = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                                 "shortcut.csv")
 CONVNEXT_CAL = {
     m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m,
                     "calibration_table.csv")

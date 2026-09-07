@@ -1,0 +1,156 @@
+"""Figure 4 -- what does the reliability mechanism actually learn?
+
+ConvNeXt-Tiny backbone. All four panels come from the corrected reliability
+<-> counterfactual-influence analysis (src/eval/counterfactual.py), which
+computes influence as the change in predicted probability when one (frame,
+region) evidence token is suppressed, and correlates it with the model's own
+reliability score R for that token, WITHIN region and WITHIN patient (across
+frames) so the region axis cannot confound the result.
+"""
+from __future__ import annotations
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+import data
+import style
+from style import INK, INK_MUTED, MODEL_COLORS, NEUTRAL, REGION_COLORS, style_ax
+
+REGIONS = ["core", "margin", "peri", "global"]
+
+
+def main() -> None:
+    rel = {m: data.load_json(data.CONVNEXT_RELIABILITY_JSON[m]) for m in ("der_mil", "mr_mil")}
+    tok_der = pd.read_csv(data.require(data.CONVNEXT_RELIABILITY_TOKENS["der_mil"]))
+    ea = pd.read_csv(data.require(data.CONVNEXT_EVIDENCE_ABLATION))
+    ea = ea[ea.suppressed != "none"].set_index("suppressed").loc[REGIONS].reset_index()
+
+    cv = rel["der_mil"]["cross_view"]["per_region"]
+
+    fig, axes = plt.subplots(2, 2, figsize=(11.5, 9.5))
+
+    # ---- (a) evidence ablation: cost of removing each region ----------------- #
+    ax = axes[0, 0]
+    x = np.arange(len(REGIONS))
+    ax.bar(x, ea["mean_abs_delta_p"], color=[REGION_COLORS[r] for r in REGIONS],
+          width=0.6)
+    for i, v in enumerate(ea["mean_abs_delta_p"]):
+        ax.text(i, v + 0.002, "%.4f" % v, ha="center", fontsize=9, color=INK)
+    ax.set_xticks(x); ax.set_xticklabels([r.capitalize() for r in REGIONS], fontsize=10)
+    style_ax(ax, "(a) Counterfactual influence by region, ConvNeXt-Tiny\n(mean |Δp| when suppressed, DER-MIL)",
+            ylabel="Mean |Δ predicted probability|")
+
+    # ---- (b) region profile: mean R vs mean influence, both models ----------- #
+    ax = axes[0, 1]
+    for m, marker in (("der_mil", "o"), ("mr_mil", "s")):
+        prof = rel[m]["region_profile"]
+        for r in REGIONS:
+            ax.scatter(prof[r]["mean_influence"], prof[r]["mean_R"],
+                      s=140, marker=marker, color=REGION_COLORS[r],
+                      edgecolor=INK, linewidth=0.8,
+                      label=("%s" % r.capitalize()) if m == "der_mil" else None)
+    ax.scatter([], [], marker="o", color=NEUTRAL, label="DER-MIL")
+    ax.scatter([], [], marker="s", color=NEUTRAL, label="MR-MIL")
+    ax.set_xscale("log")
+    style_ax(ax, "(b) Learned reliability vs actual influence\nConvNeXt-Tiny, per region, per model",
+            xlabel="Mean counterfactual influence (log scale)",
+            ylabel="Mean reliability score R")
+    ax.legend(fontsize=8, ncol=2, loc="center left", bbox_to_anchor=(1.0, 0.5))
+
+    # ---- (c) cross-view rho per region, DER-MIL vs MR-MIL --------------------- #
+    # A region can be entirely absent from a model's per_region dict: if R is
+    # so uniform across a patient's frames that the >=3-frame guard never
+    # finds variation to correlate for ANY test patient, no key is ever
+    # written for that region. That is itself a finding (see caption), not a
+    # missing-data problem to paper over, so absent regions are drawn as 0
+    # with an explicit "no valid correlations" mark rather than skipped.
+    ax = axes[1, 0]
+    w = 0.38
+    x = np.arange(len(REGIONS))
+    missing = {m: [] for m in ("der_mil", "mr_mil")}
+    for m, off in (("der_mil", -w / 2), ("mr_mil", w / 2)):
+        pr = rel[m]["cross_view"]["per_region"]
+        vals = []
+        for r in REGIONS:
+            if r in pr:
+                vals.append(pr[r]["mean_spearman"])
+            else:
+                vals.append(0.0)
+                missing[m].append(r)
+        bars = ax.bar(x + off, vals, w, color=MODEL_COLORS[m], alpha=0.9,
+                      label="DER-MIL" if m == "der_mil" else "MR-MIL")
+        for i, r in enumerate(REGIONS):
+            if r in missing[m]:
+                ax.text(x[i] + off, 0.02, "n/a", ha="center", fontsize=7,
+                       color=INK_MUTED, rotation=90, va="bottom")
+    ax.axhline(0, color=INK_MUTED, linewidth=1)
+    ax.set_xticks(x); ax.set_xticklabels([r.capitalize() for r in REGIONS], fontsize=10)
+    style_ax(ax, "(c) Reliability predicts influence? ConvNeXt-Tiny\nWithin-patient Spearman ρ, R vs |Δp| (across frames)",
+            ylabel="Mean Spearman ρ")
+    ax.legend(fontsize=9)
+    cv_all = rel["der_mil"]["cross_view"]
+    ax.text(0.02, 0.03,
+           "DER-MIL overall: ρ=%.4f, n=%d correlations, p=%.4f"
+           % (cv_all["mean_spearman"], cv_all["n"], cv_all["ttest_p"]),
+           transform=ax.transAxes, fontsize=8, color=INK_MUTED, va="bottom")
+
+    # ---- (d) worked example: R across a real patient's frames, DER-MIL ------- #
+    ax = axes[1, 1]
+    sub3 = tok_der[tok_der.n_valid_frames >= 3]
+    pid = sub3.groupby("patient_id").size().idxmax()
+    one = sub3[sub3.patient_id == pid].pivot(index="frame", columns="region", values="R")
+    one = one[REGIONS]
+    for r in REGIONS:
+        ax.plot(one.index, one[r], marker="o", color=REGION_COLORS[r],
+               linewidth=1.8, markersize=6, label=r.capitalize())
+    style_ax(ax, "(d) Reliability across frames, real patient %s\n(DER-MIL, ConvNeXt-Tiny; %d valid frames)"
+            % (pid, len(one)), xlabel="Frame index", ylabel="Reliability score R")
+    ax.set_xticks(one.index)
+    ax.legend(fontsize=8.5, ncol=2)
+
+    fig.tight_layout()
+
+    const_frac = {}
+    for r in REGIONS:
+        rng = (sub3[sub3.region == r].groupby("patient_id")["R"]
+              .agg(lambda s: s.max() - s.min()))
+        const_frac[r] = float((rng < 1e-4).mean())
+
+    def describe(r: str) -> str:
+        if r not in cv:
+            return ("%s: no valid within-patient correlation could be computed "
+                    "at all -- R never varied across frames for any test "
+                    "patient" % r)
+        return "%s (ρ=%.3f, %.0f%% of patients positive)" % (
+            r, cv[r]["mean_spearman"], 100 * cv[r]["frac_positive"])
+
+    region_desc = "; ".join(describe(r) for r in REGIONS)
+    caption = (
+        "Figure 4. What the reliability mechanism learns, ConvNeXt-Tiny "
+        "backbone. (a) Counterfactual influence of each evidence region, "
+        "measured by suppressing it and recording the mean absolute change in "
+        "predicted probability. (b) Mean reliability score R vs mean "
+        "influence, per region, for DER-MIL (circles) and its reliability-"
+        "disabled ablation MR-MIL (squares); a well-calibrated mechanism "
+        "would place high-influence regions at high R. (c) Within-patient "
+        "Spearman correlation between R and counterfactual influence for "
+        "DER-MIL, computed within region across a patient's frames (bags "
+        "with >=3 valid frames) so the region axis cannot confound the "
+        "statistic: %s. On this backbone, DER-MIL's global-region "
+        "reliability is uniform enough across every test patient's own "
+        "frames that the correlation is undefined for every one of them -- a "
+        "more extreme version of the same near-constant-R pattern seen on "
+        "ResNet-50 (91%% of patients there, 100%% here). (d) Worked example "
+        "on one real test patient with %d valid frames. R varies by less "
+        "than 1e-4 across this patient's own frames for peri in %.0f%% of "
+        "test patients (recomputed from the raw per-token dump), which "
+        "bounds how much signal that region's correlation can carry "
+        "regardless of its sign."
+        % (region_desc, len(one), 100 * const_frac["peri"])
+    )
+    style.save(fig, "fig04_reliability_mechanism_convnext", caption)
+
+
+if __name__ == "__main__":
+    main()

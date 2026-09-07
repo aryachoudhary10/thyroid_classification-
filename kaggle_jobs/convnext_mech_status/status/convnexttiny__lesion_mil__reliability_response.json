@@ -1,0 +1,8 @@
+{
+  "model": "lesion_mil",
+  "corruption": "blur",
+  "severity": 1.0,
+  "n_patients": 707,
+  "attention_frame0_clean": 0.3774677515029907,
+  "attention_frame0_corrupted": 0.2511983811855316
+}
