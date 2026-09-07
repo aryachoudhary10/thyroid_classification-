@@ -186,6 +186,12 @@ EVIDENCE_MODE = os.environ.get("DERMIL_EVIDENCE_MODE", "")
 # of RCAF's two branches: lesion == x*M, global == x.
 REGIONS = os.environ.get("DERMIL_REGIONS", "")
 EVIDENCE_FUSION = os.environ.get("DERMIL_EVIDENCE_FUSION", "")
+# Reliability fusion rule. "mlp" learns an arbitrary interaction over
+# (I, S, D, U) and is uninterpretable; "linear" is the sign-constrained form
+#     R = sigmoid(tanh(I) + a*S - b*D - c*U + bias),  a,b,c >= 0
+# which FORCES the intended semantics -- support can only help, contradiction
+# and uncertainty can only hurt -- and exposes a, b, c as readable numbers.
+RELIABILITY_FN = os.environ.get("DERMIL_RELIABILITY_FN", "")
 # Backbone sweep (arm 3). Checkpoints are backbone-shaped, so a swap needs its
 # own DERMIL_RUN -- otherwise the registry reports the ResNet-50 folds as done,
 # skips training, and then tries to load those weights into the new trunk.
@@ -212,6 +218,9 @@ if REGIONS:
 if EVIDENCE_FUSION:
     cfg.model.evidence_fusion = EVIDENCE_FUSION
     print("evidence_fusion override -> %s" % EVIDENCE_FUSION)
+if RELIABILITY_FN:
+    cfg.model.reliability_fn = RELIABILITY_FN
+    print("reliability_fn override -> %s" % RELIABILITY_FN)
 if BACKBONE:
     if BACKBONE != "resnet50" and cfg.run.run_name in ("main", "hires"):
         raise SystemExit(
@@ -297,6 +306,39 @@ def folds_done(model):
 ready = [m for m in MODELS if folds_done(m)]
 print("\nmodels with all folds complete:", ready)
 
+# Under reliability_fn="linear" the fusion rule is sign-constrained, so a, b, c
+# are readable: a>0 means support raises reliability, b>0 means contradiction
+# lowers it, c>0 means uncertainty lowers it. Magnitudes near zero mean the
+# channel was learned to be ignored. It is the only direct evidence of what the
+# mechanism actually learned, rather than what it was designed to learn.
+if cfg.model.reliability_fn == "linear":
+    import json as _json
+    from src.models.factory import build_model as _bm
+    _coeffs = {}
+    for _m in ready:
+        try:
+            _mdl, _ = _bm(cfg, _m)
+            if not hasattr(_mdl, "reliability_coefficients"):
+                del _mdl
+                continue
+            _ck = os.path.join(CKPT, cfg.run.run_name, _m, "final", "best.pt")
+            if not os.path.exists(_ck):
+                _ck = os.path.join(CKPT, cfg.run.run_name, _m, "fold0", "best.pt")
+            if os.path.exists(_ck):
+                _sd = torch.load(_ck, map_location="cpu", weights_only=False)["model"]
+                _mdl.load_state_dict(_sd, strict=False)
+                _coeffs[_m] = _mdl.reliability_coefficients()
+                print("  reliability coefficients %-10s %s" % (_m, _coeffs[_m]))
+            del _mdl
+        except Exception:                                      # noqa: BLE001
+            import traceback
+            traceback.print_exc()
+    if _coeffs:
+        _out = os.path.join(RESULTS, cfg.run.run_name, "reliability_coefficients.json")
+        os.makedirs(os.path.dirname(_out), exist_ok=True)
+        _json.dump(_coeffs, open(_out, "w", encoding="utf-8"), indent=2)
+
+
 for model in ready:
     if time_left() <= 0:
         stopped_early = True
@@ -321,7 +363,15 @@ if RUN_ROBUST and not stopped_early and time_left() > 1800 and len(ready) >= 2:
         traceback.print_exc()
 
 if RUN_EXTERNAL and not stopped_early and time_left() > 1800 and TN5000:
-    ext = [m for m in ("rcaf", "der_mil") if m in ready]
+    # Which models get the TN5000 arms. Defaults to the two this kernel was
+    # originally written around; DERMIL_EXTERNAL_MODELS overrides it, e.g. to
+    # run the external arm for an ablation variant such as mr_mil.
+    _ext_want = [m.strip() for m in
+                 os.environ.get("DERMIL_EXTERNAL_MODELS", "rcaf,der_mil").split(",")
+                 if m.strip()]
+    ext = [m for m in _ext_want if m in ready]
+    print("external validation requested=%s ready=%s -> running=%s"
+          % (_ext_want, ready, ext))
     if ext:
         try:
             pipeline.run_external(cfg, registry, ext)

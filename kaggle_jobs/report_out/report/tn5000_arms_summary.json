@@ -1,0 +1,214 @@
+{
+  "der_mil": {
+    "mask_arms": [
+      {
+        "model": "der_mil",
+        "mask_type": "bbox",
+        "n_eval": 250,
+        "roc_auc": 0.934144,
+        "roc_auc_ci": "[0.902-0.962]",
+        "pr_auc": 0.9309393397818344,
+        "pr_auc_ci": "[0.892-0.962]",
+        "sensitivity": 0.976,
+        "sensitivity_ci": "[0.944-1.000]",
+        "specificity": 0.592,
+        "specificity_ci": "[0.504-0.680]",
+        "precision": 0.7052023121387283,
+        "precision_ci": "[0.663-0.753]",
+        "f1": 0.8187919463087248,
+        "f1_ci": "[0.787-0.852]"
+      },
+      {
+        "model": "der_mil",
+        "mask_type": "unet",
+        "n_eval": 250,
+        "roc_auc": 0.913536,
+        "roc_auc_ci": "[0.877-0.945]",
+        "pr_auc": 0.9208909521948365,
+        "pr_auc_ci": "[0.888-0.950]",
+        "sensitivity": 0.992,
+        "sensitivity_ci": "[0.976-1.000]",
+        "specificity": 0.176,
+        "specificity_ci": "[0.112-0.248]",
+        "precision": 0.5462555066079295,
+        "precision_ci": "[0.526-0.569]",
+        "f1": 0.7045454545454546,
+        "f1_ci": "[0.685-0.725]"
+      }
+    ],
+    "label_free": [
+      {
+        "model": "der_mil",
+        "arm": "zero_shot",
+        "target_labels": "none",
+        "n_eval": 250,
+        "roc_auc": 0.785984,
+        "roc_auc_ci": "[0.726-0.842]",
+        "pr_auc": 0.7725894365742565,
+        "pr_auc_ci": "[0.705-0.845]",
+        "sensitivity": 0.912,
+        "sensitivity_ci": "[0.864-0.952]",
+        "specificity": 0.44,
+        "specificity_ci": "[0.352-0.520]",
+        "precision": 0.6195652173913043,
+        "precision_ci": "[0.582-0.657]",
+        "f1": 0.7378640776699029,
+        "f1_ci": "[0.703-0.770]",
+        "brier": 0.22834822309002492
+      },
+      {
+        "model": "der_mil",
+        "arm": "upl",
+        "target_labels": "none",
+        "n_eval": 250,
+        "roc_auc": 0.772608,
+        "roc_auc_ci": "[0.710-0.826]",
+        "pr_auc": 0.7291655312316377,
+        "pr_auc_ci": "[0.663-0.806]",
+        "sensitivity": 0.752,
+        "sensitivity_ci": "[0.672-0.824]",
+        "specificity": 0.64,
+        "specificity_ci": "[0.552-0.720]",
+        "precision": 0.6762589928057554,
+        "precision_ci": "[0.620-0.736]",
+        "f1": 0.712121212121212,
+        "f1_ci": "[0.656-0.764]",
+        "brier": 0.2675990661655115
+      },
+      {
+        "model": "der_mil",
+        "arm": "upl_tent",
+        "target_labels": "none",
+        "n_eval": 250,
+        "roc_auc": 0.73312,
+        "roc_auc_ci": "[0.670-0.796]",
+        "pr_auc": 0.6453848972702048,
+        "pr_auc_ci": "[0.586-0.727]",
+        "sensitivity": 0.824,
+        "sensitivity_ci": "[0.752-0.888]",
+        "specificity": 0.584,
+        "specificity_ci": "[0.496-0.672]",
+        "precision": 0.6645161290322581,
+        "precision_ci": "[0.614-0.716]",
+        "f1": 0.7357142857142858,
+        "f1_ci": "[0.688-0.783]",
+        "brier": 0.280786364478727
+      }
+    ],
+    "retrieval": {
+      "auc": 0.761408,
+      "f1": 0.742671009771987,
+      "ci": [
+        0.7000192,
+        0.8195935999999999
+      ],
+      "bag_size": 5
+    }
+  },
+  "mr_mil": {
+    "mask_arms": [
+      {
+        "model": "mr_mil",
+        "mask_type": "bbox",
+        "n_eval": 250,
+        "roc_auc": 0.9071359999999999,
+        "roc_auc_ci": "[0.870-0.942]",
+        "pr_auc": 0.8935577077394719,
+        "pr_auc_ci": "[0.848-0.939]",
+        "sensitivity": 0.976,
+        "sensitivity_ci": "[0.952-1.000]",
+        "specificity": 0.584,
+        "specificity_ci": "[0.496-0.680]",
+        "precision": 0.7011494252873564,
+        "precision_ci": "[0.659-0.752]",
+        "f1": 0.8160535117056855,
+        "f1_ci": "[0.783-0.850]"
+      },
+      {
+        "model": "mr_mil",
+        "mask_type": "unet",
+        "n_eval": 250,
+        "roc_auc": 0.8823679999999999,
+        "roc_auc_ci": "[0.838-0.921]",
+        "pr_auc": 0.8687597416802983,
+        "pr_auc_ci": "[0.813-0.923]",
+        "sensitivity": 0.984,
+        "sensitivity_ci": "[0.960-1.000]",
+        "specificity": 0.224,
+        "specificity_ci": "[0.152-0.296]",
+        "precision": 0.5590909090909091,
+        "precision_ci": "[0.536-0.584]",
+        "f1": 0.7130434782608696,
+        "f1_ci": "[0.691-0.735]"
+      }
+    ],
+    "label_free": [
+      {
+        "model": "mr_mil",
+        "arm": "zero_shot",
+        "target_labels": "none",
+        "n_eval": 250,
+        "roc_auc": 0.8175359999999999,
+        "roc_auc_ci": "[0.764-0.867]",
+        "pr_auc": 0.8179709170633029,
+        "pr_auc_ci": "[0.760-0.870]",
+        "sensitivity": 1.0,
+        "sensitivity_ci": "[1.000-1.000]",
+        "specificity": 0.024,
+        "specificity_ci": "[0.000-0.056]",
+        "precision": 0.5060728744939271,
+        "precision_ci": "[0.500-0.514]",
+        "f1": 0.6720430107526881,
+        "f1_ci": "[0.667-0.679]",
+        "brier": 0.4587896890976105
+      },
+      {
+        "model": "mr_mil",
+        "arm": "upl",
+        "target_labels": "none",
+        "n_eval": 250,
+        "roc_auc": 0.81216,
+        "roc_auc_ci": "[0.759-0.863]",
+        "pr_auc": 0.8225249396431569,
+        "pr_auc_ci": "[0.774-0.874]",
+        "sensitivity": 1.0,
+        "sensitivity_ci": "[1.000-1.000]",
+        "specificity": 0.08,
+        "specificity_ci": "[0.040-0.128]",
+        "precision": 0.5208333333333334,
+        "precision_ci": "[0.510-0.534]",
+        "f1": 0.684931506849315,
+        "f1_ci": "[0.676-0.696]",
+        "brier": 0.40999700822299473
+      },
+      {
+        "model": "mr_mil",
+        "arm": "upl_tent",
+        "target_labels": "none",
+        "n_eval": 250,
+        "roc_auc": 0.783872,
+        "roc_auc_ci": "[0.729-0.839]",
+        "pr_auc": 0.732418642389787,
+        "pr_auc_ci": "[0.671-0.815]",
+        "sensitivity": 1.0,
+        "sensitivity_ci": "[1.000-1.000]",
+        "specificity": 0.0,
+        "specificity_ci": "[0.000-0.000]",
+        "precision": 0.5,
+        "precision_ci": "[0.500-0.500]",
+        "f1": 0.6666666666666666,
+        "f1_ci": "[0.667-0.667]",
+        "brier": 0.47975695867713825
+      }
+    ],
+    "retrieval": {
+      "auc": 0.80896,
+      "f1": 0.6720430107526881,
+      "ci": [
+        0.75564,
+        0.8597232
+      ],
+      "bag_size": 5
+    }
+  }
+}

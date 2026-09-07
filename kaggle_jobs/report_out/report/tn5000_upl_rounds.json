@@ -1,0 +1,10 @@
+{
+  "pseudo_label_rounds": [
+    {
+      "round": 0,
+      "n_kept": 12,
+      "frac_kept": 0.0032,
+      "pseudo_label_accuracy": 0.8333333333333334
+    }
+  ]
+}

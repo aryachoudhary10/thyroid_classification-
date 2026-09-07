@@ -1,11 +1,11 @@
 {
-  "id": "choudhary15/dermil-convnext",
-  "title": "dermil convnext",
+  "id": "choudhary15/dermil-linrel-status",
+  "title": "dermil linrel status",
   "code_file": "kernel_main.py",
   "language": "python",
   "kernel_type": "script",
   "is_private": true,
-  "enable_gpu": true,
+  "enable_gpu": false,
   "enable_tpu": false,
   "enable_internet": true,
   "dataset_sources": [
@@ -13,7 +13,8 @@
     "abdullahelafifi/main-data"
   ],
   "competition_sources": [],
-  "kernel_sources": [],
-  "model_sources": [],
-  "machine_shape": "nvidiaTeslaT4"
+  "kernel_sources": [
+    "choudhary15/dermil-linrel"
+  ],
+  "model_sources": []
 }

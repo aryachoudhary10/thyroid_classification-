@@ -1,0 +1,13 @@
+model,arm,target_labels,auc,ci
+der_mil,bbox,yes,0.934144,[0.902-0.962]
+der_mil,unet,yes,0.913536,[0.877-0.945]
+der_mil,zero_shot,no,0.785984,[0.726-0.842]
+der_mil,upl,no,0.772608,[0.710-0.826]
+der_mil,upl_tent,no,0.73312,[0.670-0.796]
+der_mil,retrieval_k5,no,0.761408,[0.700-0.820]
+mr_mil,bbox,yes,0.9071359999999999,[0.870-0.942]
+mr_mil,unet,yes,0.8823679999999999,[0.838-0.921]
+mr_mil,zero_shot,no,0.8175359999999999,[0.764-0.867]
+mr_mil,upl,no,0.81216,[0.759-0.863]
+mr_mil,upl_tent,no,0.783872,[0.729-0.839]
+mr_mil,retrieval_k5,no,0.80896,[0.756-0.860]

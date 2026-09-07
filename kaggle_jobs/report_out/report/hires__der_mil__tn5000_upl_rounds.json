@@ -1,0 +1,16 @@
+{
+  "pseudo_label_rounds": [
+    {
+      "round": 0,
+      "n_kept": 344,
+      "frac_kept": 0.09173333333333333,
+      "pseudo_label_accuracy": 0.8168604651162791
+    },
+    {
+      "round": 1,
+      "n_kept": 1148,
+      "frac_kept": 0.3061333333333333,
+      "pseudo_label_accuracy": 0.7604529616724739
+    }
+  ]
+}

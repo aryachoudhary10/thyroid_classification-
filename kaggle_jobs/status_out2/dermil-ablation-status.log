@@ -1,0 +1,1087 @@
+[{"stream_name":"stdout","time":1.765375578,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":1.777493618,"data":"\n"}
+,{"stream_name":"stdout","time":1.777525942,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":1.777532259,"data":"REGISTRY -- every stage for the convnexttiny run, unfiltered\n"}
+,{"stream_name":"stdout","time":1.777536688,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":78.079952318,"data":"\n"}
+,{"stream_name":"stdout","time":78.080007891,"data":"source: /kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/checkpoints/registry.json\n"}
+,{"stream_name":"stdout","time":78.080018412,"data":"  cv/convnexttiny/lesion_mil/fold0           2026-09-04 18:05:30  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/lesion_mil/oof_fold0.csv', 'roc_auc': 0.9535023041474654, 'best_val': 0.9535023041474654, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold0/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080026597,"data":"  cv/convnexttiny/lesion_mil/fold1           2026-09-04 18:25:19  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/lesion_mil/oof_fold1.csv', 'roc_auc': 0.9493951612903225, 'best_val': 0.9493951612903225, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold1/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080032542,"data":"  cv/convnexttiny/lesion_mil/fold2           2026-09-04 18:42:49  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/lesion_mil/oof_fold2.csv', 'roc_auc': 0.9474747474747475, 'best_val': 0.9474747474747475, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold2/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080038568,"data":"  cv/convnexttiny/lesion_mil/fold3           2026-09-04 19:01:38  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/lesion_mil/oof_fold3.csv', 'roc_auc': 0.9503213957759411, 'best_val': 0.9503213957759411, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold3/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080044945,"data":"  cv/convnexttiny/lesion_mil/fold4           2026-09-04 19:27:21  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/lesion_mil/oof_fold4.csv', 'roc_auc': 0.9564444444444445, 'best_val': 0.9554978354978354, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/lesion_mil/fold4/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080062652,"data":"  cv/convnexttiny/mr_mil/fold0               2026-09-04 20:57:47  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/mr_mil/oof_fold0.csv', 'roc_auc': 0.9944815668202766, 'best_val': 0.9944815668202764, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/mr_mil/fold0/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080069761,"data":"  cv/convnexttiny/mr_mil/fold1               2026-09-04 22:00:17  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/mr_mil/oof_fold1.csv', 'roc_auc': 0.9899366359447005, 'best_val': 0.9899366359447005, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/mr_mil/fold1/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080075838,"data":"  cv/convnexttiny/mr_mil/fold2               2026-09-04 22:57:41  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/mr_mil/oof_fold2.csv', 'roc_auc': 0.9893882001836547, 'best_val': 0.9893882001836547, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/mr_mil/fold2/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.08008196,"data":"  cv/convnexttiny/mr_mil/fold3               2026-09-05 00:28:13  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/mr_mil/oof_fold3.csv', 'roc_auc': 0.9969696969696971, 'best_val': 0.996969696969697, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/mr_mil/fold3/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080105904,"data":"  cv/convnexttiny/mr_mil/fold4               2026-09-05 19:11:02  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnexttiny/mr_mil/oof_fold4.csv', 'roc_auc': 0.9958672438672439, 'best_val': 0.9958672438672439, 'ckpt': '/kaggle/working/checkpoints/convnexttiny/mr_mil/fold4/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080112043,"data":"  data/cache/convnexttiny                    2026-09-05 18:21:54  {'done': True, 'artifacts': {'csv': '/kaggle/working/results/convnexttiny/manifest_cached.csv', 'files': 23270, 'built': 23270, 'failed': 0, 'bytes': 1227780264}}\n"}
+,{"stream_name":"stdout","time":78.080116225,"data":"  data/thyroidxl/convnexttiny                2026-09-04 17:46:51  {'done': True, 'artifacts': {'csv': '/kaggle/working/results/convnexttiny/manifest.csv', 'n_patients': 4093}}\n"}
+,{"stream_name":"stdout","time":78.080121177,"data":"  refit/convnexttiny/lesion_mil              2026-09-05 00:43:50  {'done': True, 'artifacts': {'ckpt': '/kaggle/working/checkpoints/convnexttiny/lesion_mil/final/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080125465,"data":"  refit/convnexttiny/mr_mil                  2026-09-05 20:11:32  {'done': True, 'artifacts': {'ckpt': '/kaggle/working/checkpoints/convnexttiny/mr_mil/final/best.pt'}}\n"}
+,{"stream_name":"stdout","time":78.080129728,"data":"  test/convnexttiny/lesion_mil               2026-09-05 00:44:07  {'done': True, 'artifacts': {'predictions': '/kaggle/working/results/convnexttiny/lesion_mil/test_predictions.csv', 'roc_auc': 0.9459628058536014, 'ckpts': ['/kaggle/working/checkpoints/convnexttiny/lesion_mil/final/best.pt']}}\n"}
+,{"stream_name":"stdout","time":78.080134433,"data":"  test/convnexttiny/mr_mil                   2026-09-05 20:12:15  {'done': True, 'artifacts': {'predictions': '/kaggle/working/results/convnexttiny/mr_mil/test_predictions.csv', 'roc_auc': 0.9937765122047879, 'ckpts': ['/kaggle/working/checkpoints/convnexttiny/mr_mil/final/best.pt']}}\n"}
+,{"stream_name":"stdout","time":78.211424583,"data":"\n"}
+,{"stream_name":"stdout","time":78.211460018,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":78.211466756,"data":"RESULT TABLES -- anything the training kernel wrote for these models\n"}
+,{"stream_name":"stdout","time":78.211471964,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":122.754052364,"data":"results roots seen: ['/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/results', '/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/results/convnexttiny', '/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/results/convnexttiny/_tables', '/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/results/convnexttiny/mr_mil', '/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/results/convnexttiny/lesion_mil']\n"}
+,{"stream_name":"stdout","time":125.446454146,"data":"\n"}
+,{"stream_name":"stdout","time":125.446610127,"data":"--- convnexttiny/_tables/development_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":125.467116924,"data":" model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n\n"}
+,{"stream_name":"stdout","time":125.467158212,"data":"mr_mil        0.991522           0.993329            0.0031 0.981885     0.892816     0.989503   0.967862 0.928826 0.030752 3354\n"}
+,{"stream_name":"stdout","time":125.471253335,"data":"\n"}
+,{"stream_name":"stdout","time":125.471300372,"data":"--- convnexttiny/_tables/index.json\n"}
+,{"stream_name":"stdout","time":125.471880132,"data":"{\n"}
+,{"stream_name":"stdout","time":125.471939949,"data":"  \"development_comparison\": \"/kaggle/working/results/convnexttiny/_tables/development_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":125.471946059,"data":"  \"test_comparison\": \"/kaggle/working/results/convnexttiny/_tables/test_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":125.471951397,"data":"  \"thresholds_mr_mil\": \"/kaggle/working/results/convnexttiny/_tables/thresholds_mr_mil.csv\",\n"}
+,{"stream_name":"stdout","time":125.471956072,"data":"  \"tirads_mr_mil\": \"/kaggle/working/results/convnexttiny/_tables/tirads_mr_mil.csv\"\n"}
+,{"stream_name":"stdout","time":125.471960472,"data":"}\n"}
+,{"stream_name":"stdout","time":125.486468369,"data":"\n"}
+,{"stream_name":"stdout","time":125.486510133,"data":"--- convnexttiny/_tables/test_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":125.491582297,"data":" model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci\n"}
+,{"stream_name":"stdout","time":125.491620215,"data":"mr_mil 0.993777 0.994348        0.5     0.929178     0.989637   0.987952 0.957664  0.960758 328 382   4  25 0.036176 739    0.477673 [0.988, 0.997] [0.990, 0.997] [0.901, 0.955] [0.979, 0.997] [0.976, 0.997] [0.941, 0.973]\n"}
+,{"stream_name":"stdout","time":125.498774539,"data":"\n"}
+,{"stream_name":"stdout","time":125.498806203,"data":"--- convnexttiny/_tables/thresholds_lesion_mil.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.50263089,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":125.502820629,"data":"          Raw @ 0.5   0.500000     0.866856     0.870466   0.859551 0.863188 0.945963 0.096496 306  50 336  47\n"}
+,{"stream_name":"stdout","time":125.502850008,"data":"Calibrated @ youden   0.393605     0.920680     0.782383   0.794621 0.853018 0.945963 0.112313 325  84 302  28\n"}
+,{"stream_name":"stdout","time":125.502853468,"data":"Calibrated @ sens90   0.489418     0.878187     0.865285   0.856354 0.867133 0.945963 0.112313 310  52 334  43\n"}
+,{"stream_name":"stdout","time":125.502856695,"data":"Prior-shifted @ 0.5   0.500000     0.966006     0.691710   0.741304 0.838868 0.945963 0.123553 341 119 267  12\n"}
+,{"stream_name":"stdout","time":125.508996489,"data":"\n"}
+,{"stream_name":"stdout","time":125.509062289,"data":"--- convnexttiny/_tables/thresholds_mr_mil.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.512991245,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":125.513025742,"data":"          Raw @ 0.5   0.500000     0.929178     0.989637   0.987952 0.957664 0.993777 0.036176 328   4 382  25\n"}
+,{"stream_name":"stdout","time":125.513053223,"data":"Calibrated @ youden   0.083809     0.974504     0.955959   0.952909 0.963585 0.993777 0.032407 344  17 369   9\n"}
+,{"stream_name":"stdout","time":125.513058361,"data":"Calibrated @ sens90   0.379938     0.937677     0.987047   0.985119 0.960813 0.993777 0.032407 331   5 381  22\n"}
+,{"stream_name":"stdout","time":125.513062595,"data":"Prior-shifted @ 0.5   0.500000     0.946176     0.984456   0.982353 0.963925 0.993777 0.026397 334   6 380  19\n"}
+,{"stream_name":"stdout","time":125.520444045,"data":"\n"}
+,{"stream_name":"stdout","time":125.520485302,"data":"--- convnexttiny/_tables/tirads_mr_mil.csv (2 rows)\n"}
+,{"stream_name":"stdout","time":125.523003539,"data":"      method  sensitivity  specificity  precision       f1   n\n"}
+,{"stream_name":"stdout","time":125.523063305,"data":" TIRADS \u003e= 4     0.988669     0.577720   0.681641 0.806936 739\n"}
+,{"stream_name":"stdout","time":125.523072809,"data":"mr_mil @ 0.5     0.929178     0.989637   0.987952 0.957664 739\n"}
+,{"stream_name":"stdout","time":125.528519565,"data":"\n"}
+,{"stream_name":"stdout","time":125.52855758,"data":"--- convnexttiny/mr_mil/calibration.json\n"}
+,{"stream_name":"stdout","time":125.529563045,"data":"{\n"}
+,{"stream_name":"stdout","time":125.529590025,"data":"  \"temperature\": 2.2130727767944336,\n"}
+,{"stream_name":"stdout","time":125.5295945,"data":"  \"thresholds\": {\n"}
+,{"stream_name":"stdout","time":125.52959762,"data":"    \"raw\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.52960061,"data":"    \"youden\": 0.08380910285785463,\n"}
+,{"stream_name":"stdout","time":125.529603703,"data":"    \"sens90\": 0.3799384105145503\n"}
+,{"stream_name":"stdout","time":125.529610183,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.52961293,"data":"  \"p_dev\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.529615657,"data":"}\n"}
+,{"stream_name":"stdout","time":125.536107044,"data":"\n"}
+,{"stream_name":"stdout","time":125.536167115,"data":"--- convnexttiny/mr_mil/calibration_table.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.538695101,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":125.538731142,"data":"Dev (OOF)          Before temp. scaling 0.029019 0.030752    0.011096       0.105995\n"}
+,{"stream_name":"stdout","time":125.538736828,"data":"Dev (OOF) After temp. scaling (T=2.213) 0.013426 0.026943    0.028735       0.113768\n"}
+,{"stream_name":"stdout","time":125.53874113,"data":" Test set            Temp. scaling only 0.033018 0.032407    0.035524       0.099734\n"}
+,{"stream_name":"stdout","time":125.538745089,"data":" Test set      + Prior-shift correction 0.032180 0.026397    0.074086       0.066664\n"}
+,{"stream_name":"stdout","time":125.552429333,"data":"\n"}
+,{"stream_name":"stdout","time":125.552479879,"data":"--- convnexttiny/mr_mil/oof.csv (3354 rows)\n"}
+,{"stream_name":"stdout","time":125.554296457,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.554324759,"data":"        141      0 -13.562500     0\n"}
+,{"stream_name":"stdout","time":125.554328705,"data":"        143      1  10.109375     0\n"}
+,{"stream_name":"stdout","time":125.554331698,"data":"        149      1  10.453125     0\n"}
+,{"stream_name":"stdout","time":125.554334438,"data":"        150      1   9.398438     0\n"}
+,{"stream_name":"stdout","time":125.554337249,"data":"        159      1  10.914062     0\n"}
+,{"stream_name":"stdout","time":125.554340011,"data":"        168      1   7.042969     0\n"}
+,{"stream_name":"stdout","time":125.554342777,"data":"        186      1  11.460938     0\n"}
+,{"stream_name":"stdout","time":125.554345456,"data":"        187      1  -1.726562     0\n"}
+,{"stream_name":"stdout","time":125.554348542,"data":"        194      1   6.425781     0\n"}
+,{"stream_name":"stdout","time":125.554373551,"data":"        212      1  10.906250     0\n"}
+,{"stream_name":"stdout","time":125.554377946,"data":"        213      1  11.195312     0\n"}
+,{"stream_name":"stdout","time":125.554382215,"data":"        218      1  10.804688     0\n"}
+,{"stream_name":"stdout","time":125.554386422,"data":"        221      1   4.691406     0\n"}
+,{"stream_name":"stdout","time":125.554391112,"data":"        229      0  -2.482422     0\n"}
+,{"stream_name":"stdout","time":125.554395216,"data":"        244      1  -6.882812     0\n"}
+,{"stream_name":"stdout","time":125.554421585,"data":"        245      0  -6.285156     0\n"}
+,{"stream_name":"stdout","time":125.554424647,"data":"        250      1  12.375000     0\n"}
+,{"stream_name":"stdout","time":125.554427356,"data":"        255      1  14.039062     0\n"}
+,{"stream_name":"stdout","time":125.55442995,"data":"        262      0  -6.179688     0\n"}
+,{"stream_name":"stdout","time":125.554432573,"data":"        265      1  12.085938     0\n"}
+,{"stream_name":"stdout","time":125.563575302,"data":"\n"}
+,{"stream_name":"stdout","time":125.563614009,"data":"--- convnexttiny/mr_mil/oof_fold0.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.565514013,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.565571926,"data":"        141      0 -13.562500     0\n"}
+,{"stream_name":"stdout","time":125.565577415,"data":"        143      1  10.109375     0\n"}
+,{"stream_name":"stdout","time":125.565580395,"data":"        149      1  10.453125     0\n"}
+,{"stream_name":"stdout","time":125.565583368,"data":"        150      1   9.398438     0\n"}
+,{"stream_name":"stdout","time":125.565586274,"data":"        159      1  10.914062     0\n"}
+,{"stream_name":"stdout","time":125.565589263,"data":"        168      1   7.042969     0\n"}
+,{"stream_name":"stdout","time":125.565592064,"data":"        186      1  11.460938     0\n"}
+,{"stream_name":"stdout","time":125.565594686,"data":"        187      1  -1.726562     0\n"}
+,{"stream_name":"stdout","time":125.5655974,"data":"        194      1   6.425781     0\n"}
+,{"stream_name":"stdout","time":125.565600013,"data":"        212      1  10.906250     0\n"}
+,{"stream_name":"stdout","time":125.565602621,"data":"        213      1  11.195312     0\n"}
+,{"stream_name":"stdout","time":125.565605238,"data":"        218      1  10.804688     0\n"}
+,{"stream_name":"stdout","time":125.56560794,"data":"        221      1   4.691406     0\n"}
+,{"stream_name":"stdout","time":125.565610599,"data":"        229      0  -2.482422     0\n"}
+,{"stream_name":"stdout","time":125.565613374,"data":"        244      1  -6.882812     0\n"}
+,{"stream_name":"stdout","time":125.565616003,"data":"        245      0  -6.285156     0\n"}
+,{"stream_name":"stdout","time":125.565618706,"data":"        250      1  12.375000     0\n"}
+,{"stream_name":"stdout","time":125.565621739,"data":"        255      1  14.039062     0\n"}
+,{"stream_name":"stdout","time":125.565624782,"data":"        262      0  -6.179688     0\n"}
+,{"stream_name":"stdout","time":125.56562751,"data":"        265      1  12.085938     0\n"}
+,{"stream_name":"stdout","time":125.573580704,"data":"\n"}
+,{"stream_name":"stdout","time":125.573619762,"data":"--- convnexttiny/mr_mil/oof_fold1.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.575429237,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.575475752,"data":"        127      0 -10.562500     1\n"}
+,{"stream_name":"stdout","time":125.575480528,"data":"        146      1   7.050781     1\n"}
+,{"stream_name":"stdout","time":125.575483795,"data":"        151      1  11.257812     1\n"}
+,{"stream_name":"stdout","time":125.575487032,"data":"        182      0  -8.031250     1\n"}
+,{"stream_name":"stdout","time":125.57549042,"data":"        183      1   7.554688     1\n"}
+,{"stream_name":"stdout","time":125.575493399,"data":"        195      1   1.938477     1\n"}
+,{"stream_name":"stdout","time":125.575496459,"data":"        198      1   5.625000     1\n"}
+,{"stream_name":"stdout","time":125.57549946500001,"data":"        200      1  10.835938     1\n"}
+,{"stream_name":"stdout","time":125.575518183,"data":"        201      1  -7.292969     1\n"}
+,{"stream_name":"stdout","time":125.575521282,"data":"        206      1   9.656250     1\n"}
+,{"stream_name":"stdout","time":125.575524192,"data":"        207      0  -9.179688     1\n"}
+,{"stream_name":"stdout","time":125.575527112,"data":"        223      1  11.062500     1\n"}
+,{"stream_name":"stdout","time":125.575530123,"data":"        241      1  11.367188     1\n"}
+,{"stream_name":"stdout","time":125.575533153,"data":"        269      0 -10.101562     1\n"}
+,{"stream_name":"stdout","time":125.575536064,"data":"        271      0  -4.394531     1\n"}
+,{"stream_name":"stdout","time":125.575538967,"data":"        272      1  10.328125     1\n"}
+,{"stream_name":"stdout","time":125.575545971,"data":"        311      0 -10.101562     1\n"}
+,{"stream_name":"stdout","time":125.575549008,"data":"        321      1  11.421875     1\n"}
+,{"stream_name":"stdout","time":125.575551921,"data":"        327      0  -8.890625     1\n"}
+,{"stream_name":"stdout","time":125.575665148,"data":"        328      1   4.531250     1\n"}
+,{"stream_name":"stdout","time":125.584504123,"data":"\n"}
+,{"stream_name":"stdout","time":125.584544409,"data":"--- convnexttiny/mr_mil/oof_fold2.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.586244558,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":125.586291911,"data":"        132      1 11.500000     2\n"}
+,{"stream_name":"stdout","time":125.586298841,"data":"        140      0 -8.632812     2\n"}
+,{"stream_name":"stdout","time":125.58630339,"data":"        144      1 10.984375     2\n"}
+,{"stream_name":"stdout","time":125.586307978,"data":"        155      1  6.058594     2\n"}
+,{"stream_name":"stdout","time":125.586311953,"data":"        162      0 10.148438     2\n"}
+,{"stream_name":"stdout","time":125.586316002,"data":"        165      1 11.750000     2\n"}
+,{"stream_name":"stdout","time":125.586319967,"data":"        172      1  8.789062     2\n"}
+,{"stream_name":"stdout","time":125.586323898,"data":"        173      1 -4.804688     2\n"}
+,{"stream_name":"stdout","time":125.586327918,"data":"        175      1 11.367188     2\n"}
+,{"stream_name":"stdout","time":125.586331783,"data":"        176      0 -1.948242     2\n"}
+,{"stream_name":"stdout","time":125.586335598,"data":"        188      1  8.593750     2\n"}
+,{"stream_name":"stdout","time":125.58633949,"data":"        193      1 -8.039062     2\n"}
+,{"stream_name":"stdout","time":125.586343123,"data":"        199      0 -2.158203     2\n"}
+,{"stream_name":"stdout","time":125.586346956,"data":"        204      0 -7.761719     2\n"}
+,{"stream_name":"stdout","time":125.586350939,"data":"        210      1 12.421875     2\n"}
+,{"stream_name":"stdout","time":125.586361441,"data":"        230      1 -1.457031     2\n"}
+,{"stream_name":"stdout","time":125.586364483,"data":"        234      0 -1.750977     2\n"}
+,{"stream_name":"stdout","time":125.586367069,"data":"        236      1  2.912109     2\n"}
+,{"stream_name":"stdout","time":125.586369733,"data":"        242      1  4.027344     2\n"}
+,{"stream_name":"stdout","time":125.586372405,"data":"        251      0 -6.281250     2\n"}
+,{"stream_name":"stdout","time":125.59328588,"data":"\n"}
+,{"stream_name":"stdout","time":125.593340061,"data":"--- convnexttiny/mr_mil/oof_fold3.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.595064183,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.595109538,"data":"         58      0 -11.054688     3\n"}
+,{"stream_name":"stdout","time":125.595137294,"data":"        139      1  13.406250     3\n"}
+,{"stream_name":"stdout","time":125.595140656,"data":"        166      1   7.582031     3\n"}
+,{"stream_name":"stdout","time":125.595143435,"data":"        167      1   9.960938     3\n"}
+,{"stream_name":"stdout","time":125.59514604,"data":"        180      1   7.296875     3\n"}
+,{"stream_name":"stdout","time":125.595148625,"data":"        192      1   1.042969     3\n"}
+,{"stream_name":"stdout","time":125.59515122,"data":"        209      1  12.132812     3\n"}
+,{"stream_name":"stdout","time":125.595153881,"data":"        216      1  -6.636719     3\n"}
+,{"stream_name":"stdout","time":125.595156475,"data":"        224      1  11.492188     3\n"}
+,{"stream_name":"stdout","time":125.595159089,"data":"        239      0  -8.531250     3\n"}
+,{"stream_name":"stdout","time":125.595161802,"data":"        240      1  13.257812     3\n"}
+,{"stream_name":"stdout","time":125.595164489,"data":"        249      1   7.617188     3\n"}
+,{"stream_name":"stdout","time":125.595167092,"data":"        268      0  -7.828125     3\n"}
+,{"stream_name":"stdout","time":125.595169682,"data":"        282      1   9.695312     3\n"}
+,{"stream_name":"stdout","time":125.595172282,"data":"        297      0  -9.601562     3\n"}
+,{"stream_name":"stdout","time":125.595174939,"data":"        306      1  13.234375     3\n"}
+,{"stream_name":"stdout","time":125.595177558,"data":"        308      1  13.062500     3\n"}
+,{"stream_name":"stdout","time":125.595180149,"data":"        313      1   9.117188     3\n"}
+,{"stream_name":"stdout","time":125.59518284,"data":"        322      0  -3.789062     3\n"}
+,{"stream_name":"stdout","time":125.595185469,"data":"        329      1  13.039062     3\n"}
+,{"stream_name":"stdout","time":125.602179976,"data":"\n"}
+,{"stream_name":"stdout","time":125.602218013,"data":"--- convnexttiny/mr_mil/oof_fold4.csv (670 rows)\n"}
+,{"stream_name":"stdout","time":125.603977224,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":125.604012936,"data":"        145      1  9.187500     4\n"}
+,{"stream_name":"stdout","time":125.604016929,"data":"        152      1  1.250977     4\n"}
+,{"stream_name":"stdout","time":125.604020117,"data":"        156      1 -4.652344     4\n"}
+,{"stream_name":"stdout","time":125.604022834,"data":"        158      1 11.554688     4\n"}
+,{"stream_name":"stdout","time":125.60402547,"data":"        196      0 -8.929688     4\n"}
+,{"stream_name":"stdout","time":125.604028188,"data":"        202      1  3.484375     4\n"}
+,{"stream_name":"stdout","time":125.604030774,"data":"        235      1  2.130859     4\n"}
+,{"stream_name":"stdout","time":125.604033434,"data":"        237      0 -9.046875     4\n"}
+,{"stream_name":"stdout","time":125.604036058,"data":"        247      0 -7.636719     4\n"}
+,{"stream_name":"stdout","time":125.604038694,"data":"        248      0 -7.296875     4\n"}
+,{"stream_name":"stdout","time":125.604041287,"data":"        256      0 -8.773438     4\n"}
+,{"stream_name":"stdout","time":125.604043951,"data":"        257      1 -5.726562     4\n"}
+,{"stream_name":"stdout","time":125.60404654,"data":"        259      1 10.015625     4\n"}
+,{"stream_name":"stdout","time":125.604049248,"data":"        270      0 -8.968750     4\n"}
+,{"stream_name":"stdout","time":125.604051841,"data":"        274      1  5.085938     4\n"}
+,{"stream_name":"stdout","time":125.604054437,"data":"        276      1  9.710938     4\n"}
+,{"stream_name":"stdout","time":125.604057106,"data":"        296      1  9.710938     4\n"}
+,{"stream_name":"stdout","time":125.604059756,"data":"        312      1 12.109375     4\n"}
+,{"stream_name":"stdout","time":125.604075684,"data":"        316      1 -0.444092     4\n"}
+,{"stream_name":"stdout","time":125.604078498,"data":"        320      1  7.804688     4\n"}
+,{"stream_name":"stdout","time":125.608057833,"data":"\n"}
+,{"stream_name":"stdout","time":125.608088488,"data":"--- convnexttiny/mr_mil/oof_summary.json\n"}
+,{"stream_name":"stdout","time":125.60876817,"data":"{\n"}
+,{"stream_name":"stdout","time":125.608789591,"data":"  \"per_fold_roc_auc\": [\n"}
+,{"stream_name":"stdout","time":125.608794951,"data":"    0.9944815668202766,\n"}
+,{"stream_name":"stdout","time":125.608799137,"data":"    0.9899366359447005,\n"}
+,{"stream_name":"stdout","time":125.608803157,"data":"    0.9893882001836547,\n"}
+,{"stream_name":"stdout","time":125.608807005,"data":"    0.9969696969696971,\n"}
+,{"stream_name":"stdout","time":125.608810868,"data":"    0.9958672438672439\n"}
+,{"stream_name":"stdout","time":125.608814695,"data":"  ],\n"}
+,{"stream_name":"stdout","time":125.608818513,"data":"  \"pooled\": {\n"}
+,{"stream_name":"stdout","time":125.608822516,"data":"    \"roc_auc\": 0.991522462757713,\n"}
+,{"stream_name":"stdout","time":125.608827149,"data":"    \"pr_auc\": 0.981884613041834,\n"}
+,{"stream_name":"stdout","time":125.608833387,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.608842199,"data":"    \"sensitivity\": 0.8928164196123147,\n"}
+,{"stream_name":"stdout","time":125.608845068,"data":"    \"specificity\": 0.9895034315704482,\n"}
+,{"stream_name":"stdout","time":125.608848249,"data":"    \"precision\": 0.9678615574783683,\n"}
+,{"stream_name":"stdout","time":125.608866611,"data":"    \"f1\": 0.9288256227758008,\n"}
+,{"stream_name":"stdout","time":125.608871195,"data":"    \"accuracy\": 0.964221824686941,\n"}
+,{"stream_name":"stdout","time":125.608876011,"data":"    \"tp\": 783,\n"}
+,{"stream_name":"stdout","time":125.608880633,"data":"    \"tn\": 2451,\n"}
+,{"stream_name":"stdout","time":125.608885455,"data":"    \"fp\": 26,\n"}
+,{"stream_name":"stdout","time":125.608889318,"data":"    \"fn\": 94,\n"}
+,{"stream_name":"stdout","time":125.608894018,"data":"    \"brier\": 0.03075202825213358,\n"}
+,{"stream_name":"stdout","time":125.608913226,"data":"    \"n\": 3354,\n"}
+,{"stream_name":"stdout","time":125.608926184,"data":"    \"prevalence\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.608930544,"data":"  }\n"}
+,{"stream_name":"stdout","time":125.608934572,"data":"}\n"}
+,{"stream_name":"stdout","time":125.619395713,"data":"\n"}
+,{"stream_name":"stdout","time":125.619433055,"data":"--- convnexttiny/mr_mil/test_predictions.csv (739 rows)\n"}
+,{"stream_name":"stdout","time":125.62214831,"data":" patient_id  label     logit    p_raw    p_cal  p_shift\n"}
+,{"stream_name":"stdout","time":125.622183559,"data":"        126      1 11.500000 0.999990 0.994494 0.997861\n"}
+,{"stream_name":"stdout","time":125.622197281,"data":"        133      1 10.875000 0.999981 0.992710 0.997165\n"}
+,{"stream_name":"stdout","time":125.62220937,"data":"        135      1  8.742188 0.999840 0.981114 0.992602\n"}
+,{"stream_name":"stdout","time":125.62221325,"data":"        136      1  8.882812 0.999861 0.982256 0.993055\n"}
+,{"stream_name":"stdout","time":125.622216344,"data":"        142      1  6.441406 0.998408 0.948369 0.979357\n"}
+,{"stream_name":"stdout","time":125.622219061,"data":"        147      1  7.710938 0.999552 0.970237 0.988263\n"}
+,{"stream_name":"stdout","time":125.622221828,"data":"        153      1  6.160156 0.997893 0.941779 0.976626\n"}
+,{"stream_name":"stdout","time":125.622237261,"data":"        157      1 11.812500 0.999993 0.995216 0.998142\n"}
+,{"stream_name":"stdout","time":125.622240129,"data":"        160      1  3.388672 0.967349 0.822183 0.922737\n"}
+,{"stream_name":"stdout","time":125.622242798,"data":"        163      1  4.578125 0.989830 0.887821 0.953363\n"}
+,{"stream_name":"stdout","time":125.622245507,"data":"        164      1  5.000000 0.993307 0.905450 0.961143\n"}
+,{"stream_name":"stdout","time":125.622248179,"data":"        169      1 11.046875 0.999984 0.993251 0.997376\n"}
+,{"stream_name":"stdout","time":125.622250955,"data":"        170      1 12.375000 0.999996 0.996285 0.998559\n"}
+,{"stream_name":"stdout","time":125.622253607,"data":"        171      1  2.406250 0.917303 0.747871 0.884547\n"}
+,{"stream_name":"stdout","time":125.622256259,"data":"        177      1  6.144531 0.997859 0.941391 0.976464\n"}
+,{"stream_name":"stdout","time":125.622258927,"data":"        178      1 10.820312 0.999980 0.992529 0.997094\n"}
+,{"stream_name":"stdout","time":125.6222618,"data":"        179      1 10.031250 0.999956 0.989363 0.995855\n"}
+,{"stream_name":"stdout","time":125.622264444,"data":"        184      1 11.468750 0.999990 0.994416 0.997831\n"}
+,{"stream_name":"stdout","time":125.62226712,"data":"        203      1 -4.570312 0.010249 0.112531 0.246714\n"}
+,{"stream_name":"stdout","time":125.622269807,"data":"        205      1  3.945312 0.981022 0.856034 0.938869\n"}
+,{"stream_name":"stdout","time":125.625843004,"data":"\n"}
+,{"stream_name":"stdout","time":125.625877909,"data":"--- convnexttiny/mr_mil/test_results.json\n"}
+,{"stream_name":"stdout","time":125.62707399600001,"data":"{\n"}
+,{"stream_name":"stdout","time":125.627102957,"data":"  \"model\": \"mr_mil\",\n"}
+,{"stream_name":"stdout","time":125.627109516,"data":"  \"n_test\": 739,\n"}
+,{"stream_name":"stdout","time":125.627113917,"data":"  \"final_mode\": \"refit\",\n"}
+,{"stream_name":"stdout","time":125.627118275,"data":"  \"raw@0.5\": {\n"}
+,{"stream_name":"stdout","time":125.627122283,"data":"    \"roc_auc\": 0.9937765122047879,\n"}
+,{"stream_name":"stdout","time":125.627126514,"data":"    \"pr_auc\": 0.994347618135721,\n"}
+,{"stream_name":"stdout","time":125.627132523,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.627141536,"data":"    \"sensitivity\": 0.9291784702549575,\n"}
+,{"stream_name":"stdout","time":125.627144784,"data":"    \"specificity\": 0.9896373056994818,\n"}
+,{"stream_name":"stdout","time":125.627147795,"data":"    \"precision\": 0.9879518072289156,\n"}
+,{"stream_name":"stdout","time":125.62715073,"data":"    \"f1\": 0.9576642335766424,\n"}
+,{"stream_name":"stdout","time":125.627157286,"data":"    \"accuracy\": 0.9607577807848444,\n"}
+,{"stream_name":"stdout","time":125.627160155,"data":"    \"tp\": 328,\n"}
+,{"stream_name":"stdout","time":125.627162848,"data":"    \"tn\": 382,\n"}
+,{"stream_name":"stdout","time":125.627166595,"data":"    \"fp\": 4,\n"}
+,{"stream_name":"stdout","time":125.627169339,"data":"    \"fn\": 25,\n"}
+,{"stream_name":"stdout","time":125.627173282,"data":"    \"brier\": 0.036175550850389065,\n"}
+,{"stream_name":"stdout","time":125.627177364,"data":"    \"n\": 739,\n"}
+,{"stream_name":"stdout","time":125.627181829,"data":"    \"prevalence\": 0.4776725304465494\n"}
+,{"stream_name":"stdout","time":125.627186145,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.627189967,"data":"  \"cal@youden\": {\n"}
+,{"stream_name":"stdout","time":125.627193755,"data":"    \"roc_auc\": 0.9937765122047879,\n"}
+,{"stream_name":"stdout","time":125.627197746,"data":"    \"pr_auc\": 0.994347618135721,\n"}
+,{"stream_name":"stdout","time":125.627220045,"data":"    \"threshold\": 0.08380910285785463,\n"}
+,{"stream_name":"stdout","time":125.627224208,"data":"    \"sensitivity\": 0.9745042492917847,\n"}
+,{"stream_name":"stdout","time":125.627228357,"data":"    \"specificity\": 0.9559585492227979,\n"}
+,{"stream_name":"stdout","time":125.627232197,"data":"    \"precision\": 0.9529085872576177,\n"}
+,{"stream_name":"stdout","time":125.627237001,"data":"    \"f1\": 0.9635854341736694,\n"}
+,{"stream_name":"stdout","time":125.627240951,"data":"    \"accuracy\": 0.96481732070365\n"}
+,{"stream_name":"stdout","time":125.631916078,"data":"\n"}
+,{"stream_name":"stdout","time":125.631946885,"data":"--- convnexttiny/lesion_mil/calibration.json\n"}
+,{"stream_name":"stdout","time":125.632673709,"data":"{\n"}
+,{"stream_name":"stdout","time":125.632688846,"data":"  \"temperature\": 3.3419382572174072,\n"}
+,{"stream_name":"stdout","time":125.632693605,"data":"  \"thresholds\": {\n"}
+,{"stream_name":"stdout","time":125.632697708,"data":"    \"raw\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.632701734,"data":"    \"youden\": 0.39360467217616474,\n"}
+,{"stream_name":"stdout","time":125.632705729,"data":"    \"sens90\": 0.48941794007256395\n"}
+,{"stream_name":"stdout","time":125.63270957,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.632713418,"data":"  \"p_dev\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.632717463,"data":"}\n"}
+,{"stream_name":"stdout","time":125.639076473,"data":"\n"}
+,{"stream_name":"stdout","time":125.639115498,"data":"--- convnexttiny/lesion_mil/calibration_table.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.641620905,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":125.64167014,"data":"Dev (OOF)          Before temp. scaling 0.092397 0.101816    0.128927       0.120679\n"}
+,{"stream_name":"stdout","time":125.641674181,"data":"Dev (OOF) After temp. scaling (T=3.342) 0.068320 0.087869    0.166385       0.208658\n"}
+,{"stream_name":"stdout","time":125.641677398,"data":" Test set            Temp. scaling only 0.116608 0.112313    0.214869       0.348769\n"}
+,{"stream_name":"stdout","time":125.64168074,"data":" Test set      + Prior-shift correction 0.151022 0.123553    0.359101       0.186202\n"}
+,{"stream_name":"stdout","time":125.654012641,"data":"\n"}
+,{"stream_name":"stdout","time":125.654052641,"data":"--- convnexttiny/lesion_mil/oof.csv (3354 rows)\n"}
+,{"stream_name":"stdout","time":125.655695628,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.655750496,"data":"        141      0 -16.718750     0\n"}
+,{"stream_name":"stdout","time":125.655762162,"data":"        143      1   1.197266     0\n"}
+,{"stream_name":"stdout","time":125.655781209,"data":"        149      1  -0.696289     0\n"}
+,{"stream_name":"stdout","time":125.655786502,"data":"        150      1   3.449219     0\n"}
+,{"stream_name":"stdout","time":125.655791031,"data":"        159      1  -1.031250     0\n"}
+,{"stream_name":"stdout","time":125.655795252,"data":"        168      1   8.312500     0\n"}
+,{"stream_name":"stdout","time":125.655799668,"data":"        186      1   3.072266     0\n"}
+,{"stream_name":"stdout","time":125.655804077,"data":"        187      1   4.179688     0\n"}
+,{"stream_name":"stdout","time":125.655808956,"data":"        194      1   2.994141     0\n"}
+,{"stream_name":"stdout","time":125.655813219,"data":"        212      1   3.310547     0\n"}
+,{"stream_name":"stdout","time":125.655817399,"data":"        213      1   5.359375     0\n"}
+,{"stream_name":"stdout","time":125.655844958,"data":"        218      1   2.005859     0\n"}
+,{"stream_name":"stdout","time":125.655849314,"data":"        221      1   0.827148     0\n"}
+,{"stream_name":"stdout","time":125.655852607,"data":"        229      0  -0.481445     0\n"}
+,{"stream_name":"stdout","time":125.655855309,"data":"        244      1  -1.444336     0\n"}
+,{"stream_name":"stdout","time":125.655857972,"data":"        245      0  -5.554688     0\n"}
+,{"stream_name":"stdout","time":125.655860656,"data":"        250      1   0.393555     0\n"}
+,{"stream_name":"stdout","time":125.655863363,"data":"        255      1   5.605469     0\n"}
+,{"stream_name":"stdout","time":125.655865952,"data":"        262      0   3.175781     0\n"}
+,{"stream_name":"stdout","time":125.655868652,"data":"        265      1  -0.094116     0\n"}
+,{"stream_name":"stdout","time":125.663998388,"data":"\n"}
+,{"stream_name":"stdout","time":125.664035335,"data":"--- convnexttiny/lesion_mil/oof_fold0.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.666021623,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.666059474,"data":"        141      0 -16.718750     0\n"}
+,{"stream_name":"stdout","time":125.66606395,"data":"        143      1   1.197266     0\n"}
+,{"stream_name":"stdout","time":125.666066958,"data":"        149      1  -0.696289     0\n"}
+,{"stream_name":"stdout","time":125.666069885,"data":"        150      1   3.449219     0\n"}
+,{"stream_name":"stdout","time":125.666072764,"data":"        159      1  -1.031250     0\n"}
+,{"stream_name":"stdout","time":125.66607538,"data":"        168      1   8.312500     0\n"}
+,{"stream_name":"stdout","time":125.66607796,"data":"        186      1   3.072266     0\n"}
+,{"stream_name":"stdout","time":125.66608062,"data":"        187      1   4.179688     0\n"}
+,{"stream_name":"stdout","time":125.666086947,"data":"        194      1   2.994141     0\n"}
+,{"stream_name":"stdout","time":125.666089571,"data":"        212      1   3.310547     0\n"}
+,{"stream_name":"stdout","time":125.66609224,"data":"        213      1   5.359375     0\n"}
+,{"stream_name":"stdout","time":125.66609483,"data":"        218      1   2.005859     0\n"}
+,{"stream_name":"stdout","time":125.666097401,"data":"        221      1   0.827148     0\n"}
+,{"stream_name":"stdout","time":125.666100074,"data":"        229      0  -0.481445     0\n"}
+,{"stream_name":"stdout","time":125.66610265,"data":"        244      1  -1.444336     0\n"}
+,{"stream_name":"stdout","time":125.66610522,"data":"        245      0  -5.554688     0\n"}
+,{"stream_name":"stdout","time":125.666107833,"data":"        250      1   0.393555     0\n"}
+,{"stream_name":"stdout","time":125.666110419,"data":"        255      1   5.605469     0\n"}
+,{"stream_name":"stdout","time":125.666113158,"data":"        262      0   3.175781     0\n"}
+,{"stream_name":"stdout","time":125.666115754,"data":"        265      1  -0.094116     0\n"}
+,{"stream_name":"stdout","time":125.673555252,"data":"\n"}
+,{"stream_name":"stdout","time":125.673593496,"data":"--- convnexttiny/lesion_mil/oof_fold1.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.675340677,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.675374871,"data":"        127      0 -12.257812     1\n"}
+,{"stream_name":"stdout","time":125.675380166,"data":"        146      1   1.531250     1\n"}
+,{"stream_name":"stdout","time":125.675387064,"data":"        151      1   5.542969     1\n"}
+,{"stream_name":"stdout","time":125.675395206,"data":"        182      0  -6.101562     1\n"}
+,{"stream_name":"stdout","time":125.675414619,"data":"        183      1  10.101562     1\n"}
+,{"stream_name":"stdout","time":125.675417533,"data":"        195      1  -1.746094     1\n"}
+,{"stream_name":"stdout","time":125.675420212,"data":"        198      1   2.333984     1\n"}
+,{"stream_name":"stdout","time":125.675422966,"data":"        200      1   7.718750     1\n"}
+,{"stream_name":"stdout","time":125.67542589,"data":"        201      1  -2.673828     1\n"}
+,{"stream_name":"stdout","time":125.675428568,"data":"        206      1   9.921875     1\n"}
+,{"stream_name":"stdout","time":125.675431158,"data":"        207      0  -5.785156     1\n"}
+,{"stream_name":"stdout","time":125.675433825,"data":"        223      1  11.671875     1\n"}
+,{"stream_name":"stdout","time":125.675436431,"data":"        241      1   5.460938     1\n"}
+,{"stream_name":"stdout","time":125.675439094,"data":"        269      0 -12.007812     1\n"}
+,{"stream_name":"stdout","time":125.675441675,"data":"        271      0   4.625000     1\n"}
+,{"stream_name":"stdout","time":125.675444389,"data":"        272      1  -1.386719     1\n"}
+,{"stream_name":"stdout","time":125.675447184,"data":"        311      0  -7.496094     1\n"}
+,{"stream_name":"stdout","time":125.675449772,"data":"        321      1   9.140625     1\n"}
+,{"stream_name":"stdout","time":125.675452364,"data":"        327      0 -12.234375     1\n"}
+,{"stream_name":"stdout","time":125.675454983,"data":"        328      1   2.519531     1\n"}
+,{"stream_name":"stdout","time":125.683387566,"data":"\n"}
+,{"stream_name":"stdout","time":125.683427555,"data":"--- convnexttiny/lesion_mil/oof_fold2.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.685203591,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.685245861,"data":"        132      1  -0.842285     2\n"}
+,{"stream_name":"stdout","time":125.685250731,"data":"        140      0 -12.039062     2\n"}
+,{"stream_name":"stdout","time":125.685254003,"data":"        144      1   2.210938     2\n"}
+,{"stream_name":"stdout","time":125.685279487,"data":"        155      1   1.543945     2\n"}
+,{"stream_name":"stdout","time":125.685284712,"data":"        162      0   3.205078     2\n"}
+,{"stream_name":"stdout","time":125.685290361,"data":"        165      1  13.718750     2\n"}
+,{"stream_name":"stdout","time":125.685296083,"data":"        172      1   6.339844     2\n"}
+,{"stream_name":"stdout","time":125.685305621,"data":"        173      1   1.085938     2\n"}
+,{"stream_name":"stdout","time":125.685310907,"data":"        175      1   7.312500     2\n"}
+,{"stream_name":"stdout","time":125.685315601,"data":"        176      0   2.296875     2\n"}
+,{"stream_name":"stdout","time":125.685320016,"data":"        188      1   2.884766     2\n"}
+,{"stream_name":"stdout","time":125.685326821,"data":"        193      1   2.449219     2\n"}
+,{"stream_name":"stdout","time":125.685336016,"data":"        199      0   0.305908     2\n"}
+,{"stream_name":"stdout","time":125.685339485,"data":"        204      0   8.554688     2\n"}
+,{"stream_name":"stdout","time":125.685342751,"data":"        210      1   8.570312     2\n"}
+,{"stream_name":"stdout","time":125.685345781,"data":"        230      1   3.757812     2\n"}
+,{"stream_name":"stdout","time":125.685348707,"data":"        234      0   1.524414     2\n"}
+,{"stream_name":"stdout","time":125.685351735,"data":"        236      1   4.972656     2\n"}
+,{"stream_name":"stdout","time":125.685354788,"data":"        242      1  -1.524414     2\n"}
+,{"stream_name":"stdout","time":125.685357811,"data":"        251      0   3.724609     2\n"}
+,{"stream_name":"stdout","time":125.692017218,"data":"\n"}
+,{"stream_name":"stdout","time":125.692066345,"data":"--- convnexttiny/lesion_mil/oof_fold3.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.693719165,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":125.693748122,"data":"         58      0 -2.656250     3\n"}
+,{"stream_name":"stdout","time":125.693753502,"data":"        139      1  1.729492     3\n"}
+,{"stream_name":"stdout","time":125.693757679,"data":"        166      1  0.065308     3\n"}
+,{"stream_name":"stdout","time":125.693769836,"data":"        167      1  9.625000     3\n"}
+,{"stream_name":"stdout","time":125.693772977,"data":"        180      1  2.482422     3\n"}
+,{"stream_name":"stdout","time":125.693776159,"data":"        192      1 -3.386719     3\n"}
+,{"stream_name":"stdout","time":125.693779069,"data":"        209      1  3.824219     3\n"}
+,{"stream_name":"stdout","time":125.693781863,"data":"        216      1  1.043945     3\n"}
+,{"stream_name":"stdout","time":125.693784571,"data":"        224      1  4.226562     3\n"}
+,{"stream_name":"stdout","time":125.693787175,"data":"        239      0 -3.248047     3\n"}
+,{"stream_name":"stdout","time":125.693789774,"data":"        240      1  7.957031     3\n"}
+,{"stream_name":"stdout","time":125.69379244,"data":"        249      1  6.042969     3\n"}
+,{"stream_name":"stdout","time":125.693795032,"data":"        268      0  3.216797     3\n"}
+,{"stream_name":"stdout","time":125.693797748,"data":"        282      1  8.859375     3\n"}
+,{"stream_name":"stdout","time":125.693800365,"data":"        297      0 -1.124023     3\n"}
+,{"stream_name":"stdout","time":125.693803028,"data":"        306      1 -8.929688     3\n"}
+,{"stream_name":"stdout","time":125.693805608,"data":"        308      1  7.328125     3\n"}
+,{"stream_name":"stdout","time":125.693808214,"data":"        313      1  4.960938     3\n"}
+,{"stream_name":"stdout","time":125.693810805,"data":"        322      0  4.207031     3\n"}
+,{"stream_name":"stdout","time":125.693813539,"data":"        329      1  9.687500     3\n"}
+,{"stream_name":"stdout","time":125.700524635,"data":"\n"}
+,{"stream_name":"stdout","time":125.700686303,"data":"--- convnexttiny/lesion_mil/oof_fold4.csv (670 rows)\n"}
+,{"stream_name":"stdout","time":125.702487055,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.702519868,"data":"        145      1  27.171875     4\n"}
+,{"stream_name":"stdout","time":125.70253987,"data":"        152      1   8.773438     4\n"}
+,{"stream_name":"stdout","time":125.702543021,"data":"        156      1   6.468750     4\n"}
+,{"stream_name":"stdout","time":125.702545925,"data":"        158      1  26.156250     4\n"}
+,{"stream_name":"stdout","time":125.702548999,"data":"        196      0 -19.781250     4\n"}
+,{"stream_name":"stdout","time":125.702551919,"data":"        202      1  16.562500     4\n"}
+,{"stream_name":"stdout","time":125.702558226,"data":"        235      1   5.546875     4\n"}
+,{"stream_name":"stdout","time":125.70256086,"data":"        237      0  -3.576172     4\n"}
+,{"stream_name":"stdout","time":125.702563548,"data":"        247      0  10.343750     4\n"}
+,{"stream_name":"stdout","time":125.70256613,"data":"        248      0 -14.468750     4\n"}
+,{"stream_name":"stdout","time":125.702568804,"data":"        256      0   3.119141     4\n"}
+,{"stream_name":"stdout","time":125.702666384,"data":"        257      1  -7.207031     4\n"}
+,{"stream_name":"stdout","time":125.702669756,"data":"        259      1  13.367188     4\n"}
+,{"stream_name":"stdout","time":125.70268843,"data":"        270      0 -29.125000     4\n"}
+,{"stream_name":"stdout","time":125.702691407,"data":"        274      1  17.359375     4\n"}
+,{"stream_name":"stdout","time":125.702694314,"data":"        276      1  12.898438     4\n"}
+,{"stream_name":"stdout","time":125.702697073,"data":"        296      1  19.343750     4\n"}
+,{"stream_name":"stdout","time":125.702699769,"data":"        312      1  17.484375     4\n"}
+,{"stream_name":"stdout","time":125.702702613,"data":"        316      1  -4.917969     4\n"}
+,{"stream_name":"stdout","time":125.702705338,"data":"        320      1  34.718750     4\n"}
+,{"stream_name":"stdout","time":125.706467424,"data":"\n"}
+,{"stream_name":"stdout","time":125.706496964,"data":"--- convnexttiny/lesion_mil/oof_summary.json\n"}
+,{"stream_name":"stdout","time":125.707584783,"data":"{\n"}
+,{"stream_name":"stdout","time":125.707612428,"data":"  \"per_fold_roc_auc\": [\n"}
+,{"stream_name":"stdout","time":125.707618929,"data":"    0.9535023041474654,\n"}
+,{"stream_name":"stdout","time":125.707623564,"data":"    0.9493951612903225,\n"}
+,{"stream_name":"stdout","time":125.707632271,"data":"    0.9474747474747475,\n"}
+,{"stream_name":"stdout","time":125.707636481,"data":"    0.9503213957759411,\n"}
+,{"stream_name":"stdout","time":125.707646832,"data":"    0.9564444444444445\n"}
+,{"stream_name":"stdout","time":125.707649874,"data":"  ],\n"}
+,{"stream_name":"stdout","time":125.707652621,"data":"  \"pooled\": {\n"}
+,{"stream_name":"stdout","time":125.707655545,"data":"    \"roc_auc\": 0.9446872458085307,\n"}
+,{"stream_name":"stdout","time":125.707658357,"data":"    \"pr_auc\": 0.8383230137067287,\n"}
+,{"stream_name":"stdout","time":125.707765671,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.7077704,"data":"    \"sensitivity\": 0.8905359179019384,\n"}
+,{"stream_name":"stdout","time":125.707773665,"data":"    \"specificity\": 0.8724263221639079,\n"}
+,{"stream_name":"stdout","time":125.707776408,"data":"    \"precision\": 0.7119416590701915,\n"}
+,{"stream_name":"stdout","time":125.707779096,"data":"    \"f1\": 0.7912867274569403,\n"}
+,{"stream_name":"stdout","time":125.707781967,"data":"    \"accuracy\": 0.8771615980918307,\n"}
+,{"stream_name":"stdout","time":125.707784697,"data":"    \"tp\": 781,\n"}
+,{"stream_name":"stdout","time":125.707787526,"data":"    \"tn\": 2161,\n"}
+,{"stream_name":"stdout","time":125.707790174,"data":"    \"fp\": 316,\n"}
+,{"stream_name":"stdout","time":125.707792836,"data":"    \"fn\": 96,\n"}
+,{"stream_name":"stdout","time":125.707795515,"data":"    \"brier\": 0.10181575795281894,\n"}
+,{"stream_name":"stdout","time":125.707798177,"data":"    \"n\": 3354,\n"}
+,{"stream_name":"stdout","time":125.707800885,"data":"    \"prevalence\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.707803606,"data":"  }\n"}
+,{"stream_name":"stdout","time":125.707806252,"data":"}\n"}
+,{"stream_name":"stdout","time":125.71726601,"data":"\n"}
+,{"stream_name":"stdout","time":125.717316913,"data":"--- convnexttiny/lesion_mil/test_predictions.csv (739 rows)\n"}
+,{"stream_name":"stdout","time":125.720565449,"data":" patient_id  label    logit    p_raw    p_cal  p_shift\n"}
+,{"stream_name":"stdout","time":125.720611689,"data":"        126      1 1.852539 0.864425 0.635140 0.818060\n"}
+,{"stream_name":"stdout","time":125.720634804,"data":"        133      1 1.045898 0.739987 0.577608 0.779351\n"}
+,{"stream_name":"stdout","time":125.720640827,"data":"        135      1 2.626953 0.932576 0.686984 0.850049\n"}
+,{"stream_name":"stdout","time":125.720668534,"data":"        136      1 2.876953 0.946695 0.702841 0.859337\n"}
+,{"stream_name":"stdout","time":125.720673536,"data":"        142      1 1.942383 0.874614 0.641347 0.822027\n"}
+,{"stream_name":"stdout","time":125.720678386,"data":"        147      1 1.138672 0.757436 0.584366 0.784088\n"}
+,{"stream_name":"stdout","time":125.720682899,"data":"        153      1 0.782715 0.686265 0.558286 0.765511\n"}
+,{"stream_name":"stdout","time":125.720689926,"data":"        157      1 3.111328 0.957358 0.717277 0.867602\n"}
+,{"stream_name":"stdout","time":125.720699246,"data":"        160      1 3.361328 0.966474 0.732198 0.875961\n"}
+,{"stream_name":"stdout","time":125.720702378,"data":"        163      1 2.699219 0.936981 0.691615 0.852784\n"}
+,{"stream_name":"stdout","time":125.720705481,"data":"        164      1 3.580078 0.972882 0.744836 0.882900\n"}
+,{"stream_name":"stdout","time":125.720708429,"data":"        169      1 3.351562 0.966156 0.731624 0.875644\n"}
+,{"stream_name":"stdout","time":125.720711411,"data":"        170      1 2.496094 0.923868 0.678503 0.844989\n"}
+,{"stream_name":"stdout","time":125.72071463,"data":"        171      1 3.792969 0.977968 0.756753 0.889327\n"}
+,{"stream_name":"stdout","time":125.720717683,"data":"        177      1 3.142578 0.958615 0.719170 0.868673\n"}
+,{"stream_name":"stdout","time":125.720720625,"data":"        178      1 5.042969 0.993587 0.818912 0.921139\n"}
+,{"stream_name":"stdout","time":125.720724149,"data":"        179      1 3.601562 0.973443 0.746056 0.883563\n"}
+,{"stream_name":"stdout","time":125.720752525,"data":"        184      1 2.189453 0.899298 0.658169 0.832587\n"}
+,{"stream_name":"stdout","time":125.720758151,"data":"        203      1 1.637695 0.837221 0.620117 0.808295\n"}
+,{"stream_name":"stdout","time":125.720763735,"data":"        205      1 2.898438 0.947769 0.704182 0.860112\n"}
+,{"stream_name":"stdout","time":125.724589912,"data":"\n"}
+,{"stream_name":"stdout","time":125.724618242,"data":"--- convnexttiny/lesion_mil/test_results.json\n"}
+,{"stream_name":"stdout","time":125.725631786,"data":"{\n"}
+,{"stream_name":"stdout","time":125.725657437,"data":"  \"model\": \"lesion_mil\",\n"}
+,{"stream_name":"stdout","time":125.725662943,"data":"  \"n_test\": 739,\n"}
+,{"stream_name":"stdout","time":125.725667219,"data":"  \"final_mode\": \"refit\",\n"}
+,{"stream_name":"stdout","time":125.725671586,"data":"  \"raw@0.5\": {\n"}
+,{"stream_name":"stdout","time":125.72567605,"data":"    \"roc_auc\": 0.9459628058536014,\n"}
+,{"stream_name":"stdout","time":125.725680307,"data":"    \"pr_auc\": 0.9431236797145995,\n"}
+,{"stream_name":"stdout","time":125.725684465,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.725690405,"data":"    \"sensitivity\": 0.8668555240793201,\n"}
+,{"stream_name":"stdout","time":125.725694787,"data":"    \"specificity\": 0.8704663212435233,\n"}
+,{"stream_name":"stdout","time":125.72570119,"data":"    \"precision\": 0.8595505617977528,\n"}
+,{"stream_name":"stdout","time":125.725705349,"data":"    \"f1\": 0.8631875881523272,\n"}
+,{"stream_name":"stdout","time":125.72570991,"data":"    \"accuracy\": 0.8687415426251691,\n"}
+,{"stream_name":"stdout","time":125.725714759,"data":"    \"tp\": 306,\n"}
+,{"stream_name":"stdout","time":125.725719598,"data":"    \"tn\": 336,\n"}
+,{"stream_name":"stdout","time":125.725729085,"data":"    \"fp\": 50,\n"}
+,{"stream_name":"stdout","time":125.725733885,"data":"    \"fn\": 47,\n"}
+,{"stream_name":"stdout","time":125.725737788,"data":"    \"brier\": 0.09649627657776544,\n"}
+,{"stream_name":"stdout","time":125.725741904,"data":"    \"n\": 739,\n"}
+,{"stream_name":"stdout","time":125.725761364,"data":"    \"prevalence\": 0.4776725304465494\n"}
+,{"stream_name":"stdout","time":125.725765611,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.725769455,"data":"  \"cal@youden\": {\n"}
+,{"stream_name":"stdout","time":125.725773464,"data":"    \"roc_auc\": 0.9459628058536014,\n"}
+,{"stream_name":"stdout","time":125.725777536,"data":"    \"pr_auc\": 0.9431236797145995,\n"}
+,{"stream_name":"stdout","time":125.725781493,"data":"    \"threshold\": 0.39360467217616474,\n"}
+,{"stream_name":"stdout","time":125.725785672,"data":"    \"sensitivity\": 0.9206798866855525,\n"}
+,{"stream_name":"stdout","time":125.725789309,"data":"    \"specificity\": 0.7823834196891192,\n"}
+,{"stream_name":"stdout","time":125.725795168,"data":"    \"precision\": 0.7946210268948656,\n"}
+,{"stream_name":"stdout","time":125.725799096,"data":"    \"f1\": 0.8530183727034121,\n"}
+,{"stream_name":"stdout","time":125.72580529,"data":"    \"accuracy\": 0.84844384\n"}
+,{"stream_name":"stdout","time":125.731219636,"data":"\n"}
+,{"stream_name":"stdout","time":125.731310503,"data":"--- _tables/development_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":125.734605891,"data":" model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n\n"}
+,{"stream_name":"stdout","time":125.734639521,"data":"mr_mil        0.991522           0.993329            0.0031 0.981885     0.892816     0.989503   0.967862 0.928826 0.030752 3354\n"}
+,{"stream_name":"stdout","time":125.735589744,"data":"\n"}
+,{"stream_name":"stdout","time":125.735615434,"data":"--- _tables/index.json\n"}
+,{"stream_name":"stdout","time":125.73635903,"data":"{\n"}
+,{"stream_name":"stdout","time":125.736380246,"data":"  \"development_comparison\": \"/kaggle/working/results/convnexttiny/_tables/development_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":125.736390994,"data":"  \"test_comparison\": \"/kaggle/working/results/convnexttiny/_tables/test_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":125.736395657,"data":"  \"thresholds_mr_mil\": \"/kaggle/working/results/convnexttiny/_tables/thresholds_mr_mil.csv\",\n"}
+,{"stream_name":"stdout","time":125.736400535,"data":"  \"tirads_mr_mil\": \"/kaggle/working/results/convnexttiny/_tables/tirads_mr_mil.csv\"\n"}
+,{"stream_name":"stdout","time":125.736404096,"data":"}\n"}
+,{"stream_name":"stdout","time":125.740475895,"data":"\n"}
+,{"stream_name":"stdout","time":125.740518112,"data":"--- _tables/test_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":125.745125684,"data":" model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci\n"}
+,{"stream_name":"stdout","time":125.745191522,"data":"mr_mil 0.993777 0.994348        0.5     0.929178     0.989637   0.987952 0.957664  0.960758 328 382   4  25 0.036176 739    0.477673 [0.988, 0.997] [0.990, 0.997] [0.901, 0.955] [0.979, 0.997] [0.976, 0.997] [0.941, 0.973]\n"}
+,{"stream_name":"stdout","time":125.749198612,"data":"\n"}
+,{"stream_name":"stdout","time":125.749240567,"data":"--- _tables/thresholds_lesion_mil.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.752370638,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":125.752428167,"data":"          Raw @ 0.5   0.500000     0.866856     0.870466   0.859551 0.863188 0.945963 0.096496 306  50 336  47\n"}
+,{"stream_name":"stdout","time":125.752435217,"data":"Calibrated @ youden   0.393605     0.920680     0.782383   0.794621 0.853018 0.945963 0.112313 325  84 302  28\n"}
+,{"stream_name":"stdout","time":125.752459705,"data":"Calibrated @ sens90   0.489418     0.878187     0.865285   0.856354 0.867133 0.945963 0.112313 310  52 334  43\n"}
+,{"stream_name":"stdout","time":125.752464625,"data":"Prior-shifted @ 0.5   0.500000     0.966006     0.691710   0.741304 0.838868 0.945963 0.123553 341 119 267  12\n"}
+,{"stream_name":"stdout","time":125.755922727,"data":"\n"}
+,{"stream_name":"stdout","time":125.755965767,"data":"--- _tables/thresholds_mr_mil.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.759005468,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":125.759053337,"data":"          Raw @ 0.5   0.500000     0.929178     0.989637   0.987952 0.957664 0.993777 0.036176 328   4 382  25\n"}
+,{"stream_name":"stdout","time":125.759113608,"data":"Calibrated @ youden   0.083809     0.974504     0.955959   0.952909 0.963585 0.993777 0.032407 344  17 369   9\n"}
+,{"stream_name":"stdout","time":125.759116852,"data":"Calibrated @ sens90   0.379938     0.937677     0.987047   0.985119 0.960813 0.993777 0.032407 331   5 381  22\n"}
+,{"stream_name":"stdout","time":125.75912006,"data":"Prior-shifted @ 0.5   0.500000     0.946176     0.984456   0.982353 0.963925 0.993777 0.026397 334   6 380  19\n"}
+,{"stream_name":"stdout","time":125.762474645,"data":"\n"}
+,{"stream_name":"stdout","time":125.76250795,"data":"--- _tables/tirads_mr_mil.csv (2 rows)\n"}
+,{"stream_name":"stdout","time":125.764530889,"data":"      method  sensitivity  specificity  precision       f1   n\n"}
+,{"stream_name":"stdout","time":125.764701206,"data":" TIRADS \u003e= 4     0.988669     0.577720   0.681641 0.806936 739\n"}
+,{"stream_name":"stdout","time":125.764709477,"data":"mr_mil @ 0.5     0.929178     0.989637   0.987952 0.957664 739\n"}
+,{"stream_name":"stdout","time":125.766357337,"data":"\n"}
+,{"stream_name":"stdout","time":125.766392949,"data":"--- mr_mil/calibration.json\n"}
+,{"stream_name":"stdout","time":125.767338724,"data":"{\n"}
+,{"stream_name":"stdout","time":125.767375345,"data":"  \"temperature\": 2.2130727767944336,\n"}
+,{"stream_name":"stdout","time":125.767382221,"data":"  \"thresholds\": {\n"}
+,{"stream_name":"stdout","time":125.767387041,"data":"    \"raw\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.767392379,"data":"    \"youden\": 0.08380910285785463,\n"}
+,{"stream_name":"stdout","time":125.767396763,"data":"    \"sens90\": 0.3799384105145503\n"}
+,{"stream_name":"stdout","time":125.767400937,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.767405262,"data":"  \"p_dev\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.76740979,"data":"}\n"}
+,{"stream_name":"stdout","time":125.77088076,"data":"\n"}
+,{"stream_name":"stdout","time":125.770936792,"data":"--- mr_mil/calibration_table.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.77300908,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":125.773039469,"data":"Dev (OOF)          Before temp. scaling 0.029019 0.030752    0.011096       0.105995\n"}
+,{"stream_name":"stdout","time":125.773044369,"data":"Dev (OOF) After temp. scaling (T=2.213) 0.013426 0.026943    0.028735       0.113768\n"}
+,{"stream_name":"stdout","time":125.773048561,"data":" Test set            Temp. scaling only 0.033018 0.032407    0.035524       0.099734\n"}
+,{"stream_name":"stdout","time":125.773052747,"data":" Test set      + Prior-shift correction 0.032180 0.026397    0.074086       0.066664\n"}
+,{"stream_name":"stdout","time":125.779283905,"data":"\n"}
+,{"stream_name":"stdout","time":125.779318718,"data":"--- mr_mil/oof.csv (3354 rows)\n"}
+,{"stream_name":"stdout","time":125.780996695,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.781038599,"data":"        141      0 -13.562500     0\n"}
+,{"stream_name":"stdout","time":125.781044543,"data":"        143      1  10.109375     0\n"}
+,{"stream_name":"stdout","time":125.781049212,"data":"        149      1  10.453125     0\n"}
+,{"stream_name":"stdout","time":125.781053206,"data":"        150      1   9.398438     0\n"}
+,{"stream_name":"stdout","time":125.78105724,"data":"        159      1  10.914062     0\n"}
+,{"stream_name":"stdout","time":125.781061268,"data":"        168      1   7.042969     0\n"}
+,{"stream_name":"stdout","time":125.7810652,"data":"        186      1  11.460938     0\n"}
+,{"stream_name":"stdout","time":125.7810697,"data":"        187      1  -1.726562     0\n"}
+,{"stream_name":"stdout","time":125.781074124,"data":"        194      1   6.425781     0\n"}
+,{"stream_name":"stdout","time":125.781078765,"data":"        212      1  10.906250     0\n"}
+,{"stream_name":"stdout","time":125.781083169,"data":"        213      1  11.195312     0\n"}
+,{"stream_name":"stdout","time":125.781088471,"data":"        218      1  10.804688     0\n"}
+,{"stream_name":"stdout","time":125.781093023,"data":"        221      1   4.691406     0\n"}
+,{"stream_name":"stdout","time":125.781096976,"data":"        229      0  -2.482422     0\n"}
+,{"stream_name":"stdout","time":125.78110841,"data":"        244      1  -6.882812     0\n"}
+,{"stream_name":"stdout","time":125.781112377,"data":"        245      0  -6.285156     0\n"}
+,{"stream_name":"stdout","time":125.781116304,"data":"        250      1  12.375000     0\n"}
+,{"stream_name":"stdout","time":125.78112017,"data":"        255      1  14.039062     0\n"}
+,{"stream_name":"stdout","time":125.781124074,"data":"        262      0  -6.179688     0\n"}
+,{"stream_name":"stdout","time":125.781128038,"data":"        265      1  12.085938     0\n"}
+,{"stream_name":"stdout","time":125.784968764,"data":"\n"}
+,{"stream_name":"stdout","time":125.785003619,"data":"--- mr_mil/oof_fold0.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.786911766,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.786941158,"data":"        141      0 -13.562500     0\n"}
+,{"stream_name":"stdout","time":125.786957458,"data":"        143      1  10.109375     0\n"}
+,{"stream_name":"stdout","time":125.786962879,"data":"        149      1  10.453125     0\n"}
+,{"stream_name":"stdout","time":125.786967343,"data":"        150      1   9.398438     0\n"}
+,{"stream_name":"stdout","time":125.786971913,"data":"        159      1  10.914062     0\n"}
+,{"stream_name":"stdout","time":125.786975918,"data":"        168      1   7.042969     0\n"}
+,{"stream_name":"stdout","time":125.786979846,"data":"        186      1  11.460938     0\n"}
+,{"stream_name":"stdout","time":125.786983629,"data":"        187      1  -1.726562     0\n"}
+,{"stream_name":"stdout","time":125.786987616,"data":"        194      1   6.425781     0\n"}
+,{"stream_name":"stdout","time":125.786991646,"data":"        212      1  10.906250     0\n"}
+,{"stream_name":"stdout","time":125.786999663,"data":"        213      1  11.195312     0\n"}
+,{"stream_name":"stdout","time":125.787002626,"data":"        218      1  10.804688     0\n"}
+,{"stream_name":"stdout","time":125.787019041,"data":"        221      1   4.691406     0\n"}
+,{"stream_name":"stdout","time":125.787023763,"data":"        229      0  -2.482422     0\n"}
+,{"stream_name":"stdout","time":125.787136997,"data":"        244      1  -6.882812     0\n"}
+,{"stream_name":"stdout","time":125.787147478,"data":"        245      0  -6.285156     0\n"}
+,{"stream_name":"stdout","time":125.787151819,"data":"        250      1  12.375000     0\n"}
+,{"stream_name":"stdout","time":125.787156026,"data":"        255      1  14.039062     0\n"}
+,{"stream_name":"stdout","time":125.787160748,"data":"        262      0  -6.179688     0\n"}
+,{"stream_name":"stdout","time":125.787164878,"data":"        265      1  12.085938     0\n"}
+,{"stream_name":"stdout","time":125.790607374,"data":"\n"}
+,{"stream_name":"stdout","time":125.790674204,"data":"--- mr_mil/oof_fold1.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.792315395,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.792348517,"data":"        127      0 -10.562500     1\n"}
+,{"stream_name":"stdout","time":125.792354319,"data":"        146      1   7.050781     1\n"}
+,{"stream_name":"stdout","time":125.792358672,"data":"        151      1  11.257812     1\n"}
+,{"stream_name":"stdout","time":125.792363558,"data":"        182      0  -8.031250     1\n"}
+,{"stream_name":"stdout","time":125.792367969,"data":"        183      1   7.554688     1\n"}
+,{"stream_name":"stdout","time":125.792380835,"data":"        195      1   1.938477     1\n"}
+,{"stream_name":"stdout","time":125.79238505000001,"data":"        198      1   5.625000     1\n"}
+,{"stream_name":"stdout","time":125.792389307,"data":"        200      1  10.835938     1\n"}
+,{"stream_name":"stdout","time":125.792393792,"data":"        201      1  -7.292969     1\n"}
+,{"stream_name":"stdout","time":125.792398625,"data":"        206      1   9.656250     1\n"}
+,{"stream_name":"stdout","time":125.792403247,"data":"        207      0  -9.179688     1\n"}
+,{"stream_name":"stdout","time":125.792408061,"data":"        223      1  11.062500     1\n"}
+,{"stream_name":"stdout","time":125.792412907,"data":"        241      1  11.367188     1\n"}
+,{"stream_name":"stdout","time":125.792417364,"data":"        269      0 -10.101562     1\n"}
+,{"stream_name":"stdout","time":125.792421334,"data":"        271      0  -4.394531     1\n"}
+,{"stream_name":"stdout","time":125.792425261,"data":"        272      1  10.328125     1\n"}
+,{"stream_name":"stdout","time":125.792429221,"data":"        311      0 -10.101562     1\n"}
+,{"stream_name":"stdout","time":125.792433069,"data":"        321      1  11.421875     1\n"}
+,{"stream_name":"stdout","time":125.792437015,"data":"        327      0  -8.890625     1\n"}
+,{"stream_name":"stdout","time":125.792441014,"data":"        328      1   4.531250     1\n"}
+,{"stream_name":"stdout","time":125.795990523,"data":"\n"}
+,{"stream_name":"stdout","time":125.796027723,"data":"--- mr_mil/oof_fold2.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.79753591,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":125.797568703,"data":"        132      1 11.500000     2\n"}
+,{"stream_name":"stdout","time":125.797575526,"data":"        140      0 -8.632812     2\n"}
+,{"stream_name":"stdout","time":125.797580889,"data":"        144      1 10.984375     2\n"}
+,{"stream_name":"stdout","time":125.79758599,"data":"        155      1  6.058594     2\n"}
+,{"stream_name":"stdout","time":125.797591755,"data":"        162      0 10.148438     2\n"}
+,{"stream_name":"stdout","time":125.797605689,"data":"        165      1 11.750000     2\n"}
+,{"stream_name":"stdout","time":125.797610753,"data":"        172      1  8.789062     2\n"}
+,{"stream_name":"stdout","time":125.79776089,"data":"        173      1 -4.804688     2\n"}
+,{"stream_name":"stdout","time":125.79776652,"data":"        175      1 11.367188     2\n"}
+,{"stream_name":"stdout","time":125.797769561,"data":"        176      0 -1.948242     2\n"}
+,{"stream_name":"stdout","time":125.797772866,"data":"        188      1  8.593750     2\n"}
+,{"stream_name":"stdout","time":125.797775792,"data":"        193      1 -8.039062     2\n"}
+,{"stream_name":"stdout","time":125.797778716,"data":"        199      0 -2.158203     2\n"}
+,{"stream_name":"stdout","time":125.797782467,"data":"        204      0 -7.761719     2\n"}
+,{"stream_name":"stdout","time":125.797785493,"data":"        210      1 12.421875     2\n"}
+,{"stream_name":"stdout","time":125.797788406,"data":"        230      1 -1.457031     2\n"}
+,{"stream_name":"stdout","time":125.797791484,"data":"        234      0 -1.750977     2\n"}
+,{"stream_name":"stdout","time":125.7977944,"data":"        236      1  2.912109     2\n"}
+,{"stream_name":"stdout","time":125.797797352,"data":"        242      1  4.027344     2\n"}
+,{"stream_name":"stdout","time":125.797800307,"data":"        251      0 -6.281250     2\n"}
+,{"stream_name":"stdout","time":125.80091461,"data":"\n"}
+,{"stream_name":"stdout","time":125.800957006,"data":"--- mr_mil/oof_fold3.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.802591637,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.802648216,"data":"         58      0 -11.054688     3\n"}
+,{"stream_name":"stdout","time":125.802655426,"data":"        139      1  13.406250     3\n"}
+,{"stream_name":"stdout","time":125.802660401,"data":"        166      1   7.582031     3\n"}
+,{"stream_name":"stdout","time":125.802665428,"data":"        167      1   9.960938     3\n"}
+,{"stream_name":"stdout","time":125.802670376,"data":"        180      1   7.296875     3\n"}
+,{"stream_name":"stdout","time":125.80267556,"data":"        192      1   1.042969     3\n"}
+,{"stream_name":"stdout","time":125.802679893,"data":"        209      1  12.132812     3\n"}
+,{"stream_name":"stdout","time":125.802684449,"data":"        216      1  -6.636719     3\n"}
+,{"stream_name":"stdout","time":125.802688782,"data":"        224      1  11.492188     3\n"}
+,{"stream_name":"stdout","time":125.802693373,"data":"        239      0  -8.531250     3\n"}
+,{"stream_name":"stdout","time":125.802697791,"data":"        240      1  13.257812     3\n"}
+,{"stream_name":"stdout","time":125.802702163,"data":"        249      1   7.617188     3\n"}
+,{"stream_name":"stdout","time":125.802710449,"data":"        268      0  -7.828125     3\n"}
+,{"stream_name":"stdout","time":125.802713493,"data":"        282      1   9.695312     3\n"}
+,{"stream_name":"stdout","time":125.802716468,"data":"        297      0  -9.601562     3\n"}
+,{"stream_name":"stdout","time":125.802719398,"data":"        306      1  13.234375     3\n"}
+,{"stream_name":"stdout","time":125.802722318,"data":"        308      1  13.062500     3\n"}
+,{"stream_name":"stdout","time":125.802725327,"data":"        313      1   9.117188     3\n"}
+,{"stream_name":"stdout","time":125.802728254,"data":"        322      0  -3.789062     3\n"}
+,{"stream_name":"stdout","time":125.802731207,"data":"        329      1  13.039062     3\n"}
+,{"stream_name":"stdout","time":125.806086982,"data":"\n"}
+,{"stream_name":"stdout","time":125.806119916,"data":"--- mr_mil/oof_fold4.csv (670 rows)\n"}
+,{"stream_name":"stdout","time":125.8077929,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":125.807840227,"data":"        145      1  9.187500     4\n"}
+,{"stream_name":"stdout","time":125.807846983,"data":"        152      1  1.250977     4\n"}
+,{"stream_name":"stdout","time":125.807853352,"data":"        156      1 -4.652344     4\n"}
+,{"stream_name":"stdout","time":125.807858061,"data":"        158      1 11.554688     4\n"}
+,{"stream_name":"stdout","time":125.807862802,"data":"        196      0 -8.929688     4\n"}
+,{"stream_name":"stdout","time":125.807867309,"data":"        202      1  3.484375     4\n"}
+,{"stream_name":"stdout","time":125.807871956,"data":"        235      1  2.130859     4\n"}
+,{"stream_name":"stdout","time":125.807876336,"data":"        237      0 -9.046875     4\n"}
+,{"stream_name":"stdout","time":125.807880266,"data":"        247      0 -7.636719     4\n"}
+,{"stream_name":"stdout","time":125.8078842,"data":"        248      0 -7.296875     4\n"}
+,{"stream_name":"stdout","time":125.807909948,"data":"        256      0 -8.773438     4\n"}
+,{"stream_name":"stdout","time":125.80791581,"data":"        257      1 -5.726562     4\n"}
+,{"stream_name":"stdout","time":125.807919901,"data":"        259      1 10.015625     4\n"}
+,{"stream_name":"stdout","time":125.807924294,"data":"        270      0 -8.968750     4\n"}
+,{"stream_name":"stdout","time":125.80792906799999,"data":"        274      1  5.085938     4\n"}
+,{"stream_name":"stdout","time":125.807933093,"data":"        276      1  9.710938     4\n"}
+,{"stream_name":"stdout","time":125.807937166,"data":"        296      1  9.710938     4\n"}
+,{"stream_name":"stdout","time":125.807941038,"data":"        312      1 12.109375     4\n"}
+,{"stream_name":"stdout","time":125.807948361,"data":"        316      1 -0.444092     4\n"}
+,{"stream_name":"stdout","time":125.807952438,"data":"        320      1  7.804688     4\n"}
+,{"stream_name":"stdout","time":125.808662606,"data":"\n"}
+,{"stream_name":"stdout","time":125.808683457,"data":"--- mr_mil/oof_summary.json\n"}
+,{"stream_name":"stdout","time":125.809385179,"data":"{\n"}
+,{"stream_name":"stdout","time":125.809409588,"data":"  \"per_fold_roc_auc\": [\n"}
+,{"stream_name":"stdout","time":125.809416529,"data":"    0.9944815668202766,\n"}
+,{"stream_name":"stdout","time":125.809420918,"data":"    0.9899366359447005,\n"}
+,{"stream_name":"stdout","time":125.809424805,"data":"    0.9893882001836547,\n"}
+,{"stream_name":"stdout","time":125.809428644,"data":"    0.9969696969696971,\n"}
+,{"stream_name":"stdout","time":125.80943255,"data":"    0.9958672438672439\n"}
+,{"stream_name":"stdout","time":125.809436621,"data":"  ],\n"}
+,{"stream_name":"stdout","time":125.809441265,"data":"  \"pooled\": {\n"}
+,{"stream_name":"stdout","time":125.809451156,"data":"    \"roc_auc\": 0.991522462757713,\n"}
+,{"stream_name":"stdout","time":125.809454375,"data":"    \"pr_auc\": 0.981884613041834,\n"}
+,{"stream_name":"stdout","time":125.809457088,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.80945988,"data":"    \"sensitivity\": 0.8928164196123147,\n"}
+,{"stream_name":"stdout","time":125.809462775,"data":"    \"specificity\": 0.9895034315704482,\n"}
+,{"stream_name":"stdout","time":125.809465506,"data":"    \"precision\": 0.9678615574783683,\n"}
+,{"stream_name":"stdout","time":125.809468181,"data":"    \"f1\": 0.9288256227758008,\n"}
+,{"stream_name":"stdout","time":125.80947093,"data":"    \"accuracy\": 0.964221824686941,\n"}
+,{"stream_name":"stdout","time":125.809473624,"data":"    \"tp\": 783,\n"}
+,{"stream_name":"stdout","time":125.809476334,"data":"    \"tn\": 2451,\n"}
+,{"stream_name":"stdout","time":125.809479653,"data":"    \"fp\": 26,\n"}
+,{"stream_name":"stdout","time":125.809493726,"data":"    \"fn\": 94,\n"}
+,{"stream_name":"stdout","time":125.809496532,"data":"    \"brier\": 0.03075202825213358,\n"}
+,{"stream_name":"stdout","time":125.809499257,"data":"    \"n\": 3354,\n"}
+,{"stream_name":"stdout","time":125.809501987,"data":"    \"prevalence\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.809504824,"data":"  }\n"}
+,{"stream_name":"stdout","time":125.809507414,"data":"}\n"}
+,{"stream_name":"stdout","time":125.814267026,"data":"\n"}
+,{"stream_name":"stdout","time":125.81433134,"data":"--- mr_mil/test_predictions.csv (739 rows)\n"}
+,{"stream_name":"stdout","time":125.816996954,"data":" patient_id  label     logit    p_raw    p_cal  p_shift\n"}
+,{"stream_name":"stdout","time":125.817043911,"data":"        126      1 11.500000 0.999990 0.994494 0.997861\n"}
+,{"stream_name":"stdout","time":125.817140351,"data":"        133      1 10.875000 0.999981 0.992710 0.997165\n"}
+,{"stream_name":"stdout","time":125.817146573,"data":"        135      1  8.742188 0.999840 0.981114 0.992602\n"}
+,{"stream_name":"stdout","time":125.817149531,"data":"        136      1  8.882812 0.999861 0.982256 0.993055\n"}
+,{"stream_name":"stdout","time":125.817152398,"data":"        142      1  6.441406 0.998408 0.948369 0.979357\n"}
+,{"stream_name":"stdout","time":125.817155247,"data":"        147      1  7.710938 0.999552 0.970237 0.988263\n"}
+,{"stream_name":"stdout","time":125.817158114,"data":"        153      1  6.160156 0.997893 0.941779 0.976626\n"}
+,{"stream_name":"stdout","time":125.817160751,"data":"        157      1 11.812500 0.999993 0.995216 0.998142\n"}
+,{"stream_name":"stdout","time":125.817163385,"data":"        160      1  3.388672 0.967349 0.822183 0.922737\n"}
+,{"stream_name":"stdout","time":125.817166176,"data":"        163      1  4.578125 0.989830 0.887821 0.953363\n"}
+,{"stream_name":"stdout","time":125.817168953,"data":"        164      1  5.000000 0.993307 0.905450 0.961143\n"}
+,{"stream_name":"stdout","time":125.817171668,"data":"        169      1 11.046875 0.999984 0.993251 0.997376\n"}
+,{"stream_name":"stdout","time":125.817174308,"data":"        170      1 12.375000 0.999996 0.996285 0.998559\n"}
+,{"stream_name":"stdout","time":125.817177019,"data":"        171      1  2.406250 0.917303 0.747871 0.884547\n"}
+,{"stream_name":"stdout","time":125.817179725,"data":"        177      1  6.144531 0.997859 0.941391 0.976464\n"}
+,{"stream_name":"stdout","time":125.817182453,"data":"        178      1 10.820312 0.999980 0.992529 0.997094\n"}
+,{"stream_name":"stdout","time":125.817185099,"data":"        179      1 10.031250 0.999956 0.989363 0.995855\n"}
+,{"stream_name":"stdout","time":125.817187774,"data":"        184      1 11.468750 0.999990 0.994416 0.997831\n"}
+,{"stream_name":"stdout","time":125.817190428,"data":"        203      1 -4.570312 0.010249 0.112531 0.246714\n"}
+,{"stream_name":"stdout","time":125.81719317700001,"data":"        205      1  3.945312 0.981022 0.856034 0.938869\n"}
+,{"stream_name":"stdout","time":125.817945667,"data":"\n"}
+,{"stream_name":"stdout","time":125.817969764,"data":"--- mr_mil/test_results.json\n"}
+,{"stream_name":"stdout","time":125.819104546,"data":"{\n"}
+,{"stream_name":"stdout","time":125.819126631,"data":"  \"model\": \"mr_mil\",\n"}
+,{"stream_name":"stdout","time":125.819130795,"data":"  \"n_test\": 739,\n"}
+,{"stream_name":"stdout","time":125.819133933,"data":"  \"final_mode\": \"refit\",\n"}
+,{"stream_name":"stdout","time":125.81913686,"data":"  \"raw@0.5\": {\n"}
+,{"stream_name":"stdout","time":125.819156923,"data":"    \"roc_auc\": 0.9937765122047879,\n"}
+,{"stream_name":"stdout","time":125.819177941,"data":"    \"pr_auc\": 0.994347618135721,\n"}
+,{"stream_name":"stdout","time":125.819183142,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.819187786,"data":"    \"sensitivity\": 0.9291784702549575,\n"}
+,{"stream_name":"stdout","time":125.819191974,"data":"    \"specificity\": 0.9896373056994818,\n"}
+,{"stream_name":"stdout","time":125.819196059,"data":"    \"precision\": 0.9879518072289156,\n"}
+,{"stream_name":"stdout","time":125.81920036,"data":"    \"f1\": 0.9576642335766424,\n"}
+,{"stream_name":"stdout","time":125.819209793,"data":"    \"accuracy\": 0.9607577807848444,\n"}
+,{"stream_name":"stdout","time":125.819212677,"data":"    \"tp\": 328,\n"}
+,{"stream_name":"stdout","time":125.819264119,"data":"    \"tn\": 382,\n"}
+,{"stream_name":"stdout","time":125.819269207,"data":"    \"fp\": 4,\n"}
+,{"stream_name":"stdout","time":125.819274003,"data":"    \"fn\": 25,\n"}
+,{"stream_name":"stdout","time":125.819278995,"data":"    \"brier\": 0.036175550850389065,\n"}
+,{"stream_name":"stdout","time":125.819283788,"data":"    \"n\": 739,\n"}
+,{"stream_name":"stdout","time":125.819288398,"data":"    \"prevalence\": 0.4776725304465494\n"}
+,{"stream_name":"stdout","time":125.81929255,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.819296375,"data":"  \"cal@youden\": {\n"}
+,{"stream_name":"stdout","time":125.819300372,"data":"    \"roc_auc\": 0.9937765122047879,\n"}
+,{"stream_name":"stdout","time":125.819304423,"data":"    \"pr_auc\": 0.994347618135721,\n"}
+,{"stream_name":"stdout","time":125.819308412,"data":"    \"threshold\": 0.08380910285785463,\n"}
+,{"stream_name":"stdout","time":125.819312432,"data":"    \"sensitivity\": 0.9745042492917847,\n"}
+,{"stream_name":"stdout","time":125.819321163,"data":"    \"specificity\": 0.9559585492227979,\n"}
+,{"stream_name":"stdout","time":125.819324178,"data":"    \"precision\": 0.9529085872576177,\n"}
+,{"stream_name":"stdout","time":125.81932739,"data":"    \"f1\": 0.9635854341736694,\n"}
+,{"stream_name":"stdout","time":125.819330186,"data":"    \"accuracy\": 0.96481732070365\n"}
+,{"stream_name":"stdout","time":125.82071273,"data":"\n"}
+,{"stream_name":"stdout","time":125.820741212,"data":"--- lesion_mil/calibration.json\n"}
+,{"stream_name":"stdout","time":125.821451372,"data":"{\n"}
+,{"stream_name":"stdout","time":125.821469995,"data":"  \"temperature\": 3.3419382572174072,\n"}
+,{"stream_name":"stdout","time":125.821474859,"data":"  \"thresholds\": {\n"}
+,{"stream_name":"stdout","time":125.821483309,"data":"    \"raw\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.821487481,"data":"    \"youden\": 0.39360467217616474,\n"}
+,{"stream_name":"stdout","time":125.82149031,"data":"    \"sens90\": 0.48941794007256395\n"}
+,{"stream_name":"stdout","time":125.821493183,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.821496041,"data":"  \"p_dev\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.821498926,"data":"}\n"}
+,{"stream_name":"stdout","time":125.824815581,"data":"\n"}
+,{"stream_name":"stdout","time":125.824845575,"data":"--- lesion_mil/calibration_table.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":125.827060542,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":125.82708916,"data":"Dev (OOF)          Before temp. scaling 0.092397 0.101816    0.128927       0.120679\n"}
+,{"stream_name":"stdout","time":125.827092607,"data":"Dev (OOF) After temp. scaling (T=3.342) 0.068320 0.087869    0.166385       0.208658\n"}
+,{"stream_name":"stdout","time":125.827131529,"data":" Test set            Temp. scaling only 0.116608 0.112313    0.214869       0.348769\n"}
+,{"stream_name":"stdout","time":125.827136918,"data":" Test set      + Prior-shift correction 0.151022 0.123553    0.359101       0.186202\n"}
+,{"stream_name":"stdout","time":125.833119534,"data":"\n"}
+,{"stream_name":"stdout","time":125.833161553,"data":"--- lesion_mil/oof.csv (3354 rows)\n"}
+,{"stream_name":"stdout","time":125.83477794,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.834811732,"data":"        141      0 -16.718750     0\n"}
+,{"stream_name":"stdout","time":125.834817802,"data":"        143      1   1.197266     0\n"}
+,{"stream_name":"stdout","time":125.834822923,"data":"        149      1  -0.696289     0\n"}
+,{"stream_name":"stdout","time":125.834827384,"data":"        150      1   3.449219     0\n"}
+,{"stream_name":"stdout","time":125.834831987,"data":"        159      1  -1.031250     0\n"}
+,{"stream_name":"stdout","time":125.834836506,"data":"        168      1   8.312500     0\n"}
+,{"stream_name":"stdout","time":125.83484048,"data":"        186      1   3.072266     0\n"}
+,{"stream_name":"stdout","time":125.834845178,"data":"        187      1   4.179688     0\n"}
+,{"stream_name":"stdout","time":125.834849824,"data":"        194      1   2.994141     0\n"}
+,{"stream_name":"stdout","time":125.834854272,"data":"        212      1   3.310547     0\n"}
+,{"stream_name":"stdout","time":125.8348583,"data":"        213      1   5.359375     0\n"}
+,{"stream_name":"stdout","time":125.834862279,"data":"        218      1   2.005859     0\n"}
+,{"stream_name":"stdout","time":125.834866294,"data":"        221      1   0.827148     0\n"}
+,{"stream_name":"stdout","time":125.834877654,"data":"        229      0  -0.481445     0\n"}
+,{"stream_name":"stdout","time":125.834880616,"data":"        244      1  -1.444336     0\n"}
+,{"stream_name":"stdout","time":125.834883241,"data":"        245      0  -5.554688     0\n"}
+,{"stream_name":"stdout","time":125.834886041,"data":"        250      1   0.393555     0\n"}
+,{"stream_name":"stdout","time":125.834888771,"data":"        255      1   5.605469     0\n"}
+,{"stream_name":"stdout","time":125.834930621,"data":"        262      0   3.175781     0\n"}
+,{"stream_name":"stdout","time":125.8349363,"data":"        265      1  -0.094116     0\n"}
+,{"stream_name":"stdout","time":125.83863008,"data":"\n"}
+,{"stream_name":"stdout","time":125.838664873,"data":"--- lesion_mil/oof_fold0.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.840333597,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.840367046,"data":"        141      0 -16.718750     0\n"}
+,{"stream_name":"stdout","time":125.84037141,"data":"        143      1   1.197266     0\n"}
+,{"stream_name":"stdout","time":125.840374406,"data":"        149      1  -0.696289     0\n"}
+,{"stream_name":"stdout","time":125.840377649,"data":"        150      1   3.449219     0\n"}
+,{"stream_name":"stdout","time":125.840404981,"data":"        159      1  -1.031250     0\n"}
+,{"stream_name":"stdout","time":125.840409927,"data":"        168      1   8.312500     0\n"}
+,{"stream_name":"stdout","time":125.840414791,"data":"        186      1   3.072266     0\n"}
+,{"stream_name":"stdout","time":125.840420048,"data":"        187      1   4.179688     0\n"}
+,{"stream_name":"stdout","time":125.840423949,"data":"        194      1   2.994141     0\n"}
+,{"stream_name":"stdout","time":125.840428826,"data":"        212      1   3.310547     0\n"}
+,{"stream_name":"stdout","time":125.840433579,"data":"        213      1   5.359375     0\n"}
+,{"stream_name":"stdout","time":125.840453266,"data":"        218      1   2.005859     0\n"}
+,{"stream_name":"stdout","time":125.840457275,"data":"        221      1   0.827148     0\n"}
+,{"stream_name":"stdout","time":125.840460982,"data":"        229      0  -0.481445     0\n"}
+,{"stream_name":"stdout","time":125.840464935,"data":"        244      1  -1.444336     0\n"}
+,{"stream_name":"stdout","time":125.840468964,"data":"        245      0  -5.554688     0\n"}
+,{"stream_name":"stdout","time":125.84047295,"data":"        250      1   0.393555     0\n"}
+,{"stream_name":"stdout","time":125.840476789,"data":"        255      1   5.605469     0\n"}
+,{"stream_name":"stdout","time":125.840485715,"data":"        262      0   3.175781     0\n"}
+,{"stream_name":"stdout","time":125.840488749,"data":"        265      1  -0.094116     0\n"}
+,{"stream_name":"stdout","time":125.844100813,"data":"\n"}
+,{"stream_name":"stdout","time":125.844136272,"data":"--- lesion_mil/oof_fold1.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.845866572,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.845898646,"data":"        127      0 -12.257812     1\n"}
+,{"stream_name":"stdout","time":125.845904438,"data":"        146      1   1.531250     1\n"}
+,{"stream_name":"stdout","time":125.845909455,"data":"        151      1   5.542969     1\n"}
+,{"stream_name":"stdout","time":125.84593313,"data":"        182      0  -6.101562     1\n"}
+,{"stream_name":"stdout","time":125.845938257,"data":"        183      1  10.101562     1\n"}
+,{"stream_name":"stdout","time":125.845943076,"data":"        195      1  -1.746094     1\n"}
+,{"stream_name":"stdout","time":125.845947769,"data":"        198      1   2.333984     1\n"}
+,{"stream_name":"stdout","time":125.845952586,"data":"        200      1   7.718750     1\n"}
+,{"stream_name":"stdout","time":125.845956484,"data":"        201      1  -2.673828     1\n"}
+,{"stream_name":"stdout","time":125.845960347,"data":"        206      1   9.921875     1\n"}
+,{"stream_name":"stdout","time":125.845964088,"data":"        207      0  -5.785156     1\n"}
+,{"stream_name":"stdout","time":125.845967997,"data":"        223      1  11.671875     1\n"}
+,{"stream_name":"stdout","time":125.845977468,"data":"        241      1   5.460938     1\n"}
+,{"stream_name":"stdout","time":125.845980424,"data":"        269      0 -12.007812     1\n"}
+,{"stream_name":"stdout","time":125.845983087,"data":"        271      0   4.625000     1\n"}
+,{"stream_name":"stdout","time":125.845985763,"data":"        272      1  -1.386719     1\n"}
+,{"stream_name":"stdout","time":125.845988343,"data":"        311      0  -7.496094     1\n"}
+,{"stream_name":"stdout","time":125.845990935,"data":"        321      1   9.140625     1\n"}
+,{"stream_name":"stdout","time":125.845993586,"data":"        327      0 -12.234375     1\n"}
+,{"stream_name":"stdout","time":125.845996322,"data":"        328      1   2.519531     1\n"}
+,{"stream_name":"stdout","time":125.850092959,"data":"\n"}
+,{"stream_name":"stdout","time":125.850130734,"data":"--- lesion_mil/oof_fold2.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.851831748,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.851864395,"data":"        132      1  -0.842285     2\n"}
+,{"stream_name":"stdout","time":125.851877853,"data":"        140      0 -12.039062     2\n"}
+,{"stream_name":"stdout","time":125.851880905,"data":"        144      1   2.210938     2\n"}
+,{"stream_name":"stdout","time":125.851883773,"data":"        155      1   1.543945     2\n"}
+,{"stream_name":"stdout","time":125.851942663,"data":"        162      0   3.205078     2\n"}
+,{"stream_name":"stdout","time":125.851949258,"data":"        165      1  13.718750     2\n"}
+,{"stream_name":"stdout","time":125.851954083,"data":"        172      1   6.339844     2\n"}
+,{"stream_name":"stdout","time":125.851958097,"data":"        173      1   1.085938     2\n"}
+,{"stream_name":"stdout","time":125.851961972,"data":"        175      1   7.312500     2\n"}
+,{"stream_name":"stdout","time":125.851965778,"data":"        176      0   2.296875     2\n"}
+,{"stream_name":"stdout","time":125.851969774,"data":"        188      1   2.884766     2\n"}
+,{"stream_name":"stdout","time":125.851973859,"data":"        193      1   2.449219     2\n"}
+,{"stream_name":"stdout","time":125.851981153,"data":"        199      0   0.305908     2\n"}
+,{"stream_name":"stdout","time":125.85199676,"data":"        204      0   8.554688     2\n"}
+,{"stream_name":"stdout","time":125.851999497,"data":"        210      1   8.570312     2\n"}
+,{"stream_name":"stdout","time":125.852002129,"data":"        230      1   3.757812     2\n"}
+,{"stream_name":"stdout","time":125.852004832,"data":"        234      0   1.524414     2\n"}
+,{"stream_name":"stdout","time":125.852007458,"data":"        236      1   4.972656     2\n"}
+,{"stream_name":"stdout","time":125.852010041,"data":"        242      1  -1.524414     2\n"}
+,{"stream_name":"stdout","time":125.852016647,"data":"        251      0   3.724609     2\n"}
+,{"stream_name":"stdout","time":125.855317714,"data":"\n"}
+,{"stream_name":"stdout","time":125.855351334,"data":"--- lesion_mil/oof_fold3.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":125.856968483,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":125.856999012,"data":"         58      0 -2.656250     3\n"}
+,{"stream_name":"stdout","time":125.857005645,"data":"        139      1  1.729492     3\n"}
+,{"stream_name":"stdout","time":125.857011004,"data":"        166      1  0.065308     3\n"}
+,{"stream_name":"stdout","time":125.857016154,"data":"        167      1  9.625000     3\n"}
+,{"stream_name":"stdout","time":125.85702683,"data":"        180      1  2.482422     3\n"}
+,{"stream_name":"stdout","time":125.857032333,"data":"        192      1 -3.386719     3\n"}
+,{"stream_name":"stdout","time":125.857037152,"data":"        209      1  3.824219     3\n"}
+,{"stream_name":"stdout","time":125.857042808,"data":"        216      1  1.043945     3\n"}
+,{"stream_name":"stdout","time":125.857047537,"data":"        224      1  4.226562     3\n"}
+,{"stream_name":"stdout","time":125.85705197,"data":"        239      0 -3.248047     3\n"}
+,{"stream_name":"stdout","time":125.857056765,"data":"        240      1  7.957031     3\n"}
+,{"stream_name":"stdout","time":125.857061078,"data":"        249      1  6.042969     3\n"}
+,{"stream_name":"stdout","time":125.857065614,"data":"        268      0  3.216797     3\n"}
+,{"stream_name":"stdout","time":125.857070243,"data":"        282      1  8.859375     3\n"}
+,{"stream_name":"stdout","time":125.857074677,"data":"        297      0 -1.124023     3\n"}
+,{"stream_name":"stdout","time":125.857078778,"data":"        306      1 -8.929688     3\n"}
+,{"stream_name":"stdout","time":125.857083102,"data":"        308      1  7.328125     3\n"}
+,{"stream_name":"stdout","time":125.857087538,"data":"        313      1  4.960938     3\n"}
+,{"stream_name":"stdout","time":125.857099227,"data":"        322      0  4.207031     3\n"}
+,{"stream_name":"stdout","time":125.857103224,"data":"        329      1  9.687500     3\n"}
+,{"stream_name":"stdout","time":125.861199481,"data":"\n"}
+,{"stream_name":"stdout","time":125.861234976,"data":"--- lesion_mil/oof_fold4.csv (670 rows)\n"}
+,{"stream_name":"stdout","time":125.862811004,"data":" patient_id  label      logit  fold\n"}
+,{"stream_name":"stdout","time":125.862999756,"data":"        145      1  27.171875     4\n"}
+,{"stream_name":"stdout","time":125.863004636,"data":"        152      1   8.773438     4\n"}
+,{"stream_name":"stdout","time":125.863007936,"data":"        156      1   6.468750     4\n"}
+,{"stream_name":"stdout","time":125.863011518,"data":"        158      1  26.156250     4\n"}
+,{"stream_name":"stdout","time":125.863014535,"data":"        196      0 -19.781250     4\n"}
+,{"stream_name":"stdout","time":125.863017484,"data":"        202      1  16.562500     4\n"}
+,{"stream_name":"stdout","time":125.863020395,"data":"        235      1   5.546875     4\n"}
+,{"stream_name":"stdout","time":125.863023375,"data":"        237      0  -3.576172     4\n"}
+,{"stream_name":"stdout","time":125.863026283,"data":"        247      0  10.343750     4\n"}
+,{"stream_name":"stdout","time":125.86302927,"data":"        248      0 -14.468750     4\n"}
+,{"stream_name":"stdout","time":125.863033577,"data":"        256      0   3.119141     4\n"}
+,{"stream_name":"stdout","time":125.863054623,"data":"        257      1  -7.207031     4\n"}
+,{"stream_name":"stdout","time":125.863059662,"data":"        259      1  13.367188     4\n"}
+,{"stream_name":"stdout","time":125.863064909,"data":"        270      0 -29.125000     4\n"}
+,{"stream_name":"stdout","time":125.863070521,"data":"        274      1  17.359375     4\n"}
+,{"stream_name":"stdout","time":125.863075734,"data":"        276      1  12.898438     4\n"}
+,{"stream_name":"stdout","time":125.863080993,"data":"        296      1  19.343750     4\n"}
+,{"stream_name":"stdout","time":125.86308533,"data":"        312      1  17.484375     4\n"}
+,{"stream_name":"stdout","time":125.863089826,"data":"        316      1  -4.917969     4\n"}
+,{"stream_name":"stdout","time":125.863094422,"data":"        320      1  34.718750     4\n"}
+,{"stream_name":"stdout","time":125.864069984,"data":"\n"}
+,{"stream_name":"stdout","time":125.864093228,"data":"--- lesion_mil/oof_summary.json\n"}
+,{"stream_name":"stdout","time":125.864615338,"data":"{\n"}
+,{"stream_name":"stdout","time":125.864631212,"data":"  \"per_fold_roc_auc\": [\n"}
+,{"stream_name":"stdout","time":125.864637167,"data":"    0.9535023041474654,\n"}
+,{"stream_name":"stdout","time":125.864641796,"data":"    0.9493951612903225,\n"}
+,{"stream_name":"stdout","time":125.8646459,"data":"    0.9474747474747475,\n"}
+,{"stream_name":"stdout","time":125.864651699,"data":"    0.9503213957759411,\n"}
+,{"stream_name":"stdout","time":125.864685375,"data":"    0.9564444444444445\n"}
+,{"stream_name":"stdout","time":125.864690482,"data":"  ],\n"}
+,{"stream_name":"stdout","time":125.864694696,"data":"  \"pooled\": {\n"}
+,{"stream_name":"stdout","time":125.864699352,"data":"    \"roc_auc\": 0.9446872458085307,\n"}
+,{"stream_name":"stdout","time":125.86470434,"data":"    \"pr_auc\": 0.8383230137067287,\n"}
+,{"stream_name":"stdout","time":125.864709842,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.864713916,"data":"    \"sensitivity\": 0.8905359179019384,\n"}
+,{"stream_name":"stdout","time":125.864718013,"data":"    \"specificity\": 0.8724263221639079,\n"}
+,{"stream_name":"stdout","time":125.864722197,"data":"    \"precision\": 0.7119416590701915,\n"}
+,{"stream_name":"stdout","time":125.864726181,"data":"    \"f1\": 0.7912867274569403,\n"}
+,{"stream_name":"stdout","time":125.864752016,"data":"    \"accuracy\": 0.8771615980918307,\n"}
+,{"stream_name":"stdout","time":125.864755174,"data":"    \"tp\": 781,\n"}
+,{"stream_name":"stdout","time":125.86475799,"data":"    \"tn\": 2161,\n"}
+,{"stream_name":"stdout","time":125.864760716,"data":"    \"fp\": 316,\n"}
+,{"stream_name":"stdout","time":125.86476333,"data":"    \"fn\": 96,\n"}
+,{"stream_name":"stdout","time":125.864766063,"data":"    \"brier\": 0.10181575795281894,\n"}
+,{"stream_name":"stdout","time":125.864768756,"data":"    \"n\": 3354,\n"}
+,{"stream_name":"stdout","time":125.86477153,"data":"    \"prevalence\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":125.864774311,"data":"  }\n"}
+,{"stream_name":"stdout","time":125.864776888,"data":"}\n"}
+,{"stream_name":"stdout","time":125.869552224,"data":"\n"}
+,{"stream_name":"stdout","time":125.869588805,"data":"--- lesion_mil/test_predictions.csv (739 rows)\n"}
+,{"stream_name":"stdout","time":125.872957458,"data":" patient_id  label    logit    p_raw    p_cal  p_shift\n"}
+,{"stream_name":"stdout","time":125.872993486,"data":"        126      1 1.852539 0.864425 0.635140 0.818060\n"}
+,{"stream_name":"stdout","time":125.873000471,"data":"        133      1 1.045898 0.739987 0.577608 0.779351\n"}
+,{"stream_name":"stdout","time":125.873005387,"data":"        135      1 2.626953 0.932576 0.686984 0.850049\n"}
+,{"stream_name":"stdout","time":125.873009956,"data":"        136      1 2.876953 0.946695 0.702841 0.859337\n"}
+,{"stream_name":"stdout","time":125.873014848,"data":"        142      1 1.942383 0.874614 0.641347 0.822027\n"}
+,{"stream_name":"stdout","time":125.873019448,"data":"        147      1 1.138672 0.757436 0.584366 0.784088\n"}
+,{"stream_name":"stdout","time":125.873023996,"data":"        153      1 0.782715 0.686265 0.558286 0.765511\n"}
+,{"stream_name":"stdout","time":125.873028445,"data":"        157      1 3.111328 0.957358 0.717277 0.867602\n"}
+,{"stream_name":"stdout","time":125.87303298,"data":"        160      1 3.361328 0.966474 0.732198 0.875961\n"}
+,{"stream_name":"stdout","time":125.873037372,"data":"        163      1 2.699219 0.936981 0.691615 0.852784\n"}
+,{"stream_name":"stdout","time":125.873041893,"data":"        164      1 3.580078 0.972882 0.744836 0.882900\n"}
+,{"stream_name":"stdout","time":125.873046289,"data":"        169      1 3.351562 0.966156 0.731624 0.875644\n"}
+,{"stream_name":"stdout","time":125.873051053,"data":"        170      1 2.496094 0.923868 0.678503 0.844989\n"}
+,{"stream_name":"stdout","time":125.873055557,"data":"        171      1 3.792969 0.977968 0.756753 0.889327\n"}
+,{"stream_name":"stdout","time":125.873060056,"data":"        177      1 3.142578 0.958615 0.719170 0.868673\n"}
+,{"stream_name":"stdout","time":125.873064077,"data":"        178      1 5.042969 0.993587 0.818912 0.921139\n"}
+,{"stream_name":"stdout","time":125.873074186,"data":"        179      1 3.601562 0.973443 0.746056 0.883563\n"}
+,{"stream_name":"stdout","time":125.873077557,"data":"        184      1 2.189453 0.899298 0.658169 0.832587\n"}
+,{"stream_name":"stdout","time":125.873080515,"data":"        203      1 1.637695 0.837221 0.620117 0.808295\n"}
+,{"stream_name":"stdout","time":125.873083594,"data":"        205      1 2.898438 0.947769 0.704182 0.860112\n"}
+,{"stream_name":"stdout","time":125.873997026,"data":"\n"}
+,{"stream_name":"stdout","time":125.874028589,"data":"--- lesion_mil/test_results.json\n"}
+,{"stream_name":"stdout","time":125.87525907,"data":"{\n"}
+,{"stream_name":"stdout","time":125.875284098,"data":"  \"model\": \"lesion_mil\",\n"}
+,{"stream_name":"stdout","time":125.875303907,"data":"  \"n_test\": 739,\n"}
+,{"stream_name":"stdout","time":125.875308196,"data":"  \"final_mode\": \"refit\",\n"}
+,{"stream_name":"stdout","time":125.87531293,"data":"  \"raw@0.5\": {\n"}
+,{"stream_name":"stdout","time":125.875323519,"data":"    \"roc_auc\": 0.9459628058536014,\n"}
+,{"stream_name":"stdout","time":125.875326805,"data":"    \"pr_auc\": 0.9431236797145995,\n"}
+,{"stream_name":"stdout","time":125.8753295,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":125.875332254,"data":"    \"sensitivity\": 0.8668555240793201,\n"}
+,{"stream_name":"stdout","time":125.875334925,"data":"    \"specificity\": 0.8704663212435233,\n"}
+,{"stream_name":"stdout","time":125.87533756,"data":"    \"precision\": 0.8595505617977528,\n"}
+,{"stream_name":"stdout","time":125.875340301,"data":"    \"f1\": 0.8631875881523272,\n"}
+,{"stream_name":"stdout","time":125.875343054,"data":"    \"accuracy\": 0.8687415426251691,\n"}
+,{"stream_name":"stdout","time":125.875345773,"data":"    \"tp\": 306,\n"}
+,{"stream_name":"stdout","time":125.875348483,"data":"    \"tn\": 336,\n"}
+,{"stream_name":"stdout","time":125.8753511,"data":"    \"fp\": 50,\n"}
+,{"stream_name":"stdout","time":125.875353678,"data":"    \"fn\": 47,\n"}
+,{"stream_name":"stdout","time":125.875356337,"data":"    \"brier\": 0.09649627657776544,\n"}
+,{"stream_name":"stdout","time":125.875359073,"data":"    \"n\": 739,\n"}
+,{"stream_name":"stdout","time":125.875361713,"data":"    \"prevalence\": 0.4776725304465494\n"}
+,{"stream_name":"stdout","time":125.875364596,"data":"  },\n"}
+,{"stream_name":"stdout","time":125.875367177,"data":"  \"cal@youden\": {\n"}
+,{"stream_name":"stdout","time":125.875369828,"data":"    \"roc_auc\": 0.9459628058536014,\n"}
+,{"stream_name":"stdout","time":125.875372493,"data":"    \"pr_auc\": 0.9431236797145995,\n"}
+,{"stream_name":"stdout","time":125.875375149,"data":"    \"threshold\": 0.39360467217616474,\n"}
+,{"stream_name":"stdout","time":125.875377836,"data":"    \"sensitivity\": 0.9206798866855525,\n"}
+,{"stream_name":"stdout","time":125.875380458,"data":"    \"specificity\": 0.7823834196891192,\n"}
+,{"stream_name":"stdout","time":125.875383111,"data":"    \"precision\": 0.7946210268948656,\n"}
+,{"stream_name":"stdout","time":125.875385962,"data":"    \"f1\": 0.8530183727034121,\n"}
+,{"stream_name":"stdout","time":125.875388631,"data":"    \"accuracy\": 0.84844384\n"}
+,{"stream_name":"stdout","time":125.877439594,"data":"\n"}
+,{"stream_name":"stdout","time":125.877469791,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":125.877476248,"data":"CHECKPOINT INVENTORY -- what actually got saved, regardless of results/\n"}
+,{"stream_name":"stdout","time":125.87748117699999,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":169.573441741,"data":"\n"}
+,{"stream_name":"stdout","time":169.573742585,"data":"/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/checkpoints/convnexttiny/lesion_mil:\n"}
+,{"stream_name":"stdout","time":169.579383659,"data":"  final      best= 324923994  last= 112414070  epoch=0  best_metric=0.9471696309045706\n"}
+,{"stream_name":"stdout","time":169.584981011,"data":"  fold0      best= 324924122  last= 112414198  epoch=0  best_metric=0.9535023041474654\n"}
+,{"stream_name":"stdout","time":169.589649876,"data":"  fold1      best= 324924506  last= 112414582  epoch=0  best_metric=0.9493951612903225\n"}
+,{"stream_name":"stdout","time":169.594733393,"data":"  fold2      best= 324924250  last= 112414326  epoch=0  best_metric=0.9474747474747475\n"}
+,{"stream_name":"stdout","time":169.599843617,"data":"  fold3      best= 324924378  last= 112414454  epoch=0  best_metric=0.9503213957759411\n"}
+,{"stream_name":"stdout","time":169.604268313,"data":"  fold4      best= 324925594  last= 112415286  epoch=0  best_metric=0.9554978354978354\n"}
+,{"stream_name":"stdout","time":169.604324744,"data":"\n"}
+,{"stream_name":"stdout","time":169.604339179,"data":"/kaggle/input/notebooks/choudhary15/dermil-convnext-ablation/checkpoints/convnexttiny/mr_mil:\n"}
+,{"stream_name":"stdout","time":169.609318212,"data":"  final      best= 332488898  last= 114937786  epoch=0  best_metric=0.9968923312296807\n"}
+,{"stream_name":"stdout","time":169.614620492,"data":"  fold0      best= 332490498  last= 114938874  epoch=0  best_metric=0.9944815668202764\n"}
+,{"stream_name":"stdout","time":169.619368096,"data":"  fold1      best= 332488898  last= 114937786  epoch=0  best_metric=0.9899366359447005\n"}
+,{"stream_name":"stdout","time":169.624997811,"data":"  fold2      best= 332488898  last= 114937786  epoch=0  best_metric=0.9893882001836547\n"}
+,{"stream_name":"stdout","time":169.630278369,"data":"  fold3      best= 332490114  last= 114938874  epoch=0  best_metric=0.996969696969697\n"}
+,{"stream_name":"stdout","time":169.635232535,"data":"  fold4      best= 332488450  last= 114937338  epoch=0  best_metric=0.9958672438672439\n"}
+,{"stream_name":"stdout","time":169.64649598,"data":"\n"}
+,{"stream_name":"stdout","time":169.646527201,"data":"small outputs written to /kaggle/working/status (57 files)\n"}
+,{"stream_name":"stdout","time":169.646532322,"data":"\n"}
+,{"stream_name":"stdout","time":169.646536306,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":169.646540648,"data":"DONE in 2.8 min\n"}
+,{"stream_name":"stdout","time":169.646544651,"data":"==============================================================================\n"}
+,{"stream_name":"stderr","time":173.383593242,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":173.383654133,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":174.031475167,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":174.031524259,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":176.969023513,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":179.22139065,"data":"[NbConvertApp] Writing 434866 bytes to __results__.html\n"}
+]

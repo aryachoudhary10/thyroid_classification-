@@ -1,0 +1,5 @@
+{
+  "development_comparison": "/kaggle/working/results/convnextlinrel/_tables/development_comparison.csv",
+  "test_comparison": "/kaggle/working/results/convnextlinrel/_tables/test_comparison.csv",
+  "thresholds_der_mil": "/kaggle/working/results/convnextlinrel/_tables/thresholds_der_mil.csv"
+}

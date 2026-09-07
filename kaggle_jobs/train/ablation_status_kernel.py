@@ -21,6 +21,14 @@ def banner(t):
 
 
 INPUT, WORK = "/kaggle/input", "/kaggle/working"
+
+# What to report on. Defaults preserve the original ConvNeXt ablation behaviour.
+RUN = os.environ.get("DERMIL_STATUS_RUN", "convnexttiny")
+MODELS = [m.strip() for m in
+          os.environ.get("DERMIL_STATUS_MODELS", "lesion_mil,mr_mil").split(",")
+          if m.strip()]
+WANT = [RUN] + MODELS
+print("status for run=%s models=%s" % (RUN, MODELS))
 OUT = os.path.join(WORK, "status")
 os.makedirs(OUT, exist_ok=True)
 
@@ -47,8 +55,7 @@ for dp, _dn, fn in os.walk(INPUT):
         except Exception as e:
             print("  %s unreadable: %s" % (src, e))
             continue
-        keys = sorted(k for k in reg if "convnexttiny" in k
-                      or "lesion_mil" in k or "mr_mil" in k)
+        keys = sorted(k for k in reg if any(w in k for w in WANT))
         if not keys:
             continue
         found_registry = True
@@ -77,7 +84,7 @@ seen_any = False
 for root in res_roots:
     for dp, _dn, fn in os.walk(root):
         rel = os.path.relpath(dp, root)
-        if "lesion_mil" not in rel and "mr_mil" not in rel and "_tables" not in rel:
+        if not any(w in rel for w in WANT) and "_tables" not in rel:
             continue
         for f in sorted(fn):
             src = os.path.join(dp, f)
@@ -111,8 +118,8 @@ if not seen_any:
 banner("CHECKPOINT INVENTORY -- what actually got saved, regardless of results/")
 
 for cdir in find_dir(INPUT, "checkpoints"):
-    for model in ("lesion_mil", "mr_mil"):
-        mp = os.path.join(cdir, "convnexttiny", model)
+    for model in MODELS:
+        mp = os.path.join(cdir, RUN, model)
         if not os.path.isdir(mp):
             continue
         print("\n%s:" % mp)

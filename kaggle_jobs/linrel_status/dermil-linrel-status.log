@@ -1,0 +1,641 @@
+[{"stream_name":"stdout","time":0.839161954,"data":"embedded source extracted to /kaggle/working/_code\n"}
+,{"stream_name":"stdout","time":0.839228236,"data":"run parameters: {'DERMIL_STATUS_MODELS': 'der_mil', 'DERMIL_STATUS_RUN': 'convnextlinrel'}\n"}
+,{"stream_name":"stdout","time":0.847363961,"data":"status for run=convnextlinrel models=['der_mil']\n"}
+,{"stream_name":"stdout","time":0.847395259,"data":"\n"}
+,{"stream_name":"stdout","time":0.847400857,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":0.847406112,"data":"REGISTRY -- every stage for the convnexttiny run, unfiltered\n"}
+,{"stream_name":"stdout","time":0.847411377,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":0.857813736,"data":"\n"}
+,{"stream_name":"stdout","time":0.857843458,"data":"source: /kaggle/input/notebooks/choudhary15/dermil-linrel/checkpoints/registry.json\n"}
+,{"stream_name":"stdout","time":0.857850049,"data":"  cv/convnextlinrel/der_mil/fold0            2026-09-06 17:52:57  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnextlinrel/der_mil/oof_fold0.csv', 'roc_auc': 0.9874078341013826, 'best_val': 0.9874078341013826, 'ckpt': '/kaggle/working/checkpoints/convnextlinrel/der_mil/fold0/best.pt'}}\n"}
+,{"stream_name":"stdout","time":0.857857381,"data":"  cv/convnextlinrel/der_mil/fold1            2026-09-06 18:42:50  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnextlinrel/der_mil/oof_fold1.csv', 'roc_auc': 0.9890092165898617, 'best_val': 0.9890092165898617, 'ckpt': '/kaggle/working/checkpoints/convnextlinrel/der_mil/fold1/best.pt'}}\n"}
+,{"stream_name":"stdout","time":0.857862986,"data":"  cv/convnextlinrel/der_mil/fold2            2026-09-06 20:01:52  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnextlinrel/der_mil/oof_fold2.csv', 'roc_auc': 0.9846074380165288, 'best_val': 0.9846074380165288, 'ckpt': '/kaggle/working/checkpoints/convnextlinrel/der_mil/fold2/best.pt'}}\n"}
+,{"stream_name":"stdout","time":0.857869078,"data":"  cv/convnextlinrel/der_mil/fold3            2026-09-06 20:56:04  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnextlinrel/der_mil/oof_fold3.csv', 'roc_auc': 0.9934171258034894, 'best_val': 0.9934171258034894, 'ckpt': '/kaggle/working/checkpoints/convnextlinrel/der_mil/fold3/best.pt'}}\n"}
+,{"stream_name":"stdout","time":0.857874295,"data":"  cv/convnextlinrel/der_mil/fold4            2026-09-06 21:36:04  {'done': True, 'artifacts': {'oof_csv': '/kaggle/working/results/convnextlinrel/der_mil/oof_fold4.csv', 'roc_auc': 0.9950822510822511, 'best_val': 0.9950822510822511, 'ckpt': '/kaggle/working/checkpoints/convnextlinrel/der_mil/fold4/best.pt'}}\n"}
+,{"stream_name":"stdout","time":0.857880065,"data":"  data/cache/convnextlinrel                  2026-09-06 17:03:33  {'done': True, 'artifacts': {'csv': '/kaggle/working/results/convnextlinrel/manifest_cached.csv', 'files': 23270, 'built': 23270, 'failed': 0, 'bytes': 1227780264}}\n"}
+,{"stream_name":"stdout","time":0.857899821,"data":"  data/thyroidxl/convnextlinrel              2026-09-06 17:02:33  {'done': True, 'artifacts': {'csv': '/kaggle/working/results/convnextlinrel/manifest.csv', 'n_patients': 4093}}\n"}
+,{"stream_name":"stdout","time":0.857903966,"data":"  refit/convnextlinrel/der_mil               2026-09-06 22:26:28  {'done': True, 'artifacts': {'ckpt': '/kaggle/working/checkpoints/convnextlinrel/der_mil/final/best.pt'}}\n"}
+,{"stream_name":"stdout","time":0.857907442,"data":"  test/convnextlinrel/der_mil                2026-09-06 22:27:11  {'done': True, 'artifacts': {'predictions': '/kaggle/working/results/convnextlinrel/der_mil/test_predictions.csv', 'roc_auc': 0.9894281436686287, 'ckpts': ['/kaggle/working/checkpoints/convnextlinrel/der_mil/final/best.pt']}}\n"}
+,{"stream_name":"stdout","time":60.593813737,"data":"\n"}
+,{"stream_name":"stdout","time":60.593860064,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":60.593868651,"data":"RESULT TABLES -- anything the training kernel wrote for these models\n"}
+,{"stream_name":"stdout","time":60.593875137,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":94.733185528,"data":"results roots seen: ['/kaggle/input/notebooks/choudhary15/dermil-linrel/results', '/kaggle/input/notebooks/choudhary15/dermil-linrel/results/convnextlinrel', '/kaggle/input/notebooks/choudhary15/dermil-linrel/results/convnextlinrel/der_mil', '/kaggle/input/notebooks/choudhary15/dermil-linrel/results/convnextlinrel/_tables']\n"}
+,{"stream_name":"stdout","time":96.409811555,"data":"\n"}
+,{"stream_name":"stdout","time":96.409851173,"data":"--- convnextlinrel/cohort_stats.csv (13 rows)\n"}
+,{"stream_name":"stdout","time":96.424471249,"data":"                  Unnamed: 0             Development set                    Test set\n"}
+,{"stream_name":"stdout","time":96.424505343,"data":"          Number of patients                        3354                         739\n"}
+,{"stream_name":"stdout","time":96.42451093,"data":"            Number of images                        9541                        2094\n"}
+,{"stream_name":"stdout","time":96.424515055,"data":"Frames per patient (min-max)                        1-10                         1-8\n"}
+,{"stream_name":"stdout","time":96.424518925,"data":"     Mean frames per patient                        2.84                        2.83\n"}
+,{"stream_name":"stdout","time":96.424522764,"data":"   Median frames per patient                           3                           3\n"}
+,{"stream_name":"stdout","time":96.42452649,"data":"      Benign patients, n (%)                2477 (73.9%)                 386 (52.2%)\n"}
+,{"stream_name":"stdout","time":96.424530285,"data":"   Malignant patients, n (%)                 877 (26.1%)                 353 (47.8%)\n"}
+,{"stream_name":"stdout","time":96.424534032,"data":"                 TIRADS 1, n                          24                           0\n"}
+,{"stream_name":"stdout","time":96.424537827,"data":"                 TIRADS 2, n                         328                          45\n"}
+,{"stream_name":"stdout","time":96.424541573,"data":"                 TIRADS 3, n                        1090                         182\n"}
+,{"stream_name":"stdout","time":96.424545373,"data":"                 TIRADS 4, n                        1024                         215\n"}
+,{"stream_name":"stdout","time":96.424549117,"data":"                 TIRADS 5, n                         888                         297\n"}
+,{"stream_name":"stdout","time":96.424552883,"data":"             Mean age, years 48.2 +/- 12.7 (range 12-94) 47.6 +/- 12.8 (range 14-84)\n"}
+,{"stream_name":"stdout","time":96.503126783,"data":"\n"}
+,{"stream_name":"stdout","time":96.503175278,"data":"--- convnextlinrel/manifest.csv (4093 rows)\n"}
+,{"stream_name":"stdout","time":96.511418588,"data":" patient_id  label split  n_frames                                                                                                                                                                                                                                                                                                                                                                 image_paths                                                                                                                                                                                                                                                                                                                                                              mask_paths bbox_xmls  tirads  age sex  conclusion_code            conclusion_text  fold\n"}
+,{"stream_name":"stdout","time":96.511479216,"data":"         58      0   dev         2                                                                                                                                                                                       /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000058_2201CE11_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000058_A73CED93_1.png                                                                                                                                                                                     /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000058_2201CE11_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000058_A73CED93_1.png         |     4.0 60.0   F                3              Benign (FNAC)     3\n"}
+,{"stream_name":"stdout","time":96.511487927,"data":"        127      0   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000127_1914A778_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000127_313017DC_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000127_513DDC30_0.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000127_1914A778_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000127_313017DC_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000127_513DDC30_0.png        ||     3.0 35.0   F                3              Benign (FNAC)     1\n"}
+,{"stream_name":"stdout","time":96.511493404,"data":"        132      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000132_3D938012_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000132_E89E8C65_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000132_F7030EDC_0.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000132_3D938012_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000132_E89E8C65_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000132_F7030EDC_0.png        ||     5.0 27.0   F                2           Malignant (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.511499073,"data":"        139      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000139_217557BB_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000139_7F96263D_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000139_FA7E0544_0.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000139_217557BB_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000139_7F96263D_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000139_FA7E0544_0.png        ||     5.0 39.0   F                1 Malignant (Histopathology)     3\n"}
+,{"stream_name":"stdout","time":96.511504206,"data":"        140      0   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000140_ABD9A36A_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000140_DDA6CF0B_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000140_FEFB77FE_0.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000140_ABD9A36A_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000140_DDA6CF0B_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000140_FEFB77FE_0.png        ||     4.0 61.0   F                3              Benign (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.511512346,"data":"        141      0   dev         4 /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000141_327064E9_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000141_969B45C8_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000141_9B928992_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000141_CFD4B94F_0.png /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000141_327064E9_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000141_969B45C8_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000141_9B928992_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000141_CFD4B94F_0.png       |||     3.0 36.0   F                3              Benign (FNAC)     0\n"}
+,{"stream_name":"stdout","time":96.511518491,"data":"        143      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000143_1B8CD5C4_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000143_7C8F04E1_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000143_D01F18EE_1.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000143_1B8CD5C4_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000143_7C8F04E1_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000143_D01F18EE_1.png        ||     5.0 31.0   F                1 Malignant (Histopathology)     0\n"}
+,{"stream_name":"stdout","time":96.51152365,"data":"        144      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000144_0BBC1CEC_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000144_4531F39E_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000144_E5367C44_1.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000144_0BBC1CEC_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000144_4531F39E_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000144_E5367C44_1.png        ||     5.0 39.0   F                1 Malignant (Histopathology)     2\n"}
+,{"stream_name":"stdout","time":96.511529117,"data":"        145      1   dev         4 /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000145_0DB811AF_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000145_5F8F5895_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000145_72C02F58_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000145_8B9C6D13_3.png /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000145_0DB811AF_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000145_5F8F5895_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000145_72C02F58_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000145_8B9C6D13_3.png       |||     5.0 40.0   F                2           Malignant (FNAC)     4\n"}
+,{"stream_name":"stdout","time":96.511583663,"data":"        146      1   dev         4 /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000146_2FFC6A5F_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000146_34A60744_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000146_68EE288E_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000146_8EC61D31_1.png /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000146_2FFC6A5F_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000146_34A60744_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000146_68EE288E_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000146_8EC61D31_1.png       |||     5.0 38.0   F                1 Malignant (Histopathology)     1\n"}
+,{"stream_name":"stdout","time":96.511593894,"data":"        149      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000149_6CD4E034_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000149_E866E388_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000149_F42ADD48_1.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000149_6CD4E034_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000149_E866E388_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000149_F42ADD48_1.png        ||     5.0 30.0   F                1 Malignant (Histopathology)     0\n"}
+,{"stream_name":"stdout","time":96.511599564,"data":"        150      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000150_34088AD0_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000150_3F474E8C_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000150_57FDCABD_0.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000150_34088AD0_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000150_3F474E8C_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000150_57FDCABD_0.png        ||     5.0 56.0   F                2           Malignant (FNAC)     0\n"}
+,{"stream_name":"stdout","time":96.511604694,"data":"        151      1   dev         4 /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000151_754FF30B_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000151_CB9E1260_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000151_CD996C8A_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000151_EACF260F_0.png /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000151_754FF30B_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000151_CB9E1260_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000151_CD996C8A_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000151_EACF260F_0.png       |||     5.0 41.0   F                1 Malignant (Histopathology)     1\n"}
+,{"stream_name":"stdout","time":96.511610144,"data":"        152      1   dev         4 /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000152_165684A8_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000152_5AD3BC24_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000152_C8BFC547_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000152_FED1C9E5_2.png /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000152_165684A8_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000152_5AD3BC24_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000152_C8BFC547_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000152_FED1C9E5_2.png       |||     5.0 42.0   F                1 Malignant (Histopathology)     4\n"}
+,{"stream_name":"stdout","time":96.511618943,"data":"        155      1   dev         4 /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000155_3740DF19_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000155_7B6A8396_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000155_A2330FD3_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000155_B2FE0531_2.png /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000155_3740DF19_3.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000155_7B6A8396_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000155_A2330FD3_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000155_B2FE0531_2.png       |||     5.0 36.0   F                1 Malignant (Histopathology)     2\n"}
+,{"stream_name":"stdout","time":96.511624201,"data":"        156      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000156_632BDDC0_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000156_A2ACF766_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000156_D1280CBD_2.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000156_632BDDC0_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000156_A2ACF766_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000156_D1280CBD_2.png        ||     5.0 29.0   F                1 Malignant (Histopathology)     4\n"}
+,{"stream_name":"stdout","time":96.511631901,"data":"        158      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000158_0BD5B665_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000158_7F1A657C_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000158_83C00F67_0.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000158_0BD5B665_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000158_7F1A657C_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000158_83C00F67_0.png        ||     5.0 35.0   F                2           Malignant (FNAC)     4\n"}
+,{"stream_name":"stdout","time":96.511639571,"data":"        159      1   dev         2                                                                                                                                                                                       /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000159_278C9967_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000159_54A68502_0.png                                                                                                                                                                                     /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000159_278C9967_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000159_54A68502_0.png         |     5.0 35.0   F                1 Malignant (Histopathology)     0\n"}
+,{"stream_name":"stdout","time":96.511651598,"data":"        162      0   dev         2                                                                                                                                                                                       /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000162_1983E6B6_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000162_1FC512A9_0.png                                                                                                                                                                                     /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000162_1983E6B6_1.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000162_1FC512A9_0.png         |     5.0 52.0   F                3              Benign (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.511659496,"data":"        165      1   dev         3                                                                                            /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000165_97BD38D0_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000165_E91BD15C_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/images/00000165_FF64E86E_1.png                                                                                           /kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000165_97BD38D0_2.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000165_E91BD15C_0.png|/kaggle/input/datasets/safaaqaisi/thyroidxl/ThyroidXL/train/masks/00000165_FF64E86E_1.png        ||     5.0 49.0   F                2           Malignant (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.555425353,"data":"\n"}
+,{"stream_name":"stdout","time":96.555461568,"data":"--- convnextlinrel/manifest_cached.csv (4093 rows)\n"}
+,{"stream_name":"stdout","time":96.56041781,"data":" patient_id  label split  n_frames                                                                                                                                                                             image_paths                                                                                                                                                                              mask_paths bbox_xmls  tirads  age sex  conclusion_code            conclusion_text  fold\n"}
+,{"stream_name":"stdout","time":96.560458046,"data":"         58      0   dev         2                                                                                             /tmp/dermil_cache/img/00000058_2201CE11_0.png|/tmp/dermil_cache/img/00000058_A73CED93_1.png                                                                                             /tmp/dermil_cache/msk/00000058_2201CE11_0.png|/tmp/dermil_cache/msk/00000058_A73CED93_1.png         |     4.0 60.0   F                3              Benign (FNAC)     3\n"}
+,{"stream_name":"stdout","time":96.560466728,"data":"        127      0   dev         3                                               /tmp/dermil_cache/img/00000127_1914A778_1.png|/tmp/dermil_cache/img/00000127_313017DC_2.png|/tmp/dermil_cache/img/00000127_513DDC30_0.png                                               /tmp/dermil_cache/msk/00000127_1914A778_1.png|/tmp/dermil_cache/msk/00000127_313017DC_2.png|/tmp/dermil_cache/msk/00000127_513DDC30_0.png        ||     3.0 35.0   F                3              Benign (FNAC)     1\n"}
+,{"stream_name":"stdout","time":96.560473378,"data":"        132      1   dev         3                                               /tmp/dermil_cache/img/00000132_3D938012_2.png|/tmp/dermil_cache/img/00000132_E89E8C65_1.png|/tmp/dermil_cache/img/00000132_F7030EDC_0.png                                               /tmp/dermil_cache/msk/00000132_3D938012_2.png|/tmp/dermil_cache/msk/00000132_E89E8C65_1.png|/tmp/dermil_cache/msk/00000132_F7030EDC_0.png        ||     5.0 27.0   F                2           Malignant (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.560491103,"data":"        139      1   dev         3                                               /tmp/dermil_cache/img/00000139_217557BB_1.png|/tmp/dermil_cache/img/00000139_7F96263D_2.png|/tmp/dermil_cache/img/00000139_FA7E0544_0.png                                               /tmp/dermil_cache/msk/00000139_217557BB_1.png|/tmp/dermil_cache/msk/00000139_7F96263D_2.png|/tmp/dermil_cache/msk/00000139_FA7E0544_0.png        ||     5.0 39.0   F                1 Malignant (Histopathology)     3\n"}
+,{"stream_name":"stdout","time":96.560495621,"data":"        140      0   dev         3                                               /tmp/dermil_cache/img/00000140_ABD9A36A_2.png|/tmp/dermil_cache/img/00000140_DDA6CF0B_1.png|/tmp/dermil_cache/img/00000140_FEFB77FE_0.png                                               /tmp/dermil_cache/msk/00000140_ABD9A36A_2.png|/tmp/dermil_cache/msk/00000140_DDA6CF0B_1.png|/tmp/dermil_cache/msk/00000140_FEFB77FE_0.png        ||     4.0 61.0   F                3              Benign (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.560500136,"data":"        141      0   dev         4 /tmp/dermil_cache/img/00000141_327064E9_1.png|/tmp/dermil_cache/img/00000141_969B45C8_0.png|/tmp/dermil_cache/img/00000141_9B928992_1.png|/tmp/dermil_cache/img/00000141_CFD4B94F_0.png /tmp/dermil_cache/msk/00000141_327064E9_1.png|/tmp/dermil_cache/msk/00000141_969B45C8_0.png|/tmp/dermil_cache/msk/00000141_9B928992_1.png|/tmp/dermil_cache/msk/00000141_CFD4B94F_0.png       |||     3.0 36.0   F                3              Benign (FNAC)     0\n"}
+,{"stream_name":"stdout","time":96.560504315,"data":"        143      1   dev         3                                               /tmp/dermil_cache/img/00000143_1B8CD5C4_2.png|/tmp/dermil_cache/img/00000143_7C8F04E1_0.png|/tmp/dermil_cache/img/00000143_D01F18EE_1.png                                               /tmp/dermil_cache/msk/00000143_1B8CD5C4_2.png|/tmp/dermil_cache/msk/00000143_7C8F04E1_0.png|/tmp/dermil_cache/msk/00000143_D01F18EE_1.png        ||     5.0 31.0   F                1 Malignant (Histopathology)     0\n"}
+,{"stream_name":"stdout","time":96.56050883,"data":"        144      1   dev         3                                               /tmp/dermil_cache/img/00000144_0BBC1CEC_0.png|/tmp/dermil_cache/img/00000144_4531F39E_2.png|/tmp/dermil_cache/img/00000144_E5367C44_1.png                                               /tmp/dermil_cache/msk/00000144_0BBC1CEC_0.png|/tmp/dermil_cache/msk/00000144_4531F39E_2.png|/tmp/dermil_cache/msk/00000144_E5367C44_1.png        ||     5.0 39.0   F                1 Malignant (Histopathology)     2\n"}
+,{"stream_name":"stdout","time":96.560512971,"data":"        145      1   dev         4 /tmp/dermil_cache/img/00000145_0DB811AF_0.png|/tmp/dermil_cache/img/00000145_5F8F5895_1.png|/tmp/dermil_cache/img/00000145_72C02F58_2.png|/tmp/dermil_cache/img/00000145_8B9C6D13_3.png /tmp/dermil_cache/msk/00000145_0DB811AF_0.png|/tmp/dermil_cache/msk/00000145_5F8F5895_1.png|/tmp/dermil_cache/msk/00000145_72C02F58_2.png|/tmp/dermil_cache/msk/00000145_8B9C6D13_3.png       |||     5.0 40.0   F                2           Malignant (FNAC)     4\n"}
+,{"stream_name":"stdout","time":96.560517141,"data":"        146      1   dev         4 /tmp/dermil_cache/img/00000146_2FFC6A5F_3.png|/tmp/dermil_cache/img/00000146_34A60744_0.png|/tmp/dermil_cache/img/00000146_68EE288E_2.png|/tmp/dermil_cache/img/00000146_8EC61D31_1.png /tmp/dermil_cache/msk/00000146_2FFC6A5F_3.png|/tmp/dermil_cache/msk/00000146_34A60744_0.png|/tmp/dermil_cache/msk/00000146_68EE288E_2.png|/tmp/dermil_cache/msk/00000146_8EC61D31_1.png       |||     5.0 38.0   F                1 Malignant (Histopathology)     1\n"}
+,{"stream_name":"stdout","time":96.560524335,"data":"        149      1   dev         3                                               /tmp/dermil_cache/img/00000149_6CD4E034_2.png|/tmp/dermil_cache/img/00000149_E866E388_0.png|/tmp/dermil_cache/img/00000149_F42ADD48_1.png                                               /tmp/dermil_cache/msk/00000149_6CD4E034_2.png|/tmp/dermil_cache/msk/00000149_E866E388_0.png|/tmp/dermil_cache/msk/00000149_F42ADD48_1.png        ||     5.0 30.0   F                1 Malignant (Histopathology)     0\n"}
+,{"stream_name":"stdout","time":96.560529091,"data":"        150      1   dev         3                                               /tmp/dermil_cache/img/00000150_34088AD0_1.png|/tmp/dermil_cache/img/00000150_3F474E8C_2.png|/tmp/dermil_cache/img/00000150_57FDCABD_0.png                                               /tmp/dermil_cache/msk/00000150_34088AD0_1.png|/tmp/dermil_cache/msk/00000150_3F474E8C_2.png|/tmp/dermil_cache/msk/00000150_57FDCABD_0.png        ||     5.0 56.0   F                2           Malignant (FNAC)     0\n"}
+,{"stream_name":"stdout","time":96.560533366,"data":"        151      1   dev         4 /tmp/dermil_cache/img/00000151_754FF30B_2.png|/tmp/dermil_cache/img/00000151_CB9E1260_1.png|/tmp/dermil_cache/img/00000151_CD996C8A_3.png|/tmp/dermil_cache/img/00000151_EACF260F_0.png /tmp/dermil_cache/msk/00000151_754FF30B_2.png|/tmp/dermil_cache/msk/00000151_CB9E1260_1.png|/tmp/dermil_cache/msk/00000151_CD996C8A_3.png|/tmp/dermil_cache/msk/00000151_EACF260F_0.png       |||     5.0 41.0   F                1 Malignant (Histopathology)     1\n"}
+,{"stream_name":"stdout","time":96.560537585,"data":"        152      1   dev         4 /tmp/dermil_cache/img/00000152_165684A8_0.png|/tmp/dermil_cache/img/00000152_5AD3BC24_1.png|/tmp/dermil_cache/img/00000152_C8BFC547_3.png|/tmp/dermil_cache/img/00000152_FED1C9E5_2.png /tmp/dermil_cache/msk/00000152_165684A8_0.png|/tmp/dermil_cache/msk/00000152_5AD3BC24_1.png|/tmp/dermil_cache/msk/00000152_C8BFC547_3.png|/tmp/dermil_cache/msk/00000152_FED1C9E5_2.png       |||     5.0 42.0   F                1 Malignant (Histopathology)     4\n"}
+,{"stream_name":"stdout","time":96.560541691,"data":"        155      1   dev         4 /tmp/dermil_cache/img/00000155_3740DF19_3.png|/tmp/dermil_cache/img/00000155_7B6A8396_1.png|/tmp/dermil_cache/img/00000155_A2330FD3_0.png|/tmp/dermil_cache/img/00000155_B2FE0531_2.png /tmp/dermil_cache/msk/00000155_3740DF19_3.png|/tmp/dermil_cache/msk/00000155_7B6A8396_1.png|/tmp/dermil_cache/msk/00000155_A2330FD3_0.png|/tmp/dermil_cache/msk/00000155_B2FE0531_2.png       |||     5.0 36.0   F                1 Malignant (Histopathology)     2\n"}
+,{"stream_name":"stdout","time":96.560545876,"data":"        156      1   dev         3                                               /tmp/dermil_cache/img/00000156_632BDDC0_0.png|/tmp/dermil_cache/img/00000156_A2ACF766_1.png|/tmp/dermil_cache/img/00000156_D1280CBD_2.png                                               /tmp/dermil_cache/msk/00000156_632BDDC0_0.png|/tmp/dermil_cache/msk/00000156_A2ACF766_1.png|/tmp/dermil_cache/msk/00000156_D1280CBD_2.png        ||     5.0 29.0   F                1 Malignant (Histopathology)     4\n"}
+,{"stream_name":"stdout","time":96.560550286,"data":"        158      1   dev         3                                               /tmp/dermil_cache/img/00000158_0BD5B665_1.png|/tmp/dermil_cache/img/00000158_7F1A657C_2.png|/tmp/dermil_cache/img/00000158_83C00F67_0.png                                               /tmp/dermil_cache/msk/00000158_0BD5B665_1.png|/tmp/dermil_cache/msk/00000158_7F1A657C_2.png|/tmp/dermil_cache/msk/00000158_83C00F67_0.png        ||     5.0 35.0   F                2           Malignant (FNAC)     4\n"}
+,{"stream_name":"stdout","time":96.560554441,"data":"        159      1   dev         2                                                                                             /tmp/dermil_cache/img/00000159_278C9967_1.png|/tmp/dermil_cache/img/00000159_54A68502_0.png                                                                                             /tmp/dermil_cache/msk/00000159_278C9967_1.png|/tmp/dermil_cache/msk/00000159_54A68502_0.png         |     5.0 35.0   F                1 Malignant (Histopathology)     0\n"}
+,{"stream_name":"stdout","time":96.560561431,"data":"        162      0   dev         2                                                                                             /tmp/dermil_cache/img/00000162_1983E6B6_1.png|/tmp/dermil_cache/img/00000162_1FC512A9_0.png                                                                                             /tmp/dermil_cache/msk/00000162_1983E6B6_1.png|/tmp/dermil_cache/msk/00000162_1FC512A9_0.png         |     5.0 52.0   F                3              Benign (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.560565736,"data":"        165      1   dev         3                                               /tmp/dermil_cache/img/00000165_97BD38D0_2.png|/tmp/dermil_cache/img/00000165_E91BD15C_0.png|/tmp/dermil_cache/img/00000165_FF64E86E_1.png                                               /tmp/dermil_cache/msk/00000165_97BD38D0_2.png|/tmp/dermil_cache/msk/00000165_E91BD15C_0.png|/tmp/dermil_cache/msk/00000165_FF64E86E_1.png        ||     5.0 49.0   F                2           Malignant (FNAC)     2\n"}
+,{"stream_name":"stdout","time":96.563793488,"data":"\n"}
+,{"stream_name":"stdout","time":96.56382502700001,"data":"--- convnextlinrel/reliability_coefficients.json\n"}
+,{"stream_name":"stdout","time":96.56443499,"data":"{\n"}
+,{"stream_name":"stdout","time":96.564452305,"data":"  \"der_mil\": {\n"}
+,{"stream_name":"stdout","time":96.56445791,"data":"    \"alpha\": 1.2766939401626587,\n"}
+,{"stream_name":"stdout","time":96.564462822,"data":"    \"beta\": 1.3266890048980713,\n"}
+,{"stream_name":"stdout","time":96.5644676,"data":"    \"gamma\": 1.2989165782928467\n"}
+,{"stream_name":"stdout","time":96.564472557,"data":"  }\n"}
+,{"stream_name":"stdout","time":96.564476841,"data":"}\n"}
+,{"stream_name":"stdout","time":96.567567115,"data":"\n"}
+,{"stream_name":"stdout","time":96.567588994,"data":"--- convnextlinrel/der_mil/calibration.json\n"}
+,{"stream_name":"stdout","time":96.56814193700001,"data":"{\n"}
+,{"stream_name":"stdout","time":96.568165336,"data":"  \"temperature\": 1.5840327739715576,\n"}
+,{"stream_name":"stdout","time":96.568171686,"data":"  \"thresholds\": {\n"}
+,{"stream_name":"stdout","time":96.568176796,"data":"    \"raw\": 0.5,\n"}
+,{"stream_name":"stdout","time":96.568181688,"data":"    \"youden\": 0.1392956127984957,\n"}
+,{"stream_name":"stdout","time":96.568186438,"data":"    \"sens90\": 0.30642895223758204\n"}
+,{"stream_name":"stdout","time":96.568191216,"data":"  },\n"}
+,{"stream_name":"stdout","time":96.568195725,"data":"  \"p_dev\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":96.568200656,"data":"}\n"}
+,{"stream_name":"stdout","time":96.572887389,"data":"\n"}
+,{"stream_name":"stdout","time":96.572923816,"data":"--- convnextlinrel/der_mil/calibration_table.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":96.575246196,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":96.575280197,"data":"Dev (OOF)          Before temp. scaling 0.029204 0.033838    0.016831       0.123483\n"}
+,{"stream_name":"stdout","time":96.575286486,"data":"Dev (OOF) After temp. scaling (T=1.584) 0.016530 0.031842    0.036764       0.131226\n"}
+,{"stream_name":"stdout","time":96.575291332,"data":" Test set            Temp. scaling only 0.061659 0.052625    0.008995       0.138917\n"}
+,{"stream_name":"stdout","time":96.575314196,"data":" Test set      + Prior-shift correction 0.045183 0.043693    0.014890       0.110871\n"}
+,{"stream_name":"stdout","time":96.583268737,"data":"\n"}
+,{"stream_name":"stdout","time":96.583305719,"data":"--- convnextlinrel/der_mil/oof.csv (3354 rows)\n"}
+,{"stream_name":"stdout","time":96.584940893,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.584972587,"data":"        141      0 -5.960938     0\n"}
+,{"stream_name":"stdout","time":96.584978693,"data":"        143      1 -0.951172     0\n"}
+,{"stream_name":"stdout","time":96.584983504,"data":"        149      1  1.336914     0\n"}
+,{"stream_name":"stdout","time":96.584988427,"data":"        150      1  6.453125     0\n"}
+,{"stream_name":"stdout","time":96.584992906,"data":"        159      1  9.156250     0\n"}
+,{"stream_name":"stdout","time":96.584997459,"data":"        168      1  9.304688     0\n"}
+,{"stream_name":"stdout","time":96.585002419,"data":"        186      1  6.011719     0\n"}
+,{"stream_name":"stdout","time":96.585005874,"data":"        187      1 -2.716797     0\n"}
+,{"stream_name":"stdout","time":96.585008799,"data":"        194      1  4.925781     0\n"}
+,{"stream_name":"stdout","time":96.585011692,"data":"        212      1  9.539062     0\n"}
+,{"stream_name":"stdout","time":96.585014563,"data":"        213      1  9.390625     0\n"}
+,{"stream_name":"stdout","time":96.585017633,"data":"        218      1  9.273438     0\n"}
+,{"stream_name":"stdout","time":96.585020512,"data":"        221      1  6.207031     0\n"}
+,{"stream_name":"stdout","time":96.585023435,"data":"        229      0 -4.375000     0\n"}
+,{"stream_name":"stdout","time":96.585026291,"data":"        244      1 -1.626953     0\n"}
+,{"stream_name":"stdout","time":96.585029224,"data":"        245      0 -4.648438     0\n"}
+,{"stream_name":"stdout","time":96.585032114,"data":"        250      1  8.273438     0\n"}
+,{"stream_name":"stdout","time":96.585034987,"data":"        255      1  9.398438     0\n"}
+,{"stream_name":"stdout","time":96.585037882,"data":"        262      0 -5.039062     0\n"}
+,{"stream_name":"stdout","time":96.585040948,"data":"        265      1  9.335938     0\n"}
+,{"stream_name":"stdout","time":96.591282821,"data":"\n"}
+,{"stream_name":"stdout","time":96.59131699,"data":"--- convnextlinrel/der_mil/oof_fold0.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.593708629,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.593765861,"data":"        141      0 -5.960938     0\n"}
+,{"stream_name":"stdout","time":96.593772135,"data":"        143      1 -0.951172     0\n"}
+,{"stream_name":"stdout","time":96.593777239,"data":"        149      1  1.336914     0\n"}
+,{"stream_name":"stdout","time":96.593787366,"data":"        150      1  6.453125     0\n"}
+,{"stream_name":"stdout","time":96.593790857,"data":"        159      1  9.156250     0\n"}
+,{"stream_name":"stdout","time":96.593793818,"data":"        168      1  9.304688     0\n"}
+,{"stream_name":"stdout","time":96.593796763,"data":"        186      1  6.011719     0\n"}
+,{"stream_name":"stdout","time":96.593799665,"data":"        187      1 -2.716797     0\n"}
+,{"stream_name":"stdout","time":96.593802667,"data":"        194      1  4.925781     0\n"}
+,{"stream_name":"stdout","time":96.593806242,"data":"        212      1  9.539062     0\n"}
+,{"stream_name":"stdout","time":96.593809412,"data":"        213      1  9.390625     0\n"}
+,{"stream_name":"stdout","time":96.593816373,"data":"        218      1  9.273438     0\n"}
+,{"stream_name":"stdout","time":96.593836013,"data":"        221      1  6.207031     0\n"}
+,{"stream_name":"stdout","time":96.593839435,"data":"        229      0 -4.375000     0\n"}
+,{"stream_name":"stdout","time":96.593842477,"data":"        244      1 -1.626953     0\n"}
+,{"stream_name":"stdout","time":96.593845453,"data":"        245      0 -4.648438     0\n"}
+,{"stream_name":"stdout","time":96.593848312,"data":"        250      1  8.273438     0\n"}
+,{"stream_name":"stdout","time":96.593851172,"data":"        255      1  9.398438     0\n"}
+,{"stream_name":"stdout","time":96.593854159,"data":"        262      0 -5.039062     0\n"}
+,{"stream_name":"stdout","time":96.593857113,"data":"        265      1  9.335938     0\n"}
+,{"stream_name":"stdout","time":96.599634806,"data":"\n"}
+,{"stream_name":"stdout","time":96.599666527,"data":"--- convnextlinrel/der_mil/oof_fold1.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.60129337,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.601320593,"data":"        127      0 -6.421875     1\n"}
+,{"stream_name":"stdout","time":96.60132631,"data":"        146      1  5.007812     1\n"}
+,{"stream_name":"stdout","time":96.601331183,"data":"        151      1  9.914062     1\n"}
+,{"stream_name":"stdout","time":96.601336004,"data":"        182      0 -4.960938     1\n"}
+,{"stream_name":"stdout","time":96.601340704,"data":"        183      1 -0.324219     1\n"}
+,{"stream_name":"stdout","time":96.601345272,"data":"        195      1 -0.312256     1\n"}
+,{"stream_name":"stdout","time":96.601350215,"data":"        198      1  3.333984     1\n"}
+,{"stream_name":"stdout","time":96.60135413,"data":"        200      1  9.476562     1\n"}
+,{"stream_name":"stdout","time":96.601357092,"data":"        201      1 -4.156250     1\n"}
+,{"stream_name":"stdout","time":96.601360053,"data":"        206      1  3.871094     1\n"}
+,{"stream_name":"stdout","time":96.601363027,"data":"        207      0 -5.265625     1\n"}
+,{"stream_name":"stdout","time":96.601365988,"data":"        223      1  9.476562     1\n"}
+,{"stream_name":"stdout","time":96.601368877,"data":"        241      1  9.914062     1\n"}
+,{"stream_name":"stdout","time":96.60137178,"data":"        269      0 -6.335938     1\n"}
+,{"stream_name":"stdout","time":96.601374654,"data":"        271      0 -5.300781     1\n"}
+,{"stream_name":"stdout","time":96.601377585,"data":"        272      1  7.562500     1\n"}
+,{"stream_name":"stdout","time":96.601380448,"data":"        311      0 -5.574219     1\n"}
+,{"stream_name":"stdout","time":96.601383633,"data":"        321      1  9.648438     1\n"}
+,{"stream_name":"stdout","time":96.601386497,"data":"        327      0 -6.121094     1\n"}
+,{"stream_name":"stdout","time":96.601389408,"data":"        328      1  2.619141     1\n"}
+,{"stream_name":"stdout","time":96.609544761,"data":"\n"}
+,{"stream_name":"stdout","time":96.609580198,"data":"--- convnextlinrel/der_mil/oof_fold2.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.611205674,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.61123193,"data":"        132      1  7.042969     2\n"}
+,{"stream_name":"stdout","time":96.611237325,"data":"        140      0 -6.527344     2\n"}
+,{"stream_name":"stdout","time":96.611241836,"data":"        144      1  8.031250     2\n"}
+,{"stream_name":"stdout","time":96.611246571,"data":"        155      1  5.796875     2\n"}
+,{"stream_name":"stdout","time":96.611251148,"data":"        162      0  7.718750     2\n"}
+,{"stream_name":"stdout","time":96.611270536,"data":"        165      1  9.257812     2\n"}
+,{"stream_name":"stdout","time":96.611273919,"data":"        172      1  7.605469     2\n"}
+,{"stream_name":"stdout","time":96.61127708,"data":"        173      1 -4.625000     2\n"}
+,{"stream_name":"stdout","time":96.611289182,"data":"        175      1  7.093750     2\n"}
+,{"stream_name":"stdout","time":96.611292288,"data":"        176      0 -3.460938     2\n"}
+,{"stream_name":"stdout","time":96.611295266,"data":"        188      1  7.597656     2\n"}
+,{"stream_name":"stdout","time":96.61129876,"data":"        193      1 -6.558594     2\n"}
+,{"stream_name":"stdout","time":96.6113028,"data":"        199      0  1.290039     2\n"}
+,{"stream_name":"stdout","time":96.611312818,"data":"        204      0 -5.191406     2\n"}
+,{"stream_name":"stdout","time":96.611315968,"data":"        210      1  9.070312     2\n"}
+,{"stream_name":"stdout","time":96.611318916,"data":"        230      1 -2.300781     2\n"}
+,{"stream_name":"stdout","time":96.611321877,"data":"        234      0 -1.893555     2\n"}
+,{"stream_name":"stdout","time":96.611324805,"data":"        236      1  9.046875     2\n"}
+,{"stream_name":"stdout","time":96.611327929,"data":"        242      1  1.826172     2\n"}
+,{"stream_name":"stdout","time":96.611330929,"data":"        251      0 -3.187500     2\n"}
+,{"stream_name":"stdout","time":96.616892773,"data":"\n"}
+,{"stream_name":"stdout","time":96.616928259,"data":"--- convnextlinrel/der_mil/oof_fold3.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.61864098,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.618674391,"data":"         58      0 -8.343750     3\n"}
+,{"stream_name":"stdout","time":96.618678894,"data":"        139      1  4.031250     3\n"}
+,{"stream_name":"stdout","time":96.618682057,"data":"        166      1  6.312500     3\n"}
+,{"stream_name":"stdout","time":96.618685229,"data":"        167      1  8.835938     3\n"}
+,{"stream_name":"stdout","time":96.618688456,"data":"        180      1  1.818359     3\n"}
+,{"stream_name":"stdout","time":96.618691483,"data":"        192      1 -3.337891     3\n"}
+,{"stream_name":"stdout","time":96.618694441,"data":"        209      1  5.707031     3\n"}
+,{"stream_name":"stdout","time":96.618697593,"data":"        216      1  6.675781     3\n"}
+,{"stream_name":"stdout","time":96.618707957,"data":"        224      1  6.703125     3\n"}
+,{"stream_name":"stdout","time":96.618710958,"data":"        239      0 -6.753906     3\n"}
+,{"stream_name":"stdout","time":96.618713862,"data":"        240      1  8.578125     3\n"}
+,{"stream_name":"stdout","time":96.618739003,"data":"        249      1  1.771484     3\n"}
+,{"stream_name":"stdout","time":96.618744201,"data":"        268      0 -5.179688     3\n"}
+,{"stream_name":"stdout","time":96.618748497,"data":"        282      1  2.267578     3\n"}
+,{"stream_name":"stdout","time":96.618753064,"data":"        297      0 -6.496094     3\n"}
+,{"stream_name":"stdout","time":96.618757644,"data":"        306      1  9.953125     3\n"}
+,{"stream_name":"stdout","time":96.618762288,"data":"        308      1  7.539062     3\n"}
+,{"stream_name":"stdout","time":96.61876705,"data":"        313      1  4.902344     3\n"}
+,{"stream_name":"stdout","time":96.618771978,"data":"        322      0 -5.707031     3\n"}
+,{"stream_name":"stdout","time":96.618776801,"data":"        329      1  7.480469     3\n"}
+,{"stream_name":"stdout","time":96.624260358,"data":"\n"}
+,{"stream_name":"stdout","time":96.624293636,"data":"--- convnextlinrel/der_mil/oof_fold4.csv (670 rows)\n"}
+,{"stream_name":"stdout","time":96.625918608,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.625947289,"data":"        145      1  6.203125     4\n"}
+,{"stream_name":"stdout","time":96.625953211,"data":"        152      1  3.369141     4\n"}
+,{"stream_name":"stdout","time":96.625958068,"data":"        156      1  2.699219     4\n"}
+,{"stream_name":"stdout","time":96.625962736,"data":"        158      1  6.386719     4\n"}
+,{"stream_name":"stdout","time":96.625967284,"data":"        196      0 -6.257812     4\n"}
+,{"stream_name":"stdout","time":96.625971953,"data":"        202      1  4.519531     4\n"}
+,{"stream_name":"stdout","time":96.625976736,"data":"        235      1  0.686523     4\n"}
+,{"stream_name":"stdout","time":96.625981169,"data":"        237      0 -5.835938     4\n"}
+,{"stream_name":"stdout","time":96.625986006,"data":"        247      0 -5.925781     4\n"}
+,{"stream_name":"stdout","time":96.625989306,"data":"        248      0 -6.105469     4\n"}
+,{"stream_name":"stdout","time":96.625992201,"data":"        256      0 -6.222656     4\n"}
+,{"stream_name":"stdout","time":96.625995189,"data":"        257      1  0.850586     4\n"}
+,{"stream_name":"stdout","time":96.625998062,"data":"        259      1  6.437500     4\n"}
+,{"stream_name":"stdout","time":96.626000959,"data":"        270      0 -5.910156     4\n"}
+,{"stream_name":"stdout","time":96.626003916,"data":"        274      1  4.375000     4\n"}
+,{"stream_name":"stdout","time":96.626006889,"data":"        276      1  6.386719     4\n"}
+,{"stream_name":"stdout","time":96.626009896,"data":"        296      1  6.414062     4\n"}
+,{"stream_name":"stdout","time":96.626016778,"data":"        312      1  6.371094     4\n"}
+,{"stream_name":"stdout","time":96.626019844,"data":"        316      1  2.015625     4\n"}
+,{"stream_name":"stdout","time":96.626022838,"data":"        320      1  5.656250     4\n"}
+,{"stream_name":"stdout","time":96.631003579,"data":"\n"}
+,{"stream_name":"stdout","time":96.631033446,"data":"--- convnextlinrel/der_mil/oof_summary.json\n"}
+,{"stream_name":"stdout","time":96.633059984,"data":"{\n"}
+,{"stream_name":"stdout","time":96.633080037,"data":"  \"per_fold_roc_auc\": [\n"}
+,{"stream_name":"stdout","time":96.633085635,"data":"    0.9874078341013826,\n"}
+,{"stream_name":"stdout","time":96.633094814,"data":"    0.9890092165898617,\n"}
+,{"stream_name":"stdout","time":96.633099476,"data":"    0.9846074380165288,\n"}
+,{"stream_name":"stdout","time":96.633105436,"data":"    0.9934171258034894,\n"}
+,{"stream_name":"stdout","time":96.633109923,"data":"    0.9950822510822511\n"}
+,{"stream_name":"stdout","time":96.633114653,"data":"  ],\n"}
+,{"stream_name":"stdout","time":96.633119191,"data":"  \"pooled\": {\n"}
+,{"stream_name":"stdout","time":96.633124148,"data":"    \"roc_auc\": 0.9862898299474895,\n"}
+,{"stream_name":"stdout","time":96.633129318,"data":"    \"pr_auc\": 0.9732275387611223,\n"}
+,{"stream_name":"stdout","time":96.633134191,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":96.633139051,"data":"    \"sensitivity\": 0.879133409350057,\n"}
+,{"stream_name":"stdout","time":96.633143026,"data":"    \"specificity\": 0.9886960032297134,\n"}
+,{"stream_name":"stdout","time":96.633146206,"data":"    \"precision\": 0.9649561952440551,\n"}
+,{"stream_name":"stdout","time":96.633149349,"data":"    \"f1\": 0.9200477326968974,\n"}
+,{"stream_name":"stdout","time":96.633153162,"data":"    \"accuracy\": 0.9600477042337507,\n"}
+,{"stream_name":"stdout","time":96.633167628,"data":"    \"tp\": 771,\n"}
+,{"stream_name":"stdout","time":96.633170863,"data":"    \"tn\": 2449,\n"}
+,{"stream_name":"stdout","time":96.633173921,"data":"    \"fp\": 28,\n"}
+,{"stream_name":"stdout","time":96.633176853,"data":"    \"fn\": 106,\n"}
+,{"stream_name":"stdout","time":96.633179857,"data":"    \"brier\": 0.0338377864883382,\n"}
+,{"stream_name":"stdout","time":96.633183095,"data":"    \"n\": 3354,\n"}
+,{"stream_name":"stdout","time":96.633186197,"data":"    \"prevalence\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":96.633190671,"data":"  }\n"}
+,{"stream_name":"stdout","time":96.633195202,"data":"}\n"}
+,{"stream_name":"stdout","time":96.641348307,"data":"\n"}
+,{"stream_name":"stdout","time":96.641381974,"data":"--- convnextlinrel/der_mil/test_predictions.csv (739 rows)\n"}
+,{"stream_name":"stdout","time":96.644063479,"data":" patient_id  label     logit    p_raw    p_cal  p_shift\n"}
+,{"stream_name":"stdout","time":96.64409746,"data":"        126      1  5.796875 0.996972 0.974902 0.990132\n"}
+,{"stream_name":"stdout","time":96.644103377,"data":"        133      1  5.640625 0.996462 0.972372 0.989120\n"}
+,{"stream_name":"stdout","time":96.64410876,"data":"        135      1 -3.382812 0.032837 0.105687 0.233860\n"}
+,{"stream_name":"stdout","time":96.644113369,"data":"        136      1  4.152344 0.984516 0.932225 0.972623\n"}
+,{"stream_name":"stdout","time":96.64411828,"data":"        142      1  8.062500 0.999685 0.993879 0.997621\n"}
+,{"stream_name":"stdout","time":96.644122627,"data":"        147      1  6.097656 0.997757 0.979152 0.991824\n"}
+,{"stream_name":"stdout","time":96.644127415,"data":"        153      1  5.925781 0.997337 0.976818 0.990896\n"}
+,{"stream_name":"stdout","time":96.644132159,"data":"        157      1  8.718750 0.999837 0.995947 0.998427\n"}
+,{"stream_name":"stdout","time":96.644136531,"data":"        160      1  5.761719 0.996864 0.974354 0.989912\n"}
+,{"stream_name":"stdout","time":96.644140876,"data":"        163      1  6.445312 0.998415 0.983192 0.993425\n"}
+,{"stream_name":"stdout","time":96.644145568,"data":"        164      1  7.718750 0.999556 0.992407 0.997046\n"}
+,{"stream_name":"stdout","time":96.64415016,"data":"        169      1 11.085938 0.999985 0.999088 0.999647\n"}
+,{"stream_name":"stdout","time":96.644155003,"data":"        170      1  8.781250 0.999846 0.996103 0.998488\n"}
+,{"stream_name":"stdout","time":96.644159052,"data":"        171      1  8.390625 0.999773 0.995018 0.998065\n"}
+,{"stream_name":"stdout","time":96.644162232,"data":"        177      1  9.562500 0.999930 0.997617 0.999076\n"}
+,{"stream_name":"stdout","time":96.644165419,"data":"        178      1  8.867188 0.999859 0.996308 0.998567\n"}
+,{"stream_name":"stdout","time":96.644168537,"data":"        179      1  5.953125 0.997409 0.977206 0.991050\n"}
+,{"stream_name":"stdout","time":96.644171495,"data":"        184      1  8.664062 0.999827 0.995805 0.998372\n"}
+,{"stream_name":"stdout","time":96.644174419,"data":"        203      1 -6.812500 0.001099 0.013377 0.033836\n"}
+,{"stream_name":"stdout","time":96.64417742,"data":"        205      1 -6.078125 0.002287 0.021101 0.052740\n"}
+,{"stream_name":"stdout","time":96.651038483,"data":"\n"}
+,{"stream_name":"stdout","time":96.651071834,"data":"--- convnextlinrel/der_mil/test_results.json\n"}
+,{"stream_name":"stdout","time":96.652027845,"data":"{\n"}
+,{"stream_name":"stdout","time":96.65205264,"data":"  \"model\": \"der_mil\",\n"}
+,{"stream_name":"stdout","time":96.65205885,"data":"  \"n_test\": 739,\n"}
+,{"stream_name":"stdout","time":96.652079515,"data":"  \"final_mode\": \"refit\",\n"}
+,{"stream_name":"stdout","time":96.652084749,"data":"  \"raw@0.5\": {\n"}
+,{"stream_name":"stdout","time":96.652089608,"data":"    \"roc_auc\": 0.9894281436686287,\n"}
+,{"stream_name":"stdout","time":96.652182269,"data":"    \"pr_auc\": 0.9849383505879502,\n"}
+,{"stream_name":"stdout","time":96.652200257,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":96.652233836,"data":"    \"sensitivity\": 0.8810198300283286,\n"}
+,{"stream_name":"stdout","time":96.652237803,"data":"    \"specificity\": 0.9948186528497409,\n"}
+,{"stream_name":"stdout","time":96.65224099,"data":"    \"precision\": 0.9936102236421726,\n"}
+,{"stream_name":"stdout","time":96.652244238,"data":"    \"f1\": 0.933933933933934,\n"}
+,{"stream_name":"stdout","time":96.652247316,"data":"    \"accuracy\": 0.9404600811907984,\n"}
+,{"stream_name":"stdout","time":96.65225057399999,"data":"    \"tp\": 311,\n"}
+,{"stream_name":"stdout","time":96.652253542,"data":"    \"tn\": 384,\n"}
+,{"stream_name":"stdout","time":96.652256609,"data":"    \"fp\": 2,\n"}
+,{"stream_name":"stdout","time":96.652259617,"data":"    \"fn\": 42,\n"}
+,{"stream_name":"stdout","time":96.652262677,"data":"    \"brier\": 0.05525444174460343,\n"}
+,{"stream_name":"stdout","time":96.652265907,"data":"    \"n\": 739,\n"}
+,{"stream_name":"stdout","time":96.652268876,"data":"    \"prevalence\": 0.4776725304465494\n"}
+,{"stream_name":"stdout","time":96.652272043,"data":"  },\n"}
+,{"stream_name":"stdout","time":96.652274986,"data":"  \"cal@youden\": {\n"}
+,{"stream_name":"stdout","time":96.65227813,"data":"    \"roc_auc\": 0.9894281436686287,\n"}
+,{"stream_name":"stdout","time":96.652281283,"data":"    \"pr_auc\": 0.9849383505879502,\n"}
+,{"stream_name":"stdout","time":96.652284239,"data":"    \"threshold\": 0.1392956127984957,\n"}
+,{"stream_name":"stdout","time":96.652287306,"data":"    \"sensitivity\": 0.9121813031161473,\n"}
+,{"stream_name":"stdout","time":96.652290324,"data":"    \"specificity\": 0.9922279792746114,\n"}
+,{"stream_name":"stdout","time":96.65229326,"data":"    \"precision\": 0.9907692307692307,\n"}
+,{"stream_name":"stdout","time":96.65229626,"data":"    \"f1\": 0.9498525073746313,\n"}
+,{"stream_name":"stdout","time":96.652299425,"data":"    \"accuracy\": 0.95399188092016\n"}
+,{"stream_name":"stdout","time":96.658847205,"data":"\n"}
+,{"stream_name":"stdout","time":96.658880826,"data":"--- convnextlinrel/_tables/development_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":96.6621101,"data":"  model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n\n"}
+,{"stream_name":"stdout","time":96.662161495,"data":"der_mil         0.98629           0.989905          0.003853 0.973228     0.879133     0.988696   0.964956 0.920048 0.033838 3354\n"}
+,{"stream_name":"stdout","time":96.664568346,"data":"\n"}
+,{"stream_name":"stdout","time":96.664602838,"data":"--- convnextlinrel/_tables/index.json\n"}
+,{"stream_name":"stdout","time":96.665188888,"data":"{\n"}
+,{"stream_name":"stdout","time":96.665213433,"data":"  \"development_comparison\": \"/kaggle/working/results/convnextlinrel/_tables/development_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":96.665220281,"data":"  \"test_comparison\": \"/kaggle/working/results/convnextlinrel/_tables/test_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":96.665225433,"data":"  \"thresholds_der_mil\": \"/kaggle/working/results/convnextlinrel/_tables/thresholds_der_mil.csv\"\n"}
+,{"stream_name":"stdout","time":96.665230489,"data":"}\n"}
+,{"stream_name":"stdout","time":96.671003776,"data":"\n"}
+,{"stream_name":"stdout","time":96.67103833,"data":"--- convnextlinrel/_tables/test_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":96.675980256,"data":"  model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci\n"}
+,{"stream_name":"stdout","time":96.676024774,"data":"der_mil 0.989428 0.984938        0.5      0.88102     0.994819    0.99361 0.933934   0.94046 311 384   2  42 0.055254 739    0.477673 [0.981, 0.995] [0.967, 0.996] [0.844, 0.915] [0.987, 1.000] [0.984, 1.000] [0.913, 0.953]\n"}
+,{"stream_name":"stdout","time":96.681431217,"data":"\n"}
+,{"stream_name":"stdout","time":96.681465279,"data":"--- convnextlinrel/_tables/thresholds_der_mil.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":96.685466577,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":96.685505239,"data":"          Raw @ 0.5   0.500000     0.881020     0.994819   0.993610 0.933934 0.989428 0.055254 311   2 384  42\n"}
+,{"stream_name":"stdout","time":96.685511714,"data":"Calibrated @ youden   0.139296     0.912181     0.992228   0.990769 0.949853 0.989428 0.052625 322   3 383  31\n"}
+,{"stream_name":"stdout","time":96.685516505,"data":"Calibrated @ sens90   0.306429     0.889518     0.994819   0.993671 0.938714 0.989428 0.052625 314   2 384  39\n"}
+,{"stream_name":"stdout","time":96.685521293,"data":"Prior-shifted @ 0.5   0.500000     0.895184     0.994819   0.993711 0.941878 0.989428 0.043693 316   2 384  37\n"}
+,{"stream_name":"stdout","time":96.687615677,"data":"\n"}
+,{"stream_name":"stdout","time":96.687667116,"data":"--- der_mil/calibration.json\n"}
+,{"stream_name":"stdout","time":96.688145456,"data":"{\n"}
+,{"stream_name":"stdout","time":96.688167888,"data":"  \"temperature\": 1.5840327739715576,\n"}
+,{"stream_name":"stdout","time":96.688173359,"data":"  \"thresholds\": {\n"}
+,{"stream_name":"stdout","time":96.688177831,"data":"    \"raw\": 0.5,\n"}
+,{"stream_name":"stdout","time":96.688182315,"data":"    \"youden\": 0.1392956127984957,\n"}
+,{"stream_name":"stdout","time":96.688187077,"data":"    \"sens90\": 0.30642895223758204\n"}
+,{"stream_name":"stdout","time":96.688191602,"data":"  },\n"}
+,{"stream_name":"stdout","time":96.688196019,"data":"  \"p_dev\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":96.688200614,"data":"}\n"}
+,{"stream_name":"stdout","time":96.691798298,"data":"\n"}
+,{"stream_name":"stdout","time":96.691835084,"data":"--- der_mil/calibration_table.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":96.694158265,"data":"   cohort                     condition      ece    brier  ece_benign  ece_malignant\n"}
+,{"stream_name":"stdout","time":96.694204552,"data":"Dev (OOF)          Before temp. scaling 0.029204 0.033838    0.016831       0.123483\n"}
+,{"stream_name":"stdout","time":96.694281385,"data":"Dev (OOF) After temp. scaling (T=1.584) 0.016530 0.031842    0.036764       0.131226\n"}
+,{"stream_name":"stdout","time":96.694295251,"data":" Test set            Temp. scaling only 0.061659 0.052625    0.008995       0.138917\n"}
+,{"stream_name":"stdout","time":96.694298985,"data":" Test set      + Prior-shift correction 0.045183 0.043693    0.014890       0.110871\n"}
+,{"stream_name":"stdout","time":96.700066017,"data":"\n"}
+,{"stream_name":"stdout","time":96.700160655,"data":"--- der_mil/oof.csv (3354 rows)\n"}
+,{"stream_name":"stdout","time":96.701776292,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.701822472,"data":"        141      0 -5.960938     0\n"}
+,{"stream_name":"stdout","time":96.701828795,"data":"        143      1 -0.951172     0\n"}
+,{"stream_name":"stdout","time":96.701831978,"data":"        149      1  1.336914     0\n"}
+,{"stream_name":"stdout","time":96.701834927,"data":"        150      1  6.453125     0\n"}
+,{"stream_name":"stdout","time":96.701837899,"data":"        159      1  9.156250     0\n"}
+,{"stream_name":"stdout","time":96.701840899,"data":"        168      1  9.304688     0\n"}
+,{"stream_name":"stdout","time":96.701843844,"data":"        186      1  6.011719     0\n"}
+,{"stream_name":"stdout","time":96.701846752,"data":"        187      1 -2.716797     0\n"}
+,{"stream_name":"stdout","time":96.701849821,"data":"        194      1  4.925781     0\n"}
+,{"stream_name":"stdout","time":96.701853388,"data":"        212      1  9.539062     0\n"}
+,{"stream_name":"stdout","time":96.701858196,"data":"        213      1  9.390625     0\n"}
+,{"stream_name":"stdout","time":96.701861498,"data":"        218      1  9.273438     0\n"}
+,{"stream_name":"stdout","time":96.701864454,"data":"        221      1  6.207031     0\n"}
+,{"stream_name":"stdout","time":96.70186733,"data":"        229      0 -4.375000     0\n"}
+,{"stream_name":"stdout","time":96.701870208,"data":"        244      1 -1.626953     0\n"}
+,{"stream_name":"stdout","time":96.701873077,"data":"        245      0 -4.648438     0\n"}
+,{"stream_name":"stdout","time":96.701876078,"data":"        250      1  8.273438     0\n"}
+,{"stream_name":"stdout","time":96.70187895,"data":"        255      1  9.398438     0\n"}
+,{"stream_name":"stdout","time":96.701881823,"data":"        262      0 -5.039062     0\n"}
+,{"stream_name":"stdout","time":96.701884852,"data":"        265      1  9.335938     0\n"}
+,{"stream_name":"stdout","time":96.705015427,"data":"\n"}
+,{"stream_name":"stdout","time":96.705044902,"data":"--- der_mil/oof_fold0.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.70675415,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.706783887,"data":"        141      0 -5.960938     0\n"}
+,{"stream_name":"stdout","time":96.706790291,"data":"        143      1 -0.951172     0\n"}
+,{"stream_name":"stdout","time":96.70679508,"data":"        149      1  1.336914     0\n"}
+,{"stream_name":"stdout","time":96.70679981,"data":"        150      1  6.453125     0\n"}
+,{"stream_name":"stdout","time":96.70680471,"data":"        159      1  9.156250     0\n"}
+,{"stream_name":"stdout","time":96.70680787,"data":"        168      1  9.304688     0\n"}
+,{"stream_name":"stdout","time":96.706810861,"data":"        186      1  6.011719     0\n"}
+,{"stream_name":"stdout","time":96.706813983,"data":"        187      1 -2.716797     0\n"}
+,{"stream_name":"stdout","time":96.706817005,"data":"        194      1  4.925781     0\n"}
+,{"stream_name":"stdout","time":96.70681993,"data":"        212      1  9.539062     0\n"}
+,{"stream_name":"stdout","time":96.70682286,"data":"        213      1  9.390625     0\n"}
+,{"stream_name":"stdout","time":96.706825777,"data":"        218      1  9.273438     0\n"}
+,{"stream_name":"stdout","time":96.706829254,"data":"        221      1  6.207031     0\n"}
+,{"stream_name":"stdout","time":96.706832287,"data":"        229      0 -4.375000     0\n"}
+,{"stream_name":"stdout","time":96.706835258,"data":"        244      1 -1.626953     0\n"}
+,{"stream_name":"stdout","time":96.70683844,"data":"        245      0 -4.648438     0\n"}
+,{"stream_name":"stdout","time":96.706853607,"data":"        250      1  8.273438     0\n"}
+,{"stream_name":"stdout","time":96.70685676,"data":"        255      1  9.398438     0\n"}
+,{"stream_name":"stdout","time":96.70685974,"data":"        262      0 -5.039062     0\n"}
+,{"stream_name":"stdout","time":96.706862777,"data":"        265      1  9.335938     0\n"}
+,{"stream_name":"stdout","time":96.709875673,"data":"\n"}
+,{"stream_name":"stdout","time":96.709904115,"data":"--- der_mil/oof_fold1.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.711529413,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.711557129,"data":"        127      0 -6.421875     1\n"}
+,{"stream_name":"stdout","time":96.7115627,"data":"        146      1  5.007812     1\n"}
+,{"stream_name":"stdout","time":96.711567482,"data":"        151      1  9.914062     1\n"}
+,{"stream_name":"stdout","time":96.711571948,"data":"        182      0 -4.960938     1\n"}
+,{"stream_name":"stdout","time":96.71157647,"data":"        183      1 -0.324219     1\n"}
+,{"stream_name":"stdout","time":96.711580578,"data":"        195      1 -0.312256     1\n"}
+,{"stream_name":"stdout","time":96.711585137,"data":"        198      1  3.333984     1\n"}
+,{"stream_name":"stdout","time":96.711589289,"data":"        200      1  9.476562     1\n"}
+,{"stream_name":"stdout","time":96.71159375,"data":"        201      1 -4.156250     1\n"}
+,{"stream_name":"stdout","time":96.71159851,"data":"        206      1  3.871094     1\n"}
+,{"stream_name":"stdout","time":96.711603155,"data":"        207      0 -5.265625     1\n"}
+,{"stream_name":"stdout","time":96.711607882,"data":"        223      1  9.476562     1\n"}
+,{"stream_name":"stdout","time":96.711613276,"data":"        241      1  9.914062     1\n"}
+,{"stream_name":"stdout","time":96.711616468,"data":"        269      0 -6.335938     1\n"}
+,{"stream_name":"stdout","time":96.711619678,"data":"        271      0 -5.300781     1\n"}
+,{"stream_name":"stdout","time":96.711622745,"data":"        272      1  7.562500     1\n"}
+,{"stream_name":"stdout","time":96.711625718,"data":"        311      0 -5.574219     1\n"}
+,{"stream_name":"stdout","time":96.711628918,"data":"        321      1  9.648438     1\n"}
+,{"stream_name":"stdout","time":96.711631955,"data":"        327      0 -6.121094     1\n"}
+,{"stream_name":"stdout","time":96.711634848,"data":"        328      1  2.619141     1\n"}
+,{"stream_name":"stdout","time":96.714386908,"data":"\n"}
+,{"stream_name":"stdout","time":96.71441708,"data":"--- der_mil/oof_fold2.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.71593914,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.71595968,"data":"        132      1  7.042969     2\n"}
+,{"stream_name":"stdout","time":96.715964502,"data":"        140      0 -6.527344     2\n"}
+,{"stream_name":"stdout","time":96.7159686,"data":"        144      1  8.031250     2\n"}
+,{"stream_name":"stdout","time":96.71597301,"data":"        155      1  5.796875     2\n"}
+,{"stream_name":"stdout","time":96.715977717,"data":"        162      0  7.718750     2\n"}
+,{"stream_name":"stdout","time":96.71598237,"data":"        165      1  9.257812     2\n"}
+,{"stream_name":"stdout","time":96.715987145,"data":"        172      1  7.605469     2\n"}
+,{"stream_name":"stdout","time":96.715991769,"data":"        173      1 -4.625000     2\n"}
+,{"stream_name":"stdout","time":96.715996598,"data":"        175      1  7.093750     2\n"}
+,{"stream_name":"stdout","time":96.716001228,"data":"        176      0 -3.460938     2\n"}
+,{"stream_name":"stdout","time":96.716016748,"data":"        188      1  7.597656     2\n"}
+,{"stream_name":"stdout","time":96.716020052,"data":"        193      1 -6.558594     2\n"}
+,{"stream_name":"stdout","time":96.71602305,"data":"        199      0  1.290039     2\n"}
+,{"stream_name":"stdout","time":96.716026036,"data":"        204      0 -5.191406     2\n"}
+,{"stream_name":"stdout","time":96.71602898,"data":"        210      1  9.070312     2\n"}
+,{"stream_name":"stdout","time":96.716031942,"data":"        230      1 -2.300781     2\n"}
+,{"stream_name":"stdout","time":96.716034805,"data":"        234      0 -1.893555     2\n"}
+,{"stream_name":"stdout","time":96.71603765,"data":"        236      1  9.046875     2\n"}
+,{"stream_name":"stdout","time":96.716040513,"data":"        242      1  1.826172     2\n"}
+,{"stream_name":"stdout","time":96.716043452,"data":"        251      0 -3.187500     2\n"}
+,{"stream_name":"stdout","time":96.718796184,"data":"\n"}
+,{"stream_name":"stdout","time":96.718822972,"data":"--- der_mil/oof_fold3.csv (671 rows)\n"}
+,{"stream_name":"stdout","time":96.72035724,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.720373006,"data":"         58      0 -8.343750     3\n"}
+,{"stream_name":"stdout","time":96.720378066,"data":"        139      1  4.031250     3\n"}
+,{"stream_name":"stdout","time":96.720382753,"data":"        166      1  6.312500     3\n"}
+,{"stream_name":"stdout","time":96.720387041,"data":"        167      1  8.835938     3\n"}
+,{"stream_name":"stdout","time":96.720391919,"data":"        180      1  1.818359     3\n"}
+,{"stream_name":"stdout","time":96.720396713,"data":"        192      1 -3.337891     3\n"}
+,{"stream_name":"stdout","time":96.720401248,"data":"        209      1  5.707031     3\n"}
+,{"stream_name":"stdout","time":96.720405482,"data":"        216      1  6.675781     3\n"}
+,{"stream_name":"stdout","time":96.720410082,"data":"        224      1  6.703125     3\n"}
+,{"stream_name":"stdout","time":96.720414703,"data":"        239      0 -6.753906     3\n"}
+,{"stream_name":"stdout","time":96.72041961,"data":"        240      1  8.578125     3\n"}
+,{"stream_name":"stdout","time":96.72042432800001,"data":"        249      1  1.771484     3\n"}
+,{"stream_name":"stdout","time":96.720428431,"data":"        268      0 -5.179688     3\n"}
+,{"stream_name":"stdout","time":96.720431508,"data":"        282      1  2.267578     3\n"}
+,{"stream_name":"stdout","time":96.720434427,"data":"        297      0 -6.496094     3\n"}
+,{"stream_name":"stdout","time":96.720437381,"data":"        306      1  9.953125     3\n"}
+,{"stream_name":"stdout","time":96.720440241,"data":"        308      1  7.539062     3\n"}
+,{"stream_name":"stdout","time":96.720443088,"data":"        313      1  4.902344     3\n"}
+,{"stream_name":"stdout","time":96.72044596,"data":"        322      0 -5.707031     3\n"}
+,{"stream_name":"stdout","time":96.720448909,"data":"        329      1  7.480469     3\n"}
+,{"stream_name":"stdout","time":96.722993652,"data":"\n"}
+,{"stream_name":"stdout","time":96.723016373,"data":"--- der_mil/oof_fold4.csv (670 rows)\n"}
+,{"stream_name":"stdout","time":96.724791678,"data":" patient_id  label     logit  fold\n"}
+,{"stream_name":"stdout","time":96.724814764,"data":"        145      1  6.203125     4\n"}
+,{"stream_name":"stdout","time":96.724820219,"data":"        152      1  3.369141     4\n"}
+,{"stream_name":"stdout","time":96.724825141,"data":"        156      1  2.699219     4\n"}
+,{"stream_name":"stdout","time":96.724844846,"data":"        158      1  6.386719     4\n"}
+,{"stream_name":"stdout","time":96.724848526,"data":"        196      0 -6.257812     4\n"}
+,{"stream_name":"stdout","time":96.724851525,"data":"        202      1  4.519531     4\n"}
+,{"stream_name":"stdout","time":96.724854518,"data":"        235      1  0.686523     4\n"}
+,{"stream_name":"stdout","time":96.724857438,"data":"        237      0 -5.835938     4\n"}
+,{"stream_name":"stdout","time":96.724860399,"data":"        247      0 -5.925781     4\n"}
+,{"stream_name":"stdout","time":96.724863332,"data":"        248      0 -6.105469     4\n"}
+,{"stream_name":"stdout","time":96.724866221,"data":"        256      0 -6.222656     4\n"}
+,{"stream_name":"stdout","time":96.724869166,"data":"        257      1  0.850586     4\n"}
+,{"stream_name":"stdout","time":96.724872156,"data":"        259      1  6.437500     4\n"}
+,{"stream_name":"stdout","time":96.724875021,"data":"        270      0 -5.910156     4\n"}
+,{"stream_name":"stdout","time":96.724877888,"data":"        274      1  4.375000     4\n"}
+,{"stream_name":"stdout","time":96.724880778,"data":"        276      1  6.386719     4\n"}
+,{"stream_name":"stdout","time":96.724883761,"data":"        296      1  6.414062     4\n"}
+,{"stream_name":"stdout","time":96.724886656,"data":"        312      1  6.371094     4\n"}
+,{"stream_name":"stdout","time":96.724889522,"data":"        316      1  2.015625     4\n"}
+,{"stream_name":"stdout","time":96.724892493,"data":"        320      1  5.656250     4\n"}
+,{"stream_name":"stdout","time":96.725570732,"data":"\n"}
+,{"stream_name":"stdout","time":96.725583629,"data":"--- der_mil/oof_summary.json\n"}
+,{"stream_name":"stdout","time":96.726161308,"data":"{\n"}
+,{"stream_name":"stdout","time":96.726179532,"data":"  \"per_fold_roc_auc\": [\n"}
+,{"stream_name":"stdout","time":96.726185187,"data":"    0.9874078341013826,\n"}
+,{"stream_name":"stdout","time":96.726190335,"data":"    0.9890092165898617,\n"}
+,{"stream_name":"stdout","time":96.726194822,"data":"    0.9846074380165288,\n"}
+,{"stream_name":"stdout","time":96.726199491,"data":"    0.9934171258034894,\n"}
+,{"stream_name":"stdout","time":96.726204387,"data":"    0.9950822510822511\n"}
+,{"stream_name":"stdout","time":96.726209073,"data":"  ],\n"}
+,{"stream_name":"stdout","time":96.726213806,"data":"  \"pooled\": {\n"}
+,{"stream_name":"stdout","time":96.726218406,"data":"    \"roc_auc\": 0.9862898299474895,\n"}
+,{"stream_name":"stdout","time":96.726223818,"data":"    \"pr_auc\": 0.9732275387611223,\n"}
+,{"stream_name":"stdout","time":96.726227488,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":96.726230816,"data":"    \"sensitivity\": 0.879133409350057,\n"}
+,{"stream_name":"stdout","time":96.726234003,"data":"    \"specificity\": 0.9886960032297134,\n"}
+,{"stream_name":"stdout","time":96.726237147,"data":"    \"precision\": 0.9649561952440551,\n"}
+,{"stream_name":"stdout","time":96.726240199,"data":"    \"f1\": 0.9200477326968974,\n"}
+,{"stream_name":"stdout","time":96.726243406,"data":"    \"accuracy\": 0.9600477042337507,\n"}
+,{"stream_name":"stdout","time":96.726246475,"data":"    \"tp\": 771,\n"}
+,{"stream_name":"stdout","time":96.726249461,"data":"    \"tn\": 2449,\n"}
+,{"stream_name":"stdout","time":96.726252439,"data":"    \"fp\": 28,\n"}
+,{"stream_name":"stdout","time":96.726255494,"data":"    \"fn\": 106,\n"}
+,{"stream_name":"stdout","time":96.726258559,"data":"    \"brier\": 0.0338377864883382,\n"}
+,{"stream_name":"stdout","time":96.726265564,"data":"    \"n\": 3354,\n"}
+,{"stream_name":"stdout","time":96.726277618,"data":"    \"prevalence\": 0.2614788312462731\n"}
+,{"stream_name":"stdout","time":96.726280976,"data":"  }\n"}
+,{"stream_name":"stdout","time":96.726283921,"data":"}\n"}
+,{"stream_name":"stdout","time":96.730414178,"data":"\n"}
+,{"stream_name":"stdout","time":96.730444456,"data":"--- der_mil/test_predictions.csv (739 rows)\n"}
+,{"stream_name":"stdout","time":96.733169486,"data":" patient_id  label     logit    p_raw    p_cal  p_shift\n"}
+,{"stream_name":"stdout","time":96.733197546,"data":"        126      1  5.796875 0.996972 0.974902 0.990132\n"}
+,{"stream_name":"stdout","time":96.733202827,"data":"        133      1  5.640625 0.996462 0.972372 0.989120\n"}
+,{"stream_name":"stdout","time":96.733207709,"data":"        135      1 -3.382812 0.032837 0.105687 0.233860\n"}
+,{"stream_name":"stdout","time":96.733212418,"data":"        136      1  4.152344 0.984516 0.932225 0.972623\n"}
+,{"stream_name":"stdout","time":96.733217116,"data":"        142      1  8.062500 0.999685 0.993879 0.997621\n"}
+,{"stream_name":"stdout","time":96.733221667,"data":"        147      1  6.097656 0.997757 0.979152 0.991824\n"}
+,{"stream_name":"stdout","time":96.733226187,"data":"        153      1  5.925781 0.997337 0.976818 0.990896\n"}
+,{"stream_name":"stdout","time":96.733231697,"data":"        157      1  8.718750 0.999837 0.995947 0.998427\n"}
+,{"stream_name":"stdout","time":96.733234993,"data":"        160      1  5.761719 0.996864 0.974354 0.989912\n"}
+,{"stream_name":"stdout","time":96.733238231,"data":"        163      1  6.445312 0.998415 0.983192 0.993425\n"}
+,{"stream_name":"stdout","time":96.733241319,"data":"        164      1  7.718750 0.999556 0.992407 0.997046\n"}
+,{"stream_name":"stdout","time":96.733244438,"data":"        169      1 11.085938 0.999985 0.999088 0.999647\n"}
+,{"stream_name":"stdout","time":96.733247494,"data":"        170      1  8.781250 0.999846 0.996103 0.998488\n"}
+,{"stream_name":"stdout","time":96.733250418,"data":"        171      1  8.390625 0.999773 0.995018 0.998065\n"}
+,{"stream_name":"stdout","time":96.733253344,"data":"        177      1  9.562500 0.999930 0.997617 0.999076\n"}
+,{"stream_name":"stdout","time":96.733256347,"data":"        178      1  8.867188 0.999859 0.996308 0.998567\n"}
+,{"stream_name":"stdout","time":96.733259301,"data":"        179      1  5.953125 0.997409 0.977206 0.991050\n"}
+,{"stream_name":"stdout","time":96.733262221,"data":"        184      1  8.664062 0.999827 0.995805 0.998372\n"}
+,{"stream_name":"stdout","time":96.733265141,"data":"        203      1 -6.812500 0.001099 0.013377 0.033836\n"}
+,{"stream_name":"stdout","time":96.733268201,"data":"        205      1 -6.078125 0.002287 0.021101 0.052740\n"}
+,{"stream_name":"stdout","time":96.738079791,"data":"\n"}
+,{"stream_name":"stdout","time":96.738098361,"data":"--- der_mil/test_results.json\n"}
+,{"stream_name":"stdout","time":96.738933576,"data":"{\n"}
+,{"stream_name":"stdout","time":96.738950907,"data":"  \"model\": \"der_mil\",\n"}
+,{"stream_name":"stdout","time":96.738956434,"data":"  \"n_test\": 739,\n"}
+,{"stream_name":"stdout","time":96.738961358,"data":"  \"final_mode\": \"refit\",\n"}
+,{"stream_name":"stdout","time":96.738966877,"data":"  \"raw@0.5\": {\n"}
+,{"stream_name":"stdout","time":96.738971733,"data":"    \"roc_auc\": 0.9894281436686287,\n"}
+,{"stream_name":"stdout","time":96.738976763,"data":"    \"pr_auc\": 0.9849383505879502,\n"}
+,{"stream_name":"stdout","time":96.738981017,"data":"    \"threshold\": 0.5,\n"}
+,{"stream_name":"stdout","time":96.738985266,"data":"    \"sensitivity\": 0.8810198300283286,\n"}
+,{"stream_name":"stdout","time":96.739002046,"data":"    \"specificity\": 0.9948186528497409,\n"}
+,{"stream_name":"stdout","time":96.739005759,"data":"    \"precision\": 0.9936102236421726,\n"}
+,{"stream_name":"stdout","time":96.739010431,"data":"    \"f1\": 0.933933933933934,\n"}
+,{"stream_name":"stdout","time":96.739014819,"data":"    \"accuracy\": 0.9404600811907984,\n"}
+,{"stream_name":"stdout","time":96.739019458,"data":"    \"tp\": 311,\n"}
+,{"stream_name":"stdout","time":96.739023824,"data":"    \"tn\": 384,\n"}
+,{"stream_name":"stdout","time":96.739028281,"data":"    \"fp\": 2,\n"}
+,{"stream_name":"stdout","time":96.739032719,"data":"    \"fn\": 42,\n"}
+,{"stream_name":"stdout","time":96.739036991,"data":"    \"brier\": 0.05525444174460343,\n"}
+,{"stream_name":"stdout","time":96.739041743,"data":"    \"n\": 739,\n"}
+,{"stream_name":"stdout","time":96.739046374,"data":"    \"prevalence\": 0.4776725304465494\n"}
+,{"stream_name":"stdout","time":96.739051319,"data":"  },\n"}
+,{"stream_name":"stdout","time":96.739055696,"data":"  \"cal@youden\": {\n"}
+,{"stream_name":"stdout","time":96.739060358,"data":"    \"roc_auc\": 0.9894281436686287,\n"}
+,{"stream_name":"stdout","time":96.739064941,"data":"    \"pr_auc\": 0.9849383505879502,\n"}
+,{"stream_name":"stdout","time":96.739069536,"data":"    \"threshold\": 0.1392956127984957,\n"}
+,{"stream_name":"stdout","time":96.739074161,"data":"    \"sensitivity\": 0.9121813031161473,\n"}
+,{"stream_name":"stdout","time":96.739078809,"data":"    \"specificity\": 0.9922279792746114,\n"}
+,{"stream_name":"stdout","time":96.739083397,"data":"    \"precision\": 0.9907692307692307,\n"}
+,{"stream_name":"stdout","time":96.739088081,"data":"    \"f1\": 0.9498525073746313,\n"}
+,{"stream_name":"stdout","time":96.73909273,"data":"    \"accuracy\": 0.95399188092016\n"}
+,{"stream_name":"stdout","time":96.74388405,"data":"\n"}
+,{"stream_name":"stdout","time":96.743916039,"data":"--- _tables/development_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":96.746930032,"data":"  model  roc_auc_pooled  roc_auc_fold_mean  roc_auc_fold_std   pr_auc  sensitivity  specificity  precision       f1    brier    n\n"}
+,{"stream_name":"stdout","time":96.746979394,"data":"der_mil         0.98629           0.989905          0.003853 0.973228     0.879133     0.988696   0.964956 0.920048 0.033838 3354\n"}
+,{"stream_name":"stdout","time":96.747842526,"data":"\n"}
+,{"stream_name":"stdout","time":96.747864235,"data":"--- _tables/index.json\n"}
+,{"stream_name":"stdout","time":96.748433582,"data":"{\n"}
+,{"stream_name":"stdout","time":96.748449357,"data":"  \"development_comparison\": \"/kaggle/working/results/convnextlinrel/_tables/development_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":96.748455605,"data":"  \"test_comparison\": \"/kaggle/working/results/convnextlinrel/_tables/test_comparison.csv\",\n"}
+,{"stream_name":"stdout","time":96.748460865,"data":"  \"thresholds_der_mil\": \"/kaggle/working/results/convnextlinrel/_tables/thresholds_der_mil.csv\"\n"}
+,{"stream_name":"stdout","time":96.748466664,"data":"}\n"}
+,{"stream_name":"stdout","time":96.752511845,"data":"\n"}
+,{"stream_name":"stdout","time":96.752545153,"data":"--- _tables/test_comparison.csv (1 rows)\n"}
+,{"stream_name":"stdout","time":96.757379325,"data":"  model  roc_auc   pr_auc  threshold  sensitivity  specificity  precision       f1  accuracy  tp  tn  fp  fn    brier   n  prevalence     roc_auc_ci      pr_auc_ci sensitivity_ci specificity_ci   precision_ci          f1_ci\n"}
+,{"stream_name":"stdout","time":96.75741562,"data":"der_mil 0.989428 0.984938        0.5      0.88102     0.994819    0.99361 0.933934   0.94046 311 384   2  42 0.055254 739    0.477673 [0.981, 0.995] [0.967, 0.996] [0.844, 0.915] [0.987, 1.000] [0.984, 1.000] [0.913, 0.953]\n"}
+,{"stream_name":"stdout","time":96.760511828,"data":"\n"}
+,{"stream_name":"stdout","time":96.760545849,"data":"--- _tables/thresholds_der_mil.csv (4 rows)\n"}
+,{"stream_name":"stdout","time":96.763696444,"data":"    operating_point  threshold  sensitivity  specificity  precision       f1  roc_auc    brier  tp  fp  tn  fn\n"}
+,{"stream_name":"stdout","time":96.763742515,"data":"          Raw @ 0.5   0.500000     0.881020     0.994819   0.993610 0.933934 0.989428 0.055254 311   2 384  42\n"}
+,{"stream_name":"stdout","time":96.763751292,"data":"Calibrated @ youden   0.139296     0.912181     0.992228   0.990769 0.949853 0.989428 0.052625 322   3 383  31\n"}
+,{"stream_name":"stdout","time":96.763756884,"data":"Calibrated @ sens90   0.306429     0.889518     0.994819   0.993671 0.938714 0.989428 0.052625 314   2 384  39\n"}
+,{"stream_name":"stdout","time":96.763761881,"data":"Prior-shifted @ 0.5   0.500000     0.895184     0.994819   0.993711 0.941878 0.989428 0.043693 316   2 384  37\n"}
+,{"stream_name":"stdout","time":96.76476795,"data":"\n"}
+,{"stream_name":"stdout","time":96.764791782,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":96.764797771,"data":"CHECKPOINT INVENTORY -- what actually got saved, regardless of results/\n"}
+,{"stream_name":"stdout","time":96.764802808,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":131.717809294,"data":"\n"}
+,{"stream_name":"stdout","time":131.717856814,"data":"/kaggle/input/notebooks/choudhary15/dermil-linrel/checkpoints/convnextlinrel/der_mil:\n"}
+,{"stream_name":"stdout","time":131.723333674,"data":"  final      best= 337640498  last= 116653148  epoch=0  best_metric=0.9922069229298145\n"}
+,{"stream_name":"stdout","time":131.727923743,"data":"  fold0      best= 337640498  last= 116653148  epoch=0  best_metric=0.9874078341013826\n"}
+,{"stream_name":"stdout","time":131.731702592,"data":"  fold1      best= 337640626  last= 116653340  epoch=0  best_metric=0.9890092165898617\n"}
+,{"stream_name":"stdout","time":131.735479218,"data":"  fold2      best= 337641458  last= 116654108  epoch=0  best_metric=0.9846074380165288\n"}
+,{"stream_name":"stdout","time":131.739197352,"data":"  fold3      best= 337640818  last= 116653468  epoch=0  best_metric=0.9934171258034894\n"}
+,{"stream_name":"stdout","time":131.743177293,"data":"  fold4      best= 337640114  last= 116652764  epoch=0  best_metric=0.9950822510822511\n"}
+,{"stream_name":"stdout","time":131.747787875,"data":"\n"}
+,{"stream_name":"stdout","time":131.747823647,"data":"small outputs written to /kaggle/working/status (35 files)\n"}
+,{"stream_name":"stdout","time":131.747831057,"data":"\n"}
+,{"stream_name":"stdout","time":131.747837413,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":131.747844258,"data":"DONE in 2.2 min\n"}
+,{"stream_name":"stdout","time":131.747850187,"data":"==============================================================================\n"}
+,{"stream_name":"stderr","time":134.813781983,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":134.813839258,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":135.211360189,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":135.211401905,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":136.896458163,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":138.659036377,"data":"[NbConvertApp] Writing 437460 bytes to __results__.html\n"}
+]

@@ -1,0 +1,142 @@
+{
+  "data/thyroidxl/hires": {
+    "done": true,
+    "finished_at": "2026-08-30 19:03:05",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/manifest.csv",
+      "n_patients": 4093
+    }
+  },
+  "data/cache/hires": {
+    "done": true,
+    "finished_at": "2026-08-30 19:04:08",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/manifest_cached.csv",
+      "files": 23270,
+      "built": 23270,
+      "failed": 0,
+      "bytes": 1227780264
+    }
+  },
+  "tn5000/manifest/hires": {
+    "done": true,
+    "finished_at": "2026-08-30 19:04:28",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/tn5000_manifest.csv",
+      "n": 5000
+    }
+  },
+  "seg/train/hires": {
+    "done": true,
+    "finished_at": "2026-08-30 19:16:31",
+    "artifacts": {
+      "json": "/kaggle/working/results/hires/segmenter.json",
+      "val_dice": 0.8885153719777908,
+      "ckpt": "/kaggle/working/registry/hires/segmenter/best.pt"
+    }
+  },
+  "seg/predict/hires/tn5000": {
+    "done": true,
+    "finished_at": "2026-08-30 19:16:48",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/tn5000_manifest_unet.csv",
+      "dir": "/kaggle/working/results/hires/tn5000_unet_masks",
+      "n_masks": 4920,
+      "n_empty": 80
+    }
+  },
+  "tn5000/adapt/hires/der_mil/bbox": {
+    "done": true,
+    "finished_at": "2026-08-30 19:34:23",
+    "artifacts": {
+      "ckpt": "/kaggle/working/registry/hires/der_mil/tn5000_bbox/best.pt",
+      "best_val_auc": 0.8908816544626954
+    }
+  },
+  "tn5000/adapt/hires/der_mil/unet": {
+    "done": true,
+    "finished_at": "2026-08-30 19:52:16",
+    "artifacts": {
+      "ckpt": "/kaggle/working/registry/hires/der_mil/tn5000_unet/best.pt",
+      "best_val_auc": 0.8724643775974668
+    }
+  },
+  "tn5000/eval/hires/der_mil": {
+    "done": true,
+    "finished_at": "2026-08-30 19:52:53",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/der_mil/tn5000_results.csv"
+    }
+  },
+  "tn5000/upl/hires/der_mil/upl": {
+    "done": true,
+    "finished_at": "2026-08-30 20:09:28",
+    "artifacts": {
+      "ckpt": "/kaggle/working/registry/hires/der_mil/tn5000_upl/best.pt",
+      "rounds": 2
+    }
+  },
+  "tn5000/labelfree/hires/der_mil": {
+    "done": true,
+    "finished_at": "2026-08-30 20:10:59",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/der_mil/tn5000_labelfree.csv"
+    }
+  },
+  "tn5000/retrieval/hires/der_mil/k5": {
+    "done": true,
+    "finished_at": "2026-08-30 20:11:56",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/der_mil/tn5000_retrieval_bags_k5.csv",
+      "bag_size": 5,
+      "neighbour_purity": 0.65
+    }
+  },
+  "tn5000/adapt/hires/mr_mil/bbox": {
+    "done": true,
+    "finished_at": "2026-08-30 20:30:26",
+    "artifacts": {
+      "ckpt": "/kaggle/working/registry/hires/mr_mil/tn5000_bbox/best.pt",
+      "best_val_auc": 0.872550959825846
+    }
+  },
+  "tn5000/adapt/hires/mr_mil/unet": {
+    "done": true,
+    "finished_at": "2026-08-30 20:48:06",
+    "artifacts": {
+      "ckpt": "/kaggle/working/registry/hires/mr_mil/tn5000_unet/best.pt",
+      "best_val_auc": 0.8691989906985949
+    }
+  },
+  "tn5000/eval/hires/mr_mil": {
+    "done": true,
+    "finished_at": "2026-08-30 20:48:45",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/mr_mil/tn5000_results.csv"
+    }
+  },
+  "tn5000/upl/hires/mr_mil/upl": {
+    "done": true,
+    "finished_at": "2026-08-30 21:04:19",
+    "artifacts": {
+      "ckpt": "/kaggle/working/registry/hires/mr_mil/tn5000_upl/best.pt",
+      "rounds": 1
+    }
+  },
+  "tn5000/labelfree/hires/mr_mil": {
+    "done": true,
+    "finished_at": "2026-08-30 21:05:44",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/mr_mil/tn5000_labelfree.csv"
+    }
+  },
+  "tn5000/retrieval/hires/mr_mil/k5": {
+    "done": true,
+    "finished_at": "2026-08-30 21:06:43",
+    "artifacts": {
+      "csv": "/kaggle/working/results/hires/mr_mil/tn5000_retrieval_bags_k5.csv",
+      "bag_size": 5,
+      "neighbour_purity": 0.644
+    }
+  }
+}
