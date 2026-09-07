@@ -1,13 +1,10 @@
-"""Figure 9 -- computational cost.
+"""Figure 9 -- computational cost, ConvNeXt-Tiny backbone.
 
-Parameter counts are exact: computed by loading each model's real saved
-checkpoint state_dict and summing tensor sizes, no architecture code required.
-FLOPs and CPU latency require instantiating the actual nn.Module and running a
-forward pass, which is only possible for mr_mil and der_mil -- the RCAF class
-was intentionally removed from this codebase after its checkpoint had already
-been produced, so only its parameter count (from the surviving weights) is
-available here, not a live FLOPs/latency measurement. That gap is reported
-rather than filled with an estimate.
+Parameter count depends only on architecture and config, not on trained
+weight values, so every number here is computed by instantiating the real
+model class with the real training config (backbone=convnext_tiny,
+evidence_mode=masked_input) and measuring it directly -- no checkpoint file
+is required, and none of these three models needed one to be exact.
 """
 from __future__ import annotations
 
@@ -17,25 +14,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import data
 import style
 from style import INK, INK_MUTED, MODEL_COLORS, MODEL_LABELS, style_ax
 
-import sys
 sys.path.insert(0, data.ROOT)
 from src.config import Config          # noqa: E402
 from src.models.factory import build_model  # noqa: E402
 
-
-def count_params(ckpt_path: str) -> float:
-    sd = torch.load(data.require(ckpt_path), map_location="cpu", weights_only=False)
-    return sum(v.numel() for v in sd["model"].values()) / 1e6
+MODELS = ["lesion_mil", "mr_mil", "der_mil"]
 
 
 def measure(model_name: str, n_frames: int = 3, n_reps: int = 20):
     cfg = Config()
     cfg.model.pretrained = False
-    cfg.model.backbone = "resnet50"
+    cfg.model.backbone = "convnext_tiny"
     cfg.model.evidence_mode = "masked_input"
     model, reqs = build_model(cfg, model_name)
     model.eval()
@@ -60,67 +57,55 @@ def measure(model_name: str, n_frames: int = 3, n_reps: int = 20):
 
 
 def main() -> None:
-    params_ckpt = {
-        "rcaf": count_params(data.CKPT["rcaf"]),
-        "mr_mil": count_params(data.CKPT["mr_mil"]),
-        "der_mil": count_params(data.CKPT["der_mil"]),
-    }
-    measured = {m: measure(m) for m in ("mr_mil", "der_mil")}
+    measured = {m: measure(m) for m in MODELS}
 
     fig, axes = plt.subplots(1, 3, figsize=(12.5, 4.4))
-    models_all = ["rcaf", "mr_mil", "der_mil"]
-    models_live = ["mr_mil", "der_mil"]
+    x = np.arange(len(MODELS))
+    labs = [MODEL_LABELS[m].split(" (")[0] for m in MODELS]
+    cols = [MODEL_COLORS[m] for m in MODELS]
 
     ax = axes[0]
-    x = np.arange(len(models_all))
-    ax.bar(x, [params_ckpt[m] for m in models_all],
-          color=[MODEL_COLORS[m] for m in models_all], width=0.55)
-    for i, m in enumerate(models_all):
-        ax.text(i, params_ckpt[m] + 0.3, "%.1fM" % params_ckpt[m], ha="center",
-               fontsize=9, color=INK)
-    ax.set_xticks(x); ax.set_xticklabels([MODEL_LABELS[m].split(" (")[0] for m in models_all],
-                                          fontsize=9)
-    style_ax(ax, "(a) Parameters\n(exact, from saved checkpoints)", ylabel="Millions of parameters")
+    vals = [measured[m][0] for m in MODELS]
+    ax.bar(x, vals, color=cols, width=0.55)
+    for i, v in enumerate(vals):
+        ax.text(i, v + 0.3, "%.1fM" % v, ha="center", fontsize=9, color=INK)
+    ax.set_xticks(x); ax.set_xticklabels(labs, fontsize=9)
+    style_ax(ax, "(a) Parameters, ConvNeXt-Tiny backbone\n(exact, architecture-determined)",
+            ylabel="Millions of parameters")
 
     ax = axes[1]
-    x2 = np.arange(len(models_live))
-    vals = [measured[m][1] for m in models_live]
-    ax.bar(x2, vals, color=[MODEL_COLORS[m] for m in models_live], width=0.5)
+    vals = [measured[m][1] for m in MODELS]
+    ax.bar(x, vals, color=cols, width=0.55)
     for i, v in enumerate(vals):
         ax.text(i, v + 1, "%.1f" % v, ha="center", fontsize=9, color=INK)
-    ax.set_xticks(x2); ax.set_xticklabels([MODEL_LABELS[m].split(" (")[0] for m in models_live],
-                                           fontsize=9.5)
+    ax.set_xticks(x); ax.set_xticklabels(labs, fontsize=9)
     style_ax(ax, "(b) Inference FLOPs, 3-frame bag\n(measured, torch.profiler)",
             ylabel="GFLOPs / patient")
 
     ax = axes[2]
-    vals2 = [measured[m][2] for m in models_live]
-    ax.bar(x2, vals2, color=[MODEL_COLORS[m] for m in models_live], width=0.5)
-    for i, v in enumerate(vals2):
+    vals = [measured[m][2] for m in MODELS]
+    ax.bar(x, vals, color=cols, width=0.55)
+    for i, v in enumerate(vals):
         ax.text(i, v + 5, "%.0f ms" % v, ha="center", fontsize=9, color=INK)
-    ax.set_xticks(x2); ax.set_xticklabels([MODEL_LABELS[m].split(" (")[0] for m in models_live],
-                                           fontsize=9.5)
+    ax.set_xticks(x); ax.set_xticklabels(labs, fontsize=9)
     style_ax(ax, "(c) CPU inference latency, 3-frame bag\n(measured on this machine, 20-run mean)",
             ylabel="Milliseconds / patient")
 
     fig.tight_layout()
     caption = (
-        "Figure 9. Computational cost. (a) Exact parameter counts, computed by "
-        "loading each model's real saved checkpoint and summing tensor sizes "
-        "(RCAF %.2fM, MR-MIL %.2fM, DER-MIL %.2fM); the ~0.4M difference "
-        "between MR-MIL and DER-MIL is the reliability head. (b-c) FLOPs and "
-        "CPU wall-clock latency for a representative 3-frame patient bag, "
-        "measured directly on this machine (torch.profiler, 20-run mean); "
-        "RCAF is omitted from (b-c) because its model class was removed from "
-        "the codebase after its checkpoint was produced, so it can no longer "
-        "be instantiated for a live forward-pass measurement -- only the "
-        "parameter count, read from the surviving weights, remains available. "
-        "The masked_input evidence encoding used here runs one backbone pass "
-        "per region (4x a single-branch model) rather than pooling from shared "
-        "feature maps, which is the dominant cost for both models shown."
-        % (params_ckpt["rcaf"], params_ckpt["mr_mil"], params_ckpt["der_mil"])
+        "Figure 9. Computational cost, ConvNeXt-Tiny backbone. (a) Exact "
+        "parameter counts (lesion-only %.2fM, MR-MIL %.2fM, DER-MIL %.2fM); "
+        "the ~0.4M difference between MR-MIL and DER-MIL is the reliability "
+        "head. (b-c) FLOPs and CPU wall-clock latency for a representative "
+        "3-frame patient bag, measured directly on this machine "
+        "(torch.profiler, 20-run mean). The masked_input evidence encoding "
+        "used throughout this project runs one backbone pass per region (4x "
+        "a single-branch model) rather than pooling from shared feature maps, "
+        "which is the dominant cost for MR-MIL and DER-MIL relative to the "
+        "lesion-only baseline."
+        % (measured["lesion_mil"][0], measured["mr_mil"][0], measured["der_mil"][0])
     )
-    style.save(fig, "fig09_computational_cost", caption)
+    style.save(fig, "fig09_computational_cost_convnext", caption)
 
 
 if __name__ == "__main__":

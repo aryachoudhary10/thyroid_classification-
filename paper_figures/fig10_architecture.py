@@ -44,7 +44,7 @@ def main() -> None:
     arrow(ax, 5.2, 7.2, 6.0, 7.2)
 
     # Shared backbone
-    box(ax, 6.0, 6.7, 2.1, 1.0, "Shared CNN backbone\n(ResNet-50 /\nswappable)", "#DDE7F0")
+    box(ax, 6.0, 6.7, 2.1, 1.0, "Shared CNN backbone\n(ConvNeXt-Tiny /\nswappable)", "#DDE7F0")
     arrow(ax, 8.1, 7.2, 8.9, 7.2)
 
     box(ax, 8.9, 6.7, 2.4, 1.0, "Evidence embeddings\ne[t,k], k in\n{core,margin,peri,global}", "#EDEDEA")

@@ -1,13 +1,11 @@
-"""Figure 11 -- error analysis (DER-MIL, ResNet-50, ThyroidXL test).
+"""Figure 11 -- error analysis, ConvNeXt-Tiny backbone.
 
-TP/TN/FP/FN counts and their breakdown by TI-RADS category and frames-per-bag
-come from a direct join of the model's real test predictions
-(test_predictions.csv) against the real patient manifest on patient_id -- no
-representative example IMAGES are shown here, because no raw ThyroidXL/TN5000
-pixel data exists anywhere in this local environment (everything was trained
-and evaluated on Kaggle; only result tables and a handful of checkpoints were
-ever fetched back). That gap is reported explicitly rather than illustrated
-with a placeholder or a stand-in image from elsewhere.
+TP/TN/FP/FN counts and their breakdown by TI-RADS category come from a direct
+join of DER-MIL's real test predictions against the real patient manifest on
+patient_id. No representative example IMAGES are shown: no raw ThyroidXL/
+TN5000 pixel data exists anywhere in this local environment (everything was
+trained and evaluated on Kaggle; only result tables and a handful of
+checkpoints were ever fetched back).
 """
 from __future__ import annotations
 
@@ -17,13 +15,13 @@ import pandas as pd
 
 import data
 import style
-from style import CLASS_COLORS, INK, INK_MUTED, MODEL_COLORS, NEUTRAL, style_ax
+from style import INK, INK_MUTED, style_ax
 
 OUTCOME_COLORS = {"TP": "#0072B2", "TN": "#56B4E9", "FP": "#D55E00", "FN": "#9B4F96"}
 
 
 def main() -> None:
-    pred = pd.read_csv(data.require(data.RESNET50["der_mil"]), dtype={"patient_id": str})
+    pred = pd.read_csv(data.require(data.CONVNEXT_PRED["der_mil"]), dtype={"patient_id": str})
     pred["patient_id"] = pred["patient_id"].map(data.norm_pid)
     man = pd.read_csv(data.require(data.MANIFEST), dtype={"patient_id": str})
     man["patient_id"] = man["patient_id"].map(data.norm_pid)
@@ -37,7 +35,6 @@ def main() -> None:
 
     fig, axes = plt.subplots(1, 3, figsize=(13.5, 4.6))
 
-    # ---- (a) outcome counts ----------------------------------------------------#
     ax = axes[0]
     order = ["TP", "TN", "FP", "FN"]
     counts = m["outcome"].value_counts().reindex(order)
@@ -45,9 +42,8 @@ def main() -> None:
     for i, v in enumerate(counts.values):
         ax.text(i, v + 8, "%d" % v, ha="center", fontsize=10, color=INK)
     ax.set_xticks(range(4)); ax.set_xticklabels(order, fontsize=11)
-    style_ax(ax, "(a) Outcome counts, threshold 0.5\nThyroidXL test, n=739", ylabel="Patients")
+    style_ax(ax, "(a) Outcome counts, threshold 0.5\nConvNeXt-Tiny, ThyroidXL test, n=739", ylabel="Patients")
 
-    # ---- (b) false negatives by TI-RADS, vs all malignant patients ------------- #
     ax = axes[1]
     mal = m[m.label == 1].copy()
     mal["tirads"] = mal["tirads"].fillna(-1).astype(int)
@@ -62,7 +58,6 @@ def main() -> None:
     style_ax(ax, "(b) False-negative rate by TI-RADS\n(among malignant test patients)",
             ylabel="False-negative rate (%)")
 
-    # ---- (c) outcome by frames-per-bag ------------------------------------------#
     ax = axes[2]
     for o in order:
         sub = m[m.outcome == o]
@@ -70,31 +65,29 @@ def main() -> None:
                   [o] * len(sub), s=18, alpha=0.55, color=OUTCOME_COLORS[o])
     style_ax(ax, "(c) Outcome vs frames available per patient\n(jittered for visibility)",
             xlabel="Frames in bag")
-    ax.set_yticks(range(4)); ax.set_yticklabels(order[::-1] if False else order)
+    ax.set_yticks(range(4)); ax.set_yticklabels(order)
 
     fig.tight_layout()
     n_fn = int((m.outcome == "FN").sum())
     n_mal = int((m.label == 1).sum())
     hi_tirads_fn = int(((m.outcome == "FN") & (m.tirads >= 4)).sum())
     caption = (
-        "Figure 11. Error analysis, DER-MIL on the ThyroidXL held-out test "
-        "cohort (n=739, threshold 0.5), from a direct join of the model's raw "
-        "predictions with the patient manifest on patient_id. (a) Outcome "
-        "counts (TP=%d, TN=%d, FP=%d, FN=%d), matching the confusion matrix in "
-        "Figure 2. (b) False-negative rate among the %d malignant test "
-        "patients, broken down by TI-RADS category; %d of the %d false "
-        "negatives (%.0f%%) occur in TI-RADS 4-5 nodules, i.e. the model's "
-        "misses are concentrated in cases the clinical scoring system also "
-        "flags as higher-risk rather than in unambiguous low-risk nodules. "
-        "(c) Outcome against the number of frames available for that patient's "
-        "bag; no image or embedding data was available locally to illustrate "
-        "individual TP/FP/FN/TN cases with representative frames -- ThyroidXL "
-        "and TN5000 pixel data reside only on Kaggle, where all training and "
-        "evaluation ran, and were never downloaded to this environment."
+        "Figure 11. Error analysis, DER-MIL, ConvNeXt-Tiny backbone, "
+        "ThyroidXL held-out test cohort (n=739, threshold 0.5), from a direct "
+        "join of the model's raw predictions with the patient manifest on "
+        "patient_id. (a) Outcome counts (TP=%d, TN=%d, FP=%d, FN=%d), "
+        "matching the confusion matrix in Figure 2. (b) False-negative rate "
+        "among the %d malignant test patients, broken down by TI-RADS "
+        "category; %d of the %d false negatives (%.0f%%) occur in TI-RADS "
+        "4-5 nodules, i.e. the model's misses are concentrated in cases the "
+        "clinical scoring system also flags as higher-risk. (c) Outcome "
+        "against the number of frames available for that patient's bag; no "
+        "image or embedding data was available locally to illustrate "
+        "individual cases with representative frames."
         % (counts["TP"], counts["TN"], counts["FP"], counts["FN"], n_mal,
            hi_tirads_fn, n_fn, 100 * hi_tirads_fn / max(n_fn, 1))
     )
-    style.save(fig, "fig11_error_analysis", caption)
+    style.save(fig, "fig11_error_analysis_convnext", caption)
 
 
 if __name__ == "__main__":

@@ -99,8 +99,23 @@ CONVNEXT_PRED = {
 }
 CONVNEXT_TN5000 = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
                                "der_mil", "tn5000_results.csv")
+CONVNEXT_TN5000_PRED = {
+    "bbox": os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                         "der_mil", "tn5000_predictions_bbox.csv"),
+    "pixel": os.path.join(KJ, "convnext_out", "results", "convnexttiny",
+                          "der_mil", "tn5000_predictions_pixel.csv"),
+}
 TN5000_MANIFEST = os.path.join(KJ, "convnext_out", "results", "convnexttiny",
                                "tn5000_manifest.csv")
+CONVNEXT_OOF = {
+    m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m, "oof.csv")
+    for m in ("lesion_mil", "mr_mil", "der_mil")
+}
+CONVNEXT_CAL = {
+    m: os.path.join(KJ, "convnext_out", "results", "convnexttiny", m,
+                    "calibration_table.csv")
+    for m in ("lesion_mil", "mr_mil", "der_mil")
+}
 
 # Reliability-fusion probe: mlp (default, above) vs linear (constrained form)
 DER_MIL_LINEAR_PRED = os.path.join(KJ, "linrel_status", "status",

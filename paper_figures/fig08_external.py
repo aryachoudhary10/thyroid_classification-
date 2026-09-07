@@ -1,12 +1,13 @@
-"""Figure 8 -- TN5000 external (cross-domain) validation.
+"""Figure 8 -- TN5000 external (cross-domain) validation, ConvNeXt-Tiny.
 
-TN5000 is a Chinese thyroid ultrasound dataset, acquired under different
-scanners and a different population prior, used only for cross-domain
-generalisation -- never for training. Panel (c) is included deliberately: two
-independent sessions ran the identical bbox-mask adaptation config for DER-MIL
-and produced 0.914 and 0.934 ROC-AUC. That spread is real, measured, and
-larger than several of the model-vs-model gaps discussed elsewhere in this
-project, so it is shown rather than only the more favourable run.
+Only DER-MIL was adapted and evaluated on TN5000 with the ConvNeXt-Tiny
+backbone -- MR-MIL and lesion-only were not run there. TN5000 also ships zero
+pixel-level masks (0 of 5000 images), so the "pixel" mask-adaptation arm
+silently falls back to the same bounding-box rectangles as the "bbox" arm:
+these are two independent training runs of an IDENTICAL configuration, not
+two different mask types, and are shown that way here -- as a direct,
+measured estimate of session-to-session training variance, not as a
+supervised-vs-alternative-mask comparison.
 """
 from __future__ import annotations
 
@@ -16,98 +17,62 @@ import pandas as pd
 
 import data
 import style
-from style import INK, INK_MUTED, MODEL_COLORS, MODEL_LABELS, NEUTRAL, style_ax
-
-ARM_LABELS = {"bbox": "Bbox masks\n(supervised)", "unet": "U-Net masks\n(supervised)",
-             "zero_shot": "Zero-shot\n(no adaptation)", "upl": "+ Pseudo-\nlabeling",
-             "upl_tent": "+ Pseudo-label\n+ TENT", "retrieval_k5": "Retrieval\nbags (k=5)"}
-ARM_ORDER = ["bbox", "unet", "zero_shot", "upl", "upl_tent", "retrieval_k5"]
+from style import INK, INK_MUTED, MODEL_COLORS, NEUTRAL, style_ax
 
 
 def main() -> None:
-    ladder = pd.read_csv(data.require(data.TN5000_ARM_LADDER))
+    res = pd.read_csv(data.require(data.CONVNEXT_TN5000)).set_index("mask_type")
+    bbox = data.load_predictions(data.CONVNEXT_TN5000_PRED["bbox"], pcol="p")
+    pixel = data.load_predictions(data.CONVNEXT_TN5000_PRED["pixel"], pcol="p")
 
-    fig, axes = plt.subplots(1, 3, figsize=(14.5, 4.8))
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.6))
 
-    # ---- (a) full arm ladder, der_mil vs mr_mil, ResNet-50 --------------------- #
+    # ---- (a) headline external result, with CI --------------------------------#
     ax = axes[0]
-    x = np.arange(len(ARM_ORDER))
-    w = 0.35
-    for j, m in enumerate(("der_mil", "mr_mil")):
-        sub = ladder[ladder.model == m].set_index("arm").loc[ARM_ORDER]
-        off = -w / 2 if m == "der_mil" else w / 2
-        ax.bar(x + off, sub["auc"], w, color=MODEL_COLORS[m],
-              label=MODEL_LABELS[m].split(" (")[0])
-    ax.axvline(1.5, color=NEUTRAL, linestyle=(0, (4, 3)), linewidth=1)
-    ax.text(0.75, 1.0, "supervised", ha="center", fontsize=8, color=INK_MUTED,
-           transform=ax.get_xaxis_transform())
-    ax.text(3.75, 1.0, "label-free (no TN5000 labels used)", ha="center", fontsize=8,
-           color=INK_MUTED, transform=ax.get_xaxis_transform())
-    ax.set_xticks(x); ax.set_xticklabels([ARM_LABELS[a] for a in ARM_ORDER], fontsize=8)
-    style_ax(ax, "(a) TN5000 adaptation-arm ladder, ResNet-50\n(n=250, class-balanced eval subset)",
-            ylabel="ROC-AUC")
-    ax.legend(fontsize=8.5, loc="lower right")
-    ax.set_ylim(0.6, 1.0)
+    pt = res.loc["bbox", "roc_auc"]
+    lo, hi = [float(x) for x in res.loc["bbox", "roc_auc_ci"].strip("[]").split("-")]
+    ax.barh([0], [pt], xerr=[[pt - lo], [hi - pt]], color=MODEL_COLORS["der_mil"],
+           height=0.4, error_kw=dict(ecolor=INK_MUTED, capsize=4, linewidth=1.4))
+    ax.text(pt + 0.01, 0, "%.3f [%.3f, %.3f]" % (pt, lo, hi), va="center", fontsize=10,
+           color=INK)
+    ax.set_yticks([0]); ax.set_yticklabels(["DER-MIL\n(ConvNeXt-Tiny)"], fontsize=10)
+    ax.set_xlim(0.80, 1.0)
+    style_ax(ax, "(a) TN5000 external validation\nbbox-mask adaptation, n=250 (class-balanced)",
+            xlabel="ROC-AUC")
 
-    # ---- (b) all label-free arms make things worse than zero-shot ------------ #
+    # ---- (b) same-config run-to-run variance -----------------------------------#
     ax = axes[1]
-    for j, m in enumerate(("der_mil", "mr_mil")):
-        sub = ladder[(ladder.model == m) & (ladder.target_labels == "no")]
-        sub = sub.set_index("arm").loc[["zero_shot", "upl", "upl_tent", "retrieval_k5"]]
-        ax.plot(range(4), sub["auc"], marker="o", color=MODEL_COLORS[m],
-               linewidth=2, markersize=7, label=MODEL_LABELS[m].split(" (")[0])
-    ax.set_xticks(range(4))
-    ax.set_xticklabels(["Zero-shot", "+ Pseudo-\nlabel", "+ TENT", "Retrieval\nbags"], fontsize=9)
-    style_ax(ax, "(b) Label-free adaptation arms\n(no TN5000 label ever used)",
+    dl = data.delong(bbox, pixel)
+    labels = ["Session 1\n(\"bbox\")", "Session 2\n(\"pixel\", fell back to\nidentical bbox input)"]
+    vals = [res.loc["bbox", "roc_auc"], res.loc["pixel", "roc_auc"]]
+    bars = ax.bar([0, 1], vals, color=MODEL_COLORS["der_mil"], width=0.5)
+    bars[1].set_alpha(0.55)
+    for i, v in enumerate(vals):
+        ax.text(i, v + 0.004, "%.4f" % v, ha="center", fontsize=10, color=INK)
+    ax.set_xticks([0, 1]); ax.set_xticklabels(labels, fontsize=8.5)
+    ax.set_ylim(0.85, 1.0)
+    style_ax(ax, "(b) Two runs, identical config & input\n(TN5000 ships 0 pixel masks of 5000)",
             ylabel="ROC-AUC")
-    ax.legend(fontsize=9)
-
-    # ---- (c) same-config run-to-run variance, measured directly --------------- #
-    ax = axes[2]
-    runs = [("Run 1\n(kaggle_jobs/final_out)", 0.913984, MODEL_COLORS["der_mil"]),
-           ("Run 2\n(kaggle_jobs/report_out)", ladder.loc[(ladder.model == "der_mil") &
-                                                          (ladder.arm == "bbox"), "auc"].item(),
-            MODEL_COLORS["der_mil"])]
-    x2 = np.arange(2)
-    ax.bar(x2, [r[1] for r in runs], color=[r[2] for r in runs], width=0.5, alpha=[1.0, 0.55][0])
-    for i, r in enumerate(runs):
-        ax.text(i, r[1] + 0.003, "%.4f" % r[1], ha="center", fontsize=10, color=INK)
-    ax.set_xticks(x2); ax.set_xticklabels([r[0] for r in runs], fontsize=9)
-    spread = abs(runs[1][1] - runs[0][1])
-    ax.set_ylim(0.85, 0.98)
-    style_ax(ax, "(c) Identical config, two sessions\nDER-MIL, bbox masks, same 250 images",
-            ylabel="ROC-AUC")
-    ax.text(0.5, 0.06, "spread = %.4f AUC\n(training stochasticity only --\nno code or data changed)"
-           % spread, ha="center", fontsize=8.5, color=INK_MUTED, transform=ax.transAxes)
+    ax.text(0.5, 0.05, "spread = %.4f AUC (training\nstochasticity only; DeLong\np=%.3f treating them as paired)"
+           % (abs(vals[0] - vals[1]), dl["p_value"]),
+           ha="center", fontsize=8, color=INK_MUTED, transform=ax.transAxes)
 
     fig.tight_layout()
-    bbox_a = data.load_predictions(data.TN5000_PRED[("der_mil", "bbox")], pcol="p")
-    bbox_b = data.load_predictions(data.TN5000_PRED[("mr_mil", "bbox")], pcol="p")
-    unet_a = data.load_predictions(data.TN5000_PRED[("der_mil", "unet")], pcol="p")
-    unet_b = data.load_predictions(data.TN5000_PRED[("mr_mil", "unet")], pcol="p")
-    dl_bbox = data.delong(bbox_a, bbox_b)
-    dl_unet = data.delong(unet_a, unet_b)
     caption = (
-        "Figure 8. External (cross-domain) validation on TN5000, evaluated on a "
-        "class-balanced 250-image subset of the official validation split, "
-        "never used for training. (a) Full adaptation-arm ladder for DER-MIL "
-        "and MR-MIL: supervised domain adaptation with bounding-box or "
-        "U-Net-predicted masks, versus three label-free arms that never see a "
-        "TN5000 label. (b) DER-MIL is significantly ahead of MR-MIL on both "
-        "supervised arms (paired DeLong on the identical 250 images: bbox "
-        "diff=%+.4f p=%.4f, U-Net-mask diff=%+.4f p=%.4f) but every label-free "
-        "arm underperforms "
-        "plain zero-shot transfer for both models, indicating the pseudo-"
-        "labeling and test-time-adaptation arms are not currently beneficial "
-        "on this domain shift. (c) The identical bbox-adaptation configuration "
-        "run in two independent Kaggle sessions produced ROC-AUC values %.4f "
-        "apart, which is training stochasticity alone and is comparable in "
-        "magnitude to several of the model-vs-model differences reported in "
-        "this project -- external comparisons on this 250-image subset should "
-        "be read with that noise floor in mind."
-        % (dl_bbox["diff"], dl_bbox["p_value"], dl_unet["diff"], dl_unet["p_value"], spread)
+        "Figure 8. External (cross-domain) validation on TN5000, ConvNeXt-Tiny "
+        "backbone, DER-MIL only -- MR-MIL and lesion-only were not evaluated "
+        "on TN5000 with this backbone. (a) ROC-AUC on the class-balanced "
+        "250-image evaluation subset with 95%% bootstrap CI, adapted with "
+        "bounding-box masks. (b) TN5000 ships pixel-level masks for 0 of 5000 "
+        "images, so the nominal \"pixel-mask\" adaptation run received "
+        "identical bounding-box input to the \"bbox\" run; the two sessions "
+        "are therefore two independent trainings of the same configuration, "
+        "and their %.4f-point spread is a direct, measured estimate of "
+        "training-stochasticity noise on this 250-image subset rather than "
+        "an effect of mask type."
+        % abs(vals[0] - vals[1])
     )
-    style.save(fig, "fig08_external_tn5000", caption)
+    style.save(fig, "fig08_external_tn5000_convnext", caption)
 
 
 if __name__ == "__main__":

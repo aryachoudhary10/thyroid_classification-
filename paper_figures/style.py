@@ -51,7 +51,12 @@ MODEL_LABELS = {
     "der_mil_linear": "DER-MIL (linear fusion)",
 }
 
-FIGDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+# Output root: PAPER_FIG_OUTDIR lets a script in a subfolder (e.g.
+# resnet50_supplementary/) redirect its own figures without touching the
+# primary output/ directory. Set it before importing this module.
+FIGDIR = os.environ.get(
+    "PAPER_FIG_OUTDIR",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "output"))
 PNG_DIR = os.path.join(FIGDIR, "png")
 PDF_DIR = os.path.join(FIGDIR, "pdf")
 SVG_DIR = os.path.join(FIGDIR, "svg")
